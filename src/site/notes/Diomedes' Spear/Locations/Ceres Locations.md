@@ -3,34 +3,49 @@
 ---
 
 ## Administrative Precinct
-- Governor's Office
-- Government Business
+
+| Location                 | Characters                               |
+| ------------------------ | ---------------------------------------- |
+| Governor's Office        | [[Diomedes' Spear/NPC/Ceres/Anderson Dawes\|Anderson Dawes]]<br>[[Diomedes' Spear/NPC/Ceres/Enyo Macmillin\|Enyo Macmillin]] |
+| Government Adminstration | [[Diomedes' Spear/NPC/Ceres/Wendy (Mags) Okereke\|Wendy (Mags) Okereke]]                 |
+
 
 ## Docks
-- Dock Master
-- Transportation Firm Offices
-- Abandoned UNN Offices
+| Location                    | Characters                                |
+| --------------------------- | ----------------------------------------- |
+| Dock Master                 | [[Diomedes' Spear/NPC/Ceres/Bosmang Dino Collazo\|Bosmang Dino Collazo]]                  |
+| Transportation Firm Offices |                                           |
+| Abandoned UNN Offices       |                                           |
+| Docks                       | [[Diomedes' Spear/NPC/Ceres/Gerdie Odicho\|Gerdie Odicho]]<br>[[Diomedes' Spear/NPC/Ceres/Ishmael Sandoval\|Ishmael Sandoval]] |
 
 ## Commercial District
-- Weapons Store
-- Medical Clinic - BioNex
-- Bar - The Rusted Airlock
-- Casino
-- Brothel
-- Hotel
-- Dinner
-- Convenience Store
+| Location               | Characters                                                      |
+| ---------------------- | --------------------------------------------------------------- |
+| Weapons Store          |                                                                 |
+| BioNex Medical Clinic  | [[Diomedes' Spear/NPC/Ceres/Dr Donald Hanson\|Dr Donald Hanson]]<br>[[Diomedes' Spear/NPC/Ceres/Dr. Imara Dzeke\|Dr. Imara Dzeke]]<br>[[Diomedes' Spear/NPC/Ceres/Reyan Chance\|Reyan Chance]] |
+| The Rusted Airlock Bar | [[Diomedes' Spear/NPC/Ceres/Prabhleen (Prab) Ivy\|Prabhleen (Prab) Ivy]]                                        |
+| Casino                 |                                                                 |
+| Brothel                |                                                                 |
+| Hotel                  |                                                                 |
+| Diner                  |                                                                 |
+| Convenience Store      |                                                                 |
 
 ## Accommodation District
-- Residencies 
-- Ceres Security Offices
-- Clothing Store
-- Dinner
-- Restaurant
-- Technology Store
-- Church of Humanity Ascended
-- Gym
-- Grocery Store
+| Location                    | Characters                                                                        |
+| --------------------------- | --------------------------------------------------------------------------------- |
+| Residencies                 |                                                                                   |
+| Ceres Security Offices      | [[Diomedes' Spear/NPC/Ceres/Captain Shaddid\|Captain Shaddid]]<br>[[Diomedes' Spear/NPC/Ceres/Casimiro Sanecki\|Casimiro Sanecki]]<br>[[Diomedes' Spear/NPC/Ceres/Detective Sariah (Sarie) Vondo\|Detective Sariah (Sarie) Vondo]] |
+| Clothing Store              |                                                                                   |
+| Diner                       |                                                                                   |
+| Restaurant                  |                                                                                   |
+| Technology Store            |                                                                                   |
+| Church of Humanity Ascended |                                                                                   |
+| Gym                         |                                                                                   |
+| Grocery Store               |                                                                                   |
 
 ## Random Subway Stop
-- Medical centre / morgue 
+| Location       | Characters |
+| -------------- | ---------- |
+| Medical centre |            |
+| Morgue         |            |
+
