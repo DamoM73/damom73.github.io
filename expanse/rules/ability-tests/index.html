@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Ability Tests</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h2 id="test-target-number" tabindex="-1">Test Target Number</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">Target Number</th>
+<th>Test Difficulty</th>
+<th style="text-align:center">50% Change</th>
+<th style="text-align:center">90% Chance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">7</td>
+<td>Routine</td>
+<td style="text-align:center">-3</td>
+<td style="text-align:center">+1</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td>Easy</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">+3</td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td>Average</td>
+<td style="text-align:center">+1</td>
+<td style="text-align:center">+5</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td>Challenging</td>
+<td style="text-align:center">+3</td>
+<td style="text-align:center">+7</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td>Hard</td>
+<td style="text-align:center">+5</td>
+<td style="text-align:center">+9</td>
+</tr>
+<tr>
+<td style="text-align:center">17</td>
+<td>Formidable</td>
+<td style="text-align:center">+7</td>
+<td style="text-align:center">+11</td>
+</tr>
+<tr>
+<td style="text-align:center">19</td>
+<td>Imposing</td>
+<td style="text-align:center">+9</td>
+<td style="text-align:center">+13</td>
+</tr>
+<tr>
+<td style="text-align:center">21</td>
+<td>Nigh Impossible</td>
+<td style="text-align:center">+11</td>
+<td style="text-align:center">+15</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="basic-tests" tabindex="-1">Basic Tests</h2>
+<ol>
+<li>Determine Appropriate ability focus</li>
+<li>Assign a target number</li>
+<li>Roll &amp; apply fortune</li>
+<li>Test results successful &gt;= target number</li>
+</ol>
+<h2 id="opposed-tests" tabindex="-1">Opposed Tests</h2>
+<ol>
+<li>Determine Appropriate ability focus for both characters</li>
+<li>Assign a target number for both characters</li>
+<li>Both characters roll &amp; apply fortune</li>
+<li>Character
+<ul>
+<li>win when &gt;= TN and &gt; opponent</li>
+<li>Tie -&gt; Drama dice
+<ul>
+<li>Tie -&gt; highest ability score (including focus)</li>
+</ul>
+</li>
+<li>Both fail TN -&gt; tie</li>
+</ul>
+</li>
+</ol>
+<h2 id="advanced-test" tabindex="-1">Advanced Test</h2>
+<ol>
+<li>Determine the TN or opposed roll</li>
+<li>Each success on a test adds its Drama Die total to the success threshold until you either succeed or run out of time.</li>
+<li>Each roll requires a time increment.
+<ul>
+<li>figure out the typical amount of time the task should take and divide it by half of the success threshold.</li>
+</ul>
+</li>
+<li>You make an ability test against the target number or opposed roll for each time increment:
+<ul>
+<li>Failure -&gt; don’t make any headway, and the time passes.</li>
+<li>Success -&gt; Add the Drama Die result to total</li>
+</ul>
+</li>
+<li>When the total meets or exceeds the success threshold, you complete the task.</li>
+</ol>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Task Difficulty</th>
+<th style="text-align:center">Success Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Easy</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td>Average</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td>Challenging</td>
+<td style="text-align:center">15</td>
+</tr>
+<tr>
+<td>Hard</td>
+<td style="text-align:center">20</td>
+</tr>
+<tr>
+<td>Formidable</td>
+<td style="text-align:center">25</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="challenge-test" tabindex="-1">Challenge Test</h2>
+<p>Same as advanced test, with consequence for each failure.<br>
+Determine how many times characters can fail at a challenge test before increasing the level of the consequences.</p>
+<h3 id="minor-consequences" tabindex="-1">Minor consequences</h3>
+<ul>
+<li>Make the next test more difficult, increasing the target number by +2</li>
+<li>Increase the amount of time needed for each ability test</li>
+<li>Cause some minor complication</li>
+</ul>
+<h3 id="moderate-consequences" tabindex="-1">Moderate consequences</h3>
+<ul>
+<li>Make all future tests more difficult, increasing the target number by +2</li>
+<li>Eliminating half of your accumulated progress towards the success threshold</li>
+<li>Close off current avenue of progress, forcing you to adopt a new approach (may require change of focus)</li>
+</ul>
+<h3 id="major-consequences" tabindex="-1">Major consequences</h3>
+<ul>
+<li>Jeopardise the entire challenge test forcing characters to:
+<ul>
+<li>start the test over from the beginning</li>
+<li>complete another advanced or challenge test in order to pick up where they left off</li>
+</ul>
+</li>
+</ul>
+<h2 id="assisting-tests" tabindex="-1">Assisting Tests</h2>
+<p>If multiple characters work together on a task, one player is designated as the primary roller. Other characters who assist <strong>must have an applicable ability focus</strong> related to the test.</p>
+<p><strong>Bonus for Assistance</strong> – For each assisting character, the primary roller gains a <strong>+1 bonus to their roll</strong>, up to a maximum of <strong>+3</strong>.</p>
+<h2 id="probability-of-scores" tabindex="-1">Probability of scores</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">Score</th>
+<th style="text-align:center">Cumulative Probability (%)</th>
+<th style="text-align:center">Exact Probability (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">26</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">38</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td style="text-align:center">62</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">74</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center">84</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center">91</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center">95</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td style="text-align:center">98</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">17</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">18</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table></div>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>
