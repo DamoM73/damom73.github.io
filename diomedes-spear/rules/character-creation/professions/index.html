@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Equipment Quality and Flaws</title>
+<title>Professions</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -108,7 +108,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/character-creation/professions/">Professions </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/character-creation/professions/">Professions </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -142,7 +142,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/equipment-quality-and-flaws/">Equipment Quality and Flaws </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/equipment-quality-and-flaws/">Equipment Quality and Flaws </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -215,149 +215,493 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T06:36:15.211Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T06:36:15.211Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T06:36:15.211Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Equipment Quality and Flaws</h1>
+<h1 data-note-icon="">Professions</h1>
 <div class="header-meta">
 </div>
 </header>
-<p>Each quality -&gt; cost +1<br>
-Each flaw -&gt; cost - 1</p>
-<h2 id="general-qualities" tabindex="-1">General Qualities</h2>
+<h2 id="outsider-professions" tabindex="-1">Outsider Professions</h2>
+<h3 id="artist" tabindex="-1">Artist</h3>
+<p>You are about expression, whether it is sharing your sense of what is beautiful or expressing your pain or outrage in a form others can understand. You may or may not be making a living at it, but you need to express yourself regardless.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Quality</th>
+<th>Stat</th>
 <th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Durable</td>
-<td>The item is built to last. Under normal conditions, it lasts twice as long and for tests involving damaging it, it has +2 Toughness.</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Expression) or <br>- Intelligence (Art)</td>
 </tr>
 <tr>
-<td>Effective</td>
-<td>The item works better than a regular item of its type, gaining a +1 bonus to one of its abilities. This could be damage, armour bonus, or some other ability used for outcome or effectiveness but not for tests (see Fine, following, for that quality) or a 50% improvement in overall output. A Very Effective item has two qualities and provides a +2 bonus or a 100% improvement.</td>
-</tr>
-<tr>
-<td>Fast</td>
-<td>The item works fast. It takes half the usual time to use a regular item of its type. For something used during action time, the character gains a +2 bonus to initiative when using the item</td>
-</tr>
-<tr>
-<td>Favoured Stunt</td>
-<td>The item is either especially well-suited for performing a particular stunt, granting a –1 SP modifier to its cost, or else the item grants access to a unique stunt the character can perform while wielding or using it. Each favoured stunt is a separate quality and an item can have more than one.</td>
-</tr>
-<tr>
-<td>Fine</td>
-<td>The item’s quality is such that the character gains a +1 bonus to tests for using or wielding it. Very Fine items have two qualities and provide a +2 bonus.</td>
-</tr>
-<tr>
-<td>Impressive</td>
-<td>The item’s quality is clearly apparent, providing a +1 bonus to social and roleplaying tests where such things are noteworthy, such as trying to make a good impression while wearing an Impressive outfit or intimidating someone with an Impressive weapon. Very Impressive items have two qualities and provide a +2 bonus.</td>
-</tr>
-<tr>
-<td>Light</td>
-<td>The item is lighter and more compact than normal, reducing any penalty to Dexterity and Speed it normally imposes by 1. Very Light items have two qualities and reduce penalties by 2.</td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Artistry or <br>- Performance</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="general-flaws" tabindex="-1">General Flaws</h2>
+<h3 id="brawler" tabindex="-1">Brawler</h3>
+<p>There are always opportunities for people willing and able to knock some heads together. It’s not fancy fighting, and it’s certainly not fair, but you’d much rather have a reputation for winning and surviving than anything else.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Flaw</th>
+<th>Stat</th>
 <th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Fragile</td>
-<td>The item wasn’t made to take much punishment. A deliberate attempt to break it always succeeds. Further more, when a test to use the item fails and the Drama Die is 3 or less, the item breaks.</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Fighting (Brawling) or <br>- Fighting (Grappling)</td>
 </tr>
 <tr>
-<td>Heavy</td>
-<td>The item is heavier or bulkier than normal, imposing a –1 penalty to the Dexterity and Speed of a character carrying or wearing it. Very Heavy items have two flaws and impose a –2 penalty to Dexterity and Speed.</td>
-</tr>
-<tr>
-<td>Ineffective</td>
-<td>The item can’t inflict damage as easily as a proper weapon, imposing a –1 or –2 penalty to damage rolls, with a minimum damage roll of 1.</td>
-</tr>
-<tr>
-<td>Poor</td>
-<td>The overall poor quality of the item imposes a –1 penalty to tests using or wielding it. Very Poor items have two flaws and impose a –2 penalty.</td>
-</tr>
-<tr>
-<td>Shoddy</td>
-<td>The item’s flaws are glaringly apparent, imposing a –1 penalty to social and roleplaying tests where such things are noteworthy, such as trying to intimidate someone with a Shoddy weapon, or make a good first impression in a Shoddy outfit. The GM may adjust the penalty, depending on the circumstances, but it is always negative.</td>
-</tr>
-<tr>
-<td>Slow</td>
-<td>The item works, but not fast. It takes twice as much time to use as a regular item of its type. For something that can be used with a major action during action time, a Slow item requires a Ready action after it is used each time to prepare it to be used again.</td>
-</tr>
-<tr>
-<td>Unreliable</td>
-<td>The item works...most of the time. When a test involving the item fails and the Drama Die is a 3 or less, the item stops working. If the item does not require a test to use, the GM should roll 3d6 when the item needs to work. On a total roll of 10 or less where the Drama Die is a 3 or less, the item stops working. Getting an Unreliable item working again takes either an interlude to fix it or, during action time, a TN 13 challenge test with a success threshold of 10 and a time increment of 1 round.</td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Grappling Style or <br>- Striking Style</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="ranged-weapon-qualities" tabindex="-1">Ranged Weapon Qualities</h2>
+<h3 id="criminal" tabindex="-1">Criminal</h3>
+<p>When you’re on the outside, you often bend and break the law to survive. You might feel you have no choice in the matter because of circumstances, or maybe you chose those circumstances, loving crime with professional pride, or as a means to some political or personal end. Either way, you know how to work around the law.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Quality</th>
+<th>Stat</th>
 <th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Armor Piercing</td>
-<td>The weapon’s rounds reduce the Toughness bonus of worn armour by –2 in terms of reducing their damage. Unfortunately, armour-piercing rounds also have the ability to punch through vacuum sealed bulkheads, so a missed attack with one on a spaceship or station near an outside wall may cause a hull breach. Roll 1d6; on a roll of 1 or 2, a breach occurs and the air begins rushing out of the compartment. See the Threats chapter for details on suffocation hazards</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Deception) or <br>- Dexterity (Forgery, Sleight of Hand, or Stealth)</td>
 </tr>
 <tr>
-<td>Automatic</td>
-<td>The weapon reloads and fires automatically so long as its trigger is depressed. This makes the weapon capable of performing stunts with the (Automatic) quality on the Gun Stunts table in Chapter 5.</td>
-</tr>
-<tr>
-<td>High Capacity</td>
-<td>The weapon carries a substantial amount of ammunition. Ignore the first roll indicating the weapon has run out of ammo (see Weapon Capacity, following).</td>
-</tr>
-<tr>
-<td>Long Range</td>
-<td>The weapon’s effective ranges are doubled. See Range under Making Attacks in Chapter 5 for details.</td>
-</tr>
-<tr>
-<td>Spreading</td>
-<td>The weapon fires a spreading cone of pellets, shot, or similar small ammunition, like a shotgun. It does one die less damage, but can hit all targets within a roughly 30-degree angle in front of the shooter.</td>
-</tr>
-<tr>
-<td>Tracer</td>
-<td>The weapon fires rounds that glow, leaving visible trails (tracers) behind. A tracer weapon allows the user to take the Aim action as a free action so long as the weapon was fired on the previous round (see Aim under Minor Actions in Chapter 5).</td>
-</tr>
-<tr>
-<td>Tranquilizer</td>
-<td>A tranquilizer or tranq weapon fires a hypodermic dart preloaded with a dose of a drug, usually a powerful tranquilizer to knock out its target. The dart won’t penetrate any armour, but if it hits an unarmoured target, the character must make a TN 13 Constitution (Tolerance) test or become unconscious. A successful test means the character is only fatigued.</td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Burglary or <br>- Scouting</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="makeshift-weapon-flaws" tabindex="-1">Makeshift Weapon Flaws</h2>
+<h3 id="fixer" tabindex="-1">Fixer</h3>
+<p>You are good at getting things done, often in a less-than strictly-legal fashion or outside of the normal channels. While some Fixers are motivated by profit, others do what they can to help people within the context of a restrictive and often corrupt system.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Flaw</th>
+<th>Stat</th>
 <th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Clumsy</td>
-<td>The weapon is awkward to wield, imposing a –1 or –2 penalty to attack tests.</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Bargaining) or <br>- Intelligence (Evaluation)</td>
 </tr>
 <tr>
-<td>Fragile</td>
-<td>The weapon wasn’t made to take much punishment. When an attack with it misses and the Drama Die is 3 or less, the object breaks and becomes useless as a weapon</td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Fringer or <br>- Improvisation</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="scavenger" tabindex="-1">Scavenger</h3>
+<p>Most people would be amazed at the things that get thrown away and forgotten, but not you. You are all too familiar with that bounty: how to find it, salvage it, and make the best use of it.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Intelligence (Technology) or <br>- Perception (Searching)</td>
 </tr>
 <tr>
-<td>Weak</td>
-<td>The object can’t inflict damage as easily as a proper weapon, imposing a –1 or –2 penalty to damage rolls, with a minimum damage roll of 1.</td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Improvisation or <br>- Maker</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="survivalist" tabindex="-1">Survivalist</h3>
+<p>Survival is the most basic challenge of life, and you have learned how to do it, whether because you had to or because you prefer it that way. You know how to make do without many of the products and social networks most people depend upon for their everyday lives.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Accuracy (Bows or Pistols) or <br>- Perception (Survival)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Fringer or <br>- Tactical Awareness</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="lower-class-professions" tabindex="-1">Lower Class Professions</h2>
+<h3 id="athlete" tabindex="-1">Athlete</h3>
+<p>You pit yourself against physical challenges, from other teams and rival athletes to your own limits and personal best. Your work involves a lot of training and practice to stay at the top of your game.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Constitution (Running or Swimming) or<br>- Dexterity (Acrobatics or Free-fall) or <br>- Strength (Climbing or Jumping)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Agility or <br>- Quick Reflexes</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="clergy" tabindex="-1">Clergy</h3>
+<p>People need faith. They need someone to look after their hearts and souls just as much as bodies or minds, perhaps even more so in some ways. You have a calling to do this work, along with tending to your own faith—whatever form that might take.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Intelligence (Theology) or <br>- Willpower (Faith)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Inspire or <br>- Oratory</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="investigator" tabindex="-1">Investigator</h3>
+<p>People lie and keep secrets. They’ve been doing it since the dawn of time. Likewise, people like you, who know how to dig up the truth, have always dogged deceivers. You might bring criminals to justice, get information to the public, or find out what a client wants or needs to know.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Investigation) or <br>- Perception (choose one)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Intrigue or <br>- Observation</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="negotiator" tabindex="-1">Negotiator</h3>
+<p>The harder things are, the more people need each other to get by and the more likely it seems they are to disagree. You know how to get people together, to settle disputes, to find compromises, and to generally grease the rusty wheels of conflicting agendas so they turn in unison once more.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Bargaining or Persuasion) or <br>- Perception (Empathy)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Intrigue or <br>- Oratory</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="soldier" tabindex="-1">Soldier</h3>
+<p>Your nation and people need someone to defend them, to stand on the front lines and, sometimes, to go to war against their enemies. You’re trained to follow orders, to fight, and to do what needs doing. Rather than duty to home and country, you might be a soldier-for-hire, working for what ever client can meet your fee.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Accuracy (Pistols or Rifles) or <br>- Fighting (Brawling)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- One Fighting Style or <br>- Tactical Awareness</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="technician" tabindex="-1">Technician</h3>
+<p>You fix things. Whether you’re a mechanic, maintenance technician, or even work in information technologies, people depend on you to keep it working. You might work in vast server farms, in lightless tunnels, in a massive factory, or in a nondescript office. These are all points where you maintain part of the System’s vast infrastructure.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Intelligence (Engineering or Technology)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Expertise or<br>- Hacking or <br>- Maker</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="middle-class-professions" tabindex="-1">Middle Class Professions</h2>
+<h3 id="merchant" tabindex="-1">Merchant</h3>
+<p>Money makes the world go around, and you are a part of that time-honored tradition. You know how to buy at a discount, sell at a profit, and make trades that ensure you come out ahead of the game. You might be involved in trade, work in retail or wholesale, or deal in rarities that require knowledge to identify and eloquence to sell.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Bargaining) or <br>- Intelligence (Business)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Affluent or <br>- Contacts</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="pilot" tabindex="-1">Pilot</h3>
+<p>You are at your best when you’re at the controls. You have the nerve and the skill needed to make your ship do what you need it to do. It becomes an extension of your body, its humming as essential as the beat of your heart.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Dexterity (Piloting)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Pilot</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="politician" tabindex="-1">Politician</h3>
+<p>From neighbourhoods to nations, people need to be organized for society to function. You know the tricks it takes to get people to cooperate in that process, sometimes whether they want to or not. Your speeches help people devise collective political dreams, but behind closed doors you deal in the art of the possible. You might be virtuous or corrupt, but isn’t that a matter of perspective?</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Deception or Persuasion) or <br>- Intelligence (Current Affairs or Law)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Contacts or <br>- Oratory</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="professional" tabindex="-1">Professional</h3>
+<p>Whether from time toiling in a cubicle farm or your own private office, you know the “white collar” professional world. You might see it as a career path or a stepping stone towards something else, but you know your job and the skills and challenges that come with it.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Bargaining or Expression) or <br>- Intelligence (Business, Technology, or Research)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Affluent or <br>- Expertise</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="scholar" tabindex="-1">Scholar</h3>
+<p>Knowledge and understanding are your fields, focused on a specific area of interest. Whereas the expert profession tends to be about applied knowledge, you focus on knowledge for knowledge’s sake. You might work in a university, or have an amateur obsession. You look to expand your own understanding of your field and, in so doing, perhaps expand the world’s understanding as well.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Intelligence (choose one)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Expertise or Knowledge</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="security" tabindex="-1">Security</h3>
+<p>You work to protect things—and people—providing the peace of mind others need to get their jobs done, or even just to live their lives. You might be a law-enforcement officer or a private security guard or consultant, but either way you focus on keeping the bad guys from getting what they want and keeping your charges safe.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Intelligence (Security) or <br>- Perception (Empathy, Intuition, or Seeing)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- One Fighting Style or <br>- Protect</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="upper-class-professions" tabindex="-1">Upper Class Professions</h2>
+<h3 id="commander" tabindex="-1">Commander</h3>
+<p>You’re trained to lead military personnel in the field, as a noble calling or part of a professional elite. Your responsibility is to get the job done and to ensure as many of those under your command make it back as possible. Does a good commander put the first goal ahead of the second, or vice versa?</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Leadership) or <br>- Intelligence (Tactics)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Command or <br>- Tactical Awareness</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="dilettante" tabindex="-1">Dilettante</h3>
+<p>With so many possible things to learn and do, how can you choose? You’re happy to sample from the banquet of possibilities laid out before you, learning as much as you can about something before moving on to the next interest or option.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Intelligence (Research) or <br>- Perception (choose one)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Improvisation or <br>- Know-It-All</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="executive" tabindex="-1">Executive</h3>
+<p>You are the take-charge type, able to see the big picture and organize people to get things done to move towards those goals. You need vision and the ability to lead people toward it. You decide whether it’s all about profit, about the thrill of your ventures, or some other agenda.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Leadership) or <br>- Intelligence (Business)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Command or <br>- Intrigue</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="expert" tabindex="-1">Expert</h3>
+<p>There used to be a time when you could know everything, or nearly so, but that’s long gone. Still, you’re an expert in your chosen field. Experts tend to belong to highly paid and complex fields including finance, law, medicine, and the sciences.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Intelligence (choose one)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Expertise or <br>- Know-It-All</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="explorer" tabindex="-1">Explorer</h3>
+<p>There are still plenty of places in the System where few if any people have been, and you want to explore them. Your work might be for the expansion of human knowledge and achievement or simply to satisfy your own need to discover someplace new.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Intelligence (Navigation) or <br>- Perception (choose one)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Pilot or <br>- Scouting</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="socialite" tabindex="-1">Socialite</h3>
+<p>Life is a never-ending series of social engagements, from parties and receptions to fundraisers, weddings, and even funerals, and you navigate all of them with style. Your social obligations might be a burden or a source of enjoyment for you but, whatever the case, they’re yours, and you handle them well. You might lead a life of pure recreation, but your engagements could have political or charitable dimensions as well.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
+<td>- Communication (Etiquette or Seduction) or <br>- Constitution (Tolerance)</td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Talents</a></td>
+<td>- Attractive or <br>- Contacts</td>
 </tr>
 </tbody>
 </table></div>
@@ -402,13 +746,69 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#general-qualities">General Qualities</a>
+<li><a href="#outsider-professions">Outsider Professions</a>
+<ol>
+<li><a href="#artist">Artist</a>
 </li>
-<li><a href="#general-flaws">General Flaws</a>
+<li><a href="#brawler">Brawler</a>
 </li>
-<li><a href="#ranged-weapon-qualities">Ranged Weapon Qualities</a>
+<li><a href="#criminal">Criminal</a>
 </li>
-<li><a href="#makeshift-weapon-flaws">Makeshift Weapon Flaws</a>
+<li><a href="#fixer">Fixer</a>
+</li>
+<li><a href="#scavenger">Scavenger</a>
+</li>
+<li><a href="#survivalist">Survivalist</a>
+</li>
+</ol>
+</li>
+<li><a href="#lower-class-professions">Lower Class Professions</a>
+<ol>
+<li><a href="#athlete">Athlete</a>
+</li>
+<li><a href="#clergy">Clergy</a>
+</li>
+<li><a href="#investigator">Investigator</a>
+</li>
+<li><a href="#negotiator">Negotiator</a>
+</li>
+<li><a href="#soldier">Soldier</a>
+</li>
+<li><a href="#technician">Technician</a>
+</li>
+</ol>
+</li>
+<li><a href="#middle-class-professions">Middle Class Professions</a>
+<ol>
+<li><a href="#merchant">Merchant</a>
+</li>
+<li><a href="#pilot">Pilot</a>
+</li>
+<li><a href="#politician">Politician</a>
+</li>
+<li><a href="#professional">Professional</a>
+</li>
+<li><a href="#scholar">Scholar</a>
+</li>
+<li><a href="#security">Security</a>
+</li>
+</ol>
+</li>
+<li><a href="#upper-class-professions">Upper Class Professions</a>
+<ol>
+<li><a href="#commander">Commander</a>
+</li>
+<li><a href="#dilettante">Dilettante</a>
+</li>
+<li><a href="#executive">Executive</a>
+</li>
+<li><a href="#expert">Expert</a>
+</li>
+<li><a href="#explorer">Explorer</a>
+</li>
+<li><a href="#socialite">Socialite</a>
+</li>
+</ol>
 </li>
 </ol>
 </nav>

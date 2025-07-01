@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Equipment Quality and Flaws</title>
+<title>Specializations</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -142,7 +142,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/equipment-quality-and-flaws/">Equipment Quality and Flaws </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/equipment-quality-and-flaws/">Equipment Quality and Flaws </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -178,7 +178,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/specializations/">Specializations </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/specializations/">Specializations </a>
 </div>
 </div>
 </div>
@@ -215,149 +215,601 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T06:36:15.211Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T06:36:15.211Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T06:36:15.211Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Equipment Quality and Flaws</h1>
+<h1 data-note-icon="">Specializations</h1>
 <div class="header-meta">
 </div>
 </header>
-<p>Each quality -&gt; cost +1<br>
-Each flaw -&gt; cost - 1</p>
-<h2 id="general-qualities" tabindex="-1">General Qualities</h2>
+<pre><code class="language-table-of-contents">title: 
+style: nestedList # TOC style (nestedList|nestedOrderedList|inlineFirstLevel)
+minLevel: 0 # Include headings from the specified level
+maxLevel: 2 # Include headings up to the specified level
+includeLinks: true # Make headings clickable
+hideWhenEmpty: false # Hide TOC if no headings are found
+debugInConsole: false # Print debug info in Obsidian console
+</code></pre>
+<h2 id="academic" tabindex="-1">Academic</h2>
+<p>You are trained in finding information and putting it to use.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Quality</th>
-<th>Effect</th>
+<th>Category</th>
+<th>Detail</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Durable</td>
-<td>The item is built to last. Under normal conditions, it lasts twice as long and for tests involving damaging it, it has +2 Toughness.</td>
+<td>Requirement</td>
+<td>Intelligence 2 or higher and the Intelligence (Research) focus.</td>
 </tr>
 <tr>
-<td>Effective</td>
-<td>The item works better than a regular item of its type, gaining a +1 bonus to one of its abilities. This could be damage, armour bonus, or some other ability used for outcome or effectiveness but not for tests (see Fine, following, for that quality) or a 50% improvement in overall output. A Very Effective item has two qualities and provides a +2 bonus or a 100% improvement.</td>
+<td>Novice</td>
+<td>You have a real skill in not only finding facts, but knowing where to look. If you fail an Intelligence (Research) test, you can re-roll it, but must keep the result of the second roll.</td>
 </tr>
 <tr>
-<td>Fast</td>
-<td>The item works fast. It takes half the usual time to use a regular item of its type. For something used during action time, the character gains a +2 bonus to initiative when using the item</td>
+<td>Expert</td>
+<td>You have become adept at recalling relevant information. When you perform the A-Ha! stunt, you gain one free extra use of it; that is, if you spend 1 SP, you can perform the stunt twice, if you spend 2 SP, you can use it three times, and so on.</td>
 </tr>
 <tr>
-<td>Favoured Stunt</td>
-<td>The item is either especially well-suited for performing a particular stunt, granting a –1 SP modifier to its cost, or else the item grants access to a unique stunt the character can perform while wielding or using it. Each favoured stunt is a separate quality and an item can have more than one.</td>
-</tr>
-<tr>
-<td>Fine</td>
-<td>The item’s quality is such that the character gains a +1 bonus to tests for using or wielding it. Very Fine items have two qualities and provide a +2 bonus.</td>
-</tr>
-<tr>
-<td>Impressive</td>
-<td>The item’s quality is clearly apparent, providing a +1 bonus to social and roleplaying tests where such things are noteworthy, such as trying to make a good impression while wearing an Impressive outfit or intimidating someone with an Impressive weapon. Very Impressive items have two qualities and provide a +2 bonus.</td>
-</tr>
-<tr>
-<td>Light</td>
-<td>The item is lighter and more compact than normal, reducing any penalty to Dexterity and Speed it normally imposes by 1. Very Light items have two qualities and reduce penalties by 2.</td>
+<td>Master</td>
+<td>Your fact-finding abilities are unparalleled. When you make an Intelligence (Research) test as part of an advanced test, you gain a +1 bonus to the result of each Drama Die. This increases your total roll, and allows you to reach the success threshold faster.</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="general-flaws" tabindex="-1">General Flaws</h2>
+<h2 id="ace" tabindex="-1">Ace</h2>
+<p>Few can fly like you do.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Flaw</th>
-<th>Effect</th>
+<th>Category</th>
+<th>Detail</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Fragile</td>
-<td>The item wasn’t made to take much punishment. A deliberate attempt to break it always succeeds. Further more, when a test to use the item fails and the Drama Die is 3 or less, the item breaks.</td>
+<td>Requirement</td>
+<td>Dexterity 3 or higher and the Dexterity (Piloting) focus.</td>
 </tr>
 <tr>
-<td>Heavy</td>
-<td>The item is heavier or bulkier than normal, imposing a –1 penalty to the Dexterity and Speed of a character carrying or wearing it. Very Heavy items have two flaws and impose a –2 penalty to Dexterity and Speed.</td>
+<td>Novice</td>
+<td>You can coax more out of your ship than most. When you perform the Punch It chase stunt, you gain an extra +1 bonus on your next chase test, above the bonus gained for the stunt (so the bonus is +2 when you spend 1 SP, +3 when you spend 2 SP and so on).</td>
 </tr>
 <tr>
-<td>Ineffective</td>
-<td>The item can’t inflict damage as easily as a proper weapon, imposing a –1 or –2 penalty to damage rolls, with a minimum damage roll of 1.</td>
+<td>Expert</td>
+<td>Add +2 to the Drama Die when making tests using the Dexterity (Piloting) focus.</td>
 </tr>
 <tr>
-<td>Poor</td>
-<td>The overall poor quality of the item imposes a –1 penalty to tests using or wielding it. Very Poor items have two flaws and impose a –2 penalty.</td>
-</tr>
-<tr>
-<td>Shoddy</td>
-<td>The item’s flaws are glaringly apparent, imposing a –1 penalty to social and roleplaying tests where such things are noteworthy, such as trying to intimidate someone with a Shoddy weapon, or make a good first impression in a Shoddy outfit. The GM may adjust the penalty, depending on the circumstances, but it is always negative.</td>
-</tr>
-<tr>
-<td>Slow</td>
-<td>The item works, but not fast. It takes twice as much time to use as a regular item of its type. For something that can be used with a major action during action time, a Slow item requires a Ready action after it is used each time to prepare it to be used again.</td>
-</tr>
-<tr>
-<td>Unreliable</td>
-<td>The item works...most of the time. When a test involving the item fails and the Drama Die is a 3 or less, the item stops working. If the item does not require a test to use, the GM should roll 3d6 when the item needs to work. On a total roll of 10 or less where the Drama Die is a 3 or less, the item stops working. Getting an Unreliable item working again takes either an interlude to fix it or, during action time, a TN 13 challenge test with a success threshold of 10 and a time increment of 1 round.</td>
+<td>Master</td>
+<td>You are a peerless pilot. Add +1 to tests made using Dexterity (Piloting) and you may re-roll a failed test, although you don’t get the bonus on the re-roll and must take the result of the second roll.</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="ranged-weapon-qualities" tabindex="-1">Ranged Weapon Qualities</h2>
+<h2 id="agent" tabindex="-1">Agent</h2>
+<p>You’re a skilled spy and infiltrator.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Quality</th>
-<th>Effect</th>
+<th>Category</th>
+<th>Detail</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Armor Piercing</td>
-<td>The weapon’s rounds reduce the Toughness bonus of worn armour by –2 in terms of reducing their damage. Unfortunately, armour-piercing rounds also have the ability to punch through vacuum sealed bulkheads, so a missed attack with one on a spaceship or station near an outside wall may cause a hull breach. Roll 1d6; on a roll of 1 or 2, a breach occurs and the air begins rushing out of the compartment. See the Threats chapter for details on suffocation hazards</td>
+<td>Requirement</td>
+<td>Perception 2 or higher and the Perception (Empathy) and Communication (Deception) focuses.</td>
 </tr>
 <tr>
-<td>Automatic</td>
-<td>The weapon reloads and fires automatically so long as its trigger is depressed. This makes the weapon capable of performing stunts with the (Automatic) quality on the Gun Stunts table in Chapter 5.</td>
+<td>Novice</td>
+<td>You built your life on lies. If you fail a Communication (Deception) test, you can re-roll it, but must keep the result of the second roll.</td>
 </tr>
 <tr>
-<td>High Capacity</td>
-<td>The weapon carries a substantial amount of ammunition. Ignore the first roll indicating the weapon has run out of ammo (see Weapon Capacity, following).</td>
+<td>Expert</td>
+<td>You are also adept at seeing through deception. When you use the Read the Room stunt, add +3 to your Perception (Empathy) roll when the stunt is opposed.</td>
 </tr>
 <tr>
-<td>Long Range</td>
-<td>The weapon’s effective ranges are doubled. See Range under Making Attacks in Chapter 5 for details.</td>
-</tr>
-<tr>
-<td>Spreading</td>
-<td>The weapon fires a spreading cone of pellets, shot, or similar small ammunition, like a shotgun. It does one die less damage, but can hit all targets within a roughly 30-degree angle in front of the shooter.</td>
-</tr>
-<tr>
-<td>Tracer</td>
-<td>The weapon fires rounds that glow, leaving visible trails (tracers) behind. A tracer weapon allows the user to take the Aim action as a free action so long as the weapon was fired on the previous round (see Aim under Minor Actions in Chapter 5).</td>
-</tr>
-<tr>
-<td>Tranquilizer</td>
-<td>A tranquilizer or tranq weapon fires a hypodermic dart preloaded with a dose of a drug, usually a powerful tranquilizer to knock out its target. The dart won’t penetrate any armour, but if it hits an unarmoured target, the character must make a TN 13 Constitution (Tolerance) test or become unconscious. A successful test means the character is only fatigued.</td>
+<td>Master</td>
+<td>You are a masterful spy. You gain two of the following focuses if you don’t have them already: Communication (Disguise), Communication (Investigation), Dexterity (Stealth), Intelligence (Cryptography), and Intelligence (Security). If you already have all of these, pick two and add +1 to all rolls made using them.</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="makeshift-weapon-flaws" tabindex="-1">Makeshift Weapon Flaws</h2>
+<h2 id="bounty-hunter" tabindex="-1">Bounty Hunter</h2>
+<p>You know how to find the right jobs, how to track down your target and get the job done with a minimum of fuss, and how to ensure you get paid before moving on to the next bounty.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Flaw</th>
-<th>Effect</th>
+<th>Category</th>
+<th>Detail</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Clumsy</td>
-<td>The weapon is awkward to wield, imposing a –1 or –2 penalty to attack tests.</td>
+<td>Requirement</td>
+<td>Perception 2 or higher and at least one Perception focus.</td>
 </tr>
 <tr>
-<td>Fragile</td>
-<td>The weapon wasn’t made to take much punishment. When an attack with it misses and the Drama Die is 3 or less, the object breaks and becomes useless as a weapon</td>
+<td>Novice</td>
+<td>You can designate someone or something as your “quarry” after spending at least an hour on the job investigating them, including reading a prepared brief or dossier. You can only have one active quarry at a time but can substitute a new quarry for a previous one with an additional time investment. Usually, your quarry is the focus of the bounty you’re currently pursuing. You’re considered to always have the tangential focus necessary to investigate your quarry, and if you have the primary or tangential focus, you gain a +1 bonus on your tests to investigate them. You also gain the benefits of the Dexterity (Initiative) and Perception (Intuition) focuses</td>
 </tr>
 <tr>
-<td>Weak</td>
-<td>The object can’t inflict damage as easily as a proper weapon, imposing a –1 or –2 penalty to damage rolls, with a minimum damage roll of 1.</td>
+<td>Expert</td>
+<td>You can prepare a major action in relation to your quarry. Whenever you roll initiative against your quarry, you can perform your prepared action first before your quarry acts regardless of the initiative order; you then take your normal actions on your turn. Prepared actions may include things like a Run or Charge towards your quarry, an Attack against them, and attempt to hide from them, or a Stunt Attack directed at them. You can choose your prepared action up to when initiative is rolled. Once action time begins, however, it can’t be changed; you can either take the prepared action or choose not to—if circumstances allow.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>When you surprise your quarry, you are automatically considered to have them dead-to-rights. You have a +2 bonus for any tests to see if you surprise your quarry. This is in addition to any bonuses from ability focuses or your Novice ability for this specialization. Also, if you fail an ability test to unlock a clue related to your quarry, you can re-roll the test and use the result of the second roll instead</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="commando" tabindex="-1">Commando</h2>
+<p>You are trained to fight, and to win, no matter the odds.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Constitution 2 or higher and the Willpower (Self-Discipline) focus.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>If you fail a Constitution or Willpower (Self Discipline) test, you can re-roll, but must keep the result of the second roll.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>You know how to work with a team to get things done. At this degree, you gain an intensity 1 Relationship with your team, whoever that may be, and you keep the relationship even if the membership of your team changes. You can increase the intensity of this Relationship normally. See the Rewards chapter for details on Relationships.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>You can overcome the effects of some conditions through sheer grit. When you acquire the exhausted, fatigued, injured, or wounded conditions, make a TN 13 Constitution (Stamina) or Willpower (Self Discipline) test; if you succeed, you ignore the effects of the condition for the remainder of the encounter, although the condition itself remains.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="entertainer" tabindex="-1">Entertainer</h2>
+<p>In a solar system containing billions of people, it’s possible for your voice to rise above the crowd—but what will you have to say if it does?</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Focus in your area of influence with Attribute of 2 or higher</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>You’ve got some raw potential, and you’re starting to learn how to experiment with it. Sometimes that blows up in your face, but sometimes it finds brilliance in what was otherwise an average work of art. Whenever you roll a test to create or perform art, you may choose to re-roll the attempt but must keep the new roll even if it’s worse. In addition, you should explain how a success transforms a performance that wasn’t going well or how a failure results in a promising piece going off the rails.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>You have developed a signature style, possibly even a signature piece such as a custom instrument or beloved persona, and it’s something with which audiences strongly connect. Talk to the GM to develop a clear idea of what this entails, but it should be fairly narrow— “making music” is not a valid signature since it could apply to almost any test for a musician, but “playing daggri-punk” or “my drag persona Miss Fifi Fofum” would both be acceptable since they are specific as to when they apply. Whenever you create using your signature, you can choose to either gain a +2 on the subsequent Income test or reduce the cost of Stunts while using it by 1 SP (minimum 1).</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>Your art is a part of you, and even those who aren’t familiar with your medium can tell right away that you have a gift for it. You make the most challenging artistic feats look easy and attempt things other artists can’t even dream of doing. Reduce the Test Difficulty by one category for all tests related to artistic creation and performance or by two categories if you can feature your signature. In addition, if the Drama Die is lower than 3 on a performance roll related to your art, treat it as though you rolled a 3 in terms of degrees of success. This can be further modified with the Right in the Feels Stunt.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="executive" tabindex="-1">Executive</h2>
+<p>You claim authority and leadership in an organization.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Communication 2 or higher and the Communication (Persuasion) focus.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>You have experience in negotiating the byways of your organization. You acquire a Membership in a new organization or advance to the next rank with an existing Membership (see the Rewards chapter for details on Memberships). You can re-roll any test to access privileges from, or influence members of, the organization behind this acquired or improved Member ship, but must keep the results of the second roll.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>Your authority extends to calling in a subordinate to support you. Once per day you may make a Communication (Persuasion) test. If you succeed, you can call in a subordinate from the organization you chose at the Novice rank to aid you. Use one of the profiles found in the Threats chapter. If your character is level 5-8, this subordinate can be no more than a Minor threat, called at a test TN of 11. If your character is level 9-12, you may choose a Moderate-threat subordinate instead, at a test TN of 13. If your character is level 13 or above, you have the option of a subordinate who’s a Major threat in their own right, if you succeed at a TN 15 test. You do not gain the novice re-roll benefit on this test.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>Because you have influence in your organization, you have constant access to resources. Add your Membership rank in the organization to your Income whenever you can call upon your organization. Further more, if your Income score decreases, you regain the lost point during the next interlude when you interact with the organization.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="gunfighter" tabindex="-1">Gunfighter</h2>
+<p>No one shoots as quickly or as accurately as you.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Dexterity 2 and Accuracy 2 or higher.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>Your accuracy is instinctive. Pick Accuracy (Pistols) or Accuracy (Rifles). You gain a +1 to attack and damage rolls for attacks made using your chosen focus.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>You’re fast and precise. You may pick the other focus from the Novice degree and apply the Novice benefit to it, or improve the bonus for the focus you picked at Novice rank to +2 to your attack and damage rolls.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>You’re one with the gun. Choose one of the following stunts: Lightning Attack, Overwatch, Lethal Blow, or Wound. You can perform the chosen stunt for 1 SP less than usual when wielding a firearm. In the case of Overwatch, spending 1 SP gives you the effects of spending 2 SP, and spending 2 SP gives you the 3 SP effect. See Chapter 5 for details on these stunts.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="hacker" tabindex="-1">Hacker</h2>
+<p>You excel at the use and abuse of computer systems.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Intelligence 2 or higher and the Intelligence (Technology) focus.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>You are skilled in navigating computer systems. Add +1 to Intelligence (Technology) tests.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>When things go wrong or don’t work quite how you want them to, you’re skilled in finding backdoors and loopholes. You can perform the High Tech Hustle stunt for 2 SP. In advanced tests involving computer systems, add +1 to your Drama Die roll. This increases your total test result and allows you to complete advanced tests faster.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>Breaking into a system is one thing, but getting in and then out without getting caught is another. While using a computer system, you may perform the Cover Your Tracks stunt for 1 SP. Add another +1 to your Drama Die result while performing advanced tests for a total of +2, otherwise the same as the Expert degree benefit.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="investigator" tabindex="-1">Investigator</h2>
+<p>You’re a skilled detective.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Perception and Intelligence 2 or higher and least one Perception focus.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>You can always make a test to unlock a lead, even if you don’t have a primary or tangential focus relevant to the investigation, although you take a +2 increase in TN when you don’t have either (see Investigation in Chapter 5 for details). If you do have a primary or tangential focus for the lead, you get a +1 bonus to the test with a primary focus (in addition to the focus bonus) and no increase in TN for using a tangential focus.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>The real trick to being a great investigator isn’t finding clues, it’s knowing how to use them. You may use the Intuition stunt for 1 SP. Furthermore, if you have the primary focus required to unlock a lead, add another +1 to your roll to do so for a total of +2.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>When all the evidence is gathered, you only need a flash of inspiration to put it together and find the solution. You can use the Breakthrough stunt on an investigation for only 3 SP.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="journalist" tabindex="-1">Journalist</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Based on the type of journalism the character practices, they need either Communication 2 or higher and the Communication (Research) or Communication (Expression) focus, or Intelligence 2 or higher and the Intelligence (Research) or Intelligence (Current Affairs) focus. The GM has the final word on which requirement potentially applies</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>You’ve learned to use your status as a journalist to get your foot in the door both literally and figuratively. Whenever you use the Press Pass stunt success fully to gain access to a situation, gain +2 to your next social test directly related to conducting journalistic activity.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>You’ve developed a few specific techniques as part of your journalistic arsenal. Select three stunts from the General Social Stunts list in The Expanse RPG— halve the SP cost of these stunts, rounded up (minimum 1). This reduction only applies when you’re using a stunt as part of your journalistic work; while they’re encouraged to give it a fair amount of latitude, the GM has the final say on whether it applies to a particular situation.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>You’ve got a knack for finding the right angle to make a story catch on and have developed enough of an audience following to get it started. Once per session, you may use the Go Viral stunt for free, provided you have some way of broadcasting the relevant events.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="martial-artist" tabindex="-1">Martial Artist</h2>
+<p>You are a master of hand-to-hand combat.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Fighting 2 or better and at least Novice rank in one hand-to-hand combat style</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>When you make a Fighting-based attack roll, add +1 to damage on a successful hit.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>You have excellent speed and timing. When you perform the Momentum stunt with SP gained from a Fighting attack roll, you gain a bonus to your initiative as if you spent one more SP than you have. So, if you spend 1 SP, you gain a +6 bonus to initiative; if you spend 2 SP, you gain a bonus of +9.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>You are a master of many close combat techniques. When you perform the Stunt Attack action with a Fighting attack roll, you automatically generate 2 SP.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="mechanic" tabindex="-1">Mechanic</h2>
+<p>She takes of you, you take care of her. You are at one with your ship in a way that makes other feel uncomfortable.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Intelligence 2 or higher and Engineering Focus</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>Nominate a ship as &quot;Your Ship&quot;. You have the Intuition focus, for the purposes of identifying if anything is wrong with your ship.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>You have worked on so many different systems, that you intuitively know how they work. Your Intuition focus can extend to any mechanical system.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>Redundancy is the key. You have added extra redundancies to all of your ship's systems. When applying loss conditions from space combat, a roll of on the normal loss table, results in no loss rather than a reroll.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="pirate" tabindex="-1">Pirate</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Communication 2 or higher.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>Your past deeds have become known and your symbols, be they flags, songs, or catchphrases, herald your impending approach. You gain the Intimidation focus and can use your Communication rather than Strength Ability for tests that use it.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>Your name is recognized in the far corners of the system and beyond the Ring gate. While people may not always fear you, they certainly respect you both as a celebrity and a known criminal. You gain +2 to all tests to identify prize ships in social situations and +2 to recruit new crew members.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>Whether through economic disruption, tales of your derring-do, or by atrocities you’ve committed, it’s hard to go anywhere you aren’t known. While it’s harder to keep a low profile, there are distinct financial benefits to your notoriety. You gain a +2 to all tests to sell stolen cargo.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="scout" tabindex="-1">Scout</h2>
+<p>You’re skilled at understanding an area of space and finding what you’re looking for.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Intelligence 2 or higher and the Intelligence (Navigation) focus.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>You are adept at making the most of your instruments when looking for something. If you fail an Intelligence (Technology) test when using sensors, you can re-roll it but must keep the result of the second roll.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>Your astronomical abilities are unrivalled. When you make an Intelligence (Navigation) test as part of an advanced test, you gain a +1 bonus to the result of each Drama Die. This increases your total roll and allows you to reach the success threshold faster.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>When you perform tests using ship sensors, treat them as if their Sensors rating is 1 higher.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sniper" tabindex="-1">Sniper</h2>
+<p>You are a crack shot.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Accuracy 3 or better and the Accuracy (Rifles) focus.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>You know how to quietly set up a decisive shot. If you’re hidden from your target, you can re-roll your first Accuracy (Rifles) attack during an encounter, but must keep the results of the second roll.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>You know how to wait for a perfect shot to present itself. If you use the Aim action for an Accuracy (Rifles) attack, add a bonus to damage equal to the attack roll bonus your Aim provides. This includes any bonus from the Precision Marksmanship stunt.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>You are a deadly shot. When you are using the Accuracy (Rifles) focus, you can perform the Called Shot stunt for 2 SP.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="smuggler" tabindex="-1">Smuggler</h2>
+<p>You move secret, illegal, illicit, or profitable cargo across contested or monitored borders.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Communication 2 or higher and the Communication (Bargaining) focus.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>You know how to mitigate risks and maximize profits. Add +1 to all tests where the TN was increased by Risk.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>Whenever you acquire cargo, whether by using the Merchants Buying rules in Sol System or by using the clients in Trades of the Expanse: Trader/Smuggler, you may choose to also take on a small amount of illicit cargo. Your overall flight gains +1 Risk, but if you complete the trade successfully you gain an additional +2 Temporary Income bonus.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>When you attempt to bribe somebody with an Income test or a Communication (Bargaining) test, you may spend one Temporary Income to re-roll it, but must keep the result of the second roll</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="socialite" tabindex="-1">Socialite</h2>
+<p>You know people, and how to get what you want from them.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Communication and Perception 2 or higher.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>Your natural charm causes people to like you. You may perform the On the Fence stunt for 1 SP.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>When you attempt a detailed social maneuverer (see Chapter 5: Game Play), you require one fewer shift (to a minimum of 1) to succeed. If the situation only requires a simple social maneuverer, add +1 to your roll.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>Wherever you go, you fit in with ease. When you interact with people who would have an attitude of Neutral or worse toward you, they automatically shift it one step in your favour. This benefit disappears if subjects feel physically threatened by you or your allies, however.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="star" tabindex="-1">Star</h2>
+<p>You can sway people with your performance, personal charisma, and fame.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Communication 2 or higher and the Communication (Performing) focus.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>When using the Communication (Performing) focus, you may perform the Sway the Crowd stunt for 1 SP.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>A good performance opens doors, and makes people want to know you. You can perform the Oozing Confidence stunt for 2 SP.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>When you need to, you can pull out all of the stops with a performance. When you attempt a social grand gesture (see Chapter 5: Game Play), your success threshold for each shift is one less than it would normally be.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="thief" tabindex="-1">Thief</h2>
+<p>You are adept at stealing things and avoiding getting caught.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Dexterity 2 or higher and the Dexterity (Sleight of Hand) and Dexterity (Stealth) focuses.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>The first thing a skilled thief perfects is the ability to work unnoticed. You add +1 to all tests made with the Dexterity (Stealth) or the Dexterity (Sleight of Hand) focuses. Choose which focus receives this benefit when you attain this degree.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>When you make a Dexterity test to hide or steal an object, you can re-roll the test if you choose, but must keep the result of the second roll. You become an expert in avoiding suspicion. You may perform the It Wasn’t Me stunt for 2 SP.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>Add another +1 to tests using either Dexterity (Sleight of Hand) or Dexterity (Stealth), selecting the focus when you attain this degree.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="trader" tabindex="-1">Trader</h2>
+<p>You get things and people where they need to go, and you make a profit while doing so.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirement</td>
+<td>Intelligence 2 or higher and the Intelligence (Business) focus.</td>
+</tr>
+<tr>
+<td>Novice</td>
+<td>You’re good at reading people, and you’re excellent at understanding trends. Add +1 to Perception (Intuition) tests.</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>You’re savvy when it comes to finances, loop holes, and opportunities. If you fail an Intelligence (Business) test, you can re-roll it, but must keep the result of the second roll.</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>Once per session when you succeed on an Intelligence (Business) test to buy or sell goods or bid for available jobs with a client, you may increase or decrease your Drama Die by 1 without spending Fortune (or increasing the Churn for altering the dice).</td>
 </tr>
 </tbody>
 </table></div>
@@ -402,13 +854,47 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#general-qualities">General Qualities</a>
+<li><a href="#academic">Academic</a>
 </li>
-<li><a href="#general-flaws">General Flaws</a>
+<li><a href="#ace">Ace</a>
 </li>
-<li><a href="#ranged-weapon-qualities">Ranged Weapon Qualities</a>
+<li><a href="#agent">Agent</a>
 </li>
-<li><a href="#makeshift-weapon-flaws">Makeshift Weapon Flaws</a>
+<li><a href="#bounty-hunter">Bounty Hunter</a>
+</li>
+<li><a href="#commando">Commando</a>
+</li>
+<li><a href="#entertainer">Entertainer</a>
+</li>
+<li><a href="#executive">Executive</a>
+</li>
+<li><a href="#gunfighter">Gunfighter</a>
+</li>
+<li><a href="#hacker">Hacker</a>
+</li>
+<li><a href="#investigator">Investigator</a>
+</li>
+<li><a href="#journalist">Journalist</a>
+</li>
+<li><a href="#martial-artist">Martial Artist</a>
+</li>
+<li><a href="#mechanic">Mechanic</a>
+</li>
+<li><a href="#pirate">Pirate</a>
+</li>
+<li><a href="#scout">Scout</a>
+</li>
+<li><a href="#sniper">Sniper</a>
+</li>
+<li><a href="#smuggler">Smuggler</a>
+</li>
+<li><a href="#socialite">Socialite</a>
+</li>
+<li><a href="#star">Star</a>
+</li>
+<li><a href="#thief">Thief</a>
+</li>
+<li><a href="#trader">Trader</a>
 </li>
 </ol>
 </nav>
@@ -416,8 +902,7 @@ On this page
 </div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card">
-<span class="no-backlinks-message">No other pages mentions this page</span>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/diomedes-spear/rules/leveling/" data-note-icon="" class="backlink">Leveling</a>
 </div></div>
 </div>
 </div>

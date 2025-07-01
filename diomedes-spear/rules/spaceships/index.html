@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Equipment Quality and Flaws</title>
+<title>Spaceships</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -142,7 +142,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/equipment-quality-and-flaws/">Equipment Quality and Flaws </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/equipment-quality-and-flaws/">Equipment Quality and Flaws </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -174,7 +174,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/spaceships/">Spaceships </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/spaceships/">Spaceships </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -215,91 +215,154 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T06:36:15.211Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T06:36:15.211Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T06:36:15.211Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Equipment Quality and Flaws</h1>
+<h1 data-note-icon="">Spaceships</h1>
 <div class="header-meta">
 </div>
 </header>
-<p>Each quality -&gt; cost +1<br>
-Each flaw -&gt; cost - 1</p>
-<h2 id="general-qualities" tabindex="-1">General Qualities</h2>
+<h2 id="size" tabindex="-1">Size</h2>
+<p>Size determines things like the ship’s Hull score, its needed and average crew complements, and its capacity for certain utilities.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Quality</th>
-<th>Effect</th>
+<th>Size</th>
+<th style="text-align:center">Length</th>
+<th style="text-align:center">Hull</th>
+<th style="text-align:center">Crew min</th>
+<th style="text-align:center">Crew avg</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Durable</td>
-<td>The item is built to last. Under normal conditions, it lasts twice as long and for tests involving damaging it, it has +2 Toughness.</td>
+<td>Tiny</td>
+<td style="text-align:center">5m</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td>Breaching Pod</td>
 </tr>
 <tr>
-<td>Effective</td>
-<td>The item works better than a regular item of its type, gaining a +1 bonus to one of its abilities. This could be damage, armour bonus, or some other ability used for outcome or effectiveness but not for tests (see Fine, following, for that quality) or a 50% improvement in overall output. A Very Effective item has two qualities and provides a +2 bonus or a 100% improvement.</td>
+<td>Small</td>
+<td style="text-align:center">10m</td>
+<td style="text-align:center">1d3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td>Shuttle, skiff</td>
 </tr>
 <tr>
-<td>Fast</td>
-<td>The item works fast. It takes half the usual time to use a regular item of its type. For something used during action time, the character gains a +2 bonus to initiative when using the item</td>
+<td>Medium</td>
+<td style="text-align:center">25m</td>
+<td style="text-align:center">1d6</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td>Ship's boat, dropship</td>
 </tr>
 <tr>
-<td>Favoured Stunt</td>
-<td>The item is either especially well-suited for performing a particular stunt, granting a –1 SP modifier to its cost, or else the item grants access to a unique stunt the character can perform while wielding or using it. Each favoured stunt is a separate quality and an item can have more than one.</td>
+<td>Large</td>
+<td style="text-align:center">50m</td>
+<td style="text-align:center">2d6</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">16</td>
+<td>Frigate</td>
 </tr>
 <tr>
-<td>Fine</td>
-<td>The item’s quality is such that the character gains a +1 bonus to tests for using or wielding it. Very Fine items have two qualities and provide a +2 bonus.</td>
+<td>Huge</td>
+<td style="text-align:center">100m</td>
+<td style="text-align:center">3d6</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">64</td>
+<td>Destroyer</td>
 </tr>
 <tr>
-<td>Impressive</td>
-<td>The item’s quality is clearly apparent, providing a +1 bonus to social and roleplaying tests where such things are noteworthy, such as trying to make a good impression while wearing an Impressive outfit or intimidating someone with an Impressive weapon. Very Impressive items have two qualities and provide a +2 bonus.</td>
+<td>Gigantic</td>
+<td style="text-align:center">250m</td>
+<td style="text-align:center">4d6</td>
+<td style="text-align:center">64</td>
+<td style="text-align:center">512</td>
+<td>Cruiser</td>
 </tr>
 <tr>
-<td>Light</td>
-<td>The item is lighter and more compact than normal, reducing any penalty to Dexterity and Speed it normally imposes by 1. Very Light items have two qualities and reduce penalties by 2.</td>
+<td>Colossal</td>
+<td style="text-align:center">500m</td>
+<td style="text-align:center">5d6</td>
+<td style="text-align:center">256</td>
+<td style="text-align:center">2048</td>
+<td>Battleship</td>
+</tr>
+<tr>
+<td>Titanic</td>
+<td style="text-align:center">1km+</td>
+<td style="text-align:center">6d6</td>
+<td style="text-align:center">1024</td>
+<td style="text-align:center">8192</td>
+<td>Conly gerneration-ship</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="general-flaws" tabindex="-1">General Flaws</h2>
+<h3 id="hull" tabindex="-1">Hull</h3>
+<p>A ship’s Hull measures its overall structural strength.</p>
+<h3 id="crew" tabindex="-1">Crew</h3>
+<p>The ships min crew indicates the crew size required to run the ship efficiently. If the crew does not meet the min, add a -2 modifier for each category drop.</p>
+<h4 id="crew-competence" tabindex="-1">Crew Competence</h4>
+<p>For ships crew by NPCs, ability test bonuses are determined by the crew competence.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Flaw</th>
-<th>Effect</th>
+<th>Competence</th>
+<th style="text-align:center">Bonus</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Fragile</td>
-<td>The item wasn’t made to take much punishment. A deliberate attempt to break it always succeeds. Further more, when a test to use the item fails and the Drama Die is 3 or less, the item breaks.</td>
-</tr>
-<tr>
-<td>Heavy</td>
-<td>The item is heavier or bulkier than normal, imposing a –1 penalty to the Dexterity and Speed of a character carrying or wearing it. Very Heavy items have two flaws and impose a –2 penalty to Dexterity and Speed.</td>
-</tr>
-<tr>
-<td>Ineffective</td>
-<td>The item can’t inflict damage as easily as a proper weapon, imposing a –1 or –2 penalty to damage rolls, with a minimum damage roll of 1.</td>
+<td>Incompetent</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td>Poor</td>
-<td>The overall poor quality of the item imposes a –1 penalty to tests using or wielding it. Very Poor items have two flaws and impose a –2 penalty.</td>
+<td style="text-align:center">1</td>
 </tr>
 <tr>
-<td>Shoddy</td>
-<td>The item’s flaws are glaringly apparent, imposing a –1 penalty to social and roleplaying tests where such things are noteworthy, such as trying to intimidate someone with a Shoddy weapon, or make a good first impression in a Shoddy outfit. The GM may adjust the penalty, depending on the circumstances, but it is always negative.</td>
+<td>Average</td>
+<td style="text-align:center">2</td>
 </tr>
 <tr>
-<td>Slow</td>
-<td>The item works, but not fast. It takes twice as much time to use as a regular item of its type. For something that can be used with a major action during action time, a Slow item requires a Ready action after it is used each time to prepare it to be used again.</td>
+<td>Capable</td>
+<td style="text-align:center">3</td>
 </tr>
 <tr>
-<td>Unreliable</td>
-<td>The item works...most of the time. When a test involving the item fails and the Drama Die is a 3 or less, the item stops working. If the item does not require a test to use, the GM should roll 3d6 when the item needs to work. On a total roll of 10 or less where the Drama Die is a 3 or less, the item stops working. Getting an Unreliable item working again takes either an interlude to fix it or, during action time, a TN 13 challenge test with a success threshold of 10 and a time increment of 1 round.</td>
+<td>Skilled</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td>Elite</td>
+<td style="text-align:center">5</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="ranged-weapon-qualities" tabindex="-1">Ranged Weapon Qualities</h2>
+<h2 id="drive" tabindex="-1">Drive</h2>
+<p>Even at a high-g burn, regular breaks must be taken for the crew to attend to their biological needs and recover, which means that ships must have stores of food, water, air, medicine, and other consumables in proportion to the crew and the distance the ship plans to travel.</p>
+<p>An Epstein Drive plume is visible and detectable over a considerable distance, meaning a ship on the burn is fairly easy to track.</p>
+<p>The plume itself is capable of reducing any matter in it down to its constituent atoms, and firing a drive in close proximity to a station, an asteroid, or another ship can cause considerable damage.</p>
+<h2 id="sensors" tabindex="-1">Sensors</h2>
+<p>A ship’s Sensors score measures the overall effectiveness of this equipment, on a range from –2 to 6 or more.</p>
+<h2 id="weapons" tabindex="-1">Weapons</h2>
+<p>While civilian ships are unarmed, military and security craft have a variety of weapons, as do some pirates and similar illegal ships.</p>
+<p>Types of weapons:</p>
+<ul>
+<li>Grapplers</li>
+<li>Point defence cannons (PBCs)</li>
+<li>Rail Guns</li>
+<li>Torpedoes</li>
+</ul>
+<h3 id="countermeasures" tabindex="-1">Countermeasures</h3>
+<p>Most ships also have defensive countermeasures packages used to help keep enemies from targeting them:</p>
+<ul>
+<li>Communications arrays can broadcast cycling bursts of radio static across commonly used frequencies to jam communications, and at close enough range</li>
+<li>Communications lasers can be used to try and blind enemy targeting optics</li>
+<li>Physical chaff can be ejected into space between the ship and enemies, spreading out clutter to interfere with targeting lasers or radar.</li>
+</ul>
+<h2 id="qualities-and-flaws" tabindex="-1">Qualities and flaws</h2>
+<h3 id="qualities" tabindex="-1">Qualities</h3>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -309,36 +372,164 @@ Each flaw -&gt; cost - 1</p>
 </thead>
 <tbody>
 <tr>
-<td>Armor Piercing</td>
-<td>The weapon’s rounds reduce the Toughness bonus of worn armour by –2 in terms of reducing their damage. Unfortunately, armour-piercing rounds also have the ability to punch through vacuum sealed bulkheads, so a missed attack with one on a spaceship or station near an outside wall may cause a hull breach. Roll 1d6; on a roll of 1 or 2, a breach occurs and the air begins rushing out of the compartment. See the Threats chapter for details on suffocation hazards</td>
+<td>Acceleration, Improved</td>
+<td>The ship can accelerate faster. When performing a high-g maneuver, the ship can add a bonus of up to +7. The ship also gets a +1 to the Piloting test when attempting to increase or decrease range. Additional applications of this bonus can be taken, which increases the high-g maneuver bonus by 1 for each, up to a maximum of +9. Each additional level also grants another +1 to the Piloting test to increase range, up to a maximum of +3.</td>
 </tr>
 <tr>
-<td>Automatic</td>
-<td>The weapon reloads and fires automatically so long as its trigger is depressed. This makes the weapon capable of performing stunts with the (Automatic) quality on the Gun Stunts table in Chapter 5.</td>
+<td>Advanced Sensor Package</td>
+<td>+1 increase in Sensors score for each time this quality is applied.<br>Sensors score usually maxes out at 6, unless the GM chooses to make an exception.</td>
 </tr>
 <tr>
-<td>High Capacity</td>
-<td>The weapon carries a substantial amount of ammunition. Ignore the first roll indicating the weapon has run out of ammo (see Weapon Capacity, following).</td>
+<td>Agile</td>
+<td>Only ships of Small or Medium size can take this quality. The ship is extremely nimble and able to maneuver easier than other ships. The ship gets a +1 to Evasion tests and any other Piloting tests that require maneuverability. Additional applications can be taking which grant an additional +1 up to a maximum of +3. A ship must be designed and built to have this capability. It cannot be added later.</td>
 </tr>
 <tr>
-<td>Long Range</td>
-<td>The weapon’s effective ranges are doubled. See Range under Making Attacks in Chapter 5 for details.</td>
+<td>Altered Transponder Code</td>
+<td>The ship has access to or use of an altered transponder code, allowing it to appear as another ship with a different name and point of origin. This can provide a way around any number of prob lems that might arise in the course of a vessel’s life. It should be noted that changing a transponder code is highly illegal. MCRN ships are designed as such so that if the transponder code is altered without the proper access codes the ship self-destructs.</td>
 </tr>
 <tr>
-<td>Spreading</td>
-<td>The weapon fires a spreading cone of pellets, shot, or similar small ammunition, like a shotgun. It does one die less damage, but can hit all targets within a roughly 30-degree angle in front of the shooter.</td>
+<td>Atmosphere Capable</td>
+<td>The ship can operate in a planetary atmosphere for limited periods of time and is capable of landing. Generally, a ship must be designed and built to have this capability. It cannot be added later.</td>
 </tr>
 <tr>
-<td>Tracer</td>
-<td>The weapon fires rounds that glow, leaving visible trails (tracers) behind. A tracer weapon allows the user to take the Aim action as a free action so long as the weapon was fired on the previous round (see Aim under Minor Actions in Chapter 5).</td>
+<td>Communication Systems, Advanced</td>
+<td>The ship’s communications systems, both tightbeam and radio array, have an increased bandwidth that results in shorter relay times, although lightspeed still dictates the minimum transmis sion time of interplanetary communications. The advanced communications system can also send and receive encrypted messages and provide a private network for all inbound and outbound comm traffic. It can even break through some jamming frequencies. Flagships often have advanced communications systems so that they can better organize attacks. The SP cost for any Fleet Command Stunts is reduced by 1.</td>
 </tr>
 <tr>
-<td>Tranquilizer</td>
-<td>A tranquilizer or tranq weapon fires a hypodermic dart preloaded with a dose of a drug, usually a powerful tranquilizer to knock out its target. The dart won’t penetrate any armour, but if it hits an unarmoured target, the character must make a TN 13 Constitution (Tolerance) test or become unconscious. A successful test means the character is only fatigued.</td>
+<td>Disguise</td>
+<td>The ship has been disguised in some way to conceal its true provenance or purpose. While not as effec tive as stealth, Disguise combined with an Altered Transponder Code, may allow a ship to pass inspection if those looking don’t know what they’re looking for. This can counter the Wanted flaw (see the Spaceships chapter of The Expanse RPG) or similar difficulties but is not meant as a permanent solution to either.</td>
+</tr>
+<tr>
+<td>Drone Bay</td>
+<td>The ship has at least two drones for combat, visual reconnaissance, or repair. These can be remote controlled by crewmembers who can pilot them or by a computer system.</td>
+</tr>
+<tr>
+<td>Emergency Batteries</td>
+<td>All ships have batteries that allow them to run life support and maneuvering thrusters (although not the Epstein drive) even when the engines are offline for a limited period—usually less than a week depending how much power is used. Emergency batteries allow a ship to operate for months without reactor power.</td>
+</tr>
+<tr>
+<td>Flagship</td>
+<td>Flagships are the leaders to fleets and are often on the front line and the hub of command and communi cations in battle. During the Command step of space combat, the flagship generates an additional 2 SP and can give any of their generated SP to allied ships. This SP is added to any SP generated by that ship during its Command step.</td>
+</tr>
+<tr>
+<td>Good Juice</td>
+<td>+2 bonus on Constitution (Stamina) tests against high-acceleration manoeuvres.</td>
+</tr>
+<tr>
+<td>Gourmet Galley</td>
+<td>The ship has an extensive galley capable of turning out extravagant meals that are well-balanced and nutritious, and nutritious. It also has a high-quality coffee (and beverage) maker that makes a cup of coffee as good as any found on Earth. The crew has a +1 bonus to a Constitution or Willpower test once per session when they have regular access. Maintaining this quality requires adding +1 to the Resupply Cost to maintain the ship (see Resupply in Chapter 1 of this book). The crew can eliminate this cost by losing this quality.</td>
+</tr>
+<tr>
+<td>Hanger Bay</td>
+<td>Carrying ships totalling up to three or more Size categories smaller than it. Contains all of the necessary equipment for maintenance.</td>
+</tr>
+<tr>
+<td>Hidden Compartments</td>
+<td>Designed for smuggling or otherwise concealing cargo from inspections or borders.</td>
+</tr>
+<tr>
+<td>Hull Platting</td>
+<td>+1 bonus when determining its Hull total against damage. <br>Have multiple times, up to a maximum equal to its Hull score in dice.</td>
+</tr>
+<tr>
+<td>Improved Stores</td>
+<td>Capable of stocking supplies for extended travel for its crew and a number of passengers equal to half its optimal crew listing.</td>
+</tr>
+<tr>
+<td>Luxury Amenities</td>
+<td>Especially fine or luxurious accommodations.<br>Adds +1 to the Lifestyle Cost to maintain the ship<br>Contributes to reputations</td>
+</tr>
+<tr>
+<td>Manoeuvrable</td>
+<td>Considered one Size category smaller than its actual Size for tests to change range, to evade attacks, and for chases. <br>Highly Manoeuvrable -&gt; effectively two Size categories smaller.</td>
+</tr>
+<tr>
+<td>Medical Expert System</td>
+<td>auto doc provides treatment character with the Intelligence (Medicine) focus with a +2 bonus. <br>Additional applications -&gt; +1 bonus per option to a maximum of +5.</td>
+</tr>
+<tr>
+<td>Network and Database Access, Improved</td>
+<td>In addition to the public access databases and local networks, the ship has improved and private access to more advanced stores and databanks of information. Using this terminal can give a +1 bonus to any advanced Intelligence (Current Affairs or Research) test made on board.</td>
+</tr>
+<tr>
+<td>Plasma Torpedoes</td>
+<td>The ship must have a Torpedo Launcher. The ship is equipped with plasma torpedoes, designed to burn through hulls and inflict focused damage. The torpedo does 4d6 damage, and when a 1 or 2 is rolled for damage, it is counted as a 3.</td>
+</tr>
+<tr>
+<td>Rail Gun, High-Charge</td>
+<td>The ship must be at least Large Size. These rail guns fire with a higher thrust than stan dard issue rail guns, and the slugs are supercharged to do extra damage when they impact with hulls. The rail gun does 3d6 damage, but when a 1 or 2 is rolled for damage, it is counted as a 3.</td>
+</tr>
+<tr>
+<td>Rapid Reload Torpedo Tubes</td>
+<td>The ship can reload torpedoes at a faster than normal rate. SP cost to use the Rapid Reload Command Stunt is reduced by 1.</td>
+</tr>
+<tr>
+<td>Reduced Crew Requirements</td>
+<td>The ship has optimized controls to allow it to be manned by a smaller crew. Halve the crew requirement for the ship (with a minimum of 1)</td>
+</tr>
+<tr>
+<td>Reliable</td>
+<td>The ship is particularly dependable: it works the way it’s supposed to when its crew needs it to, and its upkeep is minimal. Though the crew still must dedicate activities to Maintenance during Interludes, the GM should reduce the Resupply Cost of maintaining the ship by 2.</td>
+</tr>
+<tr>
+<td>Redundant Hull (Double)</td>
+<td>A double hull provides a redundant barrier against the vacuum—usually by a few to several feet—in case the outer hull is damaged. This is standard on most Martian military ships. The ship can ignore the f irst loss condition imposed in an encounter. See Losses in the Spaceships chapter of The Expanse RPG.</td>
+</tr>
+<tr>
+<td>Redundant Hull (Triple)</td>
+<td>For maximum redundancy, the ship has a triple hull design. Less common than the Double Hull, this is primarily a feature of the yachts of the obscenely wealthy. The ship can ignore the first two loss conditions imposed in an encounter. See Losses under Space Combat in the Spaceships chapter of The Expanse RPG.</td>
+</tr>
+<tr>
+<td>Repair Facilities</td>
+<td>The ship has built-in facilities that can repair damage taken to other ships. Most standard losses can be repaired by a ship with repair facilities. To be able to repair serious losses, the ship must also have the Hanger Bay Quality and the ship to be repaired must be able to fit into the hanger bay.</td>
+</tr>
+<tr>
+<td>Security Systems, Advanced</td>
+<td>The ship’s security systems and associated software are technologically advanced, providing a +1 bonus to crew Security or Technology tests involving the ship. Additional applications of this quality provide the crew with an additional +1 bonus per option, to a maximum of +5.</td>
+</tr>
+<tr>
+<td>Self-destruct system</td>
+<td>Programmed to drop the containment on the ship’s fusion reactor. Countdown or a dead-man’s switch</td>
+</tr>
+<tr>
+<td>Sensor Scrambling</td>
+<td>When an enemy is within Medium or closer range, they suffer -1 to all Sensors tests.</td>
+</tr>
+<tr>
+<td>Stealth</td>
+<td>While the ship is at rest, with its drive inactive and using only passive sensors, it is effectively invisible and undetectable to ship sensors.</td>
+</tr>
+<tr>
+<td>Stealth, Improved</td>
+<td>Protogen stealth technology is more advanced than anything currently used by the UNN and the MCRN. Not only is this ship completely invisible to sensors when its engines are shut off, but heat sinks and other advanced technology make this ship harder to target, giving all enemy ships a -2 to all Electronic Warfare tests.</td>
+</tr>
+<tr>
+<td>Sturdy</td>
+<td>The ship is well built and can take more damage than expected for a ship of its size. The Hull receives a +2 to its value: for example, a Sturdy Large frigate would have a Hull score of 2d6+2 rather than the usual 2d6. A ship must be designed and built to have this capability. It cannot be added later.</td>
+</tr>
+<tr>
+<td>Targeting Systems, Advanced</td>
+<td>The ship has a +1 bonus to the Sensors score for Electronic Warfare tests.</td>
+</tr>
+<tr>
+<td>Ultraluxury Amenities</td>
+<td>The ship is an ultraluxury vessel with accommodations that would not be out of place in any seven-star resort—full decks given over to sumptuously decorated quarters with staffed galleys, private baths, and lounges—all the best money can buy. And it does cost money: this quality adds +4 to the Resupply Cost to maintain the ship (see the Resupply Cost table in Chapter 1 of this book). The crew can eliminate the increase to Cost by losing this quality, but the ship will not function as it is meant to; it would be somewhat like trying to run a fancy hotel without a staff.</td>
+</tr>
+<tr>
+<td>Weapons - PBCs</td>
+<td>One quality -&gt; cover to forward arc<br>Two qualities -&gt; full coverage</td>
+</tr>
+<tr>
+<td>Weapons - Rail Gun</td>
+<td>Must be at least Medium-sized<br>Spinal-mounted -&gt; forward or rear firing position<br>Large or larger ships -&gt; two rail guns (one in each direction)<br>Gigantic or larger ship -&gt; rail guns on turrets half-spherical range of fire on one side of the ship.</td>
+</tr>
+<tr>
+<td>Weapons - Torpedo Launcher</td>
+<td>Medium-sized -&gt; 1 torpedo launcher<br>Additional Size category -&gt; adds capacity for one launcher</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="makeshift-weapon-flaws" tabindex="-1">Makeshift Weapon Flaws</h2>
+<h3 id="flaws" tabindex="-1">Flaws</h3>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -348,19 +539,81 @@ Each flaw -&gt; cost - 1</p>
 </thead>
 <tbody>
 <tr>
-<td>Clumsy</td>
-<td>The weapon is awkward to wield, imposing a –1 or –2 penalty to attack tests.</td>
+<td>Aging</td>
+<td>The ship is still in good shape but getting older, so it requires extra work to keep flying at its best. The GM should require additional Maintenance, Researching, and/or Fixing activities during Interludes (see Interludes in Chapter 5: Game Play of The Expanse RPG) and increase the Resupply Cost of by +1 to represent the additional mate rials needed for minor upkeep and repairs.</td>
+</tr>
+<tr>
+<td>Bad Juice</td>
+<td>–1 penalty to Constitution tests involving acceleration hazards.</td>
+</tr>
+<tr>
+<td>Banned from Port</td>
+<td>The ship has been banned from a major port for some reason—warranted or unwarranted. It could be due to substandard maintenance, disturbing the peace, or worse. This flaw should be paired with a specific port in Sol System and can be picked up during gameplay at GM’s discretion.</td>
+</tr>
+<tr>
+<td>Faulty System</td>
+<td>The first use of the system in an encounter roll a die: <br>- 1 or 2 -&gt; system stops working, just like a loss due to damage.</td>
 </tr>
 <tr>
 <td>Fragile</td>
-<td>The weapon wasn’t made to take much punishment. When an attack with it misses and the Drama Die is 3 or less, the object breaks and becomes useless as a weapon</td>
+<td>Reduce its Hull score to that of the Size category one below the ship’s Size.</td>
 </tr>
 <tr>
-<td>Weak</td>
-<td>The object can’t inflict damage as easily as a proper weapon, imposing a –1 or –2 penalty to damage rolls, with a minimum damage roll of 1.</td>
+<td>High Maintenance</td>
+<td>Require additional Maintenance activities and increase the Lifestyle Cost of maintaining the ship by +1.</td>
+</tr>
+<tr>
+<td>Limited Range</td>
+<td>The ships does not carry enough reaction mass for long distance travel using its Epstein drive. Such ships usually have a range of about 1 AU (the distance of earth to the Sun or, roughly, earth to Mars and back).</td>
+</tr>
+<tr>
+<td>Lumbering</td>
+<td>Considered one Size category larger for manoeuvring tests.</td>
+</tr>
+<tr>
+<td>Old</td>
+<td>The ship is old—between fifty years and a century’s service in space—and nothing works like it did when it was brand new. The GM should require additional Maintenance, Researching, and Fixing activities during Interludes (see Interludes in Chapter 5: Game Play of The Expanse RPG) and increase the Resupply Cost of by +2 to represent the additional materials needed for minor upkeep and repairs</td>
+</tr>
+<tr>
+<td>Poor Acceleration</td>
+<td>The ship does not accelerate as fast as others of its Size. When performing a high-g manoeuvre, the ship can only add a bonus up to +5 (rather than the usual +6). The ship also suffers a -1 to the Piloting test when attempting to increase or decrease range. This Flaw can be taken up to six times, making the high-g manoeuvre bonus 0 and applying a -6 penalty to Piloting tests when attempting to increase or decrease range.</td>
+</tr>
+<tr>
+<td>Poor Amenities</td>
+<td>Recovering activities on board take 50% longer.</td>
+</tr>
+<tr>
+<td>Software Glitch</td>
+<td>The ship has a glitch in the software that has been missed by updates and system scans, making it vulnerable to hacking. It is at a -1 penalty in all opposed Electronic Warfare tests (see Space Combat in the Spaceships chapter of The Expanse RPG for details)</td>
+</tr>
+<tr>
+<td>Thrusters Only</td>
+<td>The ship is only intended for short trips between planet and moon or station to station and not equipped with an Epstein drive. It limits the ship’s speed to up to 1 g until otherwise modified and takes a considerable amount of time to get up to this speed.</td>
+</tr>
+<tr>
+<td>Uncomfortable</td>
+<td>Crewmembers find the ship’s space, furniture, and facilities inconvenient to use due to size constraints. Either these are too small, in the case of a pre-Belter era design, or too large, in the case of being designed specifically for Belters only, for some members of the crew. For applicable crewmembers, this will create a -1 penalty to all ship-related actions</td>
+</tr>
+<tr>
+<td>Vulnerable Systems</td>
+<td>When the ship takes losses, choose an additional loss condition</td>
+</tr>
+<tr>
+<td>Vulnerability</td>
+<td>The ship has a weakness in the exterior (hull, hangar, cargo bay, etc.) that could be breached for boarding or worse. Anyone scanning the ship can make a TN 13 Intelligence (Technology) test to detect the weakness. Targeted weapon attacks that aim for the weakness impose a impose a -1 penalty to absorbing the Hull damage from that attack.</td>
+</tr>
+<tr>
+<td>Wanted</td>
+<td>Can cause problems docking at legitimate ports, or might mean the ship needs to avoid certain places or routes in order to avoid further trouble.</td>
+</tr>
+<tr>
+<td>Weak Hull</td>
+<td>The ship has a -1 penalty when determining the Hull total against damage. A ship can have this flaw multiple times, up a maximum equal to its Hull score in dice. For example, if the Hull is 3d6 the flaw can be taken three times.</td>
 </tr>
 </tbody>
 </table></div>
+<h2 id="maintenance-and-upkeep" tabindex="-1">Maintenance and Upkeep</h2>
+<p>GM should take the crew’s need to maintain their ship into account for maintenance activities during interludes, and remind players that neglecting these responsibilities may lead to the ship developing flaws or even suffering some losses, as if it were damaged.</p>
 </main>
 <aside>
 <div class="sidebar">
@@ -402,13 +655,37 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#general-qualities">General Qualities</a>
+<li><a href="#size">Size</a>
+<ol>
+<li><a href="#hull">Hull</a>
 </li>
-<li><a href="#general-flaws">General Flaws</a>
+<li><a href="#crew">Crew</a>
+<ol>
+<li><a href="#crew-competence">Crew Competence</a>
 </li>
-<li><a href="#ranged-weapon-qualities">Ranged Weapon Qualities</a>
+</ol>
 </li>
-<li><a href="#makeshift-weapon-flaws">Makeshift Weapon Flaws</a>
+</ol>
+</li>
+<li><a href="#drive">Drive</a>
+</li>
+<li><a href="#sensors">Sensors</a>
+</li>
+<li><a href="#weapons">Weapons</a>
+<ol>
+<li><a href="#countermeasures">Countermeasures</a>
+</li>
+</ol>
+</li>
+<li><a href="#qualities-and-flaws">Qualities and flaws</a>
+<ol>
+<li><a href="#qualities">Qualities</a>
+</li>
+<li><a href="#flaws">Flaws</a>
+</li>
+</ol>
+</li>
+<li><a href="#maintenance-and-upkeep">Maintenance and Upkeep</a>
 </li>
 </ol>
 </nav>
