@@ -300,7 +300,7 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T08:59:51.507Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T08:59:51.507Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T08:59:51.507Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T09:20:23.863Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T09:20:23.863Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T09:20:23.863Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">Interludes</h1>
@@ -349,133 +349,133 @@ CTRL + K
 <tr>
 <th>Activity</th>
 <th>Description</th>
-<th>Details</th>
+<th>Rules</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Advancement</td>
 <td>Consolidate your membership rank</td>
-<td>[[#Advancement Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#advancement">Interludes#Advancement</a></td>
 </tr>
 <tr>
 <td>Armed Combat Training</td>
 <td>Practicing your use of various weapons to enhanced your accuracy.</td>
-<td>[[#Armed Combat Training Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#armed-combat-training">Interludes#Armed Combat Training</a></td>
 </tr>
 <tr>
 <td>Audit</td>
 <td>Checking ship inventory.</td>
-<td>[[#Audit Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#audit">Interludes#Audit</a></td>
 </tr>
 <tr>
 <td>Cleaning</td>
 <td>Inspecting and clearing pollutants or hazardous materials.</td>
-<td>[[#Cleaning Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#cleaning">Interludes#Cleaning</a></td>
 </tr>
 <tr>
 <td>Communication</td>
 <td>Ongoing communication and negotations.</td>
-<td>[[#Communication Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#communication">Interludes#Communication</a></td>
 </tr>
 <tr>
 <td>Equipment Adjustment</td>
 <td>Remove equipment flaws or add equipment qualities</td>
-<td>[[#Equipment Adjustment Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#equipment-adjustment">Interludes#Equipment Adjustment</a></td>
 </tr>
 <tr>
 <td>Equipment Maintenance</td>
 <td>Ensuring equipment functions properly.</td>
-<td>[[#Equipment maintenance rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#equipment-maintenance">Interludes#Equipment Maintenance</a></td>
 </tr>
 <tr>
 <td>Equipment Manufacture</td>
 <td>Manufacturing new equipment from resources</td>
-<td>[[#Equipment Manufacture Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#equipment-manufacture">Interludes#Equipment Manufacture</a></td>
 </tr>
 <tr>
 <td>Experimentation</td>
 <td>Performing scientific experiments</td>
-<td>[[#Experimentation Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#experimentation">Interludes#Experimentation</a></td>
 </tr>
 <tr>
 <td>Kinaesthetic Discipline®</td>
 <td>Involve yourself in a range of exercises that enhance dexterity.</td>
-<td>[[#Kinaesthetic Discipline® Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#kinaesthetic-discipline">Interludes#Kinaesthetic Discipline®</a></td>
 </tr>
 <tr>
 <td>Mental Conditioning</td>
 <td>Participate in a hardship challenges to enhance your willpower.</td>
-<td>[[#Mental Conditioning Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#mental-conditioning">Interludes#Mental Conditioning</a></td>
 </tr>
 <tr>
 <td>Rationing</td>
 <td>Allocating remaining consumables like air, food, or water to last longer.</td>
-<td>[[#Rationing Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#rationing">Interludes#Rationing</a></td>
 </tr>
 <tr>
 <td>Recovery</td>
 <td>Remove physical and health conditions and recover fortune.</td>
-<td>[[#Recovery Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#recovery">Interludes#Recovery</a></td>
 </tr>
 <tr>
 <td>Relating</td>
 <td>Spending time to get to know someone better, or to change the nature or intensity of a relationship.</td>
-<td>[[#Relating Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#relating">Interludes#Relating</a></td>
 </tr>
 <tr>
 <td>Reputation</td>
 <td>Working to bolster or diminish a character's reputation.</td>
-<td>[[#Reputation Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#reputation">Interludes#Reputation</a></td>
 </tr>
 <tr>
 <td>Researching</td>
 <td>Looking up or digging for story related information</td>
-<td>[[#Researching Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#researching">Interludes#Researching</a></td>
 </tr>
 <tr>
 <td>Ship Maintenance</td>
 <td>Ensuring ship systems function properly.</td>
-<td>[[#Ship Maintenance Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#ship-maintenance">Interludes#Ship Maintenance</a></td>
 </tr>
 <tr>
 <td>Situational Awareness Simulations</td>
 <td>Using the ship's simulation equipment to hone your perception.</td>
-<td>[[#Situational Awareness Simulations]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#situational-awareness-simulations">Interludes#Situational Awareness Simulations</a></td>
 </tr>
 <tr>
 <td>Sleep</td>
 <td>Even space heroes need to sleep</td>
-<td>[[#Sleep rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#sleep">Interludes#Sleep</a></td>
 </tr>
 <tr>
 <td>Study</td>
 <td>Engage in coursework at an educational institution to enhance your intelligence or communication.</td>
-<td>[[#Study Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#study">Interludes#Study</a></td>
 </tr>
 <tr>
 <td>Training</td>
 <td>Practicing a newly acquired focuses, talents, degrees, or specialisations after levelling up.</td>
-<td>[[#Training Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#training">Interludes#Training</a></td>
 </tr>
 <tr>
 <td>Unarmed Combat Training</td>
 <td>Performing various forms and stances to perfecting your fighting style</td>
-<td>[[#Unarmed Combat Training Rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#unarmed-combat-training">Interludes#Unarmed Combat Training</a></td>
 </tr>
 <tr>
 <td>Watch</td>
 <td>Keeping an eye on ship sensors during flight.</td>
-<td>[[#Watch rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#watch">Interludes#Watch</a></td>
 </tr>
 <tr>
 <td>Working out</td>
 <td>Exerting yourself in the gym. Heavy resistance work to build ones strength or cardo work to enhance you constitution.</td>
-<td>[[#Workout rules]]</td>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/interludes/#workout">Interludes#Workout</a></td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="advancement-rules" tabindex="-1">Advancement Rules</h2>
+<h2 id="advancement" tabindex="-1">Advancement</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -504,7 +504,7 @@ CTRL + K
 </table></div>
 <p>Membership in an organisation requires a character to be active within that organisation. When a character is not active within that organisation, their reputation will wane. Practically meaning that the character will drop one membership rank. This drop in rank can represent disapproval from organisation member or leadership, or even the effects of undermining by opposed factions within the organisation.</p>
 <p>When your character's in-game activities are not associated with the their organisation, they can remain active within that organisation by dedicating one interlude shift a week to <strong>advancement</strong> within the organisation. The activity within that shift can be varied, from responding to communications through to researching for them or providing them with information. I may be character initiated or come as a request from the organisation.</p>
-<h2 id="armed-combat-training-rules" tabindex="-1">Armed Combat Training Rules</h2>
+<h2 id="armed-combat-training" tabindex="-1">Armed Combat Training</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -529,16 +529,13 @@ CTRL + K
 <td>Focus</td>
 <td>Accuracy</td>
 </tr>
-<tr>
-<td>Alright, there isn't enough room for a shooting range, but luckily Mars solved that. There wasn't much sense in training all those Redboots then letting them go soft, so Mars developed a helmet based combat simulator that connects directly with weapons their Marine's weapons. Lucky for the rest of us, not all Martian are as patriotic as we are led to believe, and these simulators soon made their way onto the black market.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Alright, there isn't enough room for a shooting range, but luckily Mars solved that. There wasn't much sense in training all those Redboots then letting them go soft, so Mars developed a helmet based combat simulator that connects directly with weapons their Marine's weapons. Lucky for the rest of us, not all Martian are as patriotic as we are led to believe, and these simulators soon made their way onto the black market.</p>
 <p>When a character dedicates an interlude shift to armed combat training they can accrue accuracy bonuses. These bonuses can be spent to boost an accuracy roll by +2. Once a bonus is spent it is gone.</p>
 <p>Characters roll a straight accuracy skill test against TN 13. If they pass, the drama die is the number of accuracy bonuses they have accrued.</p>
 <p>A character may perform this activity once in an interlude.</p>
-<h2 id="audit-rules" tabindex="-1">Audit Rules</h2>
+<h2 id="audit" tabindex="-1">Audit</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -563,14 +560,11 @@ CTRL + K
 <td>Focus</td>
 <td>N/A</td>
 </tr>
-<tr>
-<td>Living in a little metal tube amidst the vastness of space can be challenging. You need to carry everything that you need with you. Importantly you also need to make sure that you actually have what you think you have. A crew member who is a 'midnight snacker' or 'liberal with the pain relief', a leaky water line, insufficient scrubbers, or a inaccurate ammunition counter can result in a discrepancy between what your records say you have, and what you actually have. This shortfall can have implication when resupplying, or, more consequentially, in times of crisis (eg. Churn Events, post-combat recovery).</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Living in a little metal tube amidst the vastness of space can be challenging. You need to carry everything that you need with you. Importantly you also need to make sure that you actually have what you think you have. A crew member who is a 'midnight snacker' or 'liberal with the pain relief', a leaky water line, insufficient scrubbers, or a inaccurate ammunition counter can result in a discrepancy between what your records say you have, and what you actually have. This shortfall can have implication when resupplying, or, more consequentially, in times of crisis (eg. Churn Events, post-combat recovery).</p>
 <p>Having a accurate understanding of your starting point mitigates complications. Having a recent stocktake (within one week) will grant a +2 to all rolls that relate to needing accurate records. For example, post combat and your ships reaction mass storage has been damaged. The pilot will receive a +2 to calculating manoeuvres so they ensure the reaction mass doesn't run out.</p>
-<h2 id="cleaning-rules" tabindex="-1">Cleaning Rules</h2>
+<h2 id="cleaning" tabindex="-1">Cleaning</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -595,15 +589,12 @@ CTRL + K
 <td>Focus</td>
 <td>Constitution (Tolerance)</td>
 </tr>
-<tr>
-<td>Normal cleaning is a day-to-day occurrence that doesn't need to be factored into interludes. This kind of clearing refers to the removal of pollutants or hazardous materials that spaceship carry around with them. Normally this material stays in it's appropriate locations and is removed as part of a resupply at docking facilities, but sometimes emergencies happen. If the pollutants or hazardous materials are not cleaned the crew will be at risk of developing conditions. They will requires Constitution (Tolerance) challenge tests, with consequences like increased difficulty or developing conditions</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Normal cleaning is a day-to-day occurrence that doesn't need to be factored into interludes. This kind of clearing refers to the removal of pollutants or hazardous materials that spaceship carry around with them. Normally this material stays in it's appropriate locations and is removed as part of a resupply at docking facilities, but sometimes emergencies happen. If the pollutants or hazardous materials are not cleaned the crew will be at risk of developing conditions. They will requires Constitution (Tolerance) challenge tests, with consequences like increased difficulty or developing conditions</p>
 <p>The cleaning of pollutants and hazardous materials is an advanced test, with the success threshold (ST) and the target number (TN) set by the GM. To make an ability test against the TN, one player will need to allocate an interlude shift to cleaning. If successful, they will add the drama die points to the accumulated progress towards the ST.</p>
 <p>If an additional player wishes to assist, they too will have to allocate an interlude shift. If they succeed in a ability test towards against the TN, they add +2 to the cleaner's ability test.</p>
-<h2 id="communication-rules" tabindex="-1">Communication Rules</h2>
+<h2 id="communication" tabindex="-1">Communication</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -628,12 +619,9 @@ CTRL + K
 <td>Focus</td>
 <td>Communication focus</td>
 </tr>
-<tr>
-<td>Communicating over space distances is different to local communication. Even after just one day of 1/3g burn, there is a minute delay between a message being sent and it being received. Allowing for time spend composing, recording at returning a response, you would be unlikely to get a response earlier than five minutes. At that's close. Here are the communication times (in minutes) between locations:</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Communicating over space distances is different to local communication. Even after just one day of 1/3g burn, there is a minute delay between a message being sent and it being received. Allowing for time spend composing, recording at returning a response, you would be unlikely to get a response earlier than five minutes. At that's close. Here are the communication times (in minutes) between locations:</p>
 <p><strong>Major Locations</strong></p>
 <div class="table-wrapper"><table>
 <thead>
@@ -938,7 +926,7 @@ CTRL + K
 <p>To engage in any form of communication test remotely, your character will need to allocate an interlude shift. The number of tests you character can perform in this shift, will depend on the distance of the communication.</p>
 <p><em>Number of tests = 480mins / (Communication Distance + 10mins x 2)</em></p>
 <p>For example, a character can perform 13 test if they are communication from Ceres to Tycho, but only 6 if they are communicating with someone in the Saturnian system.</p>
-<h2 id="equipment-adjustment-rules" tabindex="-1">Equipment Adjustment Rules</h2>
+<h2 id="equipment-adjustment" tabindex="-1">Equipment Adjustment</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -963,12 +951,9 @@ CTRL + K
 <td>Focus</td>
 <td>Intelligence (Engineering) or Intelligence (Technology)</td>
 </tr>
-<tr>
-<td>Adjusting equipment is essential in the variable, unpredictable environments of space where one-size-fits-all rarely applies. Vacuum seals wear unevenly, magnetic boots lose calibration, and tools designed for Martian gravity might fail under Belt micro-g. Belters tweak filters to stretch their lifespan; Martian marines modify armour seals to survive long burns. In tight ship quarters or aging stations, factory defaults aren't good enough -- tuning gear to your body, your task, and your environment keeps you alive. Whether it’s recalibrating a rifle’s zero for shipboard recoil, reinforcing an EVA suit for radiation, or jury-rigging a drone’s sensor array, adjustments make equipment personal, efficient, and reliable. During an Interlude, such adjustments justify mechanical bonuses and reflect the hard-earned lessons that separate spacers who just survive from those who thrive.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Adjusting equipment is essential in the variable, unpredictable environments of space where one-size-fits-all rarely applies. Vacuum seals wear unevenly, magnetic boots lose calibration, and tools designed for Martian gravity might fail under Belt micro-g. Belters tweak filters to stretch their lifespan; Martian marines modify armour seals to survive long burns. In tight ship quarters or aging stations, factory defaults aren't good enough -- tuning gear to your body, your task, and your environment keeps you alive. Whether it’s recalibrating a rifle’s zero for shipboard recoil, reinforcing an EVA suit for radiation, or jury-rigging a drone’s sensor array, adjustments make equipment personal, efficient, and reliable. During an Interlude, such adjustments justify mechanical bonuses and reflect the hard-earned lessons that separate spacers who just survive from those who thrive.</p>
 <p>Adjusting equipment by adding or removing attributes requires a player to perform an advanced technology or engineering test, using the Target numbers and success threshold below.</p>
 <p>The equipment can only be worked on during interlude time, and each test expends one unit of interlude time.</p>
 <p>Whilst the equipment is being worked on, it is out of commission.</p>
@@ -1280,7 +1265,7 @@ CTRL + K
 </tr>
 </tbody>
 </table></div>
-<h2 id="equipment-maintenance-rules" tabindex="-1">Equipment Maintenance Rules</h2>
+<h2 id="equipment-maintenance" tabindex="-1">Equipment Maintenance</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1305,12 +1290,9 @@ CTRL + K
 <td>Focus</td>
 <td>N/A</td>
 </tr>
-<tr>
-<td>In the harshness of space you need to be able to rely on your equipment. This means that every character knows how to maintain their equipment. Failure to maintain your equipment, means it will degrade. Character can prevent this by dedicating an interlude shift to maintain your equipment. The character will only require one shift to maintain all their personal equipment.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>In the harshness of space you need to be able to rely on your equipment. This means that every character knows how to maintain their equipment. Failure to maintain your equipment, means it will degrade. Character can prevent this by dedicating an interlude shift to maintain your equipment. The character will only require one shift to maintain all their personal equipment.</p>
 <h3 id="failure-to-maintain-equipment" tabindex="-1">Failure to maintain equipment</h3>
 <p>If a characters equipment has not been maintain in the past week, then the player has to roll on each equipment item (equipment being adjusted is excluded). If they roll a 1 2 or 3, that item will develop a random temporary flaw until. This flaw will be removed by it's next maintenance. The number of dice rolled is equal to the number of weeks it has been without maintenance (ie. after two weeks without maintenance, roll two dice).</p>
 <div class="table-wrapper"><table>
@@ -1363,7 +1345,7 @@ CTRL + K
 </tr>
 </tbody>
 </table></div>
-<h2 id="equipment-manufacture-rules" tabindex="-1">Equipment Manufacture Rules</h2>
+<h2 id="equipment-manufacture" tabindex="-1">Equipment Manufacture</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1388,12 +1370,9 @@ CTRL + K
 <td>Focus</td>
 <td>Dexterity (Crafting) or Intelligence (Engineering)</td>
 </tr>
-<tr>
-<td>Equipment manufacture is a necessity born of distance, scarcity, and independence in the Expanse. Far from Earth’s supply lines and Martian factories, Belters, outstation crews, and smugglers can’t rely on resupply or standard issue -- they must build what they need from what they have. Whether it’s forging replacement air filters from scavenged parts, printing custom weapon mods on a fabricators, or assembling drone components out of mining scraps, manufacturing gear in-house is often the only way to stay operational. It allows crews to tailor tools for unique missions, create backups of critical systems, and maintain autonomy from corporate or faction control. In the Belt, if you can’t build it, you’d better trade for it -- or go without.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Equipment manufacture is a necessity born of distance, scarcity, and independence in the Expanse. Far from Earth’s supply lines and Martian factories, Belters, outstation crews, and smugglers can’t rely on resupply or standard issue -- they must build what they need from what they have. Whether it’s forging replacement air filters from scavenged parts, printing custom weapon mods on a fabricators, or assembling drone components out of mining scraps, manufacturing gear in-house is often the only way to stay operational. It allows crews to tailor tools for unique missions, create backups of critical systems, and maintain autonomy from corporate or faction control. In the Belt, if you can’t build it, you’d better trade for it -- or go without.</p>
 <p>To manufacture equipment a character must meet certain requirements:</p>
 <ul>
 <li>Materials: The character needs the appropriate raw materials for the item. Unrestricted materials can be acquired by making an Income test against a Target Number (TN) equal to the item's value minus 5.</li>
@@ -1407,7 +1386,7 @@ CTRL + K
 </ul>
 <p>Creating an item from scratch is resolved using an advanced test:</p>
 <ul>
-<li>Target Number (TN): The TN for the test is the equivalent to the Equipment Adjustment [[#Success Threshold]]</li>
+<li>Target Number (TN): The TN for the test is the equivalent to the Equipment Adjustment Success Threshold</li>
 <li>Success Threshold: The GM determines a success threshold based on the item's complexity:
 <ul>
 <li>5 for a simple item.</li>
@@ -1417,7 +1396,7 @@ CTRL + K
 </li>
 </ul>
 <p>For each interlude shift a character dedicates to equipment manufacture, they can roll one advance test.</p>
-<h2 id="experimentation-rules" tabindex="-1">Experimentation Rules</h2>
+<h2 id="experimentation" tabindex="-1">Experimentation</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1442,14 +1421,11 @@ CTRL + K
 <td>Focus</td>
 <td>2 different Intelligence focuses</td>
 </tr>
-<tr>
-<td>Experimental tinkering is the engine of survival and progress in a system built on unreliable tech, recycled parts, and desperate innovation. Nowhere is this clearer than in the origin of the Epstein Drive itself -- a breakthrough born not in a government lab, but in a personal garage. Solomon Epstein’s overdrive of a fusion engine during personal experimentation led to the single greatest leap in human expansion, unlocking efficient long-burn travel and opening the Belt, the moons, and beyond. That spirit of hands-on experimentation still defines the frontier: Belter mechanics modulate scrubbers using salvaged Martian code, smugglers tweak sensor profiles to avoid detection, and pirates wire up disposable thrusters from mining equipment. In a setting where blueprints are outdated and factory parts are scarce, tinkering turns scrap into solutions, giving characters a chance to innovate, adapt, and sometimes create the next big thing -- just like Epstein did, burning too hard and too far, but changing the system forever.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Experimental tinkering is the engine of survival and progress in a system built on unreliable tech, recycled parts, and desperate innovation. Nowhere is this clearer than in the origin of the Epstein Drive itself -- a breakthrough born not in a government lab, but in a personal garage. Solomon Epstein’s overdrive of a fusion engine during personal experimentation led to the single greatest leap in human expansion, unlocking efficient long-burn travel and opening the Belt, the moons, and beyond. That spirit of hands-on experimentation still defines the frontier: Belter mechanics modulate scrubbers using salvaged Martian code, smugglers tweak sensor profiles to avoid detection, and pirates wire up disposable thrusters from mining equipment. In a setting where blueprints are outdated and factory parts are scarce, tinkering turns scrap into solutions, giving characters a chance to innovate, adapt, and sometimes create the next big thing -- just like Epstein did, burning too hard and too far, but changing the system forever.</p>
 <p>Dedicating interlude time to experimenting provides an opportunity for characters to develop new technology concepts. To perform an experiment a character needs to nominate an objective and identify two Intelligence focuses that will underpin the experiment. In each interlude shift spent experimenting, the character will roll a challenge test against each of these focuses. If <strong>both</strong> tests pass, then both drama dice values get added to their progress. The TN and ST of the experiment will be determined by the GM taking into account the number of breakthroughs required to move for the current technology to the character's objective.</p>
-<h2 id="kinaesthetic-discipline-rules" tabindex="-1">Kinaesthetic Discipline® Rules</h2>
+<h2 id="kinaesthetic-discipline" tabindex="-1">Kinaesthetic Discipline®</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1474,16 +1450,13 @@ CTRL + K
 <td>Focus</td>
 <td>Dexterity</td>
 </tr>
-<tr>
-<td>Muscle mass and bone density are not the only things that degrade in zero/low-g environment. Reflexes and fine motor skills also atrophy. Recently the Ganymede Institute of Agronomics and Applied Sciences (GIAAS) developed Kinaesthetic Discipline®, a series of exercises and simulations that prevent and even reverse this atrophy. The naïve academics decided to post the research royalty-free into the feed before the corporations could get their hands on it. The lead author has subsequently disappeared.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Muscle mass and bone density are not the only things that degrade in zero/low-g environment. Reflexes and fine motor skills also atrophy. Recently the Ganymede Institute of Agronomics and Applied Sciences (GIAAS) developed Kinaesthetic Discipline®, a series of exercises and simulations that prevent and even reverse this atrophy. The naïve academics decided to post the research royalty-free into the feed before the corporations could get their hands on it. The lead author has subsequently disappeared.</p>
 <p>When a character dedicates an interlude shift to Kinaesthetic Discipline® they can accrue dexterity bonuses. These bonuses can be spent to boost a dexterity roll by +2. Once a bonus is spent it is gone.</p>
 <p>Characters roll a straight dexterity skill test against TN 13. If they pass, the drama die is the number of dexterity bonuses they have accrued.</p>
 <p>A character may perform this activity once in an interlude.</p>
-<h2 id="mental-conditioning-rules" tabindex="-1">Mental Conditioning Rules</h2>
+<h2 id="mental-conditioning" tabindex="-1">Mental Conditioning</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1508,16 +1481,13 @@ CTRL + K
 <td>Focus</td>
 <td>Willpower</td>
 </tr>
-<tr>
-<td>Mental Conditioning originated as a psychological resilience program developed during the early Mars terraforming initiatives, when isolation, high-risk labour, and limited resources demanded exceptional emotional control and cognitive stability. Initially formalized by Martian neuropsychologists and military trainers, it combined mindfulness protocols, cognitive reinforcement, and sensory deprivation drills to enhance focus, discipline, and resistance to panic under stress. Over time, the practice spread to long-haul freighter crews, Belter survivalists, and security contractors across the system, evolving into a diverse set of routines -- part science, part ritual -- used to train the mind against fear, fatigue, and coercion in the harsh vacuum of the Belt and beyond.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Mental Conditioning originated as a psychological resilience program developed during the early Mars terraforming initiatives, when isolation, high-risk labour, and limited resources demanded exceptional emotional control and cognitive stability. Initially formalized by Martian neuropsychologists and military trainers, it combined mindfulness protocols, cognitive reinforcement, and sensory deprivation drills to enhance focus, discipline, and resistance to panic under stress. Over time, the practice spread to long-haul freighter crews, Belter survivalists, and security contractors across the system, evolving into a diverse set of routines -- part science, part ritual -- used to train the mind against fear, fatigue, and coercion in the harsh vacuum of the Belt and beyond.</p>
 <p>When a character dedicates an interlude shift to mental conditioning they can accrue willpower bonuses. These bonuses can be spent to boost a willpower roll by +2. Once a bonus is spent it is gone.</p>
 <p>Characters roll a straight willpower skill test against TN 13. If they pass, the drama die is the number of willpower bonuses they have accrued.</p>
 <p>A character may perform this activity once in an interlude.</p>
-<h2 id="rationing-rules" tabindex="-1">Rationing Rules</h2>
+<h2 id="rationing" tabindex="-1">Rationing</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1542,12 +1512,9 @@ CTRL + K
 <td>Focus</td>
 <td>Intelligence</td>
 </tr>
-<tr>
-<td>While most ships in the system are provisioned with enough supplies for standard operations, unexpected events -- like damage to recycling systems, extended missions, shiftades, or rerouted travel -- can radically shift anticipated needs. Spending Interlude time to implement rationing protocols reflects the crew’s proactive adaptation to scarcity, rather than reacting in crisis. It may involve recalibrating the water reclamation cycle, adjusting food distribution algorithms, or manually portioning breathable air in failing systems. This effort isn't just logistical -- it’s psychological, requiring coordination, trust, and mental resilience.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>While most ships in the system are provisioned with enough supplies for standard operations, unexpected events -- like damage to recycling systems, extended missions, blockades, or rerouted travel -- can radically shift anticipated needs. Spending Interlude time to implement rationing protocols reflects the crew’s proactive adaptation to scarcity, rather than reacting in crisis. It may involve recalibrating the water reclamation cycle, adjusting food distribution algorithms, or manually portioning breathable air in failing systems. This effort isn't just logistical -- it’s psychological, requiring coordination, trust, and mental resilience.</p>
 <p>Crew can mitigate the impacts of an unexpected drain on resources by dedicating interlude shifts to rationing.</p>
 <p>To ration:</p>
 <ul>
@@ -1560,7 +1527,7 @@ CTRL + K
 </li>
 </ul>
 <p>Additional interlude shifts can be allocated to rationing, if the supply loss is not yet mitigated.</p>
-<h2 id="recovery-rules" tabindex="-1">Recovery Rules</h2>
+<h2 id="recovery" tabindex="-1">Recovery</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1585,12 +1552,9 @@ CTRL + K
 <td>Focus</td>
 <td>Constitution (Stamina) or Intelligence (Medicine)</td>
 </tr>
-<tr>
-<td>The universe of The Expanse is a dangerous place, and it is easy for characters to accrue physical conditions. To permanently remove these conditions as character must dedicate time to recovery in an appropriate facility (eg. medical clinic, or ship med bay). Even those who have survived an encounter unscratched, may need to recover from it. A character can also use a recovery interlude shift to recover fortune.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>The universe of The Expanse is a dangerous place, and it is easy for characters to accrue physical conditions. To permanently remove these conditions as character must dedicate time to recovery in an appropriate facility (eg. medical clinic, or ship med bay). Even those who have survived an encounter unscratched, may need to recover from it. A character can also use a recovery interlude shift to recover fortune.</p>
 <h3 id="remove-conditions" tabindex="-1">Remove conditions</h3>
 <p>To remove conditions characters must make an advanced Constitution (Stamina) TN 11 test every interlude shift.</p>
 <ul>
@@ -1660,7 +1624,7 @@ CTRL + K
 </table></div>
 <h3 id="recovering-fortune" tabindex="-1">Recovering fortune</h3>
 <p>If a character is recovering fortune, they can do so be dedicating a interlude shift to rest and recreation. They do not need any special facilities to do this. This recovery interlude can only be used to regain fortune and cannot be undertaken whilst the character is injured, wounded, fatigued, exhausted, unconscious or dying. Characters regain fortune at a rate of <em>10 + character level per interlude shift</em>.</p>
-<h2 id="relating-rules" tabindex="-1">Relating Rules</h2>
+<h2 id="relating" tabindex="-1">Relating</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1685,14 +1649,11 @@ CTRL + K
 <td>Focus</td>
 <td>N/A</td>
 </tr>
-<tr>
-<td>In the vast, isolating expanse of space, relationships are as critical to survival as oxygen and fuel. A crew that trusts one another can coordinate under fire, make tough calls without hesitation, and hold the line when systems fail or plans go sideways. In a setting where political tensions, corporate exploitation, and environmental fragility press in from all sides, strong personal bonds offer stability, loyalty, and emotional resilience. Building relations during Interludes isn’t just about friendship -- it’s a strategic choice that can defuse conflict, improve cooperation, and create lasting ties that influence future encounters, negotiations, or even loyalty in mutinous moments. A bonded crew acts as a single unit; a divided one tears itself apart in the cold dark.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>In the vast, isolating expanse of space, relationships are as critical to survival as oxygen and fuel. A crew that trusts one another can coordinate under fire, make tough calls without hesitation, and hold the line when systems fail or plans go sideways. In a setting where political tensions, corporate exploitation, and environmental fragility press in from all sides, strong personal bonds offer stability, loyalty, and emotional resilience. Building relations during Interludes isn’t just about friendship -- it’s a strategic choice that can defuse conflict, improve cooperation, and create lasting ties that influence future encounters, negotiations, or even loyalty in mutinous moments. A bonded crew acts as a single unit; a divided one tears itself apart in the cold dark.</p>
 <p>If two characters spend an relating interlude shift with each other, they strengthen the bond intensity between them. The number of shifts required is the target bond intensity. For example, to move a bond from intensity 2 to 3, will require 3 shifts. No roll is required, but the type of relating can change the type of bond</p>
-<h2 id="reputation-rules" tabindex="-1">Reputation Rules</h2>
+<h2 id="reputation" tabindex="-1">Reputation</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1717,17 +1678,14 @@ CTRL + K
 <td>Focus</td>
 <td>Communication (Expression, Performance or Deception)</td>
 </tr>
-<tr>
-<td>In the fractured and often lawless landscape of the solar system, reputation is currency. With no central authority truly binding Earth, Mars, and the Belt, deals are made and broken on the strength of a name. A ship’s reputation can open locked docking bays, secure last-minute fuel, or scare off would-be pirates. For individuals, reputation shapes how factions, fixers, and station bosses treat you -- whether they offer you work, watch your back, or put a target on it. It precedes you in places you've never set foot, serving as both shield and sword in political dealings, street-level negotiations, and black-market exchanges. In <em>The Expanse</em>, where trust is rare and betrayal is common, reputation determines who survives the long haul -- and who gets spaced when no one’s watching.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>In the fractured and often lawless landscape of the solar system, reputation is currency. With no central authority truly binding Earth, Mars, and the Belt, deals are made and broken on the strength of a name. A ship’s reputation can open locked docking bays, secure last-minute fuel, or scare off would-be pirates. For individuals, reputation shapes how factions, fixers, and station bosses treat you -- whether they offer you work, watch your back, or put a target on it. It precedes you in places you've never set foot, serving as both shield and sword in political dealings, street-level negotiations, and black-market exchanges. In <em>The Expanse</em>, where trust is rare and betrayal is common, reputation determines who survives the long haul -- and who gets spaced when no one’s watching.</p>
 <p>If, within the last week, a character has relied upon their reputation, or acted in line with their reputation, in a way that word can spread, their reputation is maintained. Failing that a character can use a interlude shift to maintain their reputation spread. Similarly they can use a interlude shift to bolster or diminish their reputation spread. This often involves making their actions known or a denying their actions through media, such as interviews or broadcasting videos.</p>
 <p>To <strong>maintain</strong> a reputation spread, characters need to dedicate one interlude shift and roll a TN11 Communication (Expression, Performance or Deception) ability test.</p>
 <p>To <strong>bolster</strong> or <strong>diminish</strong> their reputation by one spread point they will need to dedicate one interlude shift and roll a TN13 Communication (Expression, Performance or Deception) ability test.</p>
 <p>To <strong>create a reputation</strong> anew a character will need to highlight an appropriate behaviour in the previous week, and then dedicate one interlude shift and roll a TN15 Communication (Expression, Performance or Deception) ability test.</p>
-<h2 id="researching-rules" tabindex="-1">Researching Rules</h2>
+<h2 id="researching" tabindex="-1">Researching</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1757,7 +1715,7 @@ CTRL + K
 <p>Researching leads is how a smart crew stays ahead of the game in a system built on secrets, shifting alliances, and hidden agendas. Whether tracking down a missing freighter, verifying a shady cargo contract, or digging into a name whispered on backchannels, research turns rumours into actionable intel. In a world where stations lie, manifests are forged, and faction loyalties change with the burn cycle, blindly charging in is a shortcut to an airlock funeral. Digging into comm records, sifting through public data nets, bribing info brokers, or scraping old sensor logs during an Interlude gives the crew time to connect dots others miss. It turns scattered clues into solid direction, reveals hidden dangers, and sometimes exposes a deeper plot. In the Expanse, information isn’t just power -- it’s survival, profit, and leverage.</p>
 <p>During the campaign characters will come across many leads. Some of these leads will point to future missions, and some will turn out to be dead ends. Character can dedicate interlude shifts to researching these leads.</p>
 <p>All leads research are normally research advance tests, but characters can use other focuses where appropriate. The GM will provide the TN and the ST for the test. Characters can roll four times during each interlude shift.</p>
-<h2 id="ship-maintenance-rules" tabindex="-1">Ship Maintenance Rules</h2>
+<h2 id="ship-maintenance" tabindex="-1">Ship Maintenance</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1782,12 +1740,9 @@ CTRL + K
 <td>Focus</td>
 <td>N/A</td>
 </tr>
-<tr>
-<td>Ship maintenance is the difference between life and death in the vacuum of space. Every ship, from a Martian corvette to a Belter junk-hauler, is a self-contained ecosystem -- housing life support, propulsion, power, and environmental controls in a fragile, complex balance. Microfractures in a bulkhead, fouled scrubbers, a lagging thrust vector -- all of these can cascade into catastrophic failure if left unchecked. In the Belt especially, where replacement parts are scarce and station mechanics might not be trustworthy, routine maintenance becomes a sacred ritual. A well-maintained ship is faster, safer, and more efficient; it burns less fuel, resists radiation better, and holds together under stress. Crews who respect their vessel treat it like a living thing -- monitoring her sounds, smells, and quirks -- because in the black, your ship isn’t just your ride; it’s your only shelter, your last line of defence, and often, your only home.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Ship maintenance is the difference between life and death in the vacuum of space. Every ship, from a Martian corvette to a Belter junk-hauler, is a self-contained ecosystem -- housing life support, propulsion, power, and environmental controls in a fragile, complex balance. Microfractures in a bulkhead, fouled scrubbers, a lagging thrust vector -- all of these can cascade into catastrophic failure if left unchecked. In the Belt especially, where replacement parts are scarce and station mechanics might not be trustworthy, routine maintenance becomes a sacred ritual. A well-maintained ship is faster, safer, and more efficient; it burns less fuel, resists radiation better, and holds together under stress. Crews who respect their vessel treat it like a living thing -- monitoring her sounds, smells, and quirks -- because in the black, your ship isn’t just your ride; it’s your only shelter, your last line of defence, and often, your only home.</p>
 <p>A spaceship has four distinct systems that need to be maintained:</p>
 <ul>
 <li>Hull and structure</li>
@@ -1822,16 +1777,13 @@ CTRL + K
 <td>Focus</td>
 <td>Perception</td>
 </tr>
-<tr>
-<td>Situational Awareness Simulations were first developed by the Martian Congressional Republic Navy during the early terraforming era, when operating in low-visibility, high-risk environments demanded rapid threat recognition and spatial comprehension under extreme stress. These training protocols combined zero-g tactical exercises, sensor blinding drills, and multispectral threat identification into immersive VR suites aboard naval stations and fleet carriers. As piracy, boarding actions, and deep-space salvage operations became more common throughout the system, civilian security firms, Belter prospectors, and outer-system smugglers adapted the simulations into modular programs -- ranging from improvised drills in vac-sealed corridors to open-source VR patches -- making situational awareness a prized survival skill in the void.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Situational Awareness Simulations were first developed by the Martian Congressional Republic Navy during the early terraforming era, when operating in low-visibility, high-risk environments demanded rapid threat recognition and spatial comprehension under extreme stress. These training protocols combined zero-g tactical exercises, sensor blinding drills, and multispectral threat identification into immersive VR suites aboard naval stations and fleet carriers. As piracy, boarding actions, and deep-space salvage operations became more common throughout the system, civilian security firms, Belter prospectors, and outer-system smugglers adapted the simulations into modular programs -- ranging from improvised drills in vac-sealed corridors to open-source VR patches -- making situational awareness a prized survival skill in the void.</p>
 <p>When a character dedicates an interlude shift to mental conditioning they can accrue perception bonuses. These bonuses can be spent to boost a perception roll by +2. Once a bonus is spent it is gone.</p>
 <p>Characters roll a straight perception skill test against TN 13. If they pass, the drama die is the number of perception bonuses they have accrued.</p>
 <p>A character may perform this activity once in an interlude.</p>
-<h2 id="sleep-rules" tabindex="-1">Sleep rules</h2>
+<h2 id="sleep" tabindex="-1">Sleep</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1856,12 +1808,9 @@ CTRL + K
 <td>Focus</td>
 <td>Constitution (Stamina)</td>
 </tr>
-<tr>
-<td>Sleep is essential for survival in the harsh conditions of space -- not just for physical health, but for mental stability, decision-making, and crew cohesion. In microgravity environments and high-stress operations, the human body suffers disrupted circadian rhythms, reduced immune response, and deteriorating cognitive function. A tired crew makes mistakes: missed readings, delayed reactions, emotional outbursts. In combat, a split-second lapse can mean decompression or death. Regular, quality sleep helps regulate hormones, restore stamina, and maintain emotional balance -- vital when confined with others in tight, recycled-air quarters for months at a time. In <em>The Expanse</em>, where long burns, erratic schedules, and mission pressure are the norm, sleep isn’t a luxury -- it’s a strategic necessity. Crews that skip it too often burn out, break down, or turn on each other, becoming their own worst threat in the black.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Sleep is essential for survival in the harsh conditions of space -- not just for physical health, but for mental stability, decision-making, and crew cohesion. In microgravity environments and high-stress operations, the human body suffers disrupted circadian rhythms, reduced immune response, and deteriorating cognitive function. A tired crew makes mistakes: missed readings, delayed reactions, emotional outbursts. In combat, a split-second lapse can mean decompression or death. Regular, quality sleep helps regulate hormones, restore stamina, and maintain emotional balance -- vital when confined with others in tight, recycled-air quarters for months at a time. In <em>The Expanse</em>, where long burns, erratic schedules, and mission pressure are the norm, sleep isn’t a luxury -- it’s a strategic necessity. Crews that skip it too often burn out, break down, or turn on each other, becoming their own worst threat in the black.</p>
 <p>Every character should allocate one interlude shift per day to sleep. This doesn't just represent sleep, it includes hygiene care and other 'personal' pursuits. If a character does not sleep, they following effect will occur</p>
 <div class="table-wrapper"><table>
 <thead>
@@ -1893,7 +1842,7 @@ CTRL + K
 </tr>
 </tbody>
 </table></div>
-<h2 id="study-rules" tabindex="-1">Study Rules</h2>
+<h2 id="study" tabindex="-1">Study</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1918,16 +1867,13 @@ CTRL + K
 <td>Focus</td>
 <td>Communication or Intelligence</td>
 </tr>
-<tr>
-<td>In the resource-strained environments of the Belt and outer planets, formal education is rare, but study -- especially self-directed or apprentice-based learning -- remains a vital path to advancement. On stations and ships, knowledge is often passed through trade manuals, archived data partitions, or oral histories recorded in tightbeam journals. Studying these materials -- whether ancient Earth rhetorical texts, Martian engineering treatises, or pirate-patched training sims -- allows individuals to hone reasoning, refine speech, or gain technical mastery. Those who dedicate Interlude time to focused study can sharpen their Intelligence through structured logic and theory, or improve Communication by internalizing persuasive tactics, intercultural nuance, and leadership protocols -- skills critical for surviving negotiation, command, or deception in a fractured solar system.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>In the resource-strained environments of the Belt and outer planets, formal education is rare, but study -- especially self-directed or apprentice-based learning -- remains a vital path to advancement. On stations and ships, knowledge is often passed through trade manuals, archived data partitions, or oral histories recorded in tightbeam journals. Studying these materials -- whether ancient Earth rhetorical texts, Martian engineering treatises, or pirate-patched training sims -- allows individuals to hone reasoning, refine speech, or gain technical mastery. Those who dedicate Interlude time to focused study can sharpen their Intelligence through structured logic and theory, or improve Communication by internalizing persuasive tactics, intercultural nuance, and leadership protocols -- skills critical for surviving negotiation, command, or deception in a fractured solar system.</p>
 <p>When a character dedicates an interlude shift to study they can accrue either communication or intelligence bonuses. They need to nominate which attribute they are focusing on at the beginning of the interlude shift. These bonuses can be spent to boost a communication or intelligence roll by +2. Once a bonus is spent it is gone.</p>
 <p>Characters roll a straight communication or intelligence skill test against TN 13. If they pass, the drama die is the number of communication or intelligence bonuses they have accrued.</p>
 <p>A character may perform this activity twice in an interlude.</p>
-<h2 id="training-rules" tabindex="-1">Training Rules</h2>
+<h2 id="training" tabindex="-1">Training</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1952,14 +1898,11 @@ CTRL + K
 <td>Focus</td>
 <td>N/A</td>
 </tr>
-<tr>
-<td>Training transforms a one-off event into a habit by embedding action into memory, reducing hesitation, and building automaticity. A single successful act -- like disarming a bomb, docking under pressure, or bluffing a hostile customs agent -- proves something is <em>possible</em>, but it doesn’t make it <em>reliable</em>. Through repetition, the brain forms stronger neural pathways, turning deliberate decisions into instinctive responses. In the hostile environments of <em>The Expanse</em>, where reaction time and consistency can mean the difference between docking and drifting, training ensures that what once required focus becomes second nature. It removes the uncertainty from high-risk actions and prepares the body and mind to act automatically, even under stress, fatigue, or fear. In other words, training turns experience into readiness -- and readiness into survival.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Training transforms a one-off event into a habit by embedding action into memory, reducing hesitation, and building automaticity. A single successful act -- like disarming a bomb, docking under pressure, or bluffing a hostile customs agent -- proves something is <em>possible</em>, but it doesn’t make it <em>reliable</em>. Through repetition, the brain forms stronger neural pathways, turning deliberate decisions into instinctive responses. In the hostile environments of <em>The Expanse</em>, where reaction time and consistency can mean the difference between docking and drifting, training ensures that what once required focus becomes second nature. It removes the uncertainty from high-risk actions and prepares the body and mind to act automatically, even under stress, fatigue, or fear. In other words, training turns experience into readiness -- and readiness into survival.</p>
 <p>When a character acquires new focuses, talents, degrees, or specialisations through a level progression, during the next interlude they need to dedicate one shift to training these new skills.</p>
-<h2 id="unarmed-combat-training-rules" tabindex="-1">Unarmed Combat Training Rules</h2>
+<h2 id="unarmed-combat-training" tabindex="-1">Unarmed Combat Training</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1984,16 +1927,13 @@ CTRL + K
 <td>Focus</td>
 <td>Fighting</td>
 </tr>
-<tr>
-<td>Unarmed Combat Training has deep roots across the system, from Martian Marine close-quarters protocols to Belt-born brawling techniques developed in tight corridors and zero-g. In confined environments where firearms can breach hull integrity or weapons are confiscated during inspections, the ability to neutralize threats with bare hands or improvised holds becomes essential. Martian instructors formalized it into gravity-variable martial arts programs, while Belter factions adapted it into fluid, fast-paced systems optimized for low-g grappling and rapid disarms. Crew members, smugglers, and security personnel train during Interludes to build muscle memory, improve coordination, and maintain combat readiness -- gaining mechanical benefits to close combat and increasing survivability in any scrap where bullets aren't an option.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Unarmed Combat Training has deep roots across the system, from Martian Marine close-quarters protocols to Belt-born brawling techniques developed in tight corridors and zero-g. In confined environments where firearms can breach hull integrity or weapons are confiscated during inspections, the ability to neutralize threats with bare hands or improvised holds becomes essential. Martian instructors formalized it into gravity-variable martial arts programs, while Belter factions adapted it into fluid, fast-paced systems optimized for low-g grappling and rapid disarms. Crew members, smugglers, and security personnel train during Interludes to build muscle memory, improve coordination, and maintain combat readiness -- gaining mechanical benefits to close combat and increasing survivability in any scrap where bullets aren't an option.</p>
 <p>When a character dedicates an interlude shift to mental conditioning they can accrue fighting bonuses. These bonuses can be spent to boost a fighting roll by +2. Once a bonus is spent it is gone.</p>
 <p>Characters roll a straight fighting skill test against TN 13. If they pass, the drama die is the number of fighting bonuses they have accrued.</p>
 <p>A character may perform this activity once in an interlude.</p>
-<h2 id="watch-rules" tabindex="-1">Watch rules</h2>
+<h2 id="watch" tabindex="-1">Watch</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -2018,15 +1958,12 @@ CTRL + K
 <td>Focus</td>
 <td>Perception (Hearing or Seeing)</td>
 </tr>
-<tr>
-<td>Keeping watch is a quiet but vital act of vigilance -- a shield against the complacency that kills in space, and a window into the unexpected. Even when the weapons rest and the crew goes about their interludes, danger doesn’t. Pirates, corporate enforcers, rogue AIs, or slow-leaking coolant lines don’t wait for anyone to be ready. A proper watch rotation ensures someone is always scanning the sensors, checking hull integrity, monitoring life support, or listening for whispers in the comms. But it’s not just about catching threats -- watch is often when the strange things surface: faint transponder echoes, anomalous debris patterns, old signals in forgotten bands. It maintains discipline, enforces routine, and gives the rest of the crew space to recover safely. Neglect it, and one quiet hour can turn into catastrophe. Keep it, and the ship stays a step ahead of the void -- and maybe catches a secret no one was meant to see.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Keeping watch is a quiet but vital act of vigilance -- a shield against the complacency that kills in space, and a window into the unexpected. Even when the weapons rest and the crew goes about their interludes, danger doesn’t. Pirates, corporate enforcers, rogue AIs, or slow-leaking coolant lines don’t wait for anyone to be ready. A proper watch rotation ensures someone is always scanning the sensors, checking hull integrity, monitoring life support, or listening for whispers in the comms. But it’s not just about catching threats -- watch is often when the strange things surface: faint transponder echoes, anomalous debris patterns, old signals in forgotten bands. It maintains discipline, enforces routine, and gives the rest of the crew space to recover safely. Neglect it, and one quiet hour can turn into catastrophe. Keep it, and the ship stays a step ahead of the void -- and maybe catches a secret no one was meant to see.</p>
 <p>To dedicate an interlude shift to the watch, a character must only engage in light activities that will not distract them from monitoring the sensors. Additionally, the character cannot be Fatigued or Exhausted. To determine the effectiveness of the watch, the character makes a basic Perception (Hearing or Seeing) test against the difficulty of observing an event.</p>
 <p>Since the character on watch is mostly relaxing, they also recover fortune at half the rate according to the [[#Recovery Rules]].</p>
-<h2 id="workout-rules" tabindex="-1">Workout rules</h2>
+<h2 id="workout" tabindex="-1">Workout</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -2051,12 +1988,9 @@ CTRL + K
 <td>Focus</td>
 <td>Constitution or Strength</td>
 </tr>
-<tr>
-<td>Workouts -- structured physical training routines -- are essential for maintaining Stamina and Strength in the low-gravity environments of the Belt, stations, and ships, where muscle atrophy and bone loss are constant threats. From Martian military regimens conducted under artificial gravity to resistance-band drills used by Belters in narrow corridors, these routines are more than discipline -- they’re survival. Regular training improves Strength by reinforcing muscle mass and boosting explosive power, vital for handling gear, fighting in confined spaces, or brute-forcing machinery. Simultaneously, workouts enhance Stamina by expanding cardiovascular capacity and improving endurance in high-stress, oxygen-thin conditions.</td>
-<td></td>
-</tr>
 </tbody>
 </table></div>
+<p>Workouts -- structured physical training routines -- are essential for maintaining Stamina and Strength in the low-gravity environments of the Belt, stations, and ships, where muscle atrophy and bone loss are constant threats. From Martian military regimens conducted under artificial gravity to resistance-band drills used by Belters in narrow corridors, these routines are more than discipline -- they’re survival. Regular training improves Strength by reinforcing muscle mass and boosting explosive power, vital for handling gear, fighting in confined spaces, or brute-forcing machinery. Simultaneously, workouts enhance Stamina by expanding cardiovascular capacity and improving endurance in high-stress, oxygen-thin conditions.</p>
 <p>When a character dedicates an interlude shift to workout they can accrue either constitution or strength bonuses. They need to nominate which attribute they are focusing on at the beginning of the interlude shift. These bonuses can be spent to boost a constitution or strength roll by +2. Once a bonus is spent it is gone.</p>
 <p>Characters roll a straight constitution or strength skill test against TN 13. If they pass, the drama die is the number of constitution or strength bonuses they have accrued.</p>
 <p>A character may perform this activity twice in an interlude.</p>
@@ -2103,17 +2037,17 @@ On this page
 <ol>
 <li><a href="#interlude-shifts">Interlude shifts</a>
 </li>
-<li><a href="#advancement-rules">Advancement Rules</a>
+<li><a href="#advancement">Advancement</a>
 </li>
-<li><a href="#armed-combat-training-rules">Armed Combat Training Rules</a>
+<li><a href="#armed-combat-training">Armed Combat Training</a>
 </li>
-<li><a href="#audit-rules">Audit Rules</a>
+<li><a href="#audit">Audit</a>
 </li>
-<li><a href="#cleaning-rules">Cleaning Rules</a>
+<li><a href="#cleaning">Cleaning</a>
 </li>
-<li><a href="#communication-rules">Communication Rules</a>
+<li><a href="#communication">Communication</a>
 </li>
-<li><a href="#equipment-adjustment-rules">Equipment Adjustment Rules</a>
+<li><a href="#equipment-adjustment">Equipment Adjustment</a>
 <ol>
 <li><a href="#success-threshold">Success Threshold</a>
 </li>
@@ -2121,23 +2055,23 @@ On this page
 </li>
 </ol>
 </li>
-<li><a href="#equipment-maintenance-rules">Equipment Maintenance Rules</a>
+<li><a href="#equipment-maintenance">Equipment Maintenance</a>
 <ol>
 <li><a href="#failure-to-maintain-equipment">Failure to maintain equipment</a>
 </li>
 </ol>
 </li>
-<li><a href="#equipment-manufacture-rules">Equipment Manufacture Rules</a>
+<li><a href="#equipment-manufacture">Equipment Manufacture</a>
 </li>
-<li><a href="#experimentation-rules">Experimentation Rules</a>
+<li><a href="#experimentation">Experimentation</a>
 </li>
-<li><a href="#kinaesthetic-discipline-rules">Kinaesthetic Discipline® Rules</a>
+<li><a href="#kinaesthetic-discipline">Kinaesthetic Discipline®</a>
 </li>
-<li><a href="#mental-conditioning-rules">Mental Conditioning Rules</a>
+<li><a href="#mental-conditioning">Mental Conditioning</a>
 </li>
-<li><a href="#rationing-rules">Rationing Rules</a>
+<li><a href="#rationing">Rationing</a>
 </li>
-<li><a href="#recovery-rules">Recovery Rules</a>
+<li><a href="#recovery">Recovery</a>
 <ol>
 <li><a href="#remove-conditions">Remove conditions</a>
 </li>
@@ -2145,13 +2079,13 @@ On this page
 </li>
 </ol>
 </li>
-<li><a href="#relating-rules">Relating Rules</a>
+<li><a href="#relating">Relating</a>
 </li>
-<li><a href="#reputation-rules">Reputation Rules</a>
+<li><a href="#reputation">Reputation</a>
 </li>
-<li><a href="#researching-rules">Researching Rules</a>
+<li><a href="#researching">Researching</a>
 </li>
-<li><a href="#ship-maintenance-rules">Ship Maintenance Rules</a>
+<li><a href="#ship-maintenance">Ship Maintenance</a>
 <ol>
 <li><a href="#failure-to-maintain-systems">Failure to maintain systems</a>
 </li>
@@ -2159,17 +2093,17 @@ On this page
 </li>
 <li><a href="#situational-awareness-simulations">Situational Awareness Simulations</a>
 </li>
-<li><a href="#sleep-rules">Sleep rules</a>
+<li><a href="#sleep">Sleep</a>
 </li>
-<li><a href="#study-rules">Study Rules</a>
+<li><a href="#study">Study</a>
 </li>
-<li><a href="#training-rules">Training Rules</a>
+<li><a href="#training">Training</a>
 </li>
-<li><a href="#unarmed-combat-training-rules">Unarmed Combat Training Rules</a>
+<li><a href="#unarmed-combat-training">Unarmed Combat Training</a>
 </li>
-<li><a href="#watch-rules">Watch rules</a>
+<li><a href="#watch">Watch</a>
 </li>
-<li><a href="#workout-rules">Workout rules</a>
+<li><a href="#workout">Workout</a>
 </li>
 </ol>
 </nav>
@@ -2177,9 +2111,7 @@ On this page
 </div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card">
-<span class="no-backlinks-message">No other pages mentions this page</span>
-</div></div>
+<div class="backlink-list"></div>
 </div>
 </div>
 </div>
