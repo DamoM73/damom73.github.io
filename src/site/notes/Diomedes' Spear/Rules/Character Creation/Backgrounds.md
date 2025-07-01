@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/diomedes-spear/rules/character-creation/backgrounds/","created":"2024-12-26T13:08:08.134+10:00","updated":"2025-07-01T16:10:08.511+10:00"}
+{"dg-publish":true,"permalink":"/diomedes-spear/rules/character-creation/backgrounds/"}
 ---
 
 Only used for [[Diomedes' Spear/Rules/Character Creation/Character Creation\|Character Creation]]

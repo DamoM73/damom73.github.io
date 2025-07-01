@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/diomedes-spear/rules/combat-actions/","created":"2025-02-26T20:12:11.138+10:00","updated":"2025-07-01T16:10:42.583+10:00"}
+{"dg-publish":true,"permalink":"/diomedes-spear/rules/combat-actions/"}
 ---
 
 ## Major Actions 

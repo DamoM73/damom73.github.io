@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/diomedes-spear/rules/bonds/","created":"2025-06-30T19:38:24.351+10:00","updated":"2025-07-01T16:07:32.865+10:00"}
+{"dg-publish":true,"permalink":"/diomedes-spear/rules/bonds/"}
 ---
 
 In The Expanse Roleplaying Game, character bonds are a crucial aspect of interpersonal connections, representing the intimate ties that form between Player Characters (PCs) and even between PCs and their ship. These relationships can be deliberately developed or arise from circumstances.

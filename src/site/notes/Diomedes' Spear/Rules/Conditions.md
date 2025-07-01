@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/diomedes-spear/rules/conditions/","created":"2024-12-27T14:49:03.402+10:00","updated":"2025-07-01T16:11:01.563+10:00"}
+{"dg-publish":true,"permalink":"/diomedes-spear/rules/conditions/"}
 ---
 
 ## General
