@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/diomedes-spear/rules/abilities-and-focuses/"}
+{"dg-publish":true,"permalink":"/diomedes-spear/rules/abilities-and-focuses/","created":"2024-12-25T20:32:59.815+10:00","updated":"2025-07-01T15:58:05.737+10:00"}
 ---
 
 Use for [[Diomedes' Spear/Rules/Ability Tests\|Ability Tests]]

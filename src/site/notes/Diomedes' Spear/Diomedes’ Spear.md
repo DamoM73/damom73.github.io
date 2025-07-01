@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/diomedes-spear/diomedes-spear/","tags":["gardenEntry"]}
+{"dg-publish":true,"permalink":"/diomedes-spear/diomedes-spear/","tags":["gardenEntry"],"created":"2025-07-01T15:57:20.568+10:00","updated":"2025-07-01T15:57:53.382+10:00"}
 ---
 
 _A Campaign for The Expanse RPG_

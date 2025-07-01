@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/diomedes-spear/rules/ability-tests/"}
+{"dg-publish":true,"permalink":"/diomedes-spear/rules/ability-tests/","created":"2024-12-25T20:32:59.815+10:00","updated":"2025-07-01T15:58:09.196+10:00"}
 ---
 
 ## Test Target Number
