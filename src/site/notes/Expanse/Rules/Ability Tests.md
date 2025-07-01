@@ -14,13 +14,13 @@
 |      19       | Imposing        |     +9     |    +13     |
 |      21       | Nigh Impossible |    +11     |    +15     |
 ## Basic Tests
-1. Determine Appropriate ability focus
+1. Determine appropriate [[Expanse/Rules/Abilities and Focuses\|Abilities and Focuses]]
 2. Assign a target number
 3. Roll & apply fortune
 4. Test results successful >= target number
 
 ## Opposed Tests
-1. Determine Appropriate ability focus for both characters
+1. Determine appropriate [[Expanse/Rules/Abilities and Focuses\|Abilities and Focuses]] for both characters
 2. Assign a target number for both characters
 3. Both characters roll & apply fortune
 4. Character 
@@ -30,14 +30,15 @@
 	- Both fail TN -> tie
 
 ## Advanced Test
-1. Determine the TN or opposed roll
-2. Each success on a test adds its Drama Die total to the success threshold until you either succeed or run out of time.
-3. Each roll requires a time increment.
+1. Determine appropriate [[Expanse/Rules/Abilities and Focuses\|Abilities and Focuses]] for both characters
+2. Determine the TN or opposed roll
+3. Each success on a test adds its Drama Die total to the success threshold until you either succeed or run out of time.
+4. Each roll requires a time increment.
 	- figure out the typical amount of time the task should take and divide it by half of the success threshold.
-4. You make an ability test against the target number or opposed roll for each time increment:
+5. You make an ability test against the target number or opposed roll for each time increment:
 	- Failure -> don’t make any headway, and the time passes. 
 	- Success -> Add the Drama Die result to total
-5. When the total meets or exceeds the success threshold, you complete the task.
+6. When the total meets or exceeds the success threshold, you complete the task.
 
 | Task Difficulty | Success Threshold |
 | --------------- | :---------------: |
@@ -64,9 +65,9 @@ Determine how many times characters can fail at a challenge test before increasi
 	- complete another advanced or challenge test in order to pick up where they left off
 
 ## Assisting Tests
-If multiple characters work together on a task, one player is designated as the primary roller. Other characters who assist **must have an applicable ability focus** related to the test.
+If multiple characters work together on a task, one player is designated as the primary roller. Other characters who assist must have an applicable [[Expanse/Rules/Abilities and Focuses\|Abilities and Focuses]] related to the test.
 
-**Bonus for Assistance** – For each assisting character, the primary roller gains a **+1 bonus to their roll**, up to a maximum of **+3**.
+Bonus for Assistance – For each assisting character, the primary roller gains a +1 bonus to their roll, up to a maximum of +3.
 
 ## Probability of scores
 | Score | Cumulative Probability (%) | Exact Probability (%) |
