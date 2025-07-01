@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/diomedes-spear/","tags":["gardenEntry"]}
 ---
 
-![diomedes_spear.png](/img/user/Diomedes'%20Spear/Images/diomedes_spear.png)
+![diomedes_spear.png](/img/user/Diomedes'%20Spear/Assests/diomedes_spear.png)
 
 _A Campaign for The Expanse RPG_
 
