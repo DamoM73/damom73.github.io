@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>News Feed 2</title>
+<title>Ships</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -130,7 +130,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/locations/ships/">Ships </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/locations/ships/">Ships </a>
 </div>
 </div>
 </div>
@@ -147,7 +147,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-2/">News Feed 2 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-2/">News Feed 2 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -303,71 +303,47 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T08:59:51.507Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T08:59:51.507Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T08:59:51.507Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">News Feed 2</h1>
+<h1 data-note-icon="">Ships</h1>
 <div class="header-meta">
 </div>
 </header>
-<h2 id="ganymede-struggles-with-refugee-crisis-as-aid-efforts-falter" tabindex="-1">Ganymede Struggles with Refugee Crisis as Aid Efforts Falter</h2>
-<p><em>By Halima Okeke, Tycho Free News</em></p>
-<p><strong>GANYMEDE STATION</strong> — The agricultural heart of the outer planets is facing a crisis unlike any in recent history. In the wake of the <em>Eros Incident</em> and rising tensions between the Inners, Ganymede has become a last refuge for thousands of displaced Belters seeking safety, work, and a stable food supply. But the station’s infrastructure, already under strain, is buckling under the weight of the influx, and neither Mars nor Earth seem willing to step up.</p>
-<p>Tycho Free News reporters on the ground have spoken with refugees, aid workers, and security forces, all of whom paint a grim picture: overcrowded shelters, dwindling food and medical supplies, and the ever-present risk of conflict between desperate survivors and the military forces meant to keep order.</p>
-<h3 id="a-flood-of-desperation" tabindex="-1">A Flood of Desperation</h3>
-<p>Following the UN’s withdrawal from Ceres and increased instability in the Belt, thousands of Belters—many from asteroid stations now struggling without reliable supply lines—have made their way to Ganymede, hoping to find work or at least a meal. The station’s vast hydroponic farms make it the logical place for displaced Belters to seek refuge, but Ganymede was never designed to accommodate this many new arrivals.</p>
-<p><em>&quot;The UN left us with nothing,&quot;</em> says Lise Mankuso, a former rockhopper from a decommissioned mining colony near Vesta, now sleeping in a repurposed storage bay. <em>&quot;Ceres is a mess. Tycho’s too far. We thought here, at least, we could find a way to keep living. But we weren’t ready for what we found.&quot;</em></p>
-<p>Temporary camps have sprung up across the station, but with space at a premium, many refugees are forced to sleep in airlock corridors or converted freight bays. Public services are overwhelmed, and basic necessities like clean water and medical treatment are becoming scarce.</p>
-<h3 id="aid-delays-and-bureaucratic-gridlock" tabindex="-1">Aid Delays and Bureaucratic Gridlock</h3>
-<p>Despite calls from humanitarian organizations and local relief groups, shipments of aid have been slow to arrive. Bureaucratic disputes between Martian authorities, who technically oversee Ganymede’s governance, and independent suppliers from the Belt have left crucial resources stuck in orbit or impounded over security concerns.</p>
-<p><em>&quot;We have pallets of medical supplies sitting in dock because some MCRN administrator wants another round of clearance forms,&quot;</em> says Darius Kom, a volunteer with the Belt-wide relief group <em>Sa Sa Teik</em>. <em>&quot;Meanwhile, we’ve got kids with lung infections and pregnant women who haven’t had a proper checkup in months.&quot;</em></p>
-<p>Martian officials maintain that the restrictions are necessary. With tensions high and reports of smuggling networks using refugee movements as cover, security has been tightened around all incoming shipments. An MCRN spokesperson on Ganymede defended the delays, stating,</p>
-<p><em>&quot;While we sympathize with the situation, we must also ensure that no contraband or dangerous elements enter the station under the guise of humanitarian aid. Our duty is to maintain stability, and that means proper vetting of all incoming supplies and personnel.&quot;</em></p>
-<p>For the Belters waiting in overcrowded shelters, such explanations ring hollow.</p>
-<p><em>&quot;They say we could be smugglers? That we could be trouble? What do they think starvation and disease are?&quot;</em> asks refugee Emmeline Osei, who has been waiting for ration distributions for nearly a week. <em>&quot;They’re more worried about their rules than about whether we live or die.&quot;</em></p>
-<h3 id="a-powder-keg-waiting-to-explode" tabindex="-1">A Powder Keg Waiting to Explode</h3>
-<p>With conditions deteriorating, clashes between refugees and station security forces have become more frequent. In the past two weeks alone, Tycho Free News has confirmed at least four incidents of violence, including protests turning into riots when food shipments failed to arrive as promised.</p>
-<p>OPA-aligned factions operating on the station have been increasingly vocal, accusing Mars of deliberate neglect and warning that if aid doesn’t come soon, Belters will be forced to take what they need.</p>
-<p>Anderson Dawes, a key OPA leader based on Ceres, issued a pointed statement:</p>
-<p><em>&quot;How many times must we tell them? Belters will not sit quietly while our people starve. If Mars cannot care for Ganymede, then it is time for the Belt to take responsibility for its own. And we will.&quot;</em></p>
-<p>His words have only heightened tensions, with rumours spreading that armed OPA groups may be moving toward Ganymede to &quot;secure&quot; supplies for the refugees. If true, it could set the stage for yet another major flashpoint between Belt factions and Martian authorities.</p>
-<h3 id="who-will-act" tabindex="-1">Who Will Act?</h3>
-<p>Despite the worsening conditions, neither Earth nor Mars has made any significant moves to address the crisis. The UN, still grappling with political fallout from <em>Eros</em> and its withdrawal from Ceres, has issued vague assurances that it &quot;remains committed to humanitarian support efforts.&quot; The Martian government, preoccupied with its own military repositioning, appears unwilling to divert resources to a problem it sees as secondary to larger strategic concerns.</p>
-<p>Meanwhile, independent Belter organizations, including relief ships from Tycho Station and Pallas, are attempting to coordinate supply runs. But without official clearance, many of these efforts are being stalled before they can even reach Ganymede’s orbit.</p>
-<p><em>&quot;It’s always the same,&quot;</em> says Anya Rahm, a former freighter captain now working as a supply coordinator for a Belt relief effort. <em>&quot;Inners fight over who’s in charge, and Belters suffer. If the OPA doesn’t step in soon, the people here won’t have a choice. They’ll fight for what they need, because no one is willing to give it to them.&quot;</em></p>
-<p>For now, the thousands of Belters on Ganymede continue to wait—hungry, sick, and increasingly desperate. How much longer until waiting is no longer an option?</p>
-<p>— <em>Tycho Free News will continue to report on the ongoing crisis. For those looking to contribute to Belt relief efforts, verified donation links are available through our official channels.</em></p>
-<hr>
-<h2 id="high-court-rules-against-mormon-church-in-nauvoo-ownership-dispute" tabindex="-1">High Court Rules Against Mormon Church in Nauvoo Ownership Dispute</h2>
-<p><em>By Lillian Sharpe, Bennett-Halabi Information Services (BHIS)</em></p>
-<p><strong>LUNA</strong>— In a significant legal setback for the Church of Jesus Christ of Latter-Day Saints, the Interplanetary High Court has ruled that Tycho Manufacturing and Engineering Concern (TMEC) did not commit theft when it redirected the <em>LDSS Nauvoo</em> for emergency use. The court determined that ownership of the vessel had not been legally transferred to the Mormon Church at the time, making the dispute a matter of contractual failure rather than criminal wrongdoing.</p>
-<p>While the church had argued that Tycho unlawfully seized the ship, justices found that since the official handover had not been completed, Tycho remained the legal owner when the ship was repurposed. As a result, the case has been referred to a lower court to resolve financial claims and contractual obligations rather than issues of theft.</p>
-<h3 id="a-contract-broken-not-a-crime-committed" tabindex="-1">A Contract Broken, Not a Crime Committed</h3>
-<p>The ruling centers on contractual obligations rather than property rights, meaning that while Tycho may be liable for failing to deliver the vessel as promised, it did not steal the Nauvoo.</p>
-<p>Legal analyst Dr. Nadir Cole of the Luna Academy of Law explained:</p>
-<p><em>&quot;This ruling doesn’t let Tycho off the hook entirely. The Mormons had a valid agreement, and if Tycho failed to meet its contractual obligations, they could still be ordered to pay damages. But as far as ownership is concerned, the ship was never legally theirs.&quot;</em></p>
-<p>Tycho had maintained throughout the proceedings that the Nauvoo’s redirection was necessary, citing emergency conditions in the Belt that required immediate action. The High Court did not rule on the morality or necessity of that decision, only that the ownership dispute was legally unfounded.</p>
-<h3 id="financial-disputes-remain-unresolved" tabindex="-1">Financial Disputes Remain Unresolved</h3>
-<p>The case now moves to a lower commercial court, where legal teams will determine whether Tycho must compensate the Mormon Church for failing to deliver the Nauvoo as agreed. Potential outcomes include:</p>
-<ul>
-<li>Reimbursement for construction costs, should the court find Tycho breached its contract.</li>
-<li>A settlement, if both parties agree to resolve the matter outside of further litigation.</li>
-<li>Partial damages, depending on whether Tycho can justify its actions under force majeure or emergency provisions.</li>
-</ul>
-<p>A spokesperson for the Latter-Day Saints Missionary Fleet expressed frustration with the ruling:</p>
-<p><em>&quot;The Nauvoo was built for generations of faithful pioneers, not as a tool for political and military interests. We will continue seeking what is rightfully ours.&quot;</em></p>
-<p>Meanwhile, Tycho executives welcomed the ruling, emphasizing that their actions were dictated by necessity, not profit or malice. The company has yet to comment on whether they will seek a negotiated resolution to the financial claims.</p>
-<h3 id="what-s-next-for-the-nauvoo" tabindex="-1">What’s Next for the Nauvoo?</h3>
-<p>For now, the <em>LDSS Nauvoo</em> remains under Tycho control, its future uncertain pending legal resolution. While the Mormons had intended the ship for deep-space colonization, its sheer scale and engineering potential have made it a topic of broader strategic interest.</p>
-<p>With a lower court set to determine financial liabilities, the final chapter of the Nauvoo dispute is still being written—but one thing is clear: the High Court’s decision has set a precedent for interplanetary contract law, ensuring that future disputes over major projects will be closely scrutinized.</p>
-<p>BHIS will continue to report on developments as the case unfolds.</p>
-<hr>
-<h2 id="other-news" tabindex="-1">Other News</h2>
-<h3 id="opa-declares-ceres-a-sovereign-station" tabindex="-1">OPA Declares Ceres a “Sovereign Station”</h3>
-<p>In a fiery public address, Anderson Dawes formally declared Ceres Station a “sovereign entity under Belter administration,” rejecting any lingering claims by Earth or Mars. The declaration has been met with cautious silence from the UN and MCRN, while several Belt stations have issued statements of solidarity.</p>
-<h3 id="belter-pilgrimage-ship-vanishes-near-venus-blockade" tabindex="-1">Belter Pilgrimage Ship Vanishes Near Venus Blockade</h3>
-<p>A civilian ship, <em>Baraka’s Wish</em>, believed to be carrying members of the Faith of the Falling Star, disappeared near the Venus exclusion zone. UN officials claim the ship ignored no-entry warnings, while cult sympathizers say the vessel was “called home.”</p>
-<h3 id="hitomi-camara-releases-void-lullaby-amid-scandal" tabindex="-1">Hitomi Camara Releases 'Void Lullaby' Amid Scandal</h3>
-<p>Pop icon Hitomi Camara has released her new single <em>Void Lullaby</em>, dedicated to “those we lost in the silence of Eros.” The song's release comes as controversy brews over her relationship with Django Weber, a suspected member of the Voltaire Collective.</p>
-<h3 id="gunfight-between-rival-gangs-erupts-on-ceres-docks" tabindex="-1">Gunfight Between Rival Gangs Erupts on Ceres Docks</h3>
-<p>A violent shoot-out broke out today on Dock 94 between rival criminal gangs, leaving at least eight dead and five injured before Ceres security forces brought the situation under control. Witnesses described a brief but intense exchange of gunfire near the cargo offloading bays, with stray rounds striking nearby freighters and maintenance equipment. Station authorities have launched an investigation into the incident, while Administrator Dawes condemned the violence, vowing that &quot;gang wars will find no safe harbour on Ceres.&quot;</p>
+<h2 id="belter" tabindex="-1">Belter</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Ship</th>
+<th>Type</th>
+<th>Characters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The Slow Dog</td>
+<td>Cornucopia-class Supply Ship</td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Captain Anwar (Waro) Keita</a><br><a class="internal-link is-unresolved" href="/404" target="">XO Rasha Bhutani</a><br><a class="internal-link is-unresolved" href="/404" target="">Cargo Master Havel (Hav) Kessler</a><br><a class="internal-link is-unresolved" href="/404" target="">Chief Engineer Zoya Ferrer</a><br><a class="internal-link is-unresolved" href="/404" target="">Chief Security Officer Bojan Radic</a><br><a class="internal-link is-unresolved" href="/404" target="">Ship Chaplain Sister Clara Wei</a><br><a class="internal-link is-unresolved" href="/404" target="">Comms Officer Lian Markovic</a><br><a class="internal-link is-unresolved" href="/404" target="">Cargo Hand (Little) Tomas Nkosi</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="earther" tabindex="-1">Earther</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Ship</th>
+<th>Type</th>
+<th>Characters</th>
+</tr>
+</thead>
+</table></div>
+<h2 id="martian" tabindex="-1">Martian</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Ship</th>
+<th>Type</th>
+<th>Characters</th>
+</tr>
+</thead>
+</table></div>
 </main>
 <aside>
 <div class="sidebar">
@@ -409,39 +385,11 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#ganymede-struggles-with-refugee-crisis-as-aid-efforts-falter">Ganymede Struggles with Refugee Crisis as Aid Efforts Falter</a>
-<ol>
-<li><a href="#a-flood-of-desperation">A Flood of Desperation</a>
+<li><a href="#belter">Belter</a>
 </li>
-<li><a href="#aid-delays-and-bureaucratic-gridlock">Aid Delays and Bureaucratic Gridlock</a>
+<li><a href="#earther">Earther</a>
 </li>
-<li><a href="#a-powder-keg-waiting-to-explode">A Powder Keg Waiting to Explode</a>
-</li>
-<li><a href="#who-will-act">Who Will Act?</a>
-</li>
-</ol>
-</li>
-<li><a href="#high-court-rules-against-mormon-church-in-nauvoo-ownership-dispute">High Court Rules Against Mormon Church in Nauvoo Ownership Dispute</a>
-<ol>
-<li><a href="#a-contract-broken-not-a-crime-committed">A Contract Broken, Not a Crime Committed</a>
-</li>
-<li><a href="#financial-disputes-remain-unresolved">Financial Disputes Remain Unresolved</a>
-</li>
-<li><a href="#what-s-next-for-the-nauvoo">What’s Next for the Nauvoo?</a>
-</li>
-</ol>
-</li>
-<li><a href="#other-news">Other News</a>
-<ol>
-<li><a href="#opa-declares-ceres-a-sovereign-station">OPA Declares Ceres a “Sovereign Station”</a>
-</li>
-<li><a href="#belter-pilgrimage-ship-vanishes-near-venus-blockade">Belter Pilgrimage Ship Vanishes Near Venus Blockade</a>
-</li>
-<li><a href="#hitomi-camara-releases-void-lullaby-amid-scandal">Hitomi Camara Releases 'Void Lullaby' Amid Scandal</a>
-</li>
-<li><a href="#gunfight-between-rival-gangs-erupts-on-ceres-docks">Gunfight Between Rival Gangs Erupts on Ceres Docks</a>
-</li>
-</ol>
+<li><a href="#martian">Martian</a>
 </li>
 </ol>
 </nav>
