@@ -2,5 +2,4 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/leads/bio-nex-clinic-3/"}
 ---
 
-[Audio transmission]([transmission_1.mp3](https://1drv.ms/u/c/9eb2e49a212b638e/EY5jKyGa5LIggJ6mNwEAAAABDT9rmDKG4rbb3gf12vQcUA?e=y4gEBR))
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/K-Uk447OfGk?si=qMaT1b1xmB3-cUQu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
