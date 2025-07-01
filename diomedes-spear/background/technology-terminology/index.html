@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Abilities and Focuses</title>
+<title>Technology Terminology</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -84,7 +84,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/background/technology-terminology/">Technology Terminology </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/background/technology-terminology/">Technology Terminology </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -198,7 +198,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -307,64 +307,497 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T06:47:42.717Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T06:47:42.717Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T06:47:42.717Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Abilities and Focuses</h1>
+<h1 data-note-icon="">Technology Terminology</h1>
 <div class="header-meta">
 </div>
 </header>
-<p>Use for <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/ability-tests/">Ability Tests</a></p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Ability</th>
-<th>Description</th>
-<th><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></th>
+<th>Term</th>
+<th>Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Accuracy</td>
-<td>Accuracy measures aim and precision, and measures your ability to hit targets with ranged or thrown weapons.</td>
-<td>Gunnery<br>Pistols<br>Rifles<br>Throwing</td>
+<td><strong>Air Gap</strong></td>
+<td>A cybersecurity measure where critical systems are physically isolated from networks to prevent remote hacking.</td>
 </tr>
 <tr>
-<td>Communication</td>
-<td>Communication covers social skills and generally making friends and influencing people.</td>
-<td>Bargaining<br>Deception<br>Disguise<br>Etiquette<br>Expression<br>Gambling<br>Investigation<br>Leadership<br>Performing<br>Persuasion<br>Seduction</td>
+<td><strong>Anti-Spalling Padding</strong></td>
+<td>Protective interior padding that absorbs kinetic energy from impacts, reducing the risk of deadly spalling inside a ship</td>
 </tr>
 <tr>
-<td>Constitution</td>
-<td>Constitution is your character’s overall health, fortitude, and resistance to harm, illness, and fatigue.</td>
-<td>Running<br>Stamina<br>Swimming<br>Tolerance</td>
+<td><strong>Apoapsis &amp; Periapsis</strong></td>
+<td>The highest and lowest points in an orbit around a celestial body.</td>
 </tr>
 <tr>
-<td>Dexterity</td>
-<td>Dexterity covers deftness, agility, and reaction time, affecting how quickly and gracefully you move.</td>
-<td>Acrobatics<br>Crafting<br>Driving<br>Free-fall<br>Initiative<br>Piloting<br>Sleight of Hand<br>Stealth</td>
+<td><strong>Armour-Piercing Rounds</strong></td>
+<td>Projectiles designed to penetrate protective armor by reducing its effectiveness.</td>
 </tr>
 <tr>
-<td>Fighting</td>
-<td>Fighting is your character’s capability and prowess in close combat, ranging from a brawl to wielding weapons.</td>
-<td>Brawling<br>Grappling<br>Heavy Weapons<br>Light Weapons</td>
+<td><strong>Atmosphere Scrubbers</strong></td>
+<td>Devices that remove CO₂ and other contaminants from a ship's air supply.</td>
 </tr>
 <tr>
-<td>Intelligence</td>
-<td>Intelligence measures a character’s reasoning, memory, problem-solving, and overall knowledge.</td>
-<td>Art<br>Business<br>Cryptography<br>Current Affairs<br>Demolitions<br>Engineering<br>Evaluation<br>Law<br>Medicine<br>Navigation<br>Research<br>Science<br>Security<br>Tactics<br>Technology</td>
+<td><strong>Atmospheric Skimming</strong></td>
+<td>A technique used to collect gases from planetary atmospheres for fuel or breathing air.</td>
 </tr>
 <tr>
-<td>Perception</td>
-<td>Perception is the ability to pick up on and notice things using any of the character’s senses.</td>
-<td>Empathy<br>Hearing<br>Intuition<br>Searching<br>Seeing<br>Smelling<br>Survival<br>Tasting<br>Touching<br>Tracking</td>
+<td><strong>Automated Repair Drones</strong></td>
+<td>Small robotic units capable of performing maintenance and emergency repairs on a ship’s hull.</td>
 </tr>
 <tr>
-<td>Strength</td>
-<td>Strength is sheer muscle power and the ability to apply it, from lifting heavy things to feats of athletics.</td>
-<td>Climbing<br>Intimidation<br>Jumping<br>Might</td>
+<td><strong>Autonomous Docking System</strong></td>
+<td>AI-guided docking technology that allows ships to connect without human intervention.</td>
 </tr>
 <tr>
-<td>Willpower</td>
-<td>Willpower measures self control, self-discipline, mental fortitude, confidence.</td>
-<td>Courage<br>Faith<br>Morale<br>Self-Discipline</td>
+<td><strong>Baffle Plates</strong></td>
+<td>Protective barriers inside a reactor or weapon system to manage energy flow.</td>
+</tr>
+<tr>
+<td><strong>Biologic Networks</strong></td>
+<td>A type of computing infrastructure that can repair itself after damage, used in military and high-end research applications.</td>
+</tr>
+<tr>
+<td><strong>Black Drop-Site</strong></td>
+<td>A hidden, isolated data storage partition often used for illicit or highly confidential information.</td>
+</tr>
+<tr>
+<td><strong>Breaching Pods</strong></td>
+<td>Boarding craft used to forcibly penetrate enemy hulls and deploy soldiers.</td>
+</tr>
+<tr>
+<td><strong>Circularizing Orbit</strong></td>
+<td>A maneuver to adjust a ship's orbit from elliptical to circular.</td>
+</tr>
+<tr>
+<td><strong>Cold Gas Thrusters</strong></td>
+<td>Small maneuvering thrusters that use compressed gas for silent, low-energy propulsion.</td>
+</tr>
+<tr>
+<td><strong>Countermeasures</strong></td>
+<td>Electronic or physical systems designed to disrupt targeting and hacking attempts.</td>
+</tr>
+<tr>
+<td><strong>Cryptographic Challenge</strong></td>
+<td>A security feature that requires multiple keys, passwords, or biometric data to unlock a high-security system.</td>
+</tr>
+<tr>
+<td><strong>Cybernetic Interface</strong></td>
+<td>A direct neural link between a user and a digital system, often used for piloting or hacking.</td>
+</tr>
+<tr>
+<td><strong>Cycling Chamber</strong></td>
+<td>An airlock mechanism designed to transition between pressurized and vacuum environments.</td>
+</tr>
+<tr>
+<td><strong>Cycling Chamber</strong></td>
+<td>An airlock mechanism that transitions between pressurized and vacuum environments.</td>
+</tr>
+<tr>
+<td><strong>Dark Burn</strong></td>
+<td>A high-risk maneuver where a ship shuts down most systems to evade detection.</td>
+</tr>
+<tr>
+<td><strong>Data Security Protocols</strong></td>
+<td>Measures such as encryption and biometric authentication used to protect sensitive data.</td>
+</tr>
+<tr>
+<td><strong>Decompression Protocols</strong></td>
+<td>Safety measures enacted when a ship suffers hull breaches to prevent total pressure loss.</td>
+</tr>
+<tr>
+<td><strong>Deep Packet Injection</strong></td>
+<td>A hacking method embedding false data packets within legitimate transmissions to manipulate network behaviour.</td>
+</tr>
+<tr>
+<td><strong>Delta-V</strong></td>
+<td>The change in velocity needed to perform space maneuvers, determining fuel efficiency.</td>
+</tr>
+<tr>
+<td><strong>Delta-V (Δv)</strong></td>
+<td>The measure of a ship’s available velocity change, critical for manoeuvring in space.</td>
+</tr>
+<tr>
+<td><strong>Deterioration</strong></td>
+<td>The inevitable wear and tear that occurs on ships over time, requiring regular maintenance.</td>
+</tr>
+<tr>
+<td><strong>Distributed Attack</strong></td>
+<td>A hacking strategy that uses multiple remote access points to overload a system's defenses.</td>
+</tr>
+<tr>
+<td><strong>Distributed Computing</strong></td>
+<td>The use of multiple devices or systems to perform large-scale calculations.</td>
+</tr>
+<tr>
+<td><strong>Docking Clamps</strong></td>
+<td>Mechanical arms that secure a ship in place during maintenance or refueling.</td>
+</tr>
+<tr>
+<td><strong>Drone Teakettling</strong></td>
+<td>A method where drones use micro-thrusters to maneuver in microgravity.</td>
+</tr>
+<tr>
+<td><strong>Drones</strong></td>
+<td>Semi-autonomous flying, rolling, or walking machines used for surveillance, repair, or combat.</td>
+</tr>
+<tr>
+<td><strong>Drop-Site Network</strong></td>
+<td>A covert, decentralized file-sharing system used to exchange data without direct communication.</td>
+</tr>
+<tr>
+<td><strong>Electromagnetic Catapult</strong></td>
+<td>A launch system used for deploying small craft or cargo without using chemical propellants.</td>
+</tr>
+<tr>
+<td><strong>Electronic Warfare</strong></td>
+<td>The use of hacking and digital attacks to disable enemy ship systems, intercept transmissions, or manipulate targeting computers.</td>
+</tr>
+<tr>
+<td><strong>Emergency Batteries</strong></td>
+<td>Backup power systems that keep life support and essential functions running in case of reactor failure.</td>
+</tr>
+<tr>
+<td><strong>Emergency Burn</strong></td>
+<td>A rapid, high-thrust manoeuvre to evade danger, often at the cost of crew safety due to extreme G-forces.</td>
+</tr>
+<tr>
+<td><strong>Encryption &amp; Decryption</strong></td>
+<td>The process of scrambling and unscrambling data to ensure secure communications.</td>
+</tr>
+<tr>
+<td><strong>Encryption &amp; Decryption Systems</strong></td>
+<td>Digital tools used to protect and unlock secure data transmissions.</td>
+</tr>
+<tr>
+<td><strong>Epstein Drive</strong></td>
+<td>A highly efficient fusion propulsion system that enables continuous acceleration over long distances.</td>
+</tr>
+<tr>
+<td><strong>Espionage Software</strong></td>
+<td>Advanced hacking tools used to infiltrate and manipulate networked systems.</td>
+</tr>
+<tr>
+<td><strong>Expert Pilot Assist</strong></td>
+<td>AI-driven assistance that helps pilots make precise maneuvers in high-G combat.</td>
+</tr>
+<tr>
+<td><strong>Expert System</strong></td>
+<td>A specialized AI that automates complex tasks like decryption, medical diagnostics, or targeting assistance.</td>
+</tr>
+<tr>
+<td><strong>Fabricators</strong></td>
+<td>Advanced 3D printers used to manufacture components, tools, and even food.</td>
+</tr>
+<tr>
+<td><strong>Faulty System Flaw</strong></td>
+<td>A mechanical issue that causes occasional malfunctions, often requiring emergency repairs.</td>
+</tr>
+<tr>
+<td><strong>Feed</strong></td>
+<td>A stream of information, entertainment, or news broadcasted over the system’s network.</td>
+</tr>
+<tr>
+<td><strong>Feed Manager</strong></td>
+<td>Software that curates and prioritizes incoming information from public and private networks.</td>
+</tr>
+<tr>
+<td><strong>Fusion Reactor</strong></td>
+<td>The core power system for ships, providing energy for propulsion, life support, and weapons.</td>
+</tr>
+<tr>
+<td><strong>Gel Software</strong></td>
+<td>A type of organic computing software that can regrow damaged code or reroute around compromised segments.</td>
+</tr>
+<tr>
+<td><strong>Gravity Tether</strong></td>
+<td>A system used to simulate gravity by connecting rotating habitats.</td>
+</tr>
+<tr>
+<td><strong>Grid Fins</strong></td>
+<td>Aerodynamic control surfaces used for fine maneuvering during atmospheric re-entry.</td>
+</tr>
+<tr>
+<td><strong>Hack the System</strong></td>
+<td>A manoeuvre where a hacker shuts down a ship’s key system, such as engines or weapons.</td>
+</tr>
+<tr>
+<td><strong>Hand Terminal</strong></td>
+<td>A personal computing device used for communications, data storage, and software operations.</td>
+</tr>
+<tr>
+<td><strong>Hardened Circuitry</strong></td>
+<td>Electronics shielded against EMPs, radiation, and high-G forces.</td>
+</tr>
+<tr>
+<td><strong>Heat Sink</strong></td>
+<td>A thermal management system that stores excess heat until it can be safely radiated away.</td>
+</tr>
+<tr>
+<td><strong>Herculina Station Security</strong></td>
+<td>A specific case where security protocols and countermeasures are in place to track digital intrusions.</td>
+</tr>
+<tr>
+<td><strong>Hohmann Transfer</strong></td>
+<td>A basic method to move between orbital bodies using minimal fuel.</td>
+</tr>
+<tr>
+<td><strong>HUD (Heads-Up Display)</strong></td>
+<td>A visual interface integrated into helmets or visors displaying operational and tactical data.</td>
+</tr>
+<tr>
+<td><strong>Hull Ablation</strong></td>
+<td>The process of a heat shield burning away to dissipate energy during atmospheric entry.</td>
+</tr>
+<tr>
+<td><strong>Hull Plating</strong></td>
+<td>The armored outer layer of a ship, designed to protect against micrometeoroids and weapon impacts.</td>
+</tr>
+<tr>
+<td><strong>Identity Masking</strong></td>
+<td>A digital cloaking method that alters metadata and voice signatures to obscure a user's identity.</td>
+</tr>
+<tr>
+<td><strong>Inertial Compensators</strong></td>
+<td>Technology that reduces the effects of high-G maneuvers on ship crews.</td>
+</tr>
+<tr>
+<td><strong>Intrusion Countermeasures (ICE)</strong></td>
+<td>Digital security protocols designed to detect, track, and repel hacking attempts.</td>
+</tr>
+<tr>
+<td><strong>Jamming Field</strong></td>
+<td>An electronic countermeasure used to disrupt enemy communications and targeting.</td>
+</tr>
+<tr>
+<td><strong>Jury-Rigging</strong></td>
+<td>Temporary, often improvised repairs made with available materials to keep a system operational.</td>
+</tr>
+<tr>
+<td><strong>Kessler Syndrome</strong></td>
+<td>A cascading chain reaction where orbital debris creates more debris, making certain orbits unusable.</td>
+</tr>
+<tr>
+<td><strong>Laser-Induced Plasma Channel (LIPC)</strong></td>
+<td>A technology that uses a laser to create a conductive path for electrical discharges, often used in weapons.</td>
+</tr>
+<tr>
+<td><strong>Legitimate Salvage</strong></td>
+<td>The legal process of claiming abandoned or derelict ships for profit.</td>
+</tr>
+<tr>
+<td><strong>Life Support Systems</strong></td>
+<td>The network of oxygen recyclers, water purifiers, and temperature regulators keeping a ship habitable.</td>
+</tr>
+<tr>
+<td><strong>Low-Viz Paint</strong></td>
+<td>A specialized ship coating designed to reduce visibility on sensors and to the naked eye.</td>
+</tr>
+<tr>
+<td><strong>Magnetic Containment</strong></td>
+<td>The system that holds fusion plasma within a reactor, preventing catastrophic failure.</td>
+</tr>
+<tr>
+<td><strong>Maintenance Intervals</strong></td>
+<td>The scheduled checks and repairs required to keep a ship functioning at peak performance.</td>
+</tr>
+<tr>
+<td><strong>Maneuvering Thrusters</strong></td>
+<td>Small auxiliary thrusters used for fine-tuned movement, docking, and attitude control.</td>
+</tr>
+<tr>
+<td><strong>Memory Wafer</strong></td>
+<td>A portable data storage device used for transferring sensitive information without network exposure.</td>
+</tr>
+<tr>
+<td><strong>Microgravity Adaptation</strong></td>
+<td>Physical and technological adjustments to help humans function in low-gravity environments.</td>
+</tr>
+<tr>
+<td><strong>Microgravity Welding</strong></td>
+<td>A specialized process for repairing ship hulls and structures in zero-G environments.</td>
+</tr>
+<tr>
+<td><strong>Narrowcast</strong></td>
+<td>A targeted data transmission only accessible to a specific audience, often used for private communications.</td>
+</tr>
+<tr>
+<td><strong>Network Bridge</strong></td>
+<td>A relay system connecting local, isolated networks to larger data systems, a common vulnerability in hacking.</td>
+</tr>
+<tr>
+<td><strong>Neural Overclocking</strong></td>
+<td>A temporary boost to cognitive function using stimulants or implants.</td>
+</tr>
+<tr>
+<td><strong>Neutrino Detector</strong></td>
+<td>A highly advanced sensor capable of detecting energy emissions from ships or alien technology.</td>
+</tr>
+<tr>
+<td><strong>Orbital Maneuvering Burn</strong></td>
+<td>A controlled thrust used to change a ship's trajectory.</td>
+</tr>
+<tr>
+<td><strong>Overloaded Reactor</strong></td>
+<td>A critical failure scenario where a ship’s fusion reactor generates too much heat and risks explosion.</td>
+</tr>
+<tr>
+<td><strong>Partition</strong></td>
+<td>A section of computer memory used for organizing and securing data, often used in ship and station networks.</td>
+</tr>
+<tr>
+<td><strong>Plasma Conduits</strong></td>
+<td>Channels that transfer energy from a fusion reactor to various ship systems.</td>
+</tr>
+<tr>
+<td><strong>Plasma Containment</strong></td>
+<td>Magnetic fields used to control high-energy plasma in ship reactors and weapons.</td>
+</tr>
+<tr>
+<td><strong>Point Defense Cannons (PDCs)</strong></td>
+<td>Automated rapid-fire weapons designed to intercept incoming missiles and torpedoes.</td>
+</tr>
+<tr>
+<td><strong>Privacy Baffle</strong></td>
+<td>A device attached to a computer terminal to prevent unauthorized users from seeing displayed information.</td>
+</tr>
+<tr>
+<td><strong>Prograde &amp; Retrograde</strong></td>
+<td>The two basic directions a ship can burn—prograde is with the orbit, retrograde is against it.</td>
+</tr>
+<tr>
+<td><strong>Quantum Entanglement Comms</strong></td>
+<td>A theoretical method of faster-than-light communication.</td>
+</tr>
+<tr>
+<td><strong>Radiation Hardening</strong></td>
+<td>The reinforcement of ship and station components to withstand cosmic radiation.</td>
+</tr>
+<tr>
+<td><strong>Radiation Shielding</strong></td>
+<td>Protective material layers designed to absorb or deflect cosmic radiation and reactor emissions.</td>
+</tr>
+<tr>
+<td><strong>Rail Gun</strong></td>
+<td>A weapon using electromagnetic acceleration to fire projectiles at extremely high velocities.</td>
+</tr>
+<tr>
+<td><strong>Rapid Reload Systems</strong></td>
+<td>A modification allowing faster reloading of torpedoes and railgun rounds.</td>
+</tr>
+<tr>
+<td><strong>Reaction Mass</strong></td>
+<td>The expendable material ejected by a ship’s drive to generate thrust.</td>
+</tr>
+<tr>
+<td><strong>Reactor Scram</strong></td>
+<td>An emergency shutdown of a ship's fusion core to prevent overload or explosion.</td>
+</tr>
+<tr>
+<td><strong>Redundant Hull (Double/Triple Hull)</strong></td>
+<td>A structural feature that provides multiple layers of protection against damage.</td>
+</tr>
+<tr>
+<td><strong>Redundant Systems</strong></td>
+<td>Backup systems that ensure continued operation in case of failure.</td>
+</tr>
+<tr>
+<td><strong>Resupply Costs</strong></td>
+<td>The financial burden of maintaining a ship, including repairs, fuel, and spare parts.</td>
+</tr>
+<tr>
+<td><strong>Sabotage Algorithms</strong></td>
+<td>Custom software used by hackers to disrupt, delay, or damage enemy digital infrastructure.</td>
+</tr>
+<tr>
+<td><strong>Salvage Operations</strong></td>
+<td>The recovery and repair of derelict or damaged ships, a common practice in the Belt.</td>
+</tr>
+<tr>
+<td><strong>Secure Data Capsule</strong></td>
+<td>A physically isolated storage device used for highly sensitive information transfer.</td>
+</tr>
+<tr>
+<td><strong>Sensor Scrambling</strong></td>
+<td>A defensive system designed to reduce an enemy’s ability to detect or target a ship.</td>
+</tr>
+<tr>
+<td><strong>Slipstream Hack</strong></td>
+<td>A technique used to bypass security protocols by injecting false network traffic.</td>
+</tr>
+<tr>
+<td><strong>Smart Material</strong></td>
+<td>Advanced materials that can change properties, such as self-repairing polymers.</td>
+</tr>
+<tr>
+<td><strong>Solar Sail</strong></td>
+<td>A propulsion system using photon pressure from the sun instead of conventional thrusters.</td>
+</tr>
+<tr>
+<td><strong>Spalling</strong></td>
+<td>The fragmentation of a material due to high-velocity impacts, creating dangerous debris.</td>
+</tr>
+<tr>
+<td><strong>Spin Gravity</strong></td>
+<td>Artificial gravity generated by rotating sections of a ship or station.</td>
+</tr>
+<tr>
+<td><strong>Stealth Coating</strong></td>
+<td>A radar-absorbing material used on ships to reduce visibility on sensors.</td>
+</tr>
+<tr>
+<td><strong>Structural Integrity Field</strong></td>
+<td>A system that reinforces a ship’s frame, preventing warping or stress fractures during high acceleration.</td>
+</tr>
+<tr>
+<td><strong>Teakettling</strong></td>
+<td>Flying a ship in thrusters alone.</td>
+</tr>
+<tr>
+<td><strong>Terminal</strong></td>
+<td>A stationary or portable computer interface used on ships and stations, often with advanced security protocols.</td>
+</tr>
+<tr>
+<td><strong>Tether Anchor</strong></td>
+<td>A magnetic or physical anchor point used in EVA operations.</td>
+</tr>
+<tr>
+<td><strong>Thrust-to-Mass Ratio</strong></td>
+<td>A measure of a ship's acceleration potential based on its engine power and weight.</td>
+</tr>
+<tr>
+<td><strong>Thruster Pack</strong></td>
+<td>A small, personal propulsion system for manoeuvring in zero-G environments.</td>
+</tr>
+<tr>
+<td><strong>Tightbeam Transmission</strong></td>
+<td>A highly focused laser communication requiring precise aim and knowledge of the recipient’s position.</td>
+</tr>
+<tr>
+<td><strong>Torpedo Decoys</strong></td>
+<td>Countermeasures designed to confuse enemy missile guidance systems.</td>
+</tr>
+<tr>
+<td><strong>Tracer Rounds</strong></td>
+<td>Ammunition that leaves a visible trail, aiding in targeting and aiming adjustments.</td>
+</tr>
+<tr>
+<td><strong>Tranquilizer Weapon</strong></td>
+<td>A projectile system delivering chemical doses to incapacitate targets.</td>
+</tr>
+<tr>
+<td><strong>Turnabout is Fair Play</strong></td>
+<td>A hacking technique for hijacking enemy torpedoes and redirecting or disabling them mid-flight.</td>
+</tr>
+<tr>
+<td><strong>Vibration Dampeners</strong></td>
+<td>Shock absorption systems that prevent delicate ship components from being damaged by mechanical stress.</td>
+</tr>
+<tr>
+<td><strong>Zero-G Welding</strong></td>
+<td>A specialized process for making structural repairs in microgravity environments.</td>
 </tr>
 </tbody>
 </table></div>
@@ -402,7 +835,8 @@ CTRL + K
 </div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/diomedes-spear/rules/ability-tests/" data-note-icon="" class="backlink">Ability Tests</a>
+<div class="backlink-list"><div class="backlink-card">
+<span class="no-backlinks-message">No other pages mentions this page</span>
 </div></div>
 </div>
 </div>

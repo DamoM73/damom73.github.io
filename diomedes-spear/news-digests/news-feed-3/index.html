@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Abilities and Focuses</title>
+<title>News Feed 3</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -130,7 +130,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-3/">News Feed 3 </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-3/">News Feed 3 </a>
 </div>
 </div>
 </div>
@@ -198,7 +198,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -307,67 +307,53 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T06:47:42.717Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T06:47:42.717Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T06:47:42.717Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Abilities and Focuses</h1>
+<h1 data-note-icon="">News Feed 3</h1>
 <div class="header-meta">
 </div>
 </header>
-<p>Use for <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/ability-tests/">Ability Tests</a></p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Ability</th>
-<th>Description</th>
-<th><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Accuracy</td>
-<td>Accuracy measures aim and precision, and measures your ability to hit targets with ranged or thrown weapons.</td>
-<td>Gunnery<br>Pistols<br>Rifles<br>Throwing</td>
-</tr>
-<tr>
-<td>Communication</td>
-<td>Communication covers social skills and generally making friends and influencing people.</td>
-<td>Bargaining<br>Deception<br>Disguise<br>Etiquette<br>Expression<br>Gambling<br>Investigation<br>Leadership<br>Performing<br>Persuasion<br>Seduction</td>
-</tr>
-<tr>
-<td>Constitution</td>
-<td>Constitution is your character’s overall health, fortitude, and resistance to harm, illness, and fatigue.</td>
-<td>Running<br>Stamina<br>Swimming<br>Tolerance</td>
-</tr>
-<tr>
-<td>Dexterity</td>
-<td>Dexterity covers deftness, agility, and reaction time, affecting how quickly and gracefully you move.</td>
-<td>Acrobatics<br>Crafting<br>Driving<br>Free-fall<br>Initiative<br>Piloting<br>Sleight of Hand<br>Stealth</td>
-</tr>
-<tr>
-<td>Fighting</td>
-<td>Fighting is your character’s capability and prowess in close combat, ranging from a brawl to wielding weapons.</td>
-<td>Brawling<br>Grappling<br>Heavy Weapons<br>Light Weapons</td>
-</tr>
-<tr>
-<td>Intelligence</td>
-<td>Intelligence measures a character’s reasoning, memory, problem-solving, and overall knowledge.</td>
-<td>Art<br>Business<br>Cryptography<br>Current Affairs<br>Demolitions<br>Engineering<br>Evaluation<br>Law<br>Medicine<br>Navigation<br>Research<br>Science<br>Security<br>Tactics<br>Technology</td>
-</tr>
-<tr>
-<td>Perception</td>
-<td>Perception is the ability to pick up on and notice things using any of the character’s senses.</td>
-<td>Empathy<br>Hearing<br>Intuition<br>Searching<br>Seeing<br>Smelling<br>Survival<br>Tasting<br>Touching<br>Tracking</td>
-</tr>
-<tr>
-<td>Strength</td>
-<td>Strength is sheer muscle power and the ability to apply it, from lifting heavy things to feats of athletics.</td>
-<td>Climbing<br>Intimidation<br>Jumping<br>Might</td>
-</tr>
-<tr>
-<td>Willpower</td>
-<td>Willpower measures self control, self-discipline, mental fortitude, confidence.</td>
-<td>Courage<br>Faith<br>Morale<br>Self-Discipline</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="martian-authorities-concerned-as-opa-takes-credit-for-ceres-human-trafficking-bust" tabindex="-1">Martian Authorities Concerned as OPA Takes Credit for Ceres Human Trafficking Bust</h2>
+<p><em>By Renzo Kim, Far Olympus Enterprises</em></p>
+<p><strong>CERES STATION</strong>— A major human trafficking operation on Ceres has been dismantled in a high-profile crackdown led by local security forces under OPA control. While this should be a victory for law and order, the lack of involvement from Martian or UN authorities raises serious concerns about how justice is being administered in the Belt—and whether the OPA is truly cleaning house or merely consolidating power.</p>
+<p>Among those arrested was Asgard Zo, a former freight hauler with suspected ties to smuggling operations across the Belt. Zo, known for moving illicit cargo, is believed to have played a role in the illegal transport of Belters under false pretences, though reports suggest he may have been coerced into the trade. With his capture, investigators may gain insight into the larger networks funding forced labour operations in the outer planets—assuming OPA-controlled Ceres Security actually follows through.</p>
+<h3 id="opa-s-tightening-grip-on-ceres" tabindex="-1">OPA’s Tightening Grip on Ceres</h3>
+<p>Following the bust, Anderson Dawes wasted no time taking credit, publicly declaring:</p>
+<p><em>&quot;Ceres belongs to Beltalowda, and we will not let parasites prey on our own. The Inners never protected us, so we protect ourselves.&quot;</em></p>
+<p>While the statement plays well among Belters, Martian analysts see it differently—as yet another sign that the OPA is using crime-fighting as a political tool. Dawes’ rapid claim of responsibility suggests this was not just about stopping human trafficking but also about sending a message: Ceres belongs to the OPA now, and neither Mars nor Earth has a say in how it is governed.</p>
+<h3 id="where-is-the-real-justice" tabindex="-1">Where is the Real Justice?</h3>
+<p>The operation liberated dozens of trafficked Belters, many of whom were promised safe passage to Ganymede or Tycho but were instead funnelled into forced labour operations. However, with Ceres Security fully under OPA control, Martian authorities have little oversight over how this case will proceed.</p>
+<p>The MCRN’s Intelligence Division has been tracking similar human trafficking networks operating in the Belt and has repeatedly called for greater coordination between Martian security forces and OPA-controlled stations. Yet, despite the clear criminal connections that extend beyond the Belt, OPA leadership continues to act unilaterally, rejecting any external intervention.</p>
+<p><em>&quot;If the OPA is truly committed to fighting crime, they should be willing to cooperate with legitimate law enforcement agencies,&quot;</em> stated Commander Felix Moran, a spokesperson for the MCRN’s Outer Planets Enforcement Taskforce. <em>&quot;Instead, they seize opportunities like this to legitimize their rule while shutting out any real accountability.&quot;</em></p>
+<h3 id="what-comes-next" tabindex="-1">What Comes Next?</h3>
+<p>While the operation was successful, the real question is what happens next. Will Asgard Zo and other detainees face a proper trial, or will justice be handled in the shadows? Will this truly mark the beginning of a Belt-wide effort against human trafficking, or is it simply a selective crackdown meant to eliminate rival criminal factions while keeping OPA-friendly operations intact?</p>
+<p>With Mars maintaining patrols in the outer system, officials will be watching closely to see if this bust leads to genuine reform or if Ceres is simply trading one kind of lawlessness for another. Until the OPA proves it can administer justice fairly—and without using it as a political weapon—Martian authorities will remain deeply sceptical of Dawes’ self-proclaimed victory.</p>
+<hr>
+<h2 id="kt-endeavour-disaster-another-eros-cover-up" tabindex="-1">KT Endeavour Disaster: Another Eros Cover-Up?</h2>
+<p><em>By Jordan Kaine, Pyramid News Network (PNN)</em></p>
+<p><strong>CALLISTO</strong>— The Kruger-Thompson cargo freighter KT Endeavour is gone, its crew dead, and the official explanation? A &quot;mechanical failure.&quot; Sound familiar? Because it should. This has all the markings of another Eros-style cover-up, and we at PNN aren’t buying the corporate lies.</p>
+<p>Let’s talk facts. A ship doesn’t just lose atmosphere instantly unless something catastrophic happens. But here’s where it gets interesting—sources claim that the MCRN was monitoring the region before the disaster, and Kruger-Thompson has moved quickly to shut down outside investigations.</p>
+<h3 id="connections-to-eros-and-the-venus-silence" tabindex="-1">Connections to Eros and the Venus Silence</h3>
+<p>It’s been months since Eros slammed into Venus, and yet we’re still locked out of real data on what’s happening there. UN scientists aren’t talking, transmissions aren’t being shared, and now we have a supply freighter mysteriously destroyed? Coincidence? Or is someone making sure the wrong people don’t start asking the right questions?</p>
+<p>Here’s what the Inners want you to ignore:</p>
+<ul>
+<li>The Endeavour was operating near key trade routes connected to the Venus blockade.</li>
+<li>Sources suggest it was carrying classified cargo—something Kruger-Thompson does not want the public to know about.</li>
+<li>The same corporate forces that covered up Eros are now locking down the Endeavour's wreckage, keeping independent investigators out.</li>
+</ul>
+<h3 id="what-were-they-hiding" tabindex="-1">What Were They Hiding?</h3>
+<p>Speculation is running wild, and for good reason. Was the Endeavour transporting materials linked to whatever’s happening on Venus? Did the UNN or MCRN take it out to prevent leaks? Or worse—did the crew of the Endeavour see something they weren’t supposed to?</p>
+<p>A Martian deep-space patrol was spotted in the area suspiciously fast, and Kruger-Thompson executives have been conveniently unavailable for comment. One high-level insider even suggested that this &quot;accident&quot; was meant to erase evidence of a secret supply operation—possibly related to scientific research on Venus itself.</p>
+<p>If you think this sounds crazy, ask yourself this: Why are the same people who lied about Eros the ones telling you to ignore the Endeavour?</p>
+<p>This isn’t just another corporate disaster. Something bigger is happening. And if history has taught us anything, it’s that the truth will only come out if we demand it.</p>
+<hr>
+<h2 id="other-news" tabindex="-1">Other News</h2>
+<h3 id="earth-based-charity-accused-of-trafficking-medical-supplies" tabindex="-1">Earth-Based Charity Accused of Trafficking Medical Supplies</h3>
+<p>HopeBridge International, a Basic-funded NGO, has been accused of rerouting donated medical supplies to corporate buyers instead of Belt clinics. An internal UN audit is underway, though critics argue enforcement in Luna-based operations remains lax.</p>
+<h3 id="opa-patrol-breaks-ossifex-black-market-ring-on-ceres" tabindex="-1">OPA Patrol Breaks Ossifex Black Market Ring on Ceres</h3>
+<p>A major bust led by Dawes-aligned security forces uncovered a criminal ring diluting Ossifex prescriptions and selling the real doses on the black market. The scheme, allegedly run by Earther Dr. Donald Hanlon, has been tied to multiple Belter deaths.</p>
+<h3 id="martian-colonial-assembly-debates-independence-from-earth-trade-pacts" tabindex="-1">Martian Colonial Assembly Debates Independence from Earth Trade Pacts</h3>
+<p>The Red Bloc, a political faction within Mars’ Colonial Assembly, has introduced a motion to suspend mutual trade protocols with Earth, citing “chronic exploitation and imbalance.” Though unlikely to pass, the motion reflects growing Martian assertiveness post-Eros.</p>
+<h3 id="ceres-security-arrests-alleged-voltaire-collective-sleeper-cell" tabindex="-1">Ceres Security Arrests Alleged Voltaire Collective Sleeper Cell</h3>
+<p>Three individuals arrested in Mendel District are suspected of planning infrastructure sabotage on behalf of the Voltaire Collective. While details remain scarce, the arrests have sparked fear of further Inner-targeted violence within OPA-controlled space.</p>
 </main>
 <aside>
 <div class="sidebar">
@@ -400,9 +386,53 @@ CTRL + K
 <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
 </div>
 </div>
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#martian-authorities-concerned-as-opa-takes-credit-for-ceres-human-trafficking-bust">Martian Authorities Concerned as OPA Takes Credit for Ceres Human Trafficking Bust</a>
+<ol>
+<li><a href="#opa-s-tightening-grip-on-ceres">OPA’s Tightening Grip on Ceres</a>
+</li>
+<li><a href="#where-is-the-real-justice">Where is the Real Justice?</a>
+</li>
+<li><a href="#what-comes-next">What Comes Next?</a>
+</li>
+</ol>
+</li>
+<li><a href="#kt-endeavour-disaster-another-eros-cover-up">KT Endeavour Disaster: Another Eros Cover-Up?</a>
+<ol>
+<li><a href="#connections-to-eros-and-the-venus-silence">Connections to Eros and the Venus Silence</a>
+</li>
+<li><a href="#what-were-they-hiding">What Were They Hiding?</a>
+</li>
+</ol>
+</li>
+<li><a href="#other-news">Other News</a>
+<ol>
+<li><a href="#earth-based-charity-accused-of-trafficking-medical-supplies">Earth-Based Charity Accused of Trafficking Medical Supplies</a>
+</li>
+<li><a href="#opa-patrol-breaks-ossifex-black-market-ring-on-ceres">OPA Patrol Breaks Ossifex Black Market Ring on Ceres</a>
+</li>
+<li><a href="#martian-colonial-assembly-debates-independence-from-earth-trade-pacts">Martian Colonial Assembly Debates Independence from Earth Trade Pacts</a>
+</li>
+<li><a href="#ceres-security-arrests-alleged-voltaire-collective-sleeper-cell">Ceres Security Arrests Alleged Voltaire Collective Sleeper Cell</a>
+</li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+</div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/diomedes-spear/rules/ability-tests/" data-note-icon="" class="backlink">Ability Tests</a>
+<div class="backlink-list"><div class="backlink-card">
+<span class="no-backlinks-message">No other pages mentions this page</span>
 </div></div>
 </div>
 </div>

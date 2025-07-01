@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Abilities and Focuses</title>
+<title>Universe Brief</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -88,7 +88,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/background/universe-brief/">Universe Brief </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/background/universe-brief/">Universe Brief </a>
 </div>
 </div>
 </div>
@@ -198,7 +198,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -307,67 +307,48 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T06:47:42.717Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T06:47:42.717Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T06:47:42.717Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Abilities and Focuses</h1>
+<h1 data-note-icon="">Universe Brief</h1>
 <div class="header-meta">
 </div>
 </header>
-<p>Use for <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/ability-tests/">Ability Tests</a></p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Ability</th>
-<th>Description</th>
-<th><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Accuracy</td>
-<td>Accuracy measures aim and precision, and measures your ability to hit targets with ranged or thrown weapons.</td>
-<td>Gunnery<br>Pistols<br>Rifles<br>Throwing</td>
-</tr>
-<tr>
-<td>Communication</td>
-<td>Communication covers social skills and generally making friends and influencing people.</td>
-<td>Bargaining<br>Deception<br>Disguise<br>Etiquette<br>Expression<br>Gambling<br>Investigation<br>Leadership<br>Performing<br>Persuasion<br>Seduction</td>
-</tr>
-<tr>
-<td>Constitution</td>
-<td>Constitution is your character’s overall health, fortitude, and resistance to harm, illness, and fatigue.</td>
-<td>Running<br>Stamina<br>Swimming<br>Tolerance</td>
-</tr>
-<tr>
-<td>Dexterity</td>
-<td>Dexterity covers deftness, agility, and reaction time, affecting how quickly and gracefully you move.</td>
-<td>Acrobatics<br>Crafting<br>Driving<br>Free-fall<br>Initiative<br>Piloting<br>Sleight of Hand<br>Stealth</td>
-</tr>
-<tr>
-<td>Fighting</td>
-<td>Fighting is your character’s capability and prowess in close combat, ranging from a brawl to wielding weapons.</td>
-<td>Brawling<br>Grappling<br>Heavy Weapons<br>Light Weapons</td>
-</tr>
-<tr>
-<td>Intelligence</td>
-<td>Intelligence measures a character’s reasoning, memory, problem-solving, and overall knowledge.</td>
-<td>Art<br>Business<br>Cryptography<br>Current Affairs<br>Demolitions<br>Engineering<br>Evaluation<br>Law<br>Medicine<br>Navigation<br>Research<br>Science<br>Security<br>Tactics<br>Technology</td>
-</tr>
-<tr>
-<td>Perception</td>
-<td>Perception is the ability to pick up on and notice things using any of the character’s senses.</td>
-<td>Empathy<br>Hearing<br>Intuition<br>Searching<br>Seeing<br>Smelling<br>Survival<br>Tasting<br>Touching<br>Tracking</td>
-</tr>
-<tr>
-<td>Strength</td>
-<td>Strength is sheer muscle power and the ability to apply it, from lifting heavy things to feats of athletics.</td>
-<td>Climbing<br>Intimidation<br>Jumping<br>Might</td>
-</tr>
-<tr>
-<td>Willpower</td>
-<td>Willpower measures self control, self-discipline, mental fortitude, confidence.</td>
-<td>Courage<br>Faith<br>Morale<br>Self-Discipline</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="variance-from-tv" tabindex="-1">Variance from TV</h2>
+<p>Our universe is more closely aligned with the books timeline. This is how it varies from the TV timeline.</p>
+<h3 id="timing" tabindex="-1">Timing</h3>
+<p>After Eros crashed into Venus, there was around six months of peace before the events around Ganymede kick off.</p>
+<h3 id="ceres" tabindex="-1">Ceres</h3>
+<p>Around the time Miller left Ceres the UN withdrew from Ceres due to riots. The OPA is now in charge of Ceres, with Anderson Dawes the Governor in all. It name.</p>
+<p>Star Helix (an Earth company) no longer has the security contract, although many of the former Star Helix employees are now employed by the Ceres Security service.</p>
+<h3 id="the-belt" tabindex="-1">The Belt</h3>
+<p>The UN also withdrew from The Belt, returning all UNN Belt assets to the protection of Earth. The UNN still has a Jupiter Fleet which protects Earth's interests in the Jovian and Saturnian systems.</p>
+<p>During this time Tycho Station contracted the Rocinante to help fill the power vacuum, especially patrolling for pirates.</p>
+<h3 id="characters" tabindex="-1">Characters</h3>
+<h4 id="fred-johnson-and-anderson-dawes" tabindex="-1">Fred Johnson and Anderson Dawes</h4>
+<p>At this stage, their relationship is not as antagonised as it is the the TV Show. They are rival within the OPA, but are not in open conflict with each other.</p>
+<h4 id="paolo-cortazar-protogen-scientist" tabindex="-1">Paolo Cortázar (Protogen scientist)</h4>
+<p>There was many scientists who survived the belters' raid on Thoth station. All these scientists were taken and jailed at three different black sites throughout the Belt. None were taken to Tyco Station.</p>
+<h4 id="jules-pierre-mao" tabindex="-1">Jules-Pierre Mao</h4>
+<p>While elements of the UN were aware of Jules-Pierre Mao's involvement with the protomolicule, this know is not yet public.</p>
+<h4 id="drummer" tabindex="-1">Drummer</h4>
+<p>The Drummer TV show character is a composite of four different characters from the books (Michio Pa, Bull, Samara Rosenberg and Drummer). Since it will be easier, and because she is just so damn awesome, the TV Version of Drummer will exist in our universe.</p>
+<hr>
+<h2 id="public-knowledge" tabindex="-1">Public knowledge</h2>
+<p>Below is a listing of what you (as a member of the public living on Ceres) would know about the events of Leviathan Wakes (Seasons 1, 2 and part of 3).</p>
+<h3 id="destruction-of-the-cant" tabindex="-1">Destruction of The Cant</h3>
+<p>Some guy called James Holden made a system wide broadcast claiming that The Canterbury (a Pur n Clean ice hauler) has been destroyed. He tied the attack to Mars. The Martian government publicly denied these claims.</p>
+<p>The loss of the Cant and it's scheduled load of ice meant that the tight water rationing became even tighter.</p>
+<p>Anger over the Inner's destruction of a Belter ship as well as the impact of the increased water restrictions resulted in riots in Ceres.</p>
+<h3 id="destruction-of-the-donnager" tabindex="-1">Destruction of the Donnager</h3>
+<p>Shortly after the destruction of The Cant, and around the same location, the MCRN Donnager was also destroyed. The Donnager was the largest warship ever made, and it's destruction sent shockwave around the solar system.</p>
+<p>The Martian Congressional Republic initially accused the OPA for the destruction of the Donnager. But doubts about the the OPA's capacity to produce stealth ships lead to increased suspicions that Earth was the culprit.</p>
+<p>Many Martian commentators were publicly calling for Mars to go to war with Earth.</p>
+<h3 id="un-withdrawal-from-ceres" tabindex="-1">UN withdrawal from Ceres</h3>
+<p>Whilst the UNN had a numbers advantage over the MCRN, one-on-one the MCRN ship were far superior. With the increased likelihood of war breaking out, the UNN withdrew from Ceres and the Belt to shore up their Jovian and Home fleets.</p>
+<p>The power vacuum left by the UN withdrawal from Ceres was filled by the OPA. Anderson Dawes became the de factor governor of Ceres. Dawes terminated the Ceres Security contract with Star Helix (an Earth based company) and handed it to the OPA. Many former Star Helix employees transferred to OPA security.</p>
+<p>Many Earth-based companies withdrew from Ceres, sending it's economy into recession.</p>
+<h3 id="eros-incident" tabindex="-1">Eros Incident</h3>
+<p>A few months after the destruction of The Cant, a ship exploded in Eros Station's docks, creating in a huge radiation leak on board and leading to in going into full lockdown. As per usual procedure the station was placed under full quarantine by the UNN and the MCRN.</p>
+<p>Rumours started circulating about what happened on Eros, ranging from terrorist attack through to biological weapons experiment. These rumours were further fuelled when some Belters discovered audio broadcasts from the station. Throughout the belt there were feeds that streamed these almost surreal broadcasts, containing seemingly disjointed words. These broadcasts were sampled and remixed into music creating a new genre called New Banger.</p>
+<p>Without warning Eros moved, like it was turned into a spaceship. It started accelerating towards the inner planets, and eventually crashed into Venus. At this point the broadcasts ceased.</p>
 </main>
 <aside>
 <div class="sidebar">
@@ -400,9 +381,57 @@ CTRL + K
 <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
 </div>
 </div>
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#variance-from-tv">Variance from TV</a>
+<ol>
+<li><a href="#timing">Timing</a>
+</li>
+<li><a href="#ceres">Ceres</a>
+</li>
+<li><a href="#the-belt">The Belt</a>
+</li>
+<li><a href="#characters">Characters</a>
+<ol>
+<li><a href="#fred-johnson-and-anderson-dawes">Fred Johnson and Anderson Dawes</a>
+</li>
+<li><a href="#paolo-cortazar-protogen-scientist">Paolo Cortázar (Protogen scientist)</a>
+</li>
+<li><a href="#jules-pierre-mao">Jules-Pierre Mao</a>
+</li>
+<li><a href="#drummer">Drummer</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#public-knowledge">Public knowledge</a>
+<ol>
+<li><a href="#destruction-of-the-cant">Destruction of The Cant</a>
+</li>
+<li><a href="#destruction-of-the-donnager">Destruction of the Donnager</a>
+</li>
+<li><a href="#un-withdrawal-from-ceres">UN withdrawal from Ceres</a>
+</li>
+<li><a href="#eros-incident">Eros Incident</a>
+</li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+</div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/diomedes-spear/rules/ability-tests/" data-note-icon="" class="backlink">Ability Tests</a>
+<div class="backlink-list"><div class="backlink-card">
+<span class="no-backlinks-message">No other pages mentions this page</span>
 </div></div>
 </div>
 </div>
