@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Space Combat</title>
+<title>Peterson on Eros</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -181,7 +181,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/random-silly-stuff/peterson-on-eros/">Peterson on Eros </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/random-silly-stuff/peterson-on-eros/">Peterson on Eros </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -250,7 +250,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/space-combat/">Space Combat </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/space-combat/">Space Combat </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -307,534 +307,33 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-01T08:13:16.689Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-01T08:13:16.689Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-01T08:13:16.689Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Space Combat</h1>
+<h1 data-note-icon="">Peterson on Eros</h1>
 <div class="header-meta">
 </div>
 </header>
-<h2 id="combat-steps" tabindex="-1">Combat Steps</h2>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th><strong>Step</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Command<br><em>Captain</em></td>
-<td>The character in command of the ship issues orders, determining how hard the crew can push themselves this turn and what advantages the commander’s leadership grants.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Manoeuvres<br><em>Pilot</em></td>
-<td>At the start of a round of combat, determine the range between the ships involved.<br><br>Space combat ranges fall into one of three broad bands:<br>- Long Range<br>- Medium Range<br>- Close Range or CQB (Close Quarters Battle)<br><br>Range determines effective weapon attacks and defences.<br><br>Ships can attempt to manoeuvre to extend or close the distance between them.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Electronic Warfare<br><em>Comms Officer</em></td>
-<td>Determine the effectiveness of the ship’s sensor information and any efforts to deceive enemy sensors, and therefore targeting, using electronic warfare techniques.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Weapon Attacks<br><em>Weapons Officer</em></td>
-<td>All ships involved in the combat select targets and make attacks with their available weapons.</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Defensive Actions<br><em>Pilot and</em><br><em>Weapons Officer</em></td>
-<td>All targets of weapon attacks take defensive actions, including evasion and the use of point defence weapons.</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Attack Damage<br><em>Engineer</em></td>
-<td>Resolve the damage of any weapon attack that successfully gets past defences in Step 5.</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Damage Control<br><em>Engineer</em></td>
-<td>If a ship suffers losses due to damage but is not taken out, its crew can attempt to minimize the effects of the losses.</td>
-</tr>
-</tbody>
-</table></div>
-<h2 id="commander-actions" tabindex="-1">Commander Actions</h2>
-<h3 id="step-1-command" tabindex="-1">Step 1: Command</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Command Test</td>
-<td>TN11 Communication (Leadership Test)</td>
-</tr>
-<tr>
-<td>Success</td>
-<td>1SP + Drama Die SP with doubles</td>
-</tr>
-<tr>
-<td>Stunt Points</td>
-<td>Can be used or passed to crew who can bank or use the SP</td>
-</tr>
-<tr>
-<td>Planning</td>
-<td>Allows a commander to spend the round setting up a future stunt by allowing them to save SP toward a specific goal.<br><br>To attempt a plan, the commander must declare the stunt (or combination of stunts) they are working toward and make a TN 13 Intelligence (Tactics) test. Instead of spending any stunt points earned, they are banked and can be used in a future round. Success grants 2 SP or the result of the drama die if doubles are rolled.<br><br>These SP cannot be used on the same round and must be held until the next (or later) round. A commander can continue making this test until they have enough SP for the desired stunt.<br><br>Planning cannot be used simply to increase the effectiveness of a specific stunt, such as Guidance or Evasive Action, but can only be spent building toward a stunt with a specific cost.</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="command-stunts" tabindex="-1">Command Stunts</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th><strong>SP</strong></th>
-<th><strong>Stunt</strong></th>
-<th><strong>Details</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1+</td>
-<td>Guidance</td>
-<td>+1 bonus to chosen ship combat test this round.<br><br>Choose from:<br>- manoeuvre test<br>- electronic warfare test<br>- evasion test<br>- point defence test<br>- damage control test</td>
-<td></td>
-</tr>
-<tr>
-<td>1+</td>
-<td>Blinding Manoeuvre</td>
-<td>Reduces an opposing ship’s Sensors score by 1 (to a minimum score of –2) until the start of the next round.</td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td>Multi-targeting</td>
-<td>PBCs can both attack and defend this round without any penalty.</td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td>Down With the Ship</td>
-<td>In an act of heroism, the commander can expend their own Fortune to remove damage taken by other characters (as the result of a Collateral Loss) on board the ship.</td>
-<td></td>
-</tr>
-<tr>
-<td>2+</td>
-<td>On-target</td>
-<td>Increases the TN of tests to evade your ship’s weapon attacks that round by +1.</td>
-<td></td>
-</tr>
-<tr>
-<td>2+</td>
-<td>Tactics</td>
-<td>Increases the TN of an opposing ship commander’s next command test by +1.</td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>Perceived weakness</td>
-<td>You increase the damage of one successful weapon attack by 1d6.</td>
-<td></td>
-</tr>
-<tr>
-<td>3+</td>
-<td>Evasive Action</td>
-<td>Grants a +1d6 Hull bonus to your ship that round for resisting damage from successful weapon attacks.</td>
-<td></td>
-</tr>
-<tr>
-<td>3+</td>
-<td>Calculation</td>
-<td>You can bank the SP you just spent for this stunt +1 and use them on a later stunt. You can also combine these SP with future SP earned.</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>Precise hit</td>
-<td>One successful weapon attacks results in an additional Loss, even if the target’s Hull completely eliminated the damage</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>Skimming</td>
-<td>If a space battle takes place near a planet with an atmosphere, you can dive into the planet’s atmosphere to avoid being targeted and perhaps even lose your pursuer completely.<br><br>Your pilot must make an opposed TN 17 Dexterity (Piloting) test to succeed.<br>- Success -&gt; the pursuing ship loses track of your ship in the atmosphere, at least temporarily.<br><br>On following rounds, the pursuing ship can make opposed TN 11 Intelligence (Technology) + Sensors tests to reacquire a target on your ship.</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>Too Close</td>
-<td>To perform this stunt, you must be engaged against multiple enemy ships and at close range to one that is of at least one size class larger. A space station can also count as a larger ship.<br><br>The pilot manoeuvres into a position that makes it difficult for enemies to target your ship without risking damage to the other ship.<br><br>During the Manoeuvre phase, the pilot must make a successful opposed TN 15 Dexterity (Piloting) test against the larger ship at -2. The difficulty is reduced by 1 for every additional size class greater the enemy ship is than the crew’s ship.<br><br>- Success -&gt; the pilot gains a +2 to their evasion test against any ships other than the ship they are using for cover<br>- Any attacks that miss the crew’s ship hit the larger ship if the pilot rolls a 5 or 6 on the Drama Die.<br>- If both ships fail the piloting test -&gt; the ships collide, causing 2d6 damage to the larger ship and 4d6 damage to the smaller ship.</td>
-<td></td>
-</tr>
-<tr>
-<td>4+</td>
-<td>Set-up</td>
-<td>You manoeuvre an opposing ship into a hazard, such as a normally shorter-range weapon, a field of debris, or even a floating rock.<br><br>This stunt is considered a weapon attack inflicting damage dice equal to half the SP spent (round down).<br><br>Can be evaded with the TN = 10 + your Intelligence + Leadership focus (if any) + half the SP spent</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>Burn Them</td>
-<td>An Epstein drive emits a powerful drive plume that can, in a pinch, be used as a weapon. To do this successfully, the ship must be at close range and perform a sudden flip and burn that points the drive plume directly at the enemy ship.<br><br>The ships must be at extremely close range, so this manoeuvre can’t be used in normal engagements - only if circumstances have dictated that the ships are very close (under 1 km). Unfortunately, this manoeuvre leaves the crew’s ship vulnerable and open to attack.<br><br>To successfully perform this manoeuvre, the pilot must also make a successful opposed TN 19 Dexterity (Piloting) test against the other ship at -2. If successful, the other ship is engulfed in your drive plume, causing 6d6 damage. The downside is that only rear-facing weapons can fire while the ship performs this manoeuvre, and enemy ships have a +2 to their evasion tests. Also, due to being in an exposed position, all evasion tests are at -2. If the pilot fails this test, they fail to engulf the enemy ship with the drive plume but still suffer all of the associated penalties.</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>Weapon Online</td>
-<td>One of the crew can temporarily bring a damaged weapon, or a weapon that has run out of ammo, back online.<br><br>A character can attempt a TN 14 Intelligence (Engineering) or Dexterity (Gunnery) test to bring a weapon back online.<br><br>The weapon can make 1d3 shots before giving up the ghost for good, requiring a proper repair. The weapon cannot be brought back online again without the ship receiving full maintenance at a spaceport.</td>
-<td></td>
-</tr>
-<tr>
-<td>6</td>
-<td>Quick Start</td>
-<td>The crew can attempt to make a quick repair and restart the ship’s reactor.<br><br>This requires two characters to work together; one must make a TN 14 Intelligence (Technology) test and another must make a TN 14 Intelligence (Engineering) test, and they must reach a threshold of 15.</td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>Misdirect</td>
-<td>When attempting to outrun a torpedo, you can fly close to another ship to try to get the torpedo to hit that ship instead of your own. You perform a flip and burn when near another ship.<br><br>The pilot must make a successful opposed Dexterity (Piloting) test against the other ship and another member of the crew must make a TN 17 Technology (Intelligence) test. If both are successful, the torpedo impacts the other ship instead.</td>
-<td></td>
-</tr>
-</tbody>
-</table></div>
-<h2 id="pilot-actions" tabindex="-1">Pilot Actions</h2>
-<h3 id="step-2-manoeuvres" tabindex="-1">Step 2: Manoeuvres</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Change Range</td>
-<td>Automatically change by one range band</td>
-</tr>
-<tr>
-<td>Prevent change</td>
-<td>- Opposed Dexterity (Piloting) test between the two ships to prevent change in range<br>- Smaller ship getting a +1 bonus per Size category smaller than the larger ship</td>
-</tr>
-<tr>
-<td>High-G Manoeuvring</td>
-<td>- Adds a bonus from +1 to +6 to the manoeuvre test result<br>- Allows the ship to shift up to two range bands.</td>
-</tr>
-<tr>
-<td>High-G effects</td>
-<td>Requires all characters on board to perform a Constitution (Stamina) test with a TN of 8 + manoeuvre bonus:<br>- failure -&gt; the character suffers 1d6 penetrating damage per point of manoeuvre bonus<br>- success -&gt; half 1d6 penetrating damage per point of manoeuvre bonus</td>
-</tr>
-<tr>
-<td>The Juice</td>
-<td>Characters with access to the juice can take fatigued and exhausted conditions first to mitigate the damage before they take injured or wounded conditions, otherwise they have to take just injured and wounded conditions.</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="step-5-defensive-actions" tabindex="-1">Step 5: Defensive Actions</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Evade Torpedo</td>
-<td>Complete a Evade test for each torpedo<br>- Launched from Long Range -&gt; cannot evade, only shoot down<br>- Launched from Medium Range -&gt; 3d6 + Dex (Piloting) vs. TN 12 + attacking ship sensors + attack bonus<br>- Launched from Short Range -&gt; 3d6 + Dex (Piloting) vs. TN 10 + attacking ship sensors + attack bonus</td>
-</tr>
-<tr>
-<td>Evade Railgun</td>
-<td>- Long Range -&gt; automatic success<br>- Medium Range -&gt;&gt; 3d6 + Dex (Piloting) vs. TN 10 + attacking ship sensors + attack bonus<br>- Short Rang-&gt; -&gt; 3d6 + Dex (Piloting) vs. TN 12 + attacking ship sensors + attack bonus</td>
-</tr>
-<tr>
-<td>Evade PDC</td>
-<td>- Long Range -&gt; automatic success<br>- Medium Range -&gt; automatic success<br>- Short Range -&gt; 3d6 + Dex (Piloting) vs. TN 10 + attacking ship sensors + attack bonus<br> - If opponent used PDC for defence and attack -&gt; TN 8</td>
-</tr>
-<tr>
-<td>High-G Manoeuvring</td>
-<td>- Adds a bonus from +1 to +6 to the evasion test result</td>
-</tr>
-<tr>
-<td>High-G effects</td>
-<td>Requires all characters on board to perform a Constitution (Stamina) test with a TN of 8 + manoeuvre bonus:<br>- failure -&gt; the character suffers 1d6 penetrating damage per point of manoeuvre bonus<br>- success → half 1d6 penetrating damage per point of manoeuvre bonus</td>
-</tr>
-<tr>
-<td>The Juice</td>
-<td>Characters with access to the juice can take fatigued and exhausted conditions first to mitigate the damage before they take injured or wounded conditions, otherwise they have to take just injured and wounded conditions.</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="piloting-stunts" tabindex="-1">Piloting Stunts</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th><strong>SP</strong></th>
-<th><strong>Stunt</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1+</td>
-<td>Blinding Manoeuvre</td>
-<td>Reduces an opposing ship’s Sensors score by 1 (to a minimum score of –2) until the start of the next round.</td>
-</tr>
-<tr>
-<td>2+</td>
-<td>Steady as She Goes</td>
-<td>Pilot can lessen the potential high-g manoeuvres damage to passengers. For every 2 SP spent the TN for the Constitution (Stamina) test is reduced by 1.</td>
-</tr>
-<tr>
-<td>3+</td>
-<td>Evasive Action</td>
-<td>Grants a +1d6 Hull bonus to your ship that round for resisting damage from successful weapon attacks.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Blockade</td>
-<td>The pilot manoeuvres the ship to make it difficult for an enemy ship to fire on or pursue its chosen target (unless that target is the pilot’s ship).<br><br>The enemy ship suffers a -2 penalty to any manoeuvre test to pursue or attack its original target. Or the targeted ship gets a +2 to its evasion test.</td>
-</tr>
-<tr>
-<td>4+</td>
-<td>Set-up</td>
-<td>You manoeuvre an opposing ship into a hazard, such as a normally shorter-range weapon, a field of debris, or even a floating rock.<br><br>This stunt is considered a weapon attack inflicting damage dice equal to half the SP spent (round down).<br><br>Can be evaded with the TN = 10 + your Intelligence + Leadership focus (if any) + half the SP spent</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Dauntless</td>
-<td>The pilot aims their ship at an enemy ship as if to ram it, to cause it to veer off course and miss their attack opportunity. This manoeuvre can only be used when the ships are already at close range.<br><br>The enemy ship must make a successful TN 15 Dexterity (Piloting) test or not be able to take any other action as they recover from the threat of being rammed. If the enemy ship doesn’t flinch, the pilot must make a successful TN 17 Dexterity (Piloting) test to avoid hitting the ship they were aiming at although their ship still gets to take other actions.</td>
-</tr>
-</tbody>
-</table></div>
-<h2 id="comms-officer-actions" tabindex="-1">Comms Officer Actions</h2>
-<h3 id="step-3-electronic-warfare" tabindex="-1">Step 3: Electronic Warfare</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EW Test</td>
-<td>Opposed Intelligence (Technology) test + Ship sensors vs TN 11<br><br>Winner gains half drama die (rounded up) bonus to apply to:<br>- Defensive actions<br>- TN of your attack that round</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="electronic-warfare-stunts" tabindex="-1">Electronic Warfare Stunts</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th><strong>SP</strong></th>
-<th><strong>Stunt</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2+</td>
-<td>Turnabout is Fair Play</td>
-<td>If a torpedo is being manually controlled, the sensors operator can attempt to wrest control of the torpedo from the other ship. If there is more than one torpedo, 2 SP can be spent to attempt to control each.<br><br>Opposed Intelligence (Technology) + Sensors test against the enemy ship.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Perceived weakness</td>
-<td>You increase the damage of one successful weapon attack by 1d6.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Hack the System</td>
-<td>While scanning the enemy ship for weaknesses, the sensors operator detects an opening in the enemy ship’s computer system. They can attempt to hack the enemy’s ship to temporarily disable one or more systems. To do this, a PC must make an opposed Intelligence (Technology) + Sensors test against the enemy ship. If successful, they can shut down one system on that ship (weapons, sensors, engines, etc.). They remain offline until someone on the enemy ship makes a successful TN 15 Intelligence (Technology) test.</td>
-</tr>
-</tbody>
-</table></div>
-<h2 id="weapons-officer-actions" tabindex="-1">Weapons Officer Actions</h2>
-<h3 id="step-3-weapon-attacks" tabindex="-1">Step 3: Weapon Attacks</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Attack</td>
-<td>Each of the ship’s weapons within range can attack an available target designated by a crew member with weapons control.</td>
-</tr>
-<tr>
-<td>Effective Weapon Ranges</td>
-<td>- Grapplers -&gt; up to Close<br>- PDCs -&gt; up to Close<br>- Rail Gun -&gt; up to Medium<br>- Torpedo -&gt; up to Long</td>
-</tr>
-<tr>
-<td>Torpedo time to impact</td>
-<td>- Close range -&gt; same round as launch<br>- Medium range -&gt; next round after launch<br>- Long range -&gt; two rounds after launch</td>
-</tr>
-<tr>
-<td>Targeted Attacks</td>
-<td>Characters can choose to fire a targeted weapon attack aimed at causing a particular type of loss to the target:<br><br>- Targets:<br> - Collateral -&gt; TN 11 -&gt; Hull modifier ¾<br> - Manoeuvrability -&gt; TN 13 -&gt; Hull modifier ⅓<br> - Sensors -&gt; TN 15 -&gt; Hull modifier ½<br> - Weapons -&gt; TN 15 -&gt; Hull modifier ½<br>- the attack cannot cause any effect greater than the intended loss<br>- cannot take out the target ship<br>- any damage in excess of the intended loss has no effect</td>
-</tr>
-<tr>
-<td>Gunnery skill</td>
-<td>Characters can replace the ship’s sensor score with their Dexterity (Gunnery) score.</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="step-5-defensive-actions-1" tabindex="-1">Step 5: Defensive Actions</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Point Defence</td>
-<td>Can only be used on torpedoes.<br><br>Can roll a point defence test for each torpedo in close range</td>
-</tr>
-<tr>
-<td>Point Defence Test</td>
-<td>3d6 + Sensors vs TN 10 + Attacking Ship's Sensors + attack bonuses<br><br>If PBC have been used for attack in this round TN 12</td>
-</tr>
-<tr>
-<td>Gunnery skill</td>
-<td>Characters can replace the ship’s sensor score with their Dexterity (Gunnery) score.</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="weapons-officer-stunts" tabindex="-1">Weapons Officer Stunts</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th><strong>SP</strong></th>
-<th><strong>Stunt</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td>Multi-targeting</td>
-<td>PBCs can both attack and defend this round without any penalty.</td>
-</tr>
-<tr>
-<td>2+</td>
-<td>On-target</td>
-<td>Increases the TN of tests of your opponent to evade your ship’s weapon attacks that round by +1.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Precise hit</td>
-<td>One successful weapon attack results in an additional Loss, even if the target’s Hull completely eliminated the damage</td>
-</tr>
-</tbody>
-</table></div>
-<h2 id="engineer-actions" tabindex="-1">Engineer Actions</h2>
-<h3 id="step-6-weapon-attacks" tabindex="-1">Step 6: Weapon Attacks</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Attack damage roll</td>
-<td>- Grapplers -&gt; n/a<br>- PDCs -&gt; 2d6<br>- Rail Gun -&gt; 3d6<br>- Torpedo -&gt; 4d6</td>
-</tr>
-<tr>
-<td>Applying damage</td>
-<td>1. Subtract Hull Score<br>2. Apply loss conditions:<br> - 1 loss condition -&gt; reduces damage by 1d6<br> - 2 loss condition -&gt; reduces damage by 2d6<br>3. Any remaining damage -&gt; ship taken out</td>
-</tr>
-<tr>
-<td>Applying loss conditions</td>
-<td>- 1 loss condition -&gt; 2 normal losses<br>- 2 loss conditions -&gt; 4 normal losses or 1 serious loss</td>
-</tr>
-<tr>
-<td>Loss conditions</td>
-<td>1 -&gt; Collateral | Reactor Offline<br>2 -&gt; Hull | Reactor Offline<br>3 -&gt; Manoeuvrability systems | Reactor Offline<br>4 -&gt; Sensor systems | Weapons Offline<br>5 -&gt; Weapons systems | Weapons Offline<br>6 -&gt; Re-roll | Weapons Offline</td>
-</tr>
-<tr>
-<td>Manoeuvrability, sensor <br>and weapons systems losses</td>
-<td>- Each normal loss applies -1 to that system.<br>- Can stack up to 6 times after that, they are offline.</td>
-</tr>
-<tr>
-<td>Collateral losses</td>
-<td>for each collateral loss one crew members suffers the overflow damage (penetrating).</td>
-</tr>
-<tr>
-<td>Hull losses</td>
-<td>The amount of hull damage that can be applied depends on the ship’s hull score (the number of dice you roll for hull)</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="step-6-damage-control" tabindex="-1">Step 6: Damage Control</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Step 6: Damage Control</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>Damage control roll</td>
-<td>Loss off Manoeuvrability, Sensors, or Weapons can be eliminated with a damage control advanced test:<br>- Intelligence (Engineering) vs. TN 11<br>- success threshold is 5 for every loss on that system</td>
-</tr>
-<tr>
-<td>Restore offline reactor or weapons</td>
-<td>Temporarily restore offline system<br>- TN 13 basic Intelligence (Engineering) test<br>- restores system for a number of rounds equal to the Drama Die</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="engineer-stunts" tabindex="-1">Engineer Stunts</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th><strong>SP</strong></th>
-<th><strong>Stunt</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1+</td>
-<td>Not My Ship!</td>
-<td>The Engineer can spend Fortune to reduce damage taken by the ship just as it were part of the hull. For every SP spent on this stunt, the engineer can spend 1d6 Fortune to reduce damage</td>
-</tr>
-<tr>
-<td>3+</td>
-<td>Quick Fix</td>
-<td>Every 3 SP spent allows the engineer to instantly repair a single loss to Manoeuvrability, Sensors, or Weapons.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Patch</td>
-<td>The ship’s engineer can apply a quick weld job to temporarily reinforce hull damage. Attempt a TN 17 Intelligence (Engineering) test to make the patch. If successful, the temporarily remove hull losses up to the number rolled on the Drama Die by the engineer. This patch only lasts until the end of the combat, and the ship must then receive proper maintenance at a spaceport.</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Weapon Online</td>
-<td>One of the crew can temporarily bring a damaged weapon, or a weapon that has run out of ammo, back online.<br><br>A character can attempt a TN 14 Intelligence (Engineering) or Dexterity (Gunnery) test to bring a weapon back online.<br><br>The weapon can make 1d3 shots before giving up the ghost for good, requiring a proper repair. The weapon cannot be brought back online again without the ship receiving full maintenance at a spaceport.</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Quick Start</td>
-<td>The crew can attempt to make a quick repair and restart the ship’s reactor.<br><br>This requires two characters to work together; one must make a TN 14 Intelligence (Technology) test and another must make a TN 14 Intelligence (Engineering) test, and they must reach a threshold of 15.</td>
-</tr>
-</tbody>
-</table></div>
+<p>You see, the Eros Incident is not merely a historical event; it is a <em>biblical</em> event in its essence. It is an unveiling of the fallen nature of man—the hubris, the sin, and the inevitable suffering that follows when we abandon the Logos, the divine order, in favour of our own twisted ambitions. This is Cain slaying Abel on a planetary scale. This is the Tower of Babel, not just reaching to the heavens, but <em>penetrating</em> into the unknown depths of creation where man was never meant to tread.</p>
+<p>What happened on Eros was <em>sacrificial</em>—but not in the way that Christ was sacrificed for the redemption of mankind. This was the inversion of sacrifice. Instead of offering oneself in obedience to truth, the powerful offered the weak in obedience to ambition. This is the core of tyranny, the corruption that seeps into human institutions when they believe they can <em>create</em> meaning and <em>define</em> morality, rather than submit to the moral structure already present in the fabric of the universe.</p>
+<p>And we must ask: <em>why</em> did this happen? Why did Protogen, a corporation run by men and women like you and me—educated, strategic, ambitious—why did they <em>choose</em> to commit such a crime? It wasn’t mere greed. No, no, it was something much deeper.</p>
+<p>It was the same temptation that lurked in the Garden. It was the Serpent’s whisper: <em>You shall be as gods.</em></p>
+<p>That’s the lie that has seduced humanity since the beginning. The idea that we can redefine the cosmos on <em>our</em> terms, that we can <em>transcend</em> our limitations, that we can master forces beyond our understanding. And what did it lead to? The creation of a <em>new</em> god—a terrible, mindless god, consuming and reshaping everything in its image. This is the birth of an abomination, a golden calf made not of metal, but of suffering, flesh, and alien horror.</p>
+<p>And this is what people <em>don’t</em> understand about the moral structure of reality. We like to think we can dabble in the unknown, that we can grasp knowledge and <em>own</em> it, like it’s a commodity. But the Bible tells us something very different. It tells us that knowledge is <em>dangerous</em>. That without wisdom, without morality, knowledge doesn’t <em>free</em> you—it <em>enslaves</em> you. That’s what the Fall was about! Adam and Eve took the fruit, not because they were starving, not because they were in need, but because they <em>wanted to know</em>, they wanted to decide for <em>themselves</em> what was right and wrong.</p>
+<p>Protogen did the exact same thing. They found something beyond human comprehension, and instead of approaching it with humility, instead of treating it as sacred, they decided to <em>use</em> it. To <em>own</em> it. To <em>control</em> it.</p>
+<p>And look what happened.</p>
+<p>A plague upon a people who had no say in their own fate. The Belters were <em>sacrificed</em> to this new god of science without morality. But that’s always how these things go. The powerful never offer <em>themselves</em>. They don’t take up the Cross. They make others carry it for them. And that, my friends, is not just evil—it is <em>satanic</em>.</p>
+<p>Now, consider what followed. Eros <em>moved</em>. Eros <em>thought</em>. It was no longer just a station; it became something <em>else</em>. And this is where we enter truly biblical territory. Because Eros, as it fell into the grip of the protomolecule, became a city of the damned.</p>
+<p>Think of the story of Sodom and Gomorrah. A city so steeped in sin, in corruption, that it had to be destroyed—not just because the people were wicked, but because the <em>city itself</em> had become an abomination. The Eros Incident is the same story, told again, in the language of science fiction. The entire station became <em>possessed</em>, if you will, by an alien force that twisted everything it touched. And once it started moving toward Earth, it was no longer just a tragedy—it was an <em>apocalypse</em>.</p>
+<p>And that’s the warning here. That’s the <em>moral</em> of this catastrophe.</p>
+<p>We think we are the masters of creation. We think we are the builders of Babel, the rulers of our own destiny. But the moment we sever our knowledge from divine wisdom, the moment we try to wrestle control of the universe away from God, we don’t <em>gain</em> power. We <em>unleash</em> it. And once it is unleashed, it does <em>not</em> serve us—it <em>devours</em> us.</p>
+<p>Eros was a lesson. It was a demonstration of what happens when humanity plays at divinity. And what was the result? The whole world stood at the edge of annihilation, because a handful of people thought they could reach beyond what was rightfully theirs.</p>
+<p>So what do we learn from this?</p>
+<p>First, that suffering is the inevitable result of knowledge without wisdom. That is why scripture constantly warns us about arrogance. ‘Pride goeth before destruction, and a haughty spirit before a fall.’ And what is Eros but the <em>fall</em>? A world plunged into chaos because of the pride of a few.</p>
+<p>Second, we learn that power is never neutral. You cannot separate knowledge from morality. The idea that science is ‘just science,’ that progress is <em>always</em> good—this is an illusion. The world doesn’t work that way. The only thing that prevents <em>every</em> scientific breakthrough from turning into another Eros is <em>moral restraint</em>.</p>
+<p>And third, and perhaps most importantly, we learn that there are forces in this universe beyond our comprehension, and we would be wise to <em>fear</em> them. Whether you call it the protomolecule, the abyss, or something else, the lesson is the same: <em>Some doors are not meant to be opened.</em></p>
+<p>So what do we do?</p>
+<p>We <em>repent</em>. We recognize our limitations. We do not abandon knowledge, but we subordinate it to something <em>higher</em>. The way forward is not the reckless pursuit of power. The way forward is the <em>Logos</em>, the divine order, the wisdom that comes from humility before God.</p>
+<p>Because if we don’t learn this lesson—if we keep pretending that we are gods—then we will see another Eros.</p>
+<p>And next time, we might not survive it.&quot;</p>
+<p><em>&quot;Sort yourselves out, before it’s too late.&quot;</em></p>
 </main>
 <aside>
 <div class="sidebar">
@@ -867,70 +366,10 @@ CTRL + K
 <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
 </div>
 </div>
-<div class="toc">
-<div class="toc-title-container">
-<div class="toc-title">
-On this page
-</div>
-</div>
-<div class="toc-container">
-<nav class="toc">
-<ol>
-<li><a href="#combat-steps">Combat Steps</a>
-</li>
-<li><a href="#commander-actions">Commander Actions</a>
-<ol>
-<li><a href="#step-1-command">Step 1: Command</a>
-</li>
-<li><a href="#command-stunts">Command Stunts</a>
-</li>
-</ol>
-</li>
-<li><a href="#pilot-actions">Pilot Actions</a>
-<ol>
-<li><a href="#step-2-manoeuvres">Step 2: Manoeuvres</a>
-</li>
-<li><a href="#step-5-defensive-actions">Step 5: Defensive Actions</a>
-</li>
-<li><a href="#piloting-stunts">Piloting Stunts</a>
-</li>
-</ol>
-</li>
-<li><a href="#comms-officer-actions">Comms Officer Actions</a>
-<ol>
-<li><a href="#step-3-electronic-warfare">Step 3: Electronic Warfare</a>
-</li>
-<li><a href="#electronic-warfare-stunts">Electronic Warfare Stunts</a>
-</li>
-</ol>
-</li>
-<li><a href="#weapons-officer-actions">Weapons Officer Actions</a>
-<ol>
-<li><a href="#step-3-weapon-attacks">Step 3: Weapon Attacks</a>
-</li>
-<li><a href="#step-5-defensive-actions-1">Step 5: Defensive Actions</a>
-</li>
-<li><a href="#weapons-officer-stunts">Weapons Officer Stunts</a>
-</li>
-</ol>
-</li>
-<li><a href="#engineer-actions">Engineer Actions</a>
-<ol>
-<li><a href="#step-6-weapon-attacks">Step 6: Weapon Attacks</a>
-</li>
-<li><a href="#step-6-damage-control">Step 6: Damage Control</a>
-</li>
-<li><a href="#engineer-stunts">Engineer Stunts</a>
-</li>
-</ol>
-</li>
-</ol>
-</nav>
-</div>
-</div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/diomedes-spear/rules/interludes/" data-note-icon="" class="backlink">Interludes</a>
+<div class="backlink-list"><div class="backlink-card">
+<span class="no-backlinks-message">No other pages mentions this page</span>
 </div></div>
 </div>
 </div>
