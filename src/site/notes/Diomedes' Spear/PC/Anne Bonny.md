@@ -26,3 +26,12 @@
 | Point Defence Network | Close | 2d6    | Full Coverage |
 | Grapplers (2)         | Close | -      | Aft           |
 
+## Maintenance
+
+| Activity                       | Last time done |
+| ------------------------------ | :------------: |
+| Audit                          |       -        |
+| Ship maintenance - Hull        |       -        |
+| Ship maintenance - Manouvering |       -        |
+| Ship maintenance - Sensors     |       -        |
+| Ship maintenance - Weapons     |       -        |

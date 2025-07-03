@@ -18,5 +18,8 @@ And somewhere in the dark, something is stirring—something colder than vacuum,
 
 This is _Diomedes’ Spear_—a story of loyalty, betrayal, and survival in a solar system coming apart at the seams.
 
-**Buckle in, tolowda. Time to choose who you bleed for.**
+**Buckle in, Beltawala. Time to choose who you bleed for.**
 
+| Current Day |
+| :---------: |
+|    **1**    |
