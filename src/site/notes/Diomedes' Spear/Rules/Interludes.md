@@ -34,7 +34,7 @@ Each interlude is broken into 8 hour shifts. Players nominate what activity thei
 | Rationing                         | Allocating remaining consumables like air, food, or water to last longer.                                             | [[Diomedes' Spear/Rules/Interludes#Rationing\|Interludes#Rationing]]                         |
 | Recovery                          | Remove physical and health conditions and recover fortune.                                                            | [[Diomedes' Spear/Rules/Interludes#Recovery\|Interludes#Recovery]]                          |
 | Relating                          | Spending time to get to know someone better, or to change the nature or intensity of a relationship.                  | [[Diomedes' Spear/Rules/Interludes#Relating\|Interludes#Relating]]                          |
-| Reputation                        | Working to bolster or diminish a character's reputation.                                                              | [[Diomedes' Spear/Rules/Interludes#Reputation\|Interludes#Reputation]]                        |
+| Reputation Maintenance            | Working to bolster or diminish a character's reputation.                                                              | [[Diomedes' Spear/Rules/Interludes#Reputation Maintenance\|Interludes#Reputation Maintenance]]            |
 | Researching                       | Looking up or digging for story related information                                                                   | [[Diomedes' Spear/Rules/Interludes#Researching\|Interludes#Researching]]                       |
 | Ship Maintenance                  | Ensuring ship systems function properly.                                                                              | [[Diomedes' Spear/Rules/Interludes#Ship Maintenance\|Interludes#Ship Maintenance]]                  |
 | Situational Awareness Simulations | Using the ship's simulation equipment to hone your perception.                                                        | [[Diomedes' Spear/Rules/Interludes#Situational Awareness Simulations\|Interludes#Situational Awareness Simulations]] |
@@ -418,7 +418,7 @@ In the vast, isolating expanse of space, relationships are as critical to surviv
 
 If two characters spend an relating interlude shift with each other, they strengthen the bond intensity between them. The number of shifts required is the target bond intensity. For example, to move a bond from intensity 2 to 3, will require 3 shifts. No roll is required, but the type of relating can change the type of bond
 
-## Reputation 
+## Reputation Maintenance
 
 | Feature   | Details                                               |
 | --------- | ----------------------------------------------------- |
