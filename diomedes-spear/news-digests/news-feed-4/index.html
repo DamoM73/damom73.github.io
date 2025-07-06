@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Grendal-class Freighter</title>
+<title>News Feed 4</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -163,7 +163,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-4/">News Feed 4 </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-4/">News Feed 4 </a>
 </div>
 </div>
 </div>
@@ -311,7 +311,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/grendal-class-freighter/">Grendal-class Freighter </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/grendal-class-freighter/">Grendal-class Freighter </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -376,129 +376,81 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-06T12:21:34.608Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-06T12:21:34.608Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-06T12:21:34.608Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Grendal-class Freighter</h1>
+<h1 data-note-icon="">News Feed 4</h1>
 <div class="header-meta">
 </div>
 </header>
-<div class="callout" data-callout="info"><div class="callout-title"><div class="callout-title-inner"> Description<br></div></div>
-<div class="callout-content">
-<p>
-The Grendel-class Light Freighter is a Large-category civilian vessel, renowned as the workhorse of the solar system due to its longevity and versatility. These ships have been in operation for over 50 years and are popular among small corporations and entrepreneurs aiming for profit.</p>
-</div></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td></td>
-</tr>
-<tr>
-<td>Class</td>
-<td>Grendal-Class Freighter</td>
-</tr>
-<tr>
-<td>Faction</td>
-<td></td>
-</tr>
-<tr>
-<td>Category</td>
-<td>Large</td>
-</tr>
-<tr>
-<td>Drive</td>
-<td>Epstein, Thrusters</td>
-</tr>
-<tr>
-<td>Length</td>
-<td>65</td>
-</tr>
-<tr>
-<td>Crew</td>
-<td>2 (8)</td>
-</tr>
-<tr>
-<td>Competence</td>
-<td>Average to Capable</td>
-</tr>
-<tr>
-<td>Hull</td>
-<td>2d6</td>
-</tr>
-<tr>
-<td>Sensors</td>
-<td>0</td>
-</tr>
-<tr>
-<td>Favoured Range</td>
-<td>Long</td>
-</tr>
-<tr>
-<td>Favoured Command Stunts</td>
-<td>Blinding Maneuver, Evasive Action, Scrambling Defenses</td>
-</tr>
-<tr>
-<td>Qualities</td>
-<td>Improved Acceleration, Improved Stores, Reduced Crew Requirements</td>
-</tr>
-<tr>
-<td>Flaws</td>
-<td>None</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Weapon Type</th>
-<th>Range</th>
-<th>Damage</th>
-<th>Arc</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:left">Quality / Flaw</th>
-<th style="text-align:left">Effect/Description</th>
-<th style="text-align:left">Conditions/Prerequisites</th>
-<th style="text-align:left">Stackable?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Acceleration, Improved</td>
-<td style="text-align:left">Allows the ship to accelerate faster, granting up to a +7 bonus (or +9 with additional applications) on high-g manoeuvres, and a +1 bonus (up to +3) on Piloting tests to change range.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">Yes (up to +9 / +3)</td>
-</tr>
-<tr>
-<td style="text-align:left">Improved Stores</td>
-<td style="text-align:left">The ship can stock supplies for extended travel for its crew and half its optimal crew listing (or more passengers).</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Reduced Crew Requirements</td>
-<td style="text-align:left">Optimised controls allow the ship to be manned by a smaller crew, halving the usual requirement (minimum 1).</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="faith-of-the-falling-star-a-cult-exploiting-the-mystery-of-venus" tabindex="-1">Faith of the Falling Star: A Cult Exploiting the Mystery of Venus?</h2>
+<p><em>By the Interplanetary Journalism Guild</em></p>
+<p><strong>LUNA</strong>— As the scientific community remains silent about the fate of Venus after the <em>Eros Incident</em>, a new religious movement has begun to spread across the system. Calling themselves &quot;The Faith of the Falling Star,&quot; its followers believe that Eros' descent was a divine event and that Venus is now the site of a coming revelation that will reshape humanity.</p>
+<p>However, an Interplanetary Journalism Guild (IJG) investigation has uncovered disturbing evidence that the Faith’s leaders may be less interested in prophecy and more in profit—exploiting desperate followers while spreading misinformation to grow their influence and wealth.</p>
+<h3 id="a-cult-fuelled-by-fear-and-secrecy" tabindex="-1">A Cult Fuelled by Fear and Secrecy</h3>
+<p>The Faith of the Falling Star has gained traction on Luna, Mars, and Belt stations, attracting people who feel abandoned by their governments in the wake of Eros. Its doctrine is based entirely on speculation—without a shred of scientific evidence—but that has done little to deter followers.</p>
+<p>The Faith teaches that:</p>
+<ul>
+<li>Eros was the beginning of a new cosmic order.</li>
+<li>Venus is now a sacred world, preparing for the “Great Awakening.”</li>
+<li>Only the faithful will be able to “hear the call” when the revelation comes.</li>
+<li>Inners and corporations are suppressing the truth to prevent humanity’s ascension.</li>
+</ul>
+<p>One of the movement’s leading figures, Reverend Kellan Jow, has been vocal in claiming that Venus itself is sending messages—despite there being no surviving witnesses from Eros to substantiate any claims.</p>
+<p><em>&quot;They lied about Eros. They are lying about Venus. But the Falling Star speaks to those who listen,&quot;</em> Jow said during a sermon broadcast from an undisclosed location.</p>
+<h3 id="where-is-the-money-going" tabindex="-1">Where Is the Money Going?</h3>
+<p>While the Faith presents itself as a spiritual movement, IJG investigators have found serious financial irregularities within its ranks.</p>
+<p>Followers are encouraged to:</p>
+<ul>
+<li>Donate to “pilgrimage funds” that have no recorded transactions or intended destination.</li>
+<li>Purchase exclusive access to &quot;sacred teachings,&quot; which consist of vague, recycled conspiracy theories.</li>
+<li>Pay for &quot;purification rituals,&quot; often in the form of expensive supplements and unproven oxygen therapies.</li>
+</ul>
+<p>One former member, who spoke anonymously for fear of retaliation, revealed that Faith leaders pressure followers into handing over their savings for a &quot;journey to enlightenment&quot;—a journey that never actually happens.</p>
+<p><em>&quot;I gave them everything,&quot;</em> the ex-follower told IJG. <em>&quot;They said I was chosen, that I would be the first to witness the truth. But when I started asking questions, they told me I wasn’t ‘ready.’ Now I have nothing.&quot;</em></p>
+<h3 id="pilgrimage-to-venus-a-death-sentence" tabindex="-1">Pilgrimage to Venus: A Death Sentence?</h3>
+<p>Perhaps the most alarming aspect of the Faith’s practices is the encouragement of pilgrimages to Venus—a suicidal mission given the complete lack of information about the planet’s conditions.</p>
+<p>While no recorded attempts have been made, leaked communications suggest that some followers have been gathering resources to fund a deep-space vessel—one they believe will bring them to Venus when the &quot;time is right.&quot;</p>
+<h3 id="the-silence-that-feeds-the-fire" tabindex="-1">The Silence That Feeds the Fire</h3>
+<p>The lack of official information about Venus has only fueled the Faith’s claims, with followers insisting that secrecy proves that the truth is being hidden. While scientific institutions and governments maintain that Venus is still under study, their silence is allowing cult leaders to control the narrative.</p>
+<p>Dr. Harlan Voight, a sociologist specializing in religious extremism, warns that this is exactly how destructive cults gain power.</p>
+<p><em>&quot;The less people know, the more they are willing to believe. If no official explanation is given, the vacuum will be filled by those who can exploit fear and faith for their own benefit,&quot;</em> Voight said.</p>
+<h3 id="what-comes-next" tabindex="-1">What Comes Next?</h3>
+<p>With reports of growing recruitment efforts and continued financial exploitation, the Faith of the Falling Star is becoming more than just a fringe movement. If leaders begin directing followers toward drastic actions, the consequences could be catastrophic.</p>
+<p>While the system waits for answers about Venus, one thing is clear: this cult is not about enlightenment—it’s about control.</p>
+<hr>
+<h2 id="django-weber-a-terrorist-shielded-by-the-belt-embarrassing-earth-on-the-interplanetary-stage" tabindex="-1">Django Weber: A Terrorist Shielded by the Belt, Embarrassing Earth on the Interplanetary Stage</h2>
+<p><em>By Anthony Graves, Pope Enterprises Media Division</em></p>
+<p>The Voltaire Collective bombing on Luna was not just an act of terrorism—it was an attack on Earth’s authority and a glaring example of the unchecked radicalism festering in the Belt. Django Weber, one of the masterminds behind this atrocity, is still free, flaunting his celebrity connections and OPA sympathies, while the UNN hesitates to bring him to justice.</p>
+<p>And in that hesitation, Earth looks weak. Mars is watching.</p>
+<h3 id="the-belt-hides-criminals-while-earth-plays-diplomat" tabindex="-1">The Belt Hides Criminals While Earth Plays Diplomat</h3>
+<p>Weber, a known radical with ties to anti-Earth extremists, should be in a UNN detention cell right now. Instead, he is hiding in plain sight, shielded by his popstar girlfriend, Hitomi Camara, who—surprise, surprise—has made a career glorifying Belt resistance and stoking anti-Earth sentiment.</p>
+<p>The Belt has always protected its worst elements. It’s what people like Fred Johnson built their careers on—pretending to be legitimate while running a lawless, pirate-infested backwater. And now, Johnson, the so-called &quot;reasonable OPA leader,&quot; remains silent on Weber.</p>
+<p>Ask yourself: If the OPA truly stood against terrorism, wouldn’t Johnson be handing Weber over to the UNN right now? Instead, they are stalling, hiding behind bureaucracy, while a known terrorist walks free.</p>
+<p>The truth is clear: The Belt does not respect Earth’s authority, because it does not fear Earth’s power.</p>
+<h3 id="mars-is-watching-and-earth-looks-weak" tabindex="-1">Mars Is Watching, and Earth Looks Weak</h3>
+<p>While the UNN hesitates, Mars is taking notes. The MCRN, already reasserting its dominance in the Belt, now sees an Earth that can’t even bring in a single terrorist who bombed a station on Luna—a station that Earth controls.</p>
+<p>What message does that send?</p>
+<ul>
+<li>That Earth will tolerate open acts of terrorism as long as the Belt throws up enough political smoke.</li>
+<li>That Fred Johnson and his OPA “government” can harbor criminals without consequence.</li>
+<li>That the UNN lacks the will to enforce law beyond the gravity well of Earth.</li>
+</ul>
+<p>And that weakness is exactly what Mars has been waiting for. With tensions already high, the MCRN has been pushing harder, expanding its fleet presence near key Belt stations. The moment Earth looks distracted, Mars will move to capitalize.</p>
+<p>This is not just about Weber. This is about credibility.</p>
+<h3 id="the-solution-is-clear-eliminate-the-threat-reassert-earth-s-power" tabindex="-1">The Solution Is Clear—Eliminate the Threat, Reassert Earth’s Power</h3>
+<p>The UNN needs to stop treating the Belt like a nation-state and start treating it like what it is—an unruly colony that has mistaken patience for weakness.</p>
+<p>Django Weber must be hunted down and captured—immediately. If the Belt refuses to cooperate, Earth must remind them who controls the lanes, the air, and the lifelines that keep their little stations running.</p>
+<p>And if Fred Johnson wants to play politics instead of handing over a terrorist, perhaps it’s time Earth stops recognizing his authority altogether.</p>
+<p>Because if the UNN continues to drag its feet, Mars will see its opportunity. And when that happens, Weber will be the least of Earth’s problems.</p>
+<p>Pope Enterprises Media Division will continue to advocate for a strong, decisive Earth—because anything less invites war.</p>
+<hr>
+<h2 id="other-news" tabindex="-1">Other News</h2>
+<h3 id="martian-mining-guild-begins-expansion-into-io" tabindex="-1">Martian Mining Guild Begins Expansion into Io</h3>
+<p>The MCRN-backed Martian Mining Guild has begun preliminary operations on Io, promising economic revitalization and increased material supply for military infrastructure. Belter labour unions have protested the move, claiming exclusion from contracts and risk to native tunnel colonies.</p>
+<h3 id="faith-of-the-falling-star-opens-temple-on-ganymede" tabindex="-1">Faith of the Falling Star Opens Temple on Ganymede</h3>
+<p>Despite mounting scrutiny, the Faith of the Falling Star has established its first formal “Temple of Ascension” on Ganymede. Local authorities express concern over child indoctrination rumours, but no legal grounds have yet been found to challenge the group’s presence.</p>
+<h3 id="kruger-thompson-lawsuit-delayed-after-witness-disappears" tabindex="-1">Kruger-Thompson Lawsuit Delayed After Witness Disappears</h3>
+<p>A court case against Kruger-Thompson involving the KT Endeavour disaster has been delayed after a key whistle-blower vanished enroute to Luna. The corporation denies involvement, but OPA media outlets are calling it a “disappearance by design.”</p>
+<h3 id="calisto-university-researchers-detect-gravitational-echoes-from-venus" tabindex="-1">Calisto University Researchers Detect Gravitational “Echoes” from Venus</h3>
+<p>A team at Calisto University claims to have detected strange gravimetric fluctuations emanating from Venus. The findings, not yet peer-reviewed, have fuelled renewed interest—and cult speculation—about the nature of the Eros impact and what may be happening beneath Venus' cloud layers.</p>
 </main>
 <aside>
 <div class="sidebar">
@@ -529,6 +481,55 @@ The Grendel-class Light Freighter is a Large-category civilian vessel, renowned 
 <div x-effect="window.graph = renderLocalGraph(graphData, depth, fullScreen)" id="link-graph"></div>
 <div x-show="showFullGraph" id="full-graph" class="show" style="display:none">
 <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
+</div>
+</div>
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#faith-of-the-falling-star-a-cult-exploiting-the-mystery-of-venus">Faith of the Falling Star: A Cult Exploiting the Mystery of Venus?</a>
+<ol>
+<li><a href="#a-cult-fuelled-by-fear-and-secrecy">A Cult Fuelled by Fear and Secrecy</a>
+</li>
+<li><a href="#where-is-the-money-going">Where Is the Money Going?</a>
+</li>
+<li><a href="#pilgrimage-to-venus-a-death-sentence">Pilgrimage to Venus: A Death Sentence?</a>
+</li>
+<li><a href="#the-silence-that-feeds-the-fire">The Silence That Feeds the Fire</a>
+</li>
+<li><a href="#what-comes-next">What Comes Next?</a>
+</li>
+</ol>
+</li>
+<li><a href="#django-weber-a-terrorist-shielded-by-the-belt-embarrassing-earth-on-the-interplanetary-stage">Django Weber: A Terrorist Shielded by the Belt, Embarrassing Earth on the Interplanetary Stage</a>
+<ol>
+<li><a href="#the-belt-hides-criminals-while-earth-plays-diplomat">The Belt Hides Criminals While Earth Plays Diplomat</a>
+</li>
+<li><a href="#mars-is-watching-and-earth-looks-weak">Mars Is Watching, and Earth Looks Weak</a>
+</li>
+<li><a href="#the-solution-is-clear-eliminate-the-threat-reassert-earth-s-power">The Solution Is Clear—Eliminate the Threat, Reassert Earth’s Power</a>
+</li>
+</ol>
+</li>
+<li><a href="#other-news">Other News</a>
+<ol>
+<li><a href="#martian-mining-guild-begins-expansion-into-io">Martian Mining Guild Begins Expansion into Io</a>
+</li>
+<li><a href="#faith-of-the-falling-star-opens-temple-on-ganymede">Faith of the Falling Star Opens Temple on Ganymede</a>
+</li>
+<li><a href="#kruger-thompson-lawsuit-delayed-after-witness-disappears">Kruger-Thompson Lawsuit Delayed After Witness Disappears</a>
+</li>
+<li><a href="#calisto-university-researchers-detect-gravitational-echoes-from-venus">Calisto University Researchers Detect Gravitational “Echoes” from Venus</a>
+</li>
+</ol>
+</li>
+</ol>
+</nav>
 </div>
 </div>
 <div class="backlinks">
