@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Links</title>
+<title>UNN Phantom-class Escort</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -366,7 +366,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ships/unn-phantom-class-escort/">UNN Phantom-class Escort </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ships/unn-phantom-class-escort/">UNN Phantom-class Escort </a>
 </div>
 </div>
 </div>
@@ -376,7 +376,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/links/">Links </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/links/">Links </a>
 </div>
 </div>
 </div>
@@ -407,12 +407,165 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-06T08:45:02.853Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-06T08:45:02.853Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-06T08:45:02.853Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Links</h1>
+<h1 data-note-icon="">UNN Phantom-class Escort</h1>
 <div class="header-meta">
 </div>
 </header>
-<p><a href="https://suno.com/playlist/d0cfbe36-b8d5-455c-aedb-be5efbe5f799" target="_blank" class="external-link">The Expanse Playlist</a><br>
-<a href="https://notebooklm.google.com/notebook/b3a003af-92ea-4b53-a90d-fbaa15051c9f?_gl=1*1eb4u9r*_ga*MTk0OTc5OTQzMi4xNzM3MzQ3MDU1*_ga_W0LDH41ZCB*MTczOTIzNjk3NC44LjAuMTczOTIzNjk3NC42MC4wLjA." target="_blank" class="external-link">Expanse Rules</a></p>
+<div class="callout" data-callout="info"><div class="callout-title"><div class="callout-title-inner"> Description<br></div></div>
+<div class="callout-content">
+<p>
+The number of already-existing vessels of the older UNN Phantom class made them perfect candidates for refit as dedicated escort ships rather than being retired and scrapped.</p>
+</div></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td></td>
+</tr>
+<tr>
+<td>Class</td>
+<td>Phantom- Class Escort</td>
+</tr>
+<tr>
+<td>Faction</td>
+<td>UNN</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>Large</td>
+</tr>
+<tr>
+<td>Drive</td>
+<td>Epstein, Thrusters</td>
+</tr>
+<tr>
+<td>Length</td>
+<td>42m</td>
+</tr>
+<tr>
+<td>Crew</td>
+<td>6 (24)</td>
+</tr>
+<tr>
+<td>Competence</td>
+<td>Average (+2)</td>
+</tr>
+<tr>
+<td>Hull</td>
+<td>2d6</td>
+</tr>
+<tr>
+<td>Sensors</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Favoured Range</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Favoured Command Stunts</td>
+<td>On-Target, Set-up, Too Close</td>
+</tr>
+<tr>
+<td>Qualities</td>
+<td>Atmosphere Capable, Hull Plating II, Manoeuvrable, Rapid Reload Torpedo Tubes, Sensor Scrambling</td>
+</tr>
+<tr>
+<td>Flaws</td>
+<td>Poor Amenities, High Maintenance, Vulnerable Systems</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Weapon Type</th>
+<th>Range</th>
+<th>Damage</th>
+<th>Arc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Torpedo Tubes (2)</td>
+<td>Long</td>
+<td>4d6</td>
+<td>Fore</td>
+</tr>
+<tr>
+<td>Point Defence Network</td>
+<td>Close</td>
+<td>2d6</td>
+<td>Fore</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">Quality / Flaw</th>
+<th style="text-align:left">Effect/Description</th>
+<th style="text-align:left">Conditions/Prerequisites</th>
+<th style="text-align:left">Stackable?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Atmosphere Capable</td>
+<td style="text-align:left">The ship can operate and land in a planetary atmosphere for limited periods.</td>
+<td style="text-align:left">Must be built-in. [i, 489]</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Hull Plating</td>
+<td style="text-align:left">Provides a +1 bonus when determining the ship's Hull total against damage.</td>
+<td style="text-align:left">None stated.</td>
+<td style="text-align:left">Yes, up to a maximum equal to the Hull score in dice (e.g., Hull Plating II, III, V)</td>
+</tr>
+<tr>
+<td style="text-align:left">Manoeuvrable</td>
+<td style="text-align:left">The ship is fast and nimble, treated as one Size category smaller for manoeuvring tests (changing range, evading attacks, chases), granting a +1 bonus to such tests.</td>
+<td style="text-align:left">None stated.</td>
+<td style="text-align:left">Yes (can be Highly Manoeuvrable with two qualities; e.g., Manoeuvrable II)</td>
+</tr>
+<tr>
+<td style="text-align:left">Rapid Reload Torpedo Tubes</td>
+<td style="text-align:left">Reduces the SP cost to use the Rapid Reload Command Stunt by 1.</td>
+<td style="text-align:left">None stated.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Sensor Scrambling</td>
+<td style="text-align:left">When an enemy is within Medium or closer range, they suffer a -1 penalty to all Sensors tests.</td>
+<td style="text-align:left">None stated.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Poor Amenities</td>
+<td style="text-align:left">The ship’s living quarters and other amenities are of poor quality. This causes Recovering activities on board to take 50% longer.</td>
+<td style="text-align:left">Commonly found on older or poorly maintained shuttles and other vessels. Also noted on Asp-class, Mulan-class, Murphy-class, Phantom-class, Morgaina-class, Tereshkova-type, Windrose L6 Vayu, Loki, Lopt, UNN Sinclair, Drosera Capensis, Shu-class, and Cassandra.</td>
+<td style="text-align:left">Not explicitly stated as stackable.</td>
+</tr>
+<tr>
+<td style="text-align:left">High Maintenance</td>
+<td style="text-align:left">The ship is difficult to maintain and requires significant care to remain operational. The GM should require additional Maintenance activities during interludes and increase the Lifestyle Cost of maintaining the ship by +1.</td>
+<td style="text-align:left">Common for Excelsior-class ships due to passenger demands. Also applies to Large Freighter, Phantom-class Escort, Raptor-class Fast Attack Cruiser, Prinzessin Victoria Luise, Tsai Shen-class Luxury Yacht, Windrose L6 Vayu, Javelin-Class Fast Courier, Aybar's Axe, Carlton's Dagger, Shu-class, Anubis-class Stealth Frigate, and Cassandra.</td>
+<td style="text-align:left">Not explicitly stated as stackable.</td>
+</tr>
+<tr>
+<td style="text-align:left">Vulnerable Systems / Vulnerability</td>
+<td style="text-align:left">When the ship takes losses, it must incur an additional loss condition (e.g., three conditions for a 1d6 loss, five for a 2d6 loss). If specifically &quot;Vulnerability,&quot; targeted weapon attacks that aim for the weakness impose a -1 penalty to absorbing the Hull damage from that attack.</td>
+<td style="text-align:left">Applies when the ship takes damage resulting in losses. Can be specific to a system, e.g., Vulnerability (Rail Gun). Also listed for Narwhal-type submersible skiff, Orion-class Heavy Scout, Drosera Capensis, Javelin-Class Fast Courier, Phantom-Class Escort, and Listen to Zathras!.</td>
+<td style="text-align:left">Not explicitly stated as stackable.</td>
+</tr>
+</tbody>
+</table></div>
 </main>
 <aside>
 <div class="sidebar">
