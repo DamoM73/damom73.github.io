@@ -315,6 +315,14 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/unn-insertion-type-dropship-skiff/">UNN Insertion-Type Dropship Skiff </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/unn-marauder-type-dropship-skiff/">UNN Marauder - Type Dropship Skiff </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/unn-mulan-class-gunship/">UNN Mulan-class Gunship </a>
 </div>
 </div>
@@ -357,7 +365,7 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-06T09:00:17.342Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-06T09:00:17.342Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-06T09:00:17.342Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-06T09:54:22.936Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-06T09:54:22.936Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-06T09:54:22.936Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">Space Combat</h1>
@@ -1281,20 +1289,32 @@ CTRL + K
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Poor Amenities</td>
-<td style="text-align:left">The ship’s living quarters and other amenities are of poor quality. This causes Recovering activities on board to take 50% longer.</td>
-<td style="text-align:left">Commonly found on older or poorly maintained shuttles and other vessels. Also noted on Asp-class, Mulan-class, Murphy-class, Phantom-class, Morgaina-class, Tereshkova-type, Windrose L6 Vayu, Loki, Lopt, UNN Sinclair, Drosera Capensis, Shu-class, and Cassandra.</td>
+<td style="text-align:left">Aging</td>
+<td style="text-align:left">The ship is getting older and requires extra work to remain at peak performance. This necessitates additional Maintenance, Researching, and/or Fixing activities during interludes and increases the Resupply Cost by +1 to cover additional minor upkeep materials.</td>
+<td style="text-align:left">Applies to ships that are generally old.</td>
 <td style="text-align:left">Not explicitly stated as stackable.</td>
 </tr>
 <tr>
-<td style="text-align:left">Ostentatious</td>
-<td style="text-align:left">The ship is well-known and draws attention wherever it goes, making it a prime target for pirates, thieves, and kidnapping gangs. It is also impossible to travel incognito, and the ship and its crew tend to attract attention. The Game Master (GM) may use this quality as a story hook or for Churn complications.</td>
-<td style="text-align:left">A ship with this flaw cannot also have the Stealth quality. Excelsior-class vessels are always Ostentatious.</td>
+<td style="text-align:left">Bad Juice</td>
+<td style="text-align:left">The ship’s acceleration tolerance drugs (the juice) are of low quality, imposing a –1 penalty to Constitution tests involving high-acceleration maneuvers.</td>
+<td style="text-align:left">None explicitly stated. Applies to Schmitt-type Rockhopper, Listen to Zathras!, and Cassandra.</td>
 <td style="text-align:left">Not explicitly stated as stackable.</td>
 </tr>
 <tr>
-<td style="text-align:left">Lumbering</td>
-<td style="text-align:left">The ship is considered one Size category larger than its actual Size when it comes to manoeuvring tests to change range, evade attacks, and for chases. This typically results in a –1 penalty to such tests.</td>
+<td style="text-align:left">Banned From Port</td>
+<td style="text-align:left">The ship has been prohibited from entering a major port. This can significantly restrict travel and access to services.</td>
+<td style="text-align:left">This flaw should be associated with a specific port in the Sol System and can be acquired during gameplay.</td>
+<td style="text-align:left">Not explicitly stated as stackable, but a ship could potentially be banned from multiple ports.</td>
+</tr>
+<tr>
+<td style="text-align:left">Faulty System</td>
+<td style="text-align:left">One of the ship's systems is unreliable. The first time that system is critical in an encounter, there is a chance (1 or 2 on a die roll) that it will stop working, requiring a damage control effort to reactivate it. Until repaired, the non-functional system cannot be used.</td>
+<td style="text-align:left">This flaw can be specific to a particular system (e.g., Maneuverability, Weapons, Rail Gun, Torpedo Tubes, PDC, Sensors). It is common for poorly maintained or old shuttles. Truman-class Dreadnought has &quot;Faulty System: Maneuverability&quot;. The Loki and The Garibaldi have this flaw.</td>
+<td style="text-align:left">Not explicitly stated as stackable.</td>
+</tr>
+<tr>
+<td style="text-align:left">Fragile</td>
+<td style="text-align:left">The ship is structurally unsound. Its Hull score is reduced to that of the Size category one below the ship’s actual Size. For example, a Fragile Colossal freighter would have the Hull score of a Gigantic ship.</td>
 <td style="text-align:left">None stated.</td>
 <td style="text-align:left">Not explicitly stated as stackable.</td>
 </tr>
@@ -1305,52 +1325,16 @@ CTRL + K
 <td style="text-align:left">Not explicitly stated as stackable.</td>
 </tr>
 <tr>
-<td style="text-align:left">Fragile</td>
-<td style="text-align:left">The ship is structurally unsound. Its Hull score is reduced to that of the Size category one below the ship’s actual Size. For example, a Fragile Colossal freighter would have the Hull score of a Gigantic ship.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">Not explicitly stated as stackable.</td>
-</tr>
-<tr>
-<td style="text-align:left">Wanted</td>
-<td style="text-align:left">The ship is associated with trouble, and individuals or groups are actively pursuing it. This can cause problems docking at legitimate ports, requiring the ship to avoid certain places or routes. Shipyards will be off-limits for repairs or maintenance, and resupplying will become more difficult. The GM should use this flaw as a story hook.</td>
-<td style="text-align:left">Automatically received by any ship crewed by a known band of pirates. Missing a mortgage payment on a ship also immediately assigns this flaw. Also applies to Anubis-class Stealth Frigate.</td>
-<td style="text-align:left">Not explicitly stated as stackable, but implies a persistent condition.</td>
-</tr>
-<tr>
-<td style="text-align:left">Faulty System</td>
-<td style="text-align:left">One of the ship's systems is unreliable. The first time that system is critical in an encounter, there is a chance (1 or 2 on a die roll) that it will stop working, requiring a damage control effort to reactivate it. Until repaired, the non-functional system cannot be used.</td>
-<td style="text-align:left">This flaw can be specific to a particular system (e.g., Maneuverability, Weapons, Rail Gun, Torpedo Tubes, PDC, Sensors). It is common for poorly maintained or old shuttles. Truman-class Dreadnought has &quot;Faulty System: Maneuverability&quot;. The Loki and The Garibaldi have this flaw.</td>
-<td style="text-align:left">Not explicitly stated as stackable.</td>
-</tr>
-<tr>
-<td style="text-align:left">Vulnerable Systems / Vulnerability</td>
-<td style="text-align:left">When the ship takes losses, it must incur an additional loss condition (e.g., three conditions for a 1d6 loss, five for a 2d6 loss). If specifically &quot;Vulnerability,&quot; targeted weapon attacks that aim for the weakness impose a -1 penalty to absorbing the Hull damage from that attack.</td>
-<td style="text-align:left">Applies when the ship takes damage resulting in losses. Can be specific to a system, e.g., Vulnerability (Rail Gun). Also listed for Narwhal-type submersible skiff, Orion-class Heavy Scout, Drosera Capensis, Javelin-Class Fast Courier, Phantom-Class Escort, and Listen to Zathras!.</td>
-<td style="text-align:left">Not explicitly stated as stackable.</td>
-</tr>
-<tr>
-<td style="text-align:left">Bad Juice</td>
-<td style="text-align:left">The ship’s acceleration tolerance drugs (the juice) are of low quality, imposing a –1 penalty to Constitution tests involving high-acceleration maneuvers.</td>
-<td style="text-align:left">None explicitly stated. Applies to Schmitt-type Rockhopper, Listen to Zathras!, and Cassandra.</td>
-<td style="text-align:left">Not explicitly stated as stackable.</td>
-</tr>
-<tr>
-<td style="text-align:left">Aging</td>
-<td style="text-align:left">The ship is getting older and requires extra work to remain at peak performance. This necessitates additional Maintenance, Researching, and/or Fixing activities during interludes and increases the Resupply Cost by +1 to cover additional minor upkeep materials.</td>
-<td style="text-align:left">Applies to ships that are generally old.</td>
-<td style="text-align:left">Not explicitly stated as stackable.</td>
-</tr>
-<tr>
-<td style="text-align:left">Banned From Port</td>
-<td style="text-align:left">The ship has been prohibited from entering a major port. This can significantly restrict travel and access to services.</td>
-<td style="text-align:left">This flaw should be associated with a specific port in the Sol System and can be acquired during gameplay.</td>
-<td style="text-align:left">Not explicitly stated as stackable, but a ship could potentially be banned from multiple ports.</td>
-</tr>
-<tr>
 <td style="text-align:left">Limited Range</td>
 <td style="text-align:left">The ship does not carry enough reaction mass for long-distance travel using its Epstein drive. It is limited to short trips (e.g., between a planet and moon or station to station), with a typical range of about 1 AU. It also limits the ship’s speed to up to 1g and takes a considerable amount of time to reach this speed.</td>
 <td style="text-align:left">The ship is not equipped with an Epstein drive, or it has insufficient reaction mass. Applies to Insertion-type Dropship Skiff, Marauder-type Dropship Skiff, and Mulan-class Gunship.</td>
 <td style="text-align:left">Not applicable, as it describes a fundamental limitation of the ship's drive system rather than a variable penalty.</td>
+</tr>
+<tr>
+<td style="text-align:left">Lumbering</td>
+<td style="text-align:left">The ship is considered one Size category larger than its actual Size when it comes to manoeuvring tests to change range, evade attacks, and for chases. This typically results in a –1 penalty to such tests.</td>
+<td style="text-align:left">None stated.</td>
+<td style="text-align:left">Not explicitly stated as stackable.</td>
 </tr>
 <tr>
 <td style="text-align:left">Old</td>
@@ -1359,10 +1343,22 @@ CTRL + K
 <td style="text-align:left">Not explicitly stated as stackable.</td>
 </tr>
 <tr>
+<td style="text-align:left">Ostentatious</td>
+<td style="text-align:left">The ship is well-known and draws attention wherever it goes, making it a prime target for pirates, thieves, and kidnapping gangs. It is also impossible to travel incognito, and the ship and its crew tend to attract attention. The Game Master (GM) may use this quality as a story hook or for Churn complications.</td>
+<td style="text-align:left">A ship with this flaw cannot also have the Stealth quality. Excelsior-class vessels are always Ostentatious.</td>
+<td style="text-align:left">Not explicitly stated as stackable.</td>
+</tr>
+<tr>
 <td style="text-align:left">Poor Acceleration</td>
 <td style="text-align:left">The ship accelerates slower than other ships of its size. When performing a high-g maneuver, the ship’s bonus is limited to +5 (instead of the usual +6). It suffers a –1 penalty to Piloting tests when attempting to increase or decrease range.</td>
 <td style="text-align:left">None explicitly stated. Liu Hui-type Scout, Orion-class Heavy Scout, and Prinzessin Victoria Luise are listed with this flaw.</td>
 <td style="text-align:left">Yes, this flaw can be taken up to six times. Each additional application further reduces the high-g maneuver bonus by 1 (down to a minimum of 0) and adds an additional –1 penalty to Piloting tests for changing range (up to a maximum of –6).</td>
+</tr>
+<tr>
+<td style="text-align:left">Poor Amenities</td>
+<td style="text-align:left">The ship’s living quarters and other amenities are of poor quality. This causes Recovering activities on board to take 50% longer.</td>
+<td style="text-align:left">Commonly found on older or poorly maintained shuttles and other vessels. Also noted on Asp-class, Mulan-class, Murphy-class, Phantom-class, Morgaina-class, Tereshkova-type, Windrose L6 Vayu, Loki, Lopt, UNN Sinclair, Drosera Capensis, Shu-class, and Cassandra.</td>
+<td style="text-align:left">Not explicitly stated as stackable.</td>
 </tr>
 <tr>
 <td style="text-align:left">Software Glitch</td>
@@ -1375,6 +1371,18 @@ CTRL + K
 <td style="text-align:left">The ship's internal space, furniture, and facilities are inconvenient due to size constraints (either too small or too large for certain crewmembers). This results in a –1 penalty to all ship-related actions for applicable crewmembers.</td>
 <td style="text-align:left">Applies to crewmembers for whom the ship's design (e.g., pre-Belter era, or Belter-only design) creates discomfort. Mosquito-class Fast Scout has this flaw.</td>
 <td style="text-align:left">Not explicitly stated as stackable.</td>
+</tr>
+<tr>
+<td style="text-align:left">Vulnerable Systems / Vulnerability</td>
+<td style="text-align:left">When the ship takes losses, it must incur an additional loss condition (e.g., three conditions for a 1d6 loss, five for a 2d6 loss). If specifically &quot;Vulnerability,&quot; targeted weapon attacks that aim for the weakness impose a -1 penalty to absorbing the Hull damage from that attack.</td>
+<td style="text-align:left">Applies when the ship takes damage resulting in losses. Can be specific to a system, e.g., Vulnerability (Rail Gun). Also listed for Narwhal-type submersible skiff, Orion-class Heavy Scout, Drosera Capensis, Javelin-Class Fast Courier, Phantom-Class Escort, and Listen to Zathras!.</td>
+<td style="text-align:left">Not explicitly stated as stackable.</td>
+</tr>
+<tr>
+<td style="text-align:left">Wanted</td>
+<td style="text-align:left">The ship is associated with trouble, and individuals or groups are actively pursuing it. This can cause problems docking at legitimate ports, requiring the ship to avoid certain places or routes. Shipyards will be off-limits for repairs or maintenance, and resupplying will become more difficult. The GM should use this flaw as a story hook.</td>
+<td style="text-align:left">Automatically received by any ship crewed by a known band of pirates. Missing a mortgage payment on a ship also immediately assigns this flaw. Also applies to Anubis-class Stealth Frigate.</td>
+<td style="text-align:left">Not explicitly stated as stackable, but implies a persistent condition.</td>
 </tr>
 <tr>
 <td style="text-align:left">Weak Hull</td>
