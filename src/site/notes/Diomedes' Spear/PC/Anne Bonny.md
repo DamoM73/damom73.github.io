@@ -43,7 +43,7 @@
 | Activity                       | Last time done |
 | ------------------------------ | :------------: |
 | Audit                          |       2        |
-| Ship maintenance - Hull        |       -        |
-| Ship maintenance - Manouvering |       -        |
-| Ship maintenance - Sensors     |       -        |
-| Ship maintenance - Weapons     |       -        |
+| Ship maintenance - Hull        |       2        |
+| Ship maintenance - Manouvering |       3        |
+| Ship maintenance - Sensors     |       2        |
+| Ship maintenance - Weapons     |       2        |

@@ -2,6 +2,11 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/diomedes-spear/","tags":["gardenEntry"]}
 ---
 
+
+| Current Day |
+| :---------: |
+|    **4**    |
+
 ![diomedes_spear.png](/img/user/Diomedes'%20Spear/Assests/diomedes_spear.png)
 
 _A Campaign for The Expanse RPG_
@@ -20,6 +25,4 @@ This is _Diomedes’ Spear_—a story of loyalty, betrayal, and survival in a so
 
 **Buckle in, Beltawala. Time to choose who you bleed for.**
 
-| Current Day |
-| :---------: |
-|    **3**    |
+
