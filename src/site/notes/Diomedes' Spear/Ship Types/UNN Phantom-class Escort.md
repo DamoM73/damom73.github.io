@@ -15,7 +15,7 @@ The number of already-existing vessels of the older UNN Phantom class made them 
 | Length                  | 42m                                                                                              |
 | Crew                    | 6 (24)                                                                                           |
 | Competence              | Average (+2)                                                                                     |
-| Hull                    | 2d6                                                                                              |
+| Hull                    | 2d6+2                                                                                            |
 | Sensors                 | 3                                                                                                |
 | Favoured Range          | Medium                                                                                           |
 | Favoured Command Stunts | On-Target, Set-up, Too Close                                                                     |

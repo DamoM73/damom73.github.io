@@ -15,7 +15,7 @@
 | Length                  | 28m                        |
 | Crew                    | 2 (4)                      |
 | Competence              | Average (+2)               |
-| Hull                    | 1d6                        |
+| Hull                    | 1d6+1                      |
 | Sensors                 | -2                         |
 | Favoured Range          | None                       |
 | Favoured Command Stunts | Evasive Actions            |

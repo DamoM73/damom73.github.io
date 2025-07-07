@@ -15,7 +15,7 @@ The Mulan-class gunship isn’t just the smallest ship in the United Nations Nav
 | Length                  | 27m                                                           |
 | Crew                    | 2 (4)                                                         |
 | Competence              | Capable (+3)                                                  |
-| Hull                    | 2d6                                                           |
+| Hull                    | 2d6+1                                                         |
 | Sensors                 | 1                                                             |
 | Favoured Range          | Long                                                          |
 | Favoured Command Stunts | On-Target, Set-up, Too Close                                  |
