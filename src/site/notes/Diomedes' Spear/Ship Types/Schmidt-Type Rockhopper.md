@@ -26,7 +26,9 @@
 | ----------------------- | ------ | ------ | ---- |
 | Grapplers (1)           | Close  |        | Aft  |
 
-| Quality / Flaw | Effect/Description                                                                                                                                                    | Conditions/Prerequisites                                             | Stackable?                                                                 |
-| :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------- | :------------------------------------------------------------------------- |
-| Agile          | Makes the vessel extremely nimble, granting a +1 bonus (up to +3) to Evasion tests and other Piloting tests requiring manoeuvrability.                                | Only available for Small or Medium ships. Must be built-in. [i, 489] | Yes (up to +3, e.g., Agile II, Agile III)                                  |
-| Manoeuvrable   | The ship is fast and nimble, treated as one Size category smaller for manoeuvring tests (changing range, evading attacks, chases), granting a +1 bonus to such tests. | None stated.                                                         | Yes (can be Highly Manoeuvrable with two qualities; e.g., Manoeuvrable II) |
+| Quality / Flaw | Effect                                                         | Prerequisites                                     | Stack?  |
+| :------------- | :------------------------------------------------------------- | :------------------------------------------------ | :------ |
+| Agile          | +1 bonus to  Piloting tests requiring manoeuvrability.         | Small or Medium ships only. <br>Must be built-in. | Yes (3) |
+| Manoeuvrable   | +1 bonus to changing range, evading attacks, and chases tests. | None stated.                                      | Yes (2) |
+| Bad Juice      | -1 to high-g Constitution tests                                | None stated.                                      | No      |
+| Poor Amenities | Recovering activities take 50% longer.                         | None stated.                                      | No      |

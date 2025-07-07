@@ -26,8 +26,8 @@
 | ----------- | ----- | ------ | --- |
 | -           |       |        |     |
 
-| Quality / Flaw            | Effect/Description                                                                                                                                                                      | Conditions/Prerequisites | Stackable?          |
-| :------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------- | :------------------ |
-| Acceleration, Improved    | Allows the ship to accelerate faster, granting up to a +7 bonus (or +9 with additional applications) on high-g manoeuvres, and a +1 bonus (up to +3) on Piloting tests to change range. | None stated.             | Yes (up to +9 / +3) |
-| Improved Stores           | The ship can stock supplies for extended travel for its crew and half its optimal crew listing (or more passengers).                                                                    | None stated.             | No                  |
-| Reduced Crew Requirements | Optimised controls allow the ship to be manned by a smaller crew, halving the usual requirement (minimum 1).                                                                            | None stated.             | No                  |
+| Quality / Flaw            | Effect                                                                                                               | Prerequisites | Stack?  |
+| :------------------------ | :------------------------------------------------------------------------------------------------------------------- | :------------ | :------ |
+| Improved Acceleration     | +7 (or +9 with stacking) on high-g manoeuvres<br>+1 to +3 on Piloting tests to change range                          | None stated.  | Yes (3) |
+| Improved Stores           | The ship can stock supplies for extended travel for its crew and half its optimal crew listing (or more passengers). | None stated.  | No      |
+| Reduced Crew Requirements | Halves the usual requirement (minimum 1).                                                                            | None stated.  | No      |

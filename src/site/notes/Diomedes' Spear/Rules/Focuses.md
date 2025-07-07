@@ -2,15 +2,6 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/rules/focuses/"}
 ---
 
-[[#Accuracy Focuses]]
-[[#Communication Focuses]]
-[[#Constitution Focuses]]
-[[#Dexterity Focuses]]
-[[#Fighting Focuses]]
-[[#Intelligence Focuses]]
-[[#Perception Focuses]]
-[[#Strength Focuses]]
-[[#Willpower Focuses]]
 ## Accuracy Focuses
 | Name     | Description                                                                                    |
 | -------- | ---------------------------------------------------------------------------------------------- |
