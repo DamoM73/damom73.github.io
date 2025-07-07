@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Schmidt-Type Rockhopper</title>
+<title>Lira Vester</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -183,7 +183,7 @@ CTRL + K
 <span class="foldername">Crew</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/npc/crew/lira-vester/">Lira Vester </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/npc/crew/lira-vester/">Lira Vester </a>
 </div>
 </div>
 </div>
@@ -345,7 +345,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/schmidt-type-rockhopper/">Schmidt-Type Rockhopper </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/schmidt-type-rockhopper/">Schmidt-Type Rockhopper </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -402,120 +402,77 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-07T04:12:18.336Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-07T04:12:18.336Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-07T04:12:18.336Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Schmidt-Type Rockhopper</h1>
+<h1 data-note-icon="">Lira Vester</h1>
 <div class="header-meta">
 </div>
 </header>
-<div class="callout" data-callout="info"><div class="callout-title"><div class="callout-title-inner"> Description<br></div></div>
-<div class="callout-content">
-<p>
-Named after Harrison Schmitt, the first professional scientist to leave low Earth orbit and to visit the moon, this ship is designed for manoeuvring in close proximity to asteroids to take the necessary tests and even perform small-scale mining operations. It is small and agile, while still being large enough to carry a crew along with a large quantity of scientific instrumentation. It is also capable of capturing and hauling smaller asteroids. Although popular among independent operators, this ship is often used by the UN and MCR.</p>
-</div></div>
+<p><img src="/img/user/Diomedes'%20Spear/Assests/Lira%20Vester.png" alt="Lira Vester.png"></p>
+<h2 id="basic-information" tabindex="-1">Basic Information</h2>
+<ul>
+<li>Name: Lira Vester</li>
+<li>Age: 27</li>
+<li>Origin: Earth (London, UK)</li>
+<li>Occupation: Ex-Project Ares Biotechnician</li>
+<li>Personality (OCEAN):
+<ul>
+<li>Openness: 5/5 (Brilliant and adaptable, but prone to reckless curiosity)</li>
+<li>Conscientiousness: 3/5 (Meticulous in research, but chaotic in personal habits)</li>
+<li>Extraversion: 2/5 (Prefers data to people, but can fake charm when needed)</li>
+<li>Agreeableness: 3/5 (Cooperative when necessary, but deeply distrustful)</li>
+<li>Neuroticism: 4/5 (Constantly anxious, but sharp under extreme pressure)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="background" tabindex="-1">Background</h2>
+<ul>
+<li>Worked for Protogen as a geneticist.</li>
+<li>Warned by her lover (a technician) that her upcoming promotion would result in her undergoing neurological cauterization.</li>
+<li>Fled Protogen when her lover went missing and no one was even acknowledged he even existed.</li>
+<li>Used a cache of stolen credentials and her private funds, she hopped transports across the Belt, avoiding security scans and biometric checks.</li>
+<li>At Ceres she saw a former colleague <a class="internal-link is-unresolved" href="/404" target="">Dr Donald Hanson</a> at a distance and was convinced he recognised her. So she attempted to escape further, she used her remaining funds bribing a dock worker to slip aboard a cargo hauler bound for Pallas Station — <em>The Slow Dog</em>.</li>
+</ul>
+<hr>
+<h2 id="character-relationships" tabindex="-1">Character Relationships</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
-<th>Attribute</th>
-<th>Details</th>
+<th>Character</th>
+<th style="text-align:center">Score</th>
+<th style="text-align:center">Attitude</th>
+<th style="text-align:center">Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td></td>
+<td>Achilles Mendez</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">Neutral</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td>Class</td>
-<td>Schmidt-Type Rockhopper</td>
+<td>Franko Folto</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td>Faction</td>
-<td>None</td>
+<td>Sir Gary Fitzwilliam</td>
+<td style="text-align:center">+2</td>
+<td style="text-align:center">Friendly</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td>Category</td>
-<td>Medium</td>
+<td>Havoc The Gambler</td>
+<td style="text-align:center">+1</td>
+<td style="text-align:center">Open</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td>Drive</td>
-<td>Epstein, Thrusters</td>
-</tr>
-<tr>
-<td>Length</td>
-<td>32m</td>
-</tr>
-<tr>
-<td>Crew</td>
-<td>2 (4)</td>
-</tr>
-<tr>
-<td>Competence</td>
-<td>Incompetant</td>
-</tr>
-<tr>
-<td>Hull</td>
-<td>1d6</td>
-</tr>
-<tr>
-<td>Sensors</td>
-<td>3</td>
-</tr>
-<tr>
-<td>Favoured Range</td>
-<td>Close</td>
-</tr>
-<tr>
-<td>Favoured Command Stunts</td>
-<td>Evasive Action</td>
-</tr>
-<tr>
-<td>Qualities</td>
-<td>Agile, Maneuvourable</td>
-</tr>
-<tr>
-<td>Flaws</td>
-<td>Bad Juice, Poor Amenities</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Weapon Type</th>
-<th>Range</th>
-<th>Damage</th>
-<th>Arc</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Grapplers (1)</td>
-<td>Close</td>
-<td></td>
-<td>Aft</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:left">Quality / Flaw</th>
-<th style="text-align:left">Effect/Description</th>
-<th style="text-align:left">Conditions/Prerequisites</th>
-<th style="text-align:left">Stackable?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Agile</td>
-<td style="text-align:left">Makes the vessel extremely nimble, granting a +1 bonus (up to +3) to Evasion tests and other Piloting tests requiring manoeuvrability.</td>
-<td style="text-align:left">Only available for Small or Medium ships. Must be built-in. [i, 489]</td>
-<td style="text-align:left">Yes (up to +3, e.g., Agile II, Agile III)</td>
-</tr>
-<tr>
-<td style="text-align:left">Manoeuvrable</td>
-<td style="text-align:left">The ship is fast and nimble, treated as one Size category smaller for manoeuvring tests (changing range, evading attacks, chases), granting a +1 bonus to such tests.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">Yes (can be Highly Manoeuvrable with two qualities; e.g., Manoeuvrable II)</td>
+<td>Mohinder Wagner</td>
+<td style="text-align:center">+2</td>
+<td style="text-align:center">Friendly</td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table></div>
@@ -549,6 +506,25 @@ Named after Harrison Schmitt, the first professional scientist to leave low Eart
 <div x-effect="window.graph = renderLocalGraph(graphData, depth, fullScreen)" id="link-graph"></div>
 <div x-show="showFullGraph" id="full-graph" class="show" style="display:none">
 <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
+</div>
+</div>
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#basic-information">Basic Information</a>
+</li>
+<li><a href="#background">Background</a>
+</li>
+<li><a href="#character-relationships">Character Relationships</a>
+</li>
+</ol>
+</nav>
 </div>
 </div>
 <div class="backlinks">
