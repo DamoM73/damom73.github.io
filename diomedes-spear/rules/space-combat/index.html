@@ -551,7 +551,7 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-08T01:32:55.925Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-08T01:32:55.925Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-08T01:32:55.925Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-08T02:25:52.194Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-08T02:25:52.194Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-08T02:25:52.194Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">Space Combat</h1>
@@ -629,11 +629,11 @@ CTRL + K
 </tr>
 <tr>
 <td>Planning</td>
-<td>Allows a commander to spend the round setting up a future stunt by allowing them to save SP toward a specific goal.<br><br>To attempt a plan, the commander must declare the stunt (or combination of stunts) they are working toward and make a TN 13 Intelligence (Tactics) test. Instead of spending any stunt points earned, they are banked and can be used in a future round. Success grants 2 SP or the result of the drama die if doubles are rolled.<br><br>These SP cannot be used on the same round and must be held until the next (or later) round. A commander can continue making this test until they have enough SP for the desired stunt.<br><br>Planning cannot be used simply to increase the effectiveness of a specific stunt, such as Guidance or Evasive Action, but can only be spent building toward a stunt with a specific cost.</td>
+<td><strong>Planning</strong> <br>A commander may spend their turn banking SP toward a specific stunt or combo of stunts. To do so, they declare the intended stunt(s) and make a TN 13 Intelligence (Tactics) test. On success, they store 2 SP—or the drama die result if doubles are rolled—for future use.<br><br>Banked SP cannot be used in the same round and must be spent in a later round. A commander may repeat the test in later rounds to accumulate enough SP for the declared stunt(s).<br><br>Planning must target a specific stunt cost and cannot be used to simply enhance stunts like <em>Guidance</em> or <em>Evasive Action</em>.</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="command-stunts" tabindex="-1">Command Stunts</h3>
+<h4 id="ship-command-stunts" tabindex="-1">Ship Command Stunts</h4>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -669,6 +669,12 @@ CTRL + K
 <td></td>
 </tr>
 <tr>
+<td>2</td>
+<td>Follow the Leader</td>
+<td>At close range, you tail another ship, mirroring its movements.<br><br>- +2 to evasion against all ships except the one you're following<br>- You gain any cover the lead ship enters<br>- Remain in position unless the lead ship wins an opposed Dexterity (Piloting) test</td>
+<td></td>
+</tr>
+<tr>
 <td>2+</td>
 <td>On-target</td>
 <td>Increases the TN of tests to evade your ship’s weapon attacks that round by +1.</td>
@@ -693,6 +699,12 @@ CTRL + K
 <td></td>
 </tr>
 <tr>
+<td>3</td>
+<td>Exploitable Terrain</td>
+<td>If near exploitable terrain (e.g. asteroids, dust cloud), you identify a path offering cover. Immediately trigger either the <strong>Evasive Manoeuvre</strong> or <strong>Follow the Leader</strong> stunt.</td>
+<td></td>
+</tr>
+<tr>
 <td>3+</td>
 <td>Calculation</td>
 <td>You can bank the SP you just spent for this stunt +1 and use them on a later stunt. You can also combine these SP with future SP earned.</td>
@@ -707,31 +719,31 @@ CTRL + K
 <tr>
 <td>4</td>
 <td>Skimming</td>
-<td>If a space battle takes place near a planet with an atmosphere, you can dive into the planet’s atmosphere to avoid being targeted and perhaps even lose your pursuer completely.<br><br>Your pilot must make an opposed TN 17 Dexterity (Piloting) test to succeed.<br>- Success -&gt; the pursuing ship loses track of your ship in the atmosphere, at least temporarily.<br><br>On following rounds, the pursuing ship can make opposed TN 11 Intelligence (Technology) + Sensors tests to reacquire a target on your ship.</td>
+<td>A ship near a planet with an atmosphere can attempt to evade pursuit by diving into it. The pilot makes an opposed TN 17 Dexterity (Piloting) test. On success, the pursuing ship loses track of the target.<br><br>On subsequent rounds, the pursuer may attempt opposed TN 11 Intelligence (Technology) + Sensors tests to reacquire the target.</td>
 <td></td>
 </tr>
 <tr>
 <td>4</td>
 <td>Too Close</td>
-<td>To perform this stunt, you must be engaged against multiple enemy ships and at close range to one that is of at least one size class larger. A space station can also count as a larger ship.<br><br>The pilot manoeuvres into a position that makes it difficult for enemies to target your ship without risking damage to the other ship.<br><br>During the Manoeuvre phase, the pilot must make a successful opposed TN 15 Dexterity (Piloting) test against the larger ship at -2. The difficulty is reduced by 1 for every additional size class greater the enemy ship is than the crew’s ship.<br><br>- Success -&gt; the pilot gains a +2 to their evasion test against any ships other than the ship they are using for cover<br>- Any attacks that miss the crew’s ship hit the larger ship if the pilot rolls a 5 or 6 on the Drama Die.<br>- If both ships fail the piloting test -&gt; the ships collide, causing 2d6 damage to the larger ship and 4d6 damage to the smaller ship.</td>
+<td>This stunt can be used when engaged with multiple enemies and adjacent to a ship (or station) at least one size class larger.<br><br>The pilot attempts to position the ship so that attacking it risks hitting the larger vessel. During the Manoeuvre phase, make an opposed TN 15 Dexterity (Piloting) test against the larger ship, with a –2 penalty. Reduce the TN by 1 for each additional size class difference.<br><br>- Success: +2 to evasion against all ships except the one used for cover.<br>- Drama Die 5–6 on a missed attack: The larger ship is hit instead.<br>- Both pilots fail: The ships collide—2d6 damage to the larger ship, 4d6 to the smaller.</td>
 <td></td>
 </tr>
 <tr>
 <td>4+</td>
 <td>Set-up</td>
-<td>You manoeuvre an opposing ship into a hazard, such as a normally shorter-range weapon, a field of debris, or even a floating rock.<br><br>This stunt is considered a weapon attack inflicting damage dice equal to half the SP spent (round down).<br><br>Can be evaded with the TN = 10 + your Intelligence + Leadership focus (if any) + half the SP spent</td>
+<td>You force an enemy ship into a nearby hazard (e.g. debris, short-range weapon, asteroid).<br><br>This counts as a weapon attack dealing damage equal to half the SP spent (rounded down).<br><br>The target may evade with a TN equal to: <br>10 + your Intelligence + Leadership (if any) + ½ SP spent.</td>
 <td></td>
 </tr>
 <tr>
 <td>5</td>
 <td>Burn Them</td>
-<td>An Epstein drive emits a powerful drive plume that can, in a pinch, be used as a weapon. To do this successfully, the ship must be at close range and perform a sudden flip and burn that points the drive plume directly at the enemy ship.<br><br>The ships must be at extremely close range, so this manoeuvre can’t be used in normal engagements - only if circumstances have dictated that the ships are very close (under 1 km). Unfortunately, this manoeuvre leaves the crew’s ship vulnerable and open to attack.<br><br>To successfully perform this manoeuvre, the pilot must also make a successful opposed TN 19 Dexterity (Piloting) test against the other ship at -2. If successful, the other ship is engulfed in your drive plume, causing 6d6 damage. The downside is that only rear-facing weapons can fire while the ship performs this manoeuvre, and enemy ships have a +2 to their evasion tests. Also, due to being in an exposed position, all evasion tests are at -2. If the pilot fails this test, they fail to engulf the enemy ship with the drive plume but still suffer all of the associated penalties.</td>
+<td>At extremely close range (under 1 km), you can use your Epstein drive as a weapon by flipping and burning toward an enemy ship.<br><br>Make an opposed TN 19 Dexterity (Piloting) test at –2.<br>- Success: The enemy is caught in your drive plume, taking 6d6 damage. <br>- Failure: No damage is dealt, but penalties still apply.<br> <br>During the manoeuvre:<br>- Only rear-facing weapons can fire. <br>- Enemies gain +2 to evasion against your attacks.<br>- Your ship suffers –2 to all evasion tests.</td>
 <td></td>
 </tr>
 <tr>
 <td>5</td>
 <td>Weapon Online</td>
-<td>One of the crew can temporarily bring a damaged weapon, or a weapon that has run out of ammo, back online.<br><br>A character can attempt a TN 14 Intelligence (Engineering) or Dexterity (Gunnery) test to bring a weapon back online.<br><br>The weapon can make 1d3 shots before giving up the ghost for good, requiring a proper repair. The weapon cannot be brought back online again without the ship receiving full maintenance at a spaceport.</td>
+<td>A crew member can temporarily restore a damaged or depleted weapon.<br><br>Make a TN 14 Intelligence (Engineering) or Dexterity (Gunnery) test. Success: The weapon functions for 1d3 shots, then fails permanently until full maintenance is performed at a spaceport.</td>
 <td></td>
 </tr>
 <tr>
@@ -743,8 +755,35 @@ CTRL + K
 <tr>
 <td>7</td>
 <td>Misdirect</td>
-<td>When attempting to outrun a torpedo, you can fly close to another ship to try to get the torpedo to hit that ship instead of your own. You perform a flip and burn when near another ship.<br><br>The pilot must make a successful opposed Dexterity (Piloting) test against the other ship and another member of the crew must make a TN 17 Technology (Intelligence) test. If both are successful, the torpedo impacts the other ship instead.</td>
+<td>You attempt to redirect an incoming torpedo toward a nearby ship by performing a close-range flip and burn.<br><br>Requires:<br>- An opposed Dexterity (Piloting) test against the nearby ship<br>- A TN 17 Intelligence (Technology) test by another crew member<br><br>Success on both: The torpedo strikes the other ship instead.</td>
 <td></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="fleet-command-stunts" tabindex="-1">Fleet Command Stunts</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th><strong>SP</strong></th>
+<th><strong>Stunt</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1+</td>
+<td>Combined Fire</td>
+<td>You coordinate fire with an allied ship, increasing the likelihood that both of you hit the target. Every 1 SP you spend increases the TN of tests made to evade your ship’s attack by +1. Both captains must spend this SP</td>
+</tr>
+<tr>
+<td>2+</td>
+<td>Draw Fire</td>
+<td>You manage to draw fire from an enemy’s intended target. For every 2 SP spent, an attacker that was going to attack an ally attacks your ship instead</td>
+</tr>
+<tr>
+<td>2+</td>
+<td>Good Advice</td>
+<td>This stunt allows one commander to aid another, either by giving them a bonus to their next command test or giving them SP. Every 2 SP you spend gives an allied Commander +1 on their next test or 1 SP to spend</td>
 </tr>
 </tbody>
 </table></div>
@@ -777,6 +816,53 @@ CTRL + K
 <tr>
 <td>The Juice</td>
 <td>Characters with access to the juice can take fatigued and exhausted conditions first to mitigate the damage before they take injured or wounded conditions, otherwise they have to take just injured and wounded conditions.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="manoeuvres-stunts" tabindex="-1">Manoeuvres Stunts</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th><strong>SP</strong></th>
+<th><strong>Stunt</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1+</td>
+<td>Blinding Manoeuvre</td>
+<td>Reduces an opposing ship’s Sensors score by 1 (to a minimum score of –2) until the start of the next round.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Evasive Manoeuver</td>
+<td>Until your next turn, attacks against you and your ship (if any) suffer a -2 penalty</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Follow the Leader</td>
+<td>At close range, you tail another ship, mirroring its movements.<br><br>- +2 to evasion against all ships except the one you're following<br>- You gain any cover the lead ship enters<br>- Remain in position unless the lead ship wins an opposed Dexterity (Piloting) test</td>
+</tr>
+<tr>
+<td>2+</td>
+<td>Steady as She Goes</td>
+<td>Pilot can lessen the potential high-g manoeuvres damage to passengers. For every 2 SP spent the TN for the Constitution (Stamina) test is reduced by 1.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Blockade</td>
+<td>You manoeuvre to block an enemy’s line to its target (other than your ship).<br><br>The enemy suffers –2 to manoeuvre tests to pursue or attack that target, or the target gains +2 to evasion (pilot’s choice).</td>
+</tr>
+<tr>
+<td>4+</td>
+<td>Set-up</td>
+<td>You force an enemy ship into a nearby hazard (e.g. debris, short-range weapon, asteroid).<br><br>This counts as a weapon attack dealing damage equal to half the SP spent (rounded down).<br><br>The target may evade with a TN equal to: <br>10 + your Intelligence + Leadership (if any) + ½ SP spent.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Dauntless</td>
+<td>At close range, you fake a ramming manoeuvre to disrupt an enemy ship.<br><br>The enemy must make a TN 15 Dexterity (Piloting) test.<br>- Failure: They flinch and take no further actions this round.<br>- Success: If they don’t flinch, your pilot must pass a TN 17 Dexterity (Piloting) test to avoid an actual collision (regardless, your ship can still act).</td>
 </tr>
 </tbody>
 </table></div>
@@ -815,7 +901,7 @@ CTRL + K
 </tr>
 </tbody>
 </table></div>
-<h3 id="piloting-stunts" tabindex="-1">Piloting Stunts</h3>
+<h4 id="defensive-actions" tabindex="-1">Defensive Actions</h4>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -826,34 +912,14 @@ CTRL + K
 </thead>
 <tbody>
 <tr>
-<td>1+</td>
-<td>Blinding Manoeuvre</td>
-<td>Reduces an opposing ship’s Sensors score by 1 (to a minimum score of –2) until the start of the next round.</td>
-</tr>
-<tr>
-<td>2+</td>
-<td>Steady as She Goes</td>
-<td>Pilot can lessen the potential high-g manoeuvres damage to passengers. For every 2 SP spent the TN for the Constitution (Stamina) test is reduced by 1.</td>
-</tr>
-<tr>
 <td>3+</td>
 <td>Evasive Action</td>
 <td>Grants a +1d6 Hull bonus to your ship that round for resisting damage from successful weapon attacks.</td>
 </tr>
 <tr>
-<td>4</td>
-<td>Blockade</td>
-<td>The pilot manoeuvres the ship to make it difficult for an enemy ship to fire on or pursue its chosen target (unless that target is the pilot’s ship).<br><br>The enemy ship suffers a -2 penalty to any manoeuvre test to pursue or attack its original target. Or the targeted ship gets a +2 to its evasion test.</td>
-</tr>
-<tr>
-<td>4+</td>
-<td>Set-up</td>
-<td>You manoeuvre an opposing ship into a hazard, such as a normally shorter-range weapon, a field of debris, or even a floating rock.<br><br>This stunt is considered a weapon attack inflicting damage dice equal to half the SP spent (round down).<br><br>Can be evaded with the TN = 10 + your Intelligence + Leadership focus (if any) + half the SP spent</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Dauntless</td>
-<td>The pilot aims their ship at an enemy ship as if to ram it, to cause it to veer off course and miss their attack opportunity. This manoeuvre can only be used when the ships are already at close range.<br><br>The enemy ship must make a successful TN 15 Dexterity (Piloting) test or not be able to take any other action as they recover from the threat of being rammed. If the enemy ship doesn’t flinch, the pilot must make a successful TN 17 Dexterity (Piloting) test to avoid hitting the ship they were aiming at although their ship still gets to take other actions.</td>
+<td>7</td>
+<td>Misdirect</td>
+<td>You attempt to redirect an incoming torpedo toward a nearby ship by performing a close-range flip and burn.<br><br>Requires:<br>- An opposed Dexterity (Piloting) test against the nearby ship<br>- A TN 17 Intelligence (Technology) test by another crew member<br><br>Success on both: The torpedo strikes the other ship instead.</td>
 </tr>
 </tbody>
 </table></div>
@@ -873,7 +939,7 @@ CTRL + K
 </tr>
 </tbody>
 </table></div>
-<h3 id="electronic-warfare-stunts" tabindex="-1">Electronic Warfare Stunts</h3>
+<h4 id="electronic-warfare-stunts" tabindex="-1">Electronic Warfare Stunts</h4>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -891,7 +957,7 @@ CTRL + K
 <tr>
 <td>2+</td>
 <td>Turnabout is Fair Play</td>
-<td>If a torpedo is being manually controlled, the sensors operator can attempt to wrest control of the torpedo from the other ship. If there is more than one torpedo, 2 SP can be spent to attempt to control each.<br><br>Opposed Intelligence (Technology) + Sensors test against the enemy ship.</td>
+<td>If a torpedo is under manual control, your sensor operator may attempt to seize control. Make an opposed Intelligence (Technology) + Sensors test against the enemy ship. Spend 2 SP per torpedo you attempt to hijack.</td>
 </tr>
 <tr>
 <td>3</td>
@@ -899,9 +965,14 @@ CTRL + K
 <td>You increase the damage of one successful weapon attack by 1d6.</td>
 </tr>
 <tr>
+<td>3</td>
+<td>Exploitable Terrain</td>
+<td>If near exploitable terrain (e.g. asteroids, dust cloud), you identify a path offering cover. Immediately trigger either the <strong>Evasive Manoeuvre</strong> or <strong>Follow the Leader</strong> stunt.</td>
+</tr>
+<tr>
 <td>4</td>
 <td>Hack the System</td>
-<td>While scanning the enemy ship for weaknesses, the sensors operator detects an opening in the enemy ship’s computer system. They can attempt to hack the enemy’s ship to temporarily disable one or more systems. To do this, a PC must make an opposed Intelligence (Technology) + Sensors test against the enemy ship. If successful, they can shut down one system on that ship (weapons, sensors, engines, etc.). They remain offline until someone on the enemy ship makes a successful TN 15 Intelligence (Technology) test.</td>
+<td>While scanning, you detect a vulnerability in the enemy's systems. Make an opposed Intelligence (Technology) + Sensors test.<br>- Success: Disable one system (e.g. weapons, sensors, engines).<br>- It remains offline until the enemy makes a TN 15 Intelligence (Technology) test.</td>
 </tr>
 </tbody>
 </table></div>
@@ -937,30 +1008,7 @@ CTRL + K
 </tr>
 </tbody>
 </table></div>
-<h3 id="step-5-defensive-actions-1" tabindex="-1">Step 5: Defensive Actions</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Point Defence</td>
-<td>Can only be used on torpedoes.<br><br>Can roll a point defence test for each torpedo in close range</td>
-</tr>
-<tr>
-<td>Point Defence Test</td>
-<td>3d6 + Sensors vs TN 10 + Attacking Ship's Sensors + attack bonuses<br><br>If PBC have been used for attack in this round TN 12</td>
-</tr>
-<tr>
-<td>Gunnery skill</td>
-<td>Characters can replace the ship’s sensor score with their Dexterity (Gunnery) score.</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="weapons-officer-stunts" tabindex="-1">Weapons Officer Stunts</h3>
+<h4 id="weapon-attacks-stunts" tabindex="-1">Weapon Attacks Stunts</h4>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -984,6 +1032,46 @@ CTRL + K
 <td>4</td>
 <td>Precise hit</td>
 <td>One successful weapon attack results in an additional Loss, even if the target’s Hull completely eliminated the damage</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="step-5-defensive-actions-1" tabindex="-1">Step 5: Defensive Actions</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point Defence</td>
+<td>Can only be used on torpedoes.<br><br>Can roll a point defence test for each torpedo in close range</td>
+</tr>
+<tr>
+<td>Point Defence Test</td>
+<td>3d6 + Sensors vs TN 10 + Attacking Ship's Sensors + attack bonuses<br><br>If PBC have been used for attack in this round TN 12</td>
+</tr>
+<tr>
+<td>Gunnery skill</td>
+<td>Characters can replace the ship’s sensor score with their Dexterity (Gunnery) score.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="defensive-actions-stunts" tabindex="-1">Defensive Actions Stunts</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th><strong>SP</strong></th>
+<th><strong>Stunt</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Multi-targeting</td>
+<td>PBCs can both attack and defend this round without any penalty.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1027,6 +1115,58 @@ CTRL + K
 </tr>
 </tbody>
 </table></div>
+<h4 id="weapon-attacks-stunts-1" tabindex="-1">Weapon Attacks Stunts</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th><strong>SP</strong></th>
+<th><strong>Stunt</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1+</td>
+<td>Penetrate Hull</td>
+<td>Your attack overcomes the ship’s resistance to damage. Spend SP equivalent to the number of hull dice.</td>
+</tr>
+<tr>
+<td>1-3</td>
+<td>System Damage</td>
+<td>Damages the ship’s Manouver, Sensors, or Weapons. Impose a –1 penalty per SP spent to the damaged ability (up to 3). Damage control can negate (but not remove) the penalty for rounds equal to the Drama Die result.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Off-Course</td>
+<td>The ship is thrown off-course, and the operator must make a TN 15 pilot test to maintain control. A new test can be made each round to regain control if it is lost</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Scuttle</td>
+<td>Your attack destroys the target vehicle. This stunt is only available against a helpless ship</td>
+</tr>
+<tr>
+<td>2+</td>
+<td>Shrapnel</td>
+<td>The attack causes a damaging explosion in the ship’s interior. The all crew in a compartment suffer 1d6 damage for 2 SP or 2d6 damage for 4 SP</td>
+</tr>
+<tr>
+<td>3+</td>
+<td>Hull Breach</td>
+<td>You inflict significant damage to the ship, reducing its Hull rating by 1 per 3 SP spent. The loss of Hull rating lasts until repaired.</td>
+</tr>
+<tr>
+<td>4+</td>
+<td>Skewer</td>
+<td>Your attack is in just the right place to do serious damage inside the vehicle. One character suffers 4d6 damage for 4 SP, or for 6 SP, 6d6 damage.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Rupture</td>
+<td>Your attack ruptures a fuel line or power conduit, causing an internal explosion. This deals 3d6 penetrating damage to crew in a compartment. It also causes the effects of a System Damage (3 SP)</td>
+</tr>
+</tbody>
+</table></div>
 <h3 id="step-6-damage-control" tabindex="-1">Step 6: Damage Control</h3>
 <div class="table-wrapper"><table>
 <thead>
@@ -1050,7 +1190,7 @@ CTRL + K
 </tr>
 </tbody>
 </table></div>
-<h3 id="engineer-stunts" tabindex="-1">Engineer Stunts</h3>
+<h4 id="damage-control-stunts" tabindex="-1">Damage Control Stunts</h4>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1078,12 +1218,12 @@ CTRL + K
 <tr>
 <td>4</td>
 <td>Patch</td>
-<td>The ship’s engineer can apply a quick weld job to temporarily reinforce hull damage. Attempt a TN 17 Intelligence (Engineering) test to make the patch. If successful, the temporarily remove hull losses up to the number rolled on the Drama Die by the engineer. This patch only lasts until the end of the combat, and the ship must then receive proper maintenance at a spaceport.</td>
+<td>The engineer makes a TN 17 Intelligence (Engineering) test to apply a temporary hull repair.<br>- Success: Restore hull equal to the engineer’s Drama Die roll.<br>- The patch lasts until the end of combat, after which proper maintenance is required.</td>
 </tr>
 <tr>
 <td>5</td>
 <td>Weapon Online</td>
-<td>One of the crew can temporarily bring a damaged weapon, or a weapon that has run out of ammo, back online.<br><br>A character can attempt a TN 14 Intelligence (Engineering) or Dexterity (Gunnery) test to bring a weapon back online.<br><br>The weapon can make 1d3 shots before giving up the ghost for good, requiring a proper repair. The weapon cannot be brought back online again without the ship receiving full maintenance at a spaceport.</td>
+<td>A crew member can temporarily restore a damaged or depleted weapon.<br><br>Make a TN 14 Intelligence (Engineering) or Dexterity (Gunnery) test. Success: The weapon functions for 1d3 shots, then fails permanently until full maintenance is performed at a spaceport.</td>
 </tr>
 <tr>
 <td>6</td>
@@ -1138,46 +1278,70 @@ On this page
 <li><a href="#commander-actions">Commander Actions</a>
 <ol>
 <li><a href="#step-1-command">Step 1: Command</a>
+<ol>
+<li><a href="#ship-command-stunts">Ship Command Stunts</a>
 </li>
-<li><a href="#command-stunts">Command Stunts</a>
+<li><a href="#fleet-command-stunts">Fleet Command Stunts</a>
+</li>
+</ol>
 </li>
 </ol>
 </li>
 <li><a href="#pilot-actions">Pilot Actions</a>
 <ol>
 <li><a href="#step-2-manoeuvres">Step 2: Manoeuvres</a>
+<ol>
+<li><a href="#manoeuvres-stunts">Manoeuvres Stunts</a>
+</li>
+</ol>
 </li>
 <li><a href="#step-5-defensive-actions">Step 5: Defensive Actions</a>
+<ol>
+<li><a href="#defensive-actions">Defensive Actions</a>
 </li>
-<li><a href="#piloting-stunts">Piloting Stunts</a>
+</ol>
 </li>
 </ol>
 </li>
 <li><a href="#comms-officer-actions">Comms Officer Actions</a>
 <ol>
 <li><a href="#step-3-electronic-warfare">Step 3: Electronic Warfare</a>
-</li>
+<ol>
 <li><a href="#electronic-warfare-stunts">Electronic Warfare Stunts</a>
+</li>
+</ol>
 </li>
 </ol>
 </li>
 <li><a href="#weapons-officer-actions">Weapons Officer Actions</a>
 <ol>
 <li><a href="#step-3-weapon-attacks">Step 3: Weapon Attacks</a>
+<ol>
+<li><a href="#weapon-attacks-stunts">Weapon Attacks Stunts</a>
+</li>
+</ol>
 </li>
 <li><a href="#step-5-defensive-actions-1">Step 5: Defensive Actions</a>
+<ol>
+<li><a href="#defensive-actions-stunts">Defensive Actions Stunts</a>
 </li>
-<li><a href="#weapons-officer-stunts">Weapons Officer Stunts</a>
+</ol>
 </li>
 </ol>
 </li>
 <li><a href="#engineer-actions">Engineer Actions</a>
 <ol>
 <li><a href="#step-6-weapon-attacks">Step 6: Weapon Attacks</a>
+<ol>
+<li><a href="#weapon-attacks-stunts-1">Weapon Attacks Stunts</a>
+</li>
+</ol>
 </li>
 <li><a href="#step-6-damage-control">Step 6: Damage Control</a>
+<ol>
+<li><a href="#damage-control-stunts">Damage Control Stunts</a>
 </li>
-<li><a href="#engineer-stunts">Engineer Stunts</a>
+</ol>
 </li>
 </ol>
 </li>
