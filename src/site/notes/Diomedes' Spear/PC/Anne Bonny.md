@@ -28,6 +28,14 @@
 | Point Defence Network | Close | 2d6    | Full Coverage |
 | Grapplers (2)         | Close | -      | Aft           |
 
+| System          | Max Conditions |
+| --------------- | :------------: |
+| Collateral      |   # of crew    |
+| Hull            |       2        |
+| Manoeuvrability |       6        |
+| Sensor          |       6        |
+| Weapons         |       6        |
+
 | Quality / Flaw            | Effect/Description                                                                                                   | Conditions/Prerequisites    | Stackable? |
 | :------------------------ | :------------------------------------------------------------------------------------------------------------------- | :-------------------------- | :--------- |
 | Altered Transponder Code  | Allows the ship to appear as another vessel.                                                                         | Highly illegal.             | No         |
