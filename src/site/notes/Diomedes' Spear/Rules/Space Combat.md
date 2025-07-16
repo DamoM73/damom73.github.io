@@ -16,7 +16,11 @@
 
 | Range  |    Distance    | Grapplers | PDCs | Rail Guns | Torpedoes |
 | ------ | :------------: | :-------: | :--: | :-------: | :-------: |
-| Close  |     < 5km      |    Yes    | Yes  |    Yes    |    Yes    |
+| Close  |                  Grapplers                   | PDCs |                              Rail Guns                               |                  Torpedoes                   |
+| ------ | :------------: | :------------------------------------------: | :--: | :------------------------------------------------------------------: | :------------------------------------------: |
+| Close  |     < 5km      | Evasion TN is 10 +  attacking ship's Sensors | Yes  | Perception (Gunnery) test vs TN 13 + defender’s Piloting (Dexterity) | Evasion TN is 10 +  attacking ship's Sensors |
+| Medium |  5km - 100km   |                      No                      |  No  |                                 Yes                                  |                                              |
+| Long   | 100km - 1000km |                      No                      |  No  |                                  No                                  |    < 5km      |    Yes    | Yes  |    Yes    |    Yes    |
 | Medium |  5km - 100km   |    No     |  No  |    Yes    |    Yes    |
 | Long   | 100km - 1000km |    No     |  No  |    No     |    Yes    |
 
