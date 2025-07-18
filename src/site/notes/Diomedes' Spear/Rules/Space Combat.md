@@ -26,7 +26,16 @@ Here are the combat ranges and the tests to evade weapons at different ranges.
 
 ### Step 1: Command
 
-| Option       | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+The character in command of the ship is responsible for issuing orders and leveraging their leadership to gain advantages for the crew. A space combat round typically lasts around a minute.
+
+
+> [!todo] Steps
+> 1. Decide on a course of action
+> 2. Give commands
+> 3. Roll a Command test
+> 4. Distribute SP if desired
+
+| Action       | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Command Test | TN11 Communication (Leadership Test)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | Success      | 1SP + Drama Die SP with doubles                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -67,14 +76,25 @@ Here are the combat ranges and the tests to evade weapons at different ranges.
 ## Pilot Actions
 
 ### Step 2: Manoeuvres
+> [!todo] Steps
+> 1. Select manoeuvring actions
+> 2. Make required rolls
+> 3. Spend SP if applicable
 
-| Option             | Details                                                                                                                                                                                                                                                                        |
+| Actions            | Details                                                                                                                                                                                                                                                                        |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Change Range       | Automatically change by one range band                                                                                                                                                                                                                                         |
 | Prevent change     | - Opposed Dexterity (Piloting) test between the two ships to prevent change in range<br>- Smaller ship getting a +1 bonus per Size category smaller than the larger ship                                                                                                       |
 | High-G Manoeuvring | - Adds a bonus from +1 to +6 to the manoeuvre test result<br>- Allows the ship to shift up to two range bands.                                                                                                                                                                 |
-| High-G effects     | Requires all characters on board to perform a Constitution (Stamina) test with a TN of 8 + manoeuvre bonus:<br>- failure -> the character suffers 1d6 penetrating damage per point of manoeuvre bonus<br>- success -> half 1d6 penetrating damage per point of manoeuvre bonus |
-| The Juice          | Characters with access to the juice can take fatigued and exhausted conditions first to mitigate the damage before they take injured or wounded conditions, otherwise they have to take just injured and wounded conditions.                                                   |
+#### High-G effects
+Requires all characters on board to perform a Constitution (Stamina) test vs TN of 8 + manoeuvre bonus:
+- failure -> the character suffers 1d6 penetrating damage per point of manoeuvre bonus
+- success -> half 1d6 penetrating damage per point of manoeuvre bonus
+
+The Juice
+- Characters with access to the juice can take fatigued and exhausted conditions first to mitigate the damage before they take injured or wounded conditions, otherwise they have to take just injured and wounded conditions.
+- Good juice ship quality provides +2 to Constitution (Stamina) test
+- Bad juice ship flaw detracts -2 from Constitution (Stamina) test
 
 #### Manoeuvres Stunts
 | **SP** | **Stunt**          | **Details**                                                                                                                                                                                                                                                                                                                                                           |
@@ -89,14 +109,27 @@ Here are the combat ranges and the tests to evade weapons at different ranges.
 
 ### Step 5A: Defensive Pilot Actions
 
-| Option             | Details                                                                                                                                                                                                                                                                                                                  |
+> [!todo] Steps
+> 1. Decide on High-G Manoeuvres
+> 2. Perform an evasive manoeuvres for every weapon system fired at you. 
+> 3. Torpedoes need to be evaded individually
+> 4. Spend SP if applicable
+
+| Action             | Details                                                                                                                                                                                                                                                                                                                  |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Evade Torpedo      | Complete a Evade test for each torpedo<br>- Launched from Long Range -> cannot evade, only shoot down<br>- Launched from Medium Range -> 3d6 + Dex (Piloting) vs. TN 12 + attacking ship sensors + attack bonus<br>- Launched from Short Range -> 3d6 + Dex (Piloting) vs. TN 10 + attacking ship sensors + attack bonus |
 | Evade Railgun      | - Long Range -> automatic success<br>- Medium Range -> 3d6 + Dex (Piloting) vs. TN 10 + attacking ship sensors + attack bonus<br>- Short Rang-> 3d6 + Dex (Piloting) vs. TN 12 + attacking ship sensors + attack bonus                                                                                                   |
-| Evade PDC          | - Long Range -> automatic success<br>- Medium Range -> automatic success<br>- Short Range -> 3d6 + Dex (Piloting) vs. TN 10 + attacking ship sensors + attack bonus<br>  - If opponent used PDC for defence and attack -> TN 8                                                                                           |
+| Evade PDC          | - Long Range -> automatic success<br>- Medium Range -> automatic success<br>- Short Range -> 3d6 + Dex (Piloting) + bonus vs. TN 10 + attacking ship sensors + attack bonus<br>- If opponent used PDC for defence and attack -> TN 8                                                                                     |
 | High-G Manoeuvring | - Adds a bonus from +1 to +6 to the evasion test result                                                                                                                                                                                                                                                                  |
-| High-G effects     | Requires all characters on board to perform a Constitution (Stamina) test with a TN of 8 + manoeuvre bonus:<br>- failure -> the character suffers 1d6 penetrating damage per point of manoeuvre bonus<br>- success → half 1d6 penetrating damage per point of manoeuvre bonus                                            |
-| The Juice          | Characters with access to the juice can take fatigued and exhausted conditions first to mitigate the damage before they take injured or wounded conditions, otherwise they have to take just injured and wounded conditions.                                                                                             |
+#### High-G effects
+Requires all characters on board to perform a Constitution (Stamina) test vs TN of 8 + manoeuvre bonus:
+- failure -> the character suffers 1d6 penetrating damage per point of manoeuvre bonus
+- success -> half 1d6 penetrating damage per point of manoeuvre bonus
+
+The Juice
+- Characters with access to the juice can take fatigued and exhausted conditions first to mitigate the damage before they take injured or wounded conditions, otherwise they have to take just injured and wounded conditions.
+- Good juice ship quality provides +2 to Constitution (Stamina) test
+- Bad juice ship flaw detracts -2 from Constitution (Stamina) test
 
 #### Defensive Pilot Stunts
 
@@ -109,9 +142,15 @@ Here are the combat ranges and the tests to evade weapons at different ranges.
 
 ### Step 3: Electronic Warfare
 
-| Option  | Details                                                                                                                                                                                    |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| EW Test | Opposed Intelligence (Technology) test + Ship sensors vs TN 11<br><br>Winner gains half drama die (rounded up) bonus to apply to:<br>- Defensive actions<br>- TN of your attack that round |
+> [!todo] Steps
+> 1. Perform Electronic Warfare test
+> 2. Make required rolls
+> 3. Choose how to distribute bonus
+> 4. Spend SP if applicable 
+
+| Actions | Details                                                                                                                                                                                                                                             |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EW Test | Opposed Intelligence (Technology) test + Ship sensors vs TN 11<br><br>Winner gains half drama die (rounded up) bonus to apply to either:<br>- add to all defensive actions<br>- increase the Target Number (TN) to evade the winning ship's attacks |
 
 #### Electronic Warfare Stunts
 
@@ -125,46 +164,56 @@ Here are the combat ranges and the tests to evade weapons at different ranges.
 
 ## Weapons Officer Actions
 ### Step 4: Weapon Attacks
+Automatic Hits and Evasion: Ship speeds and advanced computer systems mean that, under normal circumstances, a weapon attack within its effective range will automatically hit its target. A hit is only prevented if the target ship successfully performs a defensive action, such as an evasion manoeuvre.
 
-| Option                  | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Attack                  | Each of the ship’s weapons within range can attack an available target designated by a crew member with weapons control.                                                                                                                                                                                                                                                                                                                                                                           |
-| Effective Weapon Ranges | - Grapplers -> up to Close<br>- PDCs -> up to Close<br>- Rail Gun -> up to Medium (short - opposed ship has to be setup)<br>- Torpedo -> up to Long                                                                                                                                                                                                                                                                                                                                                |
-| Torpedo time to impact  | - Close range -> same round as launch<br>- Medium range -> next round after launch<br>- Long range -> two rounds after launch                                                                                                                                                                                                                                                                                                                                                                      |
-| Targeted Attacks        | Characters can choose to fire a targeted weapon attack aimed at causing a particular type of loss to the target:<br><br>- Targets:<br>  - Collateral -> TN 11 -> Hull modifier ¾<br>  - Manoeuvrability -> TN 13 -> Hull modifier ⅓<br>  - Sensors -> TN 15 -> Hull modifier ½<br>  - Weapons -> TN 15 -> Hull modifier ½<br>- the attack cannot cause any effect greater than the intended loss<br>- cannot take out the target ship<br>- any damage in excess of the intended loss has no effect |
-| Gunnery skill           | Characters can replace the ship’s sensor score with their Dexterity (Gunnery) score.                                                                                                                                                                                                                                                                                                                                                                                                               |
+> [!todo] Steps
+> 1. If performing a targeted attack, roll for attack.
+> 2. Choose which remaining weapon systems to fire.
+> 3. If you have not rolled this round , roll vs TN11 to generate SP
+> 4. Spend SP if applicable
+
+| Actions                 | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Attack                  | Each of the ship’s weapons within range can attack an available target designated by a crew member with weapons control.                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Effective Weapon Ranges | - Grapplers -> up to Close<br>- PDCs -> up to Close<br>- Rail Gun -> up to Medium (short - opposed ship has to be setup)<br>- Torpedo -> up to Long                                                                                                                                                                                                                                                                                                                                                                                   |
+| Torpedo time to impact  | - Close range -> same round as launch<br>- Medium range -> next round after launch<br>- Long range -> two rounds after launch                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Targeted Attacks        | Characters can choose to fire a targeted weapon attack aimed at causing a particular type of loss to the target:<br>- Roll is a Accuracy (Gunnery) test<br>- Targets:<br>  - Collateral -> TN 11 -> Hull modifier ¾<br>  - Manoeuvrability -> TN 13 -> Hull modifier ⅓<br>  - Sensors -> TN 15 -> Hull modifier ½<br>  - Weapons -> TN 15 -> Hull modifier ½<br>- the attack cannot cause any effect greater than the intended loss<br>- cannot take out the target ship<br>- any damage in excess of the intended loss has no effect |
+| Gunnery skill           | Characters can replace the ship’s sensor score with their Dexterity (Gunnery) score.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 #### Weapon Attacks Stunts
-| **SP** | **Stunt**       | **Details**                                                                                                            |
-| ------ | --------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 2      | Multi-targeting | PBCs can both attack and defend this round without any penalty.                                                        |
-| 2+     | On-target       | Increases the TN of tests of your opponent to evade your ship’s weapon attacks that round by +1.                       |
-| 4      | Precise hit     | One successful weapon attack results in an additional Loss, even if the target’s Hull completely eliminated the damage |
+| **SP** | **Stunt**       | **Details**                                                                                                                                                                                        |
+| ------ | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2      | Multi-targeting | PBCs can both attack and defend this round without any penalty.                                                                                                                                    |
+| 2+     | On-target       | Increases the TN of tests of your opponent to evade your ship’s weapon attacks that round by +1.                                                                                                   |
+| 4      | Precise hit     | One successful weapon attack results in an additional Loss, even if the target’s Hull completely eliminated the damage                                                                             |
+
 
 ### Step 5B: Defensive Weapons Actions
+>[!todo] Steps
+> 1. Decide which torpedoes to fire on
+> 2. This round accumulates SP that can be spent on weapon attacks stunts
+> 3. Spend SP if applicable
 
-| Option             | Details                                                                                                                        |
+| Action             | Details                                                                                                                        |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 | Point Defence      | Can only be used on torpedoes.<br><br>Can roll a point defence test for each torpedo in close range                            |
 | Point Defence Test | 3d6 + Sensors vs TN 10 + Attacking Ship's Sensors + attack bonuses<br><br>If PBC have been used for attack in this round TN 12 |
 | Gunnery skill      | Characters can replace the ship’s sensor score with their Dexterity (Gunnery) score.                                           |
 
-#### Defensive Weapons Stunts
-
-| **SP** | **Stunt**       | **Details**                                                                                                            |
-| ------ | --------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 2      | Multi-targeting | PBCs can both attack and defend this round without any penalty.                                                        |
-
- 
 ## Engineer Actions
 ### Step 6:Attack Damage
+>[!todo] Steps
+> 1. Roll a damage score for a weapon system that hits the target
+> 2. Choose stunt for that weapon system (ie. SP can only be spent on the weapon that generated them)
+> 3. Apply the damage
+> 4. Apply loss condition (least amount possible)
 
-| Option                                                 | Details                                                                                                                                                                                                                                                                                                             |
+| Action                                                 | Details                                                                                                                                                                                                                                                                                                             |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Attack damage roll                                     | - Grapplers -> n/a<br>- PDCs -> 2d6<br>- Rail Gun -> 3d6<br>- Torpedo -> 4d6                                                                                                                                                                                                                                        |
 | Applying damage                                        | 1. Subtract Hull Score<br>2. Apply loss conditions:<br>  - 1 loss condition -> reduces damage by 1d6<br>  - 2 loss condition -> reduces damage by 2d6<br>3. Any remaining damage -> ship taken out                                                                                                                  |
 | Applying loss conditions                               | - 1 loss condition -> 2 normal losses<br>- 2 loss conditions -> 4 normal losses or 1 serious loss                                                                                                                                                                                                                   |
-| Normal                                                 | Roll  \|  Normal Loss  \|  Serious Loss \|<br>1  \|  Collateral  \|  Reactor Offline<br>2  \|  Hull  \|  Reactor Offline<br>3  \|  Manoeuvrability systems  \|  Reactor Offline<br>4  \|  Sensor systems  \|  Weapons Offline<br>5  \|  Weapons systems  \|  Weapons Offline<br>6  \|  Re-roll  \|  Weapons Offline |
+| Losses                                                 | Roll  \|  Normal Loss  \|  Serious Loss \|<br>1  \|  Collateral  \|  Reactor Offline<br>2  \|  Hull  \|  Reactor Offline<br>3  \|  Manoeuvrability systems  \|  Reactor Offline<br>4  \|  Sensor systems  \|  Weapons Offline<br>5  \|  Weapons systems  \|  Weapons Offline<br>6  \|  Re-roll  \|  Weapons Offline |
 | Manoeuvrability, sensor <br>and weapons systems losses | - Each normal loss applies -1 to that system.<br>- Can stack up to 6 times after that, they are offline.                                                                                                                                                                                                            |
 | Collateral losses                                      | For each collateral loss one crew members suffers the overflow damage (penetrating).                                                                                                                                                                                                                                |
 | Hull losses                                            | The amount of hull damage that can be applied depends on the ship’s hull score (the number of dice you roll for hull)                                                                                                                                                                                               |
@@ -172,6 +221,7 @@ Here are the combat ranges and the tests to evade weapons at different ranges.
 | Weapons Offline                                        | One of the ship's weapon systems becomes non-functional                                                                                                                                                                                                                                                             |
 
 #### Weapon Attacks Stunts
+From the weapons officer.
 
 | **SP** | **Stunt**      | **Details**                                                                                                                                                                                                           |
 | ------ | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -184,14 +234,18 @@ Here are the combat ranges and the tests to evade weapons at different ranges.
 | 4+     | Skewer         | Your attack is in just the right place to do serious damage inside the vehicle. One character suffers 4d6 damage for 4 SP, or for 6 SP, 6d6 damage.                                                                   |
 | 5      | Rupture        | Your attack ruptures a fuel line or power conduit, causing an internal explosion. This deals 3d6 penetrating damage to crew in a compartment. It also causes the effects of a System Damage (3 SP)                    |
 
-
 ### Step 6: Damage Control
+>[!todo] Steps
+> 1. Choose action (one per character performing damage control)
+> 2. Perform damage control roll
+> 3. Spend SP if applicable
 
-| Option                             | Details                                                                                                                                                                                                  |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Step 6: Damage Control**         |                                                                                                                                                                                                          |
-| Damage control roll                | Loss off Manoeuvrability, Sensors, or Weapons can be eliminated with a damage control advanced test:<br>- Intelligence (Engineering) vs. TN 11<br>- success threshold is 5 for every loss on that system |
-| Restore offline reactor or weapons | Temporarily restore offline system<br>- TN 13 basic Intelligence (Engineering) test<br>- restores system for a number of rounds equal to the Drama Die                                                   |
+
+| Action                             | Details                                                                                                                                                                                                      |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Step 6: Damage Control**         |                                                                                                                                                                                                              |
+| Damage control roll                | Loss off Manoeuvrability, Sensors, or Weapons can be eliminated with a damage control **advanced** test:<br>- Intelligence (Engineering) vs. TN 11<br>- success threshold is 5 for every loss on that system |
+| Restore offline reactor or weapons | Temporarily restore offline system<br>- TN 13 basic Intelligence (Engineering) test<br>- restores system for a number of rounds equal to the Drama Die                                                       |
 
 ####  Damage Control Stunts
 
