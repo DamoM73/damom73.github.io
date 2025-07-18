@@ -88,7 +88,7 @@
 | 4+     | Set-up             | You force an enemy ship into a nearby hazard (e.g. debris, short-range weapon, asteroid).<br><br>This counts as a weapon attack dealing damage equal to half the SP spent (rounded down).<br><br>The target may evade with a TN equal to:  <br>10 + your Intelligence + Leadership (if any) + ½ SP spent.                                                             |
 | 5      | Dauntless          | At close range, you fake a ramming manoeuvre to disrupt an enemy ship.<br><br>The enemy must make a TN 15 Dexterity (Piloting) test.<br>- Failure: They flinch and take no further actions this round.<br>- Success: If they don’t flinch, your pilot must pass a TN 17 Dexterity (Piloting) test to avoid an actual collision (regardless, your ship can still act). |
 
-### Step 5: Defensive Actions
+### Step 5A: Defensive Actions
 
 | Option             | Details                                                                                                                                                                                                                                                                                                                  |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -125,7 +125,7 @@
 | 4      | Hack the System        | While scanning, you detect a vulnerability in the enemy's systems. Make an opposed Intelligence (Technology) + Sensors test.<br>- Success: Disable one system (e.g. weapons, sensors, engines).<br>- It remains offline until the enemy makes a TN 15 Intelligence (Technology) test. |
 
 ## Weapons Officer Actions
-### Step 3: Weapon Attacks
+### Step 4: Weapon Attacks
 
 | Option                  | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -142,7 +142,7 @@
 | 2+     | On-target       | Increases the TN of tests of your opponent to evade your ship’s weapon attacks that round by +1.                       |
 | 4      | Precise hit     | One successful weapon attack results in an additional Loss, even if the target’s Hull completely eliminated the damage |
 
-### Step 5: Defensive Actions
+### Step 5B: Defensive Actions
 
 | Option             | Details                                                                                                                        |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -158,7 +158,7 @@
 
  
 ## Engineer Actions
-### Step 6: Weapon Attacks
+### Step 6:Attack Damage
 
 | Option                                                 | Details                                                                                                                                                                                                                                                                                                             |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
