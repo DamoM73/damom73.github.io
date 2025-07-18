@@ -6,6 +6,7 @@
 ## Basic Information
 - Name: Paulo “Glint” Arrache
 - Age: 36
+- Sexuality: Homosexual
 - Origin: Born on Ceres Station
 - Occupation: Freelance Engineer, Black Market Quartermaster
 ---
@@ -23,4 +24,4 @@
 | Franko Folto         |  +2   |   Friendly    |                                                                |
 | Sir Gary Fitzwilliam |  +1   |     Open      |                                                                |
 | Havoc The Gambler    |  +3   | Very Friendly | A long history, that they don't want to or need to talk about. |
-| Mohinder Wagner      |  +1   |     Open      |                                                                |
+| Mohinder Wagner      |  +3   | Very Friendly |                                                                |
