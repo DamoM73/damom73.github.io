@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/ship-types/unn-truman-class-dreadnought/"}
 ---
 
+![Truman_NorthFront.webp](/img/user/Diomedes'%20Spear/Assests/Truman_NorthFront.webp)
+
 > [!info] Description
 > While smaller than the Xerxes-class, the Truman-class dreadnought is the pride of the United Nations Navy. It is the longest active class of ship in the UNN and is well known for its reliability and sturdiness.
 

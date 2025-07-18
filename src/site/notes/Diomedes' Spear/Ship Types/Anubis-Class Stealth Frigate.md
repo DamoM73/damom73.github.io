@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/ship-types/anubis-class-stealth-frigate/"}
 ---
 
+![anubis.webp](/img/user/Diomedes'%20Spear/Assests/anubis.webp)
+
 > [!info] Description
 > The Anubis-class stealth frigate is a large vessel with a single Black Ops Epstein drive, four hyper-cooled, retractable point defense cannons along the ship’s spine, two torpedo bays, a single rail gun, and nine prototype breaching pods.
 

@@ -3,7 +3,7 @@
 ---
 
 > [!info] Description
-> The Gleason-type repair skiff isn’t like typical spaceships, instead resembling terrestrial vehicles in size and func tion except for their thrusters and capabilities of operating in different gravities. They typically have room for only a pilot and a small quantity of materials, with mechanical arms equipped with various tools that can help the ship perform different tasks.
+> The Gleason-type repair skiff isn’t like typical spaceships, instead resembling terrestrial vehicles in size and function except for their thrusters and capabilities of operating in different gravities. They typically have room for only a pilot and a small quantity of materials, with mechanical arms equipped with various tools that can help the ship perform different tasks.
 
 | Attribute               | Details                           |
 | ----------------------- | --------------------------------- |

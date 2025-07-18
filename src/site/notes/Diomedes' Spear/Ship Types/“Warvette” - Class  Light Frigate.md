@@ -28,8 +28,6 @@
 | Point Defence Network | Close  | 2d6    | Full Coverage |
 | Grappler (1)          | Close  | -      | Fore          |
 
-
-
 | Quality / Flaw          | Effect                                                                            | Prerequisites     | Stack?  |
 | :---------------------- | :-------------------------------------------------------------------------------- | :---------------- | :------ |
 | Atmosphere Capable      | Can operate and land in a planetary atmosphere for limited periods.               | Must be built-in. | No      |

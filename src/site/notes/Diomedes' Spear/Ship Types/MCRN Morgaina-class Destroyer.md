@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/ship-types/mcrn-morgaina-class-destroyer/"}
 ---
 
+![Morgaina.webp](/img/user/Diomedes'%20Spear/Assests/Morgaina.webp)
+
 > [!info] Description
 > The patrol destroyer is the most mass-produced Martian Navy ship in the system and, like its name, is serviced to patrol and police various sectors of space. The Morgaina class is faster and sleeker than most ships while large enough to have a significant weapons suite.
 

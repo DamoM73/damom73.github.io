@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/ship-types/unn-phantom-class-escort/"}
 ---
 
+![RPGPhantomclass1.webp](/img/user/Diomedes'%20Spear/Assests/RPGPhantomclass1.webp)
+
 > [!info] Description
 The number of already-existing vessels of the older UNN Phantom class made them perfect candidates for refit as dedicated escort ships rather than being retired and scrapped.
 

@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/ship-types/grendal-class-freighter/"}
 ---
 
+![Gerndal.jpg](/img/user/Diomedes'%20Spear/Assests/Gerndal.jpg)
+
 > [!info] Description
 > The Grendel-class Light Freighter is a Large-category civilian vessel, renowned as the workhorse of the solar system due to its longevity and versatility. These ships have been in operation for over 50 years and are popular among small corporations and entrepreneurs aiming for profit.
 

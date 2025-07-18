@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/ship-types/orion-class-heavy-scout/"}
 ---
 
+![OrionClass.webp](/img/user/Diomedes'%20Spear/Assests/OrionClass.webp)
+
 > [!info] Description
 > The Orion-class heavy scout is intended for use on long distance, long-term missions—especially those expected to see trouble.
 

@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/ship-types/mcrn-donnager-class-battleship/"}
 ---
 
+![MCRN Donnager-Class Battleship.webp](/img/user/Diomedes'%20Spear/Assests/MCRN%20Donnager-Class%20Battleship.webp)
+
 > [!info] Description
 > Like all other MCRN ships, Donnager-class battleships are built at the Callisto shipyards. However, because of the importance and investment in designing and constructing each Donnager they are incredibly difficult to make, and only eight of them were constructed during the UN-MCR Cold War
 
