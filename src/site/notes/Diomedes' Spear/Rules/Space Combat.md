@@ -13,15 +13,14 @@
 | 6        | Attack Damage<br>_Engineer_                           | Resolve the damage of any weapon attack that successfully gets past defences in Step 5.                                                                                                                                                                                                                                                                                                |
 | 7        | Damage Control<br>_Engineer_                          | If a ship suffers losses due to damage but is not taken out, its crew can attempt to minimize the effects of the losses.                                                                                                                                                                                                                                                               |
 ## Combat Ranges
+Here are the combat ranges and the tests to evade weapons at different ranges.
 
-| Range  |    Distance    |                  Grapplers                   |   PDCs    |                              Rail Guns                               |                  Torpedoes                   |     |     |     |     |
-| ------ | :------------: | :------------------------------------------: | :-------: | :------------------------------------------------------------------: | :------------------------------------------: | --- | --- | --- | --- |
-| Close  |   Grapplers    |                     PDCs                     | Rail Guns |                              Torpedoes                               |                                              |     |     |     |     |
-| Close  |     < 5km      | Evasion TN is 10 +  attacking ship's Sensors |    Yes    | Perception (Gunnery) test vs TN 13 + defender’s Piloting (Dexterity) | Evasion TN is 10 +  attacking ship's Sensors |     |     |     |     |
-| Medium |  5km - 100km   |                      No                      |    No     |                                 Yes                                  |                                              |     |     |     |     |
-| Long   | 100km - 1000km |                      No                      |    No     |                                  No                                  |                    < 5km                     | Yes | Yes | Yes | Yes |
-| Medium |  5km - 100km   |                      No                      |    No     |                                 Yes                                  |                     Yes                      |     |     |     |     |
-| Long   | 100km - 1000km |                      No                      |    No     |                                  No                                  |                     Yes                      |     |     |     |     |
+| Range   |    Distance    |                Grapplers                |                  PDCs                   |                Rail Guns                |                Torpedoes                |
+| ------- | :------------: | :-------------------------------------: | :-------------------------------------: | :-------------------------------------: | :-------------------------------------: |
+| X-close |     < 1km      |              Auto-success               | Piloting **vs** 10 + attacker's sensors | 15 + Piloting **vs** piloting + sensors |                Auto-miss                |
+| Close   |     < 5km      | Piloting **vs** 10 + attacker's sensors | Piloting **vs** 10 + attacker's sensors | 10 + Piloting **vs** piloting + sensors | Piloting **vs** 10 + attacker's sensors |
+| Medium  |  5km - 100km   |                Auto-miss                |                Auto-miss                | Piloting **vs** 10 + attacker's sensors | Piloting **vs** 12 + attacker's sensors |
+| Long    | 100km - 1000km |                Auto-miss                |                Auto-miss                |                Auto-miss                |              Cannot Evade               |
 
 ## Commander Actions
 
