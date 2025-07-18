@@ -19,8 +19,8 @@
 
 | Character            | Score |   Attitude    |                             Notes                              |
 | -------------------- | :---: | :-----------: | :------------------------------------------------------------: |
-| Achilles Mendez      |       |               |                                                                |
-| Franko Folto         |       |               |                                                                |
-| Sir Gary Fitzwilliam |       |               |                                                                |
+| Achilles Mendez      |  +2   |   Friendly    |                                                                |
+| Franko Folto         |  +2   |   Friendly    |                                                                |
+| Sir Gary Fitzwilliam |  +1   |     Open      |                                                                |
 | Havoc The Gambler    |  +3   | Very Friendly | A long history, that they don't want to or need to talk about. |
-| Mohinder Wagner      |       |               |                                                                |
+| Mohinder Wagner      |  +1   |     Open      |                                                                |
