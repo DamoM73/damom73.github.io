@@ -14,7 +14,7 @@
 | Drive                   | Thrusters                         |
 | Length                  | 12m                               |
 | Crew                    | 1 (2)                             |
-| Competence              | Average                           |
+| Competence              | Average (+2)                      |
 | Hull                    | 1d3                               |
 | Sensors                 | -2                                |
 | Favoured Range          | None                              |

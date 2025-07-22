@@ -14,7 +14,7 @@
 | Drive                   | Epstein, Thrusters                                                                                 |
 | Length                  | 23m                                                                                                |
 | Crew                    | 2 (8)                                                                                              |
-| Competence              | Poor                                                                                               |
+| Competence              | Poor (+1)                                                                                          |
 | Hull                    | 1d6                                                                                                |
 | Sensors                 | 3                                                                                                  |
 | Favoured Range          | None                                                                                               |
