@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>UNN Xerxes - Class Battleship</title>
+<title>News Feed 5</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -167,7 +167,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-5/">News Feed 5 </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-5/">News Feed 5 </a>
 </div>
 </div>
 </div>
@@ -505,7 +505,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/unn-xerxes-class-battleship/">UNN Xerxes - Class Battleship </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/unn-xerxes-class-battleship/">UNN Xerxes - Class Battleship </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -558,199 +558,137 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-07-27T06:27:10.384Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-07-27T06:27:10.384Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-07-27T06:27:10.384Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">UNN Xerxes - Class Battleship</h1>
+<h1 data-note-icon="">News Feed 5</h1>
 <div class="header-meta">
 </div>
 </header>
-<div class="callout" data-callout="info"><div class="callout-title"><div class="callout-title-inner"> Description<br></div></div>
-<div class="callout-content">
-<p>
-The Xerxes-class battleship is physically the largest warship in the system, following the United Nations Navy belief that bigger is, strictly, better.</p>
-</div></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td></td>
-</tr>
-<tr>
-<td>Class</td>
-<td>Xerxes-Class Battleship</td>
-</tr>
-<tr>
-<td>Faction</td>
-<td>UNN</td>
-</tr>
-<tr>
-<td>Category</td>
-<td>Colossal</td>
-</tr>
-<tr>
-<td>Drive</td>
-<td>Epstein, Thrusters</td>
-</tr>
-<tr>
-<td>Length</td>
-<td>500m</td>
-</tr>
-<tr>
-<td>Crew</td>
-<td>280 (1400)</td>
-</tr>
-<tr>
-<td>Competence</td>
-<td>Capable</td>
-</tr>
-<tr>
-<td>Hull</td>
-<td>6d6+5</td>
-</tr>
-<tr>
-<td>Sensors</td>
-<td>4</td>
-</tr>
-<tr>
-<td>Favoured Range</td>
-<td>Close</td>
-</tr>
-<tr>
-<td>Favoured Command Stunts</td>
-<td>Multi-Targeting, Precise Hit, Rapid Reload</td>
-</tr>
-<tr>
-<td>Qualities</td>
-<td>Advanced Communications, Advanced Targeting Systems, Emergency Batteries, Hangar Bay, Hull Plating V, Rapid Reload Torpedo Tubes, Redundant Hull (Double), Self-Destruct System, Sensor Scrambling</td>
-</tr>
-<tr>
-<td>Flaws</td>
-<td>High Maintenance, Lumbering</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Weapon Type</th>
-<th>Range</th>
-<th>Damage</th>
-<th>Arc</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Torpedo Tubes (24)</td>
-<td>Long</td>
-<td>3d6</td>
-<td>6 Fore, 6 Starboard, 6 Port, 6 Aft</td>
-</tr>
-<tr>
-<td>Rail Gun (2)</td>
-<td>Medium</td>
-<td>3d6</td>
-<td>Fore</td>
-</tr>
-<tr>
-<td>Point Defence Network</td>
-<td>Close</td>
-<td>2d6</td>
-<td>Full Coverage</td>
-</tr>
-<tr>
-<td>Grappler (4)</td>
-<td>Close</td>
-<td>-</td>
-<td>2 Fore, 2 Aft</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:left">Quality / Flaw</th>
-<th style="text-align:left">Effect</th>
-<th style="text-align:left">Prerequisites</th>
-<th style="text-align:left">Stack?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Advanced Communications Systems</td>
-<td style="text-align:left">Reduces Fleet Command Stunt SP cost by 1.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Advanced Targeting Systems</td>
-<td style="text-align:left">+1 bonus to Sensors score for Electronic Warfare tests.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Emergency Batteries</td>
-<td style="text-align:left">Provides backup power to ship systems.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Hangar Bay</td>
-<td style="text-align:left">Capable of carrying ships 3+ Size categories smaller</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Hull Plating</td>
-<td style="text-align:left">+1 bonus when determining the ship's Hull total against damage.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">Yes (4)</td>
-</tr>
-<tr>
-<td style="text-align:left">Rapid Reload Torpedo Tubes</td>
-<td style="text-align:left">Reduces the SP cost to use the Rapid Reload Command Stunt by 1.</td>
-<td style="text-align:left">Torpedo tubes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Redundant Hull (Double)</td>
-<td style="text-align:left">Ignore the first loss condition imposed in an encounter.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Self-Destruct System</td>
-<td style="text-align:left">Can be programmed to annihilating the ship and its contents.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Sensor Scrambling</td>
-<td style="text-align:left">-1 penalty to all enemy Sensors tests within Medium or closer range</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">High Maintenance</td>
-<td style="text-align:left">+1 Lifestyle Cost of maintaining ship.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Lumbering</td>
-<td style="text-align:left">Considered one Size category larger than its actual Size when it comes to manoeuvring tests.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="breaking-cult-fleet-challenges-venus-quarantine-in-defiant-pilgrimage" tabindex="-1">BREAKING: Cult Fleet Challenges Venus Quarantine in Defiant Pilgrimage</h2>
+<p><em>By Leyra Cho, Luna Freewave Correspondent</em></p>
+<p>ORBITAL SPACE — In a dramatic and unprecedented act of defiance, an unknown number of vessels affiliated with the religious movement known as the <em>Faith of the Falling Star</em> have reportedly attempted to breach the United Nations Navy quarantine zone surrounding Venus.</p>
+<p>Eyewitness reports and leaked UNN tactical alerts suggest that the vessels, described as a &quot;loose formation of retrofitted civilian craft,&quot; emerged from multiple vectors at varying speeds before accelerating toward the exclusion zone established after the Eros Incident.</p>
+<p>The total number of ships remains unconfirmed, with initial estimates ranging from seven to possibly over two dozen. No official list of registries or trajectories has been released. Several of the ships were described as small freighters and industrial haulers, likely modified for deep space endurance.</p>
+<h3 id="the-cradle-is-opening" tabindex="-1">“The Cradle Is Opening”</h3>
+<p>Shortly before the attempted breach, a garbled but deliberate broadcast was received across multiple civilian channels in the Belt and Martian space:</p>
+<blockquote>
+<p><em>“We spiral now to the Cradle Below. The silence ends. The Taken return. Do not mourn us. We go to be remade.”</em></p>
+</blockquote>
+<p>The transmission was signed with the symbol of the Faith of the Falling Star—a spiral waveform descending into a black circle.</p>
+<h3 id="unn-engagement-unconfirmed" tabindex="-1">UNN Engagement Unconfirmed</h3>
+<p>The United Nations Navy has not issued a formal statement, but comms silence across key listening posts in the inner system has fuelled speculation that engagements may have occurred. The Venus Quarantine Command, headquartered on a secure lunar relay, temporarily entered blackout protocol.</p>
+<p>A single anonymous UNN source, speaking off record, described the event as “a coordinated mass incursion attempt” and confirmed that several ships were intercepted, though would not comment on whether any reached Venusian descent.</p>
+<h3 id="mixed-reactions-across-the-system" tabindex="-1">Mixed Reactions Across the System</h3>
+<p>On Ceres, impromptu vigils lit up corridors in Sector 12 and Meidani Ring, with mourners painting spirals and chanting the Five Verses of the Canticle. On Mars, government spokespeople have warned against “fringe religious extremism masquerading as spiritual enlightenment.”</p>
+<p>Dr. Harlan Voight, sociologist and cult researcher, stated:</p>
+<blockquote>
+<p><em>“This is what happens when spiritual desperation meets systemic silence. If even one ship got through, the mythology of the Faith just became unbreakable.”</em></p>
+</blockquote>
+<h3 id="a-growing-legend" tabindex="-1">A Growing Legend</h3>
+<p>Whether any of the ships reached Venus is currently unknown. Debris signatures detected by Martian long-range arrays suggest that some vessels may have been destroyed, but those readings remain unconfirmed and lack independent verification.</p>
+<p>As the system watches and wonders, the Faith’s mantra spreads once again across dark corridors and encrypted channels:<br>
+“The Taken shall return.”</p>
+<hr>
+<h2 id="havoc-the-gambler-suro-the-man-who-called-the-system-s-bluff-and-won" tabindex="-1">Havoc “The Gambler” Suro: The Man Who Called the System’s Bluff — and Won</h2>
+<p><em>Sir Gary Fitzwilliam</em></p>
+<p>Every generation, the Belt gives us a name. Not a politician. Not a soldier. A <em>name</em>. A force of nature. A living myth. This cycle, that name is Havoc Suro.</p>
+<p>“The Gambler,” they call him — and with good reason. Because when others hedge their bets or fold under pressure, Havoc pushes all his chips to the center of the table and dares the universe to blink.</p>
+<p>And this time? He didn’t just win. He <em>saved lives</em>.</p>
+<p>Ceres Station has seen its share of cruelty, but the Ossifex ring was a new kind of rot — hidden behind a clinic door and a counterfeit smile. Belters, already brittle from low gravity and hard living, were seeking bone-density meds to stay functional. What they got instead was a cocktail of expired pharmaceuticals, some decades past safety, swapped in by a corrupt doctor lining his pockets by selling the real Ossifex on the black market.</p>
+<p>It was quiet. It was cowardly. And it would’ve gone on forever — if Havoc hadn’t shown up.</p>
+<p>No badge. No funding. No backup.</p>
+<p>Just instinct, fire, and that voice — low, dangerous, and rough like Ceres stone. While Star Helix turned away and officials shrugged, Havoc followed the trail through the underbelly of the docks, through lies, locked doors, and rigged games. He stared down thugs, dodged bribes, and cracked the whole scheme open with the kind of righteous fury that makes old Belters weep.</p>
+<p>And when he kicked that door in and dragged the truth out — we all felt it. Like air returning to a leaky compartment. Like someone giving a damn.</p>
+<p>They say he used to run with the old-school OPA — the kind that didn’t posture, just <em>acted</em>. That’s not surprising. Because what Havoc did wasn’t policing. It wasn’t politics. It was <em>protection</em>. Of the Belt. Of its people. Of our pride.</p>
+<p>Today, the fake meds are gone. The black-market Ossifex trade is broken. The clinic's dark deal is exposed. And Ceres? Ceres remembers who did it.</p>
+<p>He’s not a cop. He’s not a politician. He’s Havoc. And he gambled everything — his safety, his future, his name — on the lives of strangers. And the Belt won.</p>
+<p>So say it loud, say it proud, say it with a raised cup and a clenched fist:</p>
+<p><strong>Havoc &quot;The Gambler&quot; walks among us. And the bastards are running scared.</strong></p>
+<hr>
+<h2 id="tensions-erupt-on-saint-germain-station-as-criminal-rivalry-boils-over" tabindex="-1">Tensions Erupt on Saint-Germain Station as Criminal Rivalry Boils Over</h2>
+<p>*By Juno Salcedo, Senior Correspondent – <em>Luna Daily Ledger</em></p>
+<p><strong>21 LUTETIA</strong>— Violence has shattered the fragile calm of Saint-Germain Station, a UN-chartered refuelling outpost nestled on the surface of the asteroid 21 Lutetia, after an intense outbreak of conflict between two criminal factions. The once-covert rivalry between the notorious Loca Griega gang and the ambitious Golden Bough Society has now erupted into open hostilities, putting station operations and civilian safety at risk.</p>
+<p>Witnesses report a dramatic escalation earlier this week when the Golden Bough moved aggressively to assert control over the station’s black market supply networks. Previously, the station’s ‘security’ had been nominally maintained by the Loca Griega, whose influence ensured a steady but discreet siphoning of goods — a practice that Saint-Germain’s primary client, Saturnalia Cruises, has long turned a blind eye to as a “cost of doing business.”</p>
+<p>That uneasy arrangement, however, now lies in ruins.</p>
+<h3 id="a-battle-in-the-black" tabindex="-1">A Battle in the Black</h3>
+<p>The conflict reached its climax when a skirmish near the station’s primary landing platform saw the Loca Griega’s frigate, <em>Maraguena</em>, left wrecked and crippled after a brutal exchange with the Golden Bough gunship <em>Yojimbo.</em> Debris from the stricken vessel remains scattered along the asteroid’s pocked surface, a grim reminder of the swift and decisive escalation.</p>
+<p><em>&quot;We saw the flashes from the station windows,&quot;</em> one dock tech recounted. <em>&quot;The Maraguena didn’t stand a chance. Then we heard the emergency klaxons. That’s when we knew something bad was going down.&quot;</em></p>
+<p>Station sensors logged multiple weapons discharges in the hours that followed, though security reports remain restricted. While the full extent of casualties is unconfirmed, rumours suggest the Golden Bough’s enforcers have begun a systematic sweep of former Loca Griega strongholds on the station.</p>
+<h3 id="administrator-silvanito-under-pressure" tabindex="-1">Administrator Silvanito Under Pressure</h3>
+<p>Saint-Germain’s Station Administrator, Silvanito, is now facing mounting scrutiny for allowing criminal elements to flourish unchecked. Though technically under UN oversight, the outpost has gained a reputation for laissez-faire governance, with station security often looking the other way in exchange for a share of illicit profits.</p>
+<p>Silvanito, known for his preference for maintaining “business as usual,” has so far issued only a brief statement:</p>
+<p><em>&quot;Saint-Germain Station remains operational, and we are cooperating with UN authorities to ensure safety and stability. Recent incidents are regrettable, but pose no ongoing threat to station personnel or commercial activity.&quot;</em></p>
+<p>Critics, however, argue that Silvanito’s passivity has emboldened the Golden Bough and made Saint-Germain a battleground.</p>
+<h3 id="saturnalia-cruises-maintains-silence" tabindex="-1">Saturnalia Cruises Maintains Silence</h3>
+<p>As one of Saint-Germain’s main corporate beneficiaries, Saturnalia Cruises has yet to comment on the situation. The Luna-based luxury operator, known for ferrying Earth’s ultra-wealthy to Titan’s exclusive holiday domes, has long relied on the station as a critical refuelling and resupply hub. Insiders suggest the company was fully aware of Loca Griega’s influence but chose to tolerate the arrangement to avoid disruptions to its lucrative routes.</p>
+<p><em>&quot;It’s all about appearances,&quot;</em> said a senior dock foreman. <em>&quot;So long as the champagne flows on Titan, no one cares what happens in the cargo hold.&quot;</em></p>
+<p>However, with the Golden Bough’s violent methods now dominating the station, pressure is mounting on Saturnalia’s leadership to intervene — or risk further destabilization of its most vital supply chain.</p>
+<h3 id="uncertain-future" tabindex="-1">Uncertain Future</h3>
+<p>For now, Saint-Germain remains under the shadow of Golden Bough control, with patrols reported throughout the lower decks. UN oversight remains nominal, with local authorities reluctant to provoke further violence. Whether this conflict will settle into a stable — if brutal — status quo, or escalate further, remains to be seen.</p>
+<p>The people of Saint-Germain, many of whom rely on the station for work and survival, can do little but wait — and hope the dust settles soon.</p>
+<hr>
+<h2 id="other-news" tabindex="-1">Other News</h2>
+<h3 id="unn-tightens-patrol-routes-near-venus" tabindex="-1">UNN Tightens Patrol Routes Near Venus</h3>
+<p>Without explanation, the United Nations Navy has rerouted several naval patrols to maintain a tighter perimeter around Venus, citing &quot;ongoing classified investigations.&quot; This move has sparked speculation that the UN is still unsure what transpired after Eros’ impact—and what might still be unfolding in the clouds.</p>
+<h3 id="mcrn-vessel-intercepts-unauthorized-tycho-freighter" tabindex="-1">MCRN Vessel Intercepts Unauthorized Tycho Freighter</h3>
+<p>Martian Naval Command reports that a Tycho-based freighter was intercepted near Phobos, allegedly carrying unauthorized surveillance equipment. The crew has been detained pending diplomatic arbitration, escalating tensions between Tycho and Mars.</p>
+<h3 id="unscheduled-work-stoppage-reported-at-mathilde-station" tabindex="-1">Unscheduled Work Stoppage Reported at Mathilde Station</h3>
+<p>Sources inside Kruger-Thompson's Mathilde Station have reported a sudden halt to ore processing operations this week. The company cited “routine maintenance and personnel reallocation” in a terse update issued to shareholders, though some supply partners have noted delayed shipments. Belter labour representatives have raised questions about the shutdown but have so far been denied access to the site.</p>
+<h3 id="opa-leadership-fractures-over-use-of-force" tabindex="-1">OPA Leadership Fractures Over Use of Force</h3>
+<p>Tensions have surfaced between factions of the OPA, with some accusing Fred Johnson of being too conciliatory toward Earth, while others decry Dawes for escalating security measures on Ceres. An emergency council session is scheduled to address leadership structure and strategic direction.</p>
 </main>
 <aside>
 <div class="sidebar">
 <div class="sidebar-container">
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#breaking-cult-fleet-challenges-venus-quarantine-in-defiant-pilgrimage">BREAKING: Cult Fleet Challenges Venus Quarantine in Defiant Pilgrimage</a>
+<ol>
+<li><a href="#the-cradle-is-opening">“The Cradle Is Opening”</a>
+</li>
+<li><a href="#unn-engagement-unconfirmed">UNN Engagement Unconfirmed</a>
+</li>
+<li><a href="#mixed-reactions-across-the-system">Mixed Reactions Across the System</a>
+</li>
+<li><a href="#a-growing-legend">A Growing Legend</a>
+</li>
+</ol>
+</li>
+<li><a href="#havoc-the-gambler-suro-the-man-who-called-the-system-s-bluff-and-won">Havoc “The Gambler” Suro: The Man Who Called the System’s Bluff — and Won</a>
+</li>
+<li><a href="#tensions-erupt-on-saint-germain-station-as-criminal-rivalry-boils-over">Tensions Erupt on Saint-Germain Station as Criminal Rivalry Boils Over</a>
+<ol>
+<li><a href="#a-battle-in-the-black">A Battle in the Black</a>
+</li>
+<li><a href="#administrator-silvanito-under-pressure">Administrator Silvanito Under Pressure</a>
+</li>
+<li><a href="#saturnalia-cruises-maintains-silence">Saturnalia Cruises Maintains Silence</a>
+</li>
+<li><a href="#uncertain-future">Uncertain Future</a>
+</li>
+</ol>
+</li>
+<li><a href="#other-news">Other News</a>
+<ol>
+<li><a href="#unn-tightens-patrol-routes-near-venus">UNN Tightens Patrol Routes Near Venus</a>
+</li>
+<li><a href="#mcrn-vessel-intercepts-unauthorized-tycho-freighter">MCRN Vessel Intercepts Unauthorized Tycho Freighter</a>
+</li>
+<li><a href="#unscheduled-work-stoppage-reported-at-mathilde-station">Unscheduled Work Stoppage Reported at Mathilde Station</a>
+</li>
+<li><a href="#opa-leadership-fractures-over-use-of-force">OPA Leadership Fractures Over Use of Force</a>
+</li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+</div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
 <div class="backlink-list"><div class="backlink-card">
