@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/background/belter-lang/"}
 ---
 
+[Belter Translator](https://lingojam.com/BelterTranslator)
 
 | English                                          | Belter Lang     |
 | ------------------------------------------------ | --------------- |
