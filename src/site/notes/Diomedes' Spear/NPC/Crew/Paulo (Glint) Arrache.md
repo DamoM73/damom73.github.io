@@ -15,6 +15,8 @@
 - He doesn’t advertise. Doesn’t explain. If you know where to knock, you get what you need.
 - Sometimes, Havoc shows up. They don’t talk about the past. Just trade looks. Maybe a bottle. Sometimes Glint gives him hardware; sometimes Havoc drops an envelope of scrip and leaves without a word. The connection remains. Scarred. Muted. Unbreakable.
 
+## Current Story
+- Believer of the Faith of the Falling Star
 ---
 ## Character Relationships
 
