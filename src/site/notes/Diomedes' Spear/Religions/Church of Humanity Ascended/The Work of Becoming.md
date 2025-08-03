@@ -21,7 +21,7 @@ Who did I help this week?
 What part of me became better?  
 Where did I lift, and where did I look away?
 
-Because ascension isn’t magic. It is labor. The kind that leaves your ethics sore, and your ego bruised. It is admitting that the person you were yesterday... might not be good enough for tomorrow.
+Because ascension isn’t magic. It is labour. The kind that leaves your ethics sore, and your ego bruised. It is admitting that the person you were yesterday... might not be good enough for tomorrow.
 
 But we do not walk this path alone.
 
