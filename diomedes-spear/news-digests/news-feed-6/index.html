@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Trump on Eros</title>
+<title>News Feed 6</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -175,7 +175,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-6/">News Feed 6 </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-6/">News Feed 6 </a>
 </div>
 </div>
 </div>
@@ -239,7 +239,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/random-silly-stuff/trump-on-eros/">Trump on Eros </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/random-silly-stuff/trump-on-eros/">Trump on Eros </a>
 </div>
 </div>
 </div>
@@ -692,27 +692,109 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-08-29T08:09:55.581Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-08-29T08:09:55.581Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-08-29T08:09:55.581Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Trump on Eros</h1>
+<h1 data-note-icon="">News Feed 6</h1>
 <div class="header-meta">
 </div>
 </header>
-<p>&quot;Okay, folks, we’re talking about Eros. Terrible thing. Just <em>terrible</em>. A total disaster. Maybe one of the worst disasters in human history. And let me tell you, nobody saw this coming—well, except me. I <em>would</em> have seen it coming.</p>
-<p>Because here’s the thing—what happened on Eros? It should <em>never</em> have happened. <em>Never.</em> But you had these weak, weak leaders. Weak politicians, weak scientists, and—most importantly—weak corporations, and they let this <em>horrible thing</em> happen. And now, look at it—Eros, a total mess. It’s floating around, glowing blue, making everybody very, very nervous. And frankly, it’s not good. It’s very bad.</p>
-<p>Now, I’m a businessman, okay? I know deals. I’ve made <em>incredible</em> deals. And let me tell you something—Protogen? Bad deal. Very bad deal. What they did—unbelievable. They take this alien goo, right? This, uh, what do they call it? The <em>proto</em>—whatever. And they decide, ‘Hey, let’s just dump it on a bunch of Belters, see what happens.’ Disgusting! <em>Disgusting!</em> And now, all these people are—let’s be honest—<em>melted</em>. They’re blue and glowing and floating around, and it’s not good.</p>
-<p>And where was the UN? Where was Mars? Nowhere! Nowhere to be found. They were sitting around, making <em>bad</em> decisions, probably giving out more free healthcare or something—very sad. Meanwhile, Eros is getting taken over by this <em>thing</em>, and suddenly, it’s moving. Can you believe that? <em>Moving</em>. They said, ‘Oh, it can’t move,’ and then—boom!—it moves! That’s the kind of thing we should’ve stopped <em>before</em> it happened. But no one listened to the smart people—like me.</p>
-<p>Now, let me tell you what <em>I</em> would have done. First of all, folks, let’s be real—we would have had <em>the best</em> space security. Absolutely <em>the best</em>. I would’ve built an <em>incredible</em> defence system. A <em>tremendous</em> defence system. Some people are saying—many people are saying—it would have been the <em>greatest</em> defence system.</p>
-<p>And you know what? We wouldn’t have let this happen. We would’ve been tough. We would’ve been smart. We would’ve said, ‘Hey, Protogen, you wanna play games with alien goo? Not happening. Not on my watch.’ We’d hit ‘em with sanctions—<em>big</em> sanctions. I do the <em>best</em> sanctions, believe me. And if they didn’t stop? <em>Boom!</em> We shut them down. Totally shut them down.</p>
-<p>And another thing—I like Belters, okay? <em>Some</em> Belters, great people. Hardworking people. But let’s be honest, folks, the Belt has a <em>lot</em> of problems. <em>A lot</em> of problems. Crime, corruption—terrible. And what did the UN do? Nothing. They let this happen. Meanwhile, we’ve got people out there, good people, hard-working people, trying to make an honest living—and suddenly, their space station is crawling with blue glowy zombies. Not good! Not good at all.</p>
-<p>Now, let me tell you what we <em>should</em> be doing. First, we get tough on corporations that do <em>very bad things</em>—like Protogen. We hold them <em>accountable</em>. We <em>win</em>. Second, we <em>protect</em> our people—Inner, Outer, doesn’t matter. If you’re human, we protect you. And third? We make sure this <em>never</em> happens again. We put up a <em>big</em>, <em>beautiful</em> defence system around Medina Station, around Ceres. A <em>huge</em> shield. And I know shields, folks. I do <em>great</em> shields. We stop alien goo <em>before</em> it spreads.</p>
-<p>And let me say this, because it’s very important—people are asking, ‘Mr. Trump, do you think this was an invasion? Do you think the aliens are coming?’ And let me tell you, I don’t know. Some people are saying it was. <em>Many</em> people. But let’s just say, if the aliens <em>are</em> coming? They’re gonna find out real fast that we don’t mess around. Not with me in charge.</p>
-<p>So let’s fix this. Let’s be <em>smart</em>. Let’s be <em>tough</em>. And let’s make sure Eros never happens again.</p>
-<p>And by the way, folks, if you see any blue glowy people floating around? <em>Run.</em> It’s bad. Very bad. Okay?</p>
-<p>Thank you, everybody. You’re <em>amazing</em> people. Love you all. God bless.&quot;</p>
-<p><em>He steps back from the podium, flashes a thumbs-up, and walks off as the crowd erupts into cheers.</em></p>
+<h2 id="the-rise-of-the-falling-star-and-the-eclipse-of-the-logos" tabindex="-1">The Rise of the Falling Star and the Eclipse of the Logos</h2>
+<p><em>By Dr. Jordan B. Peterson IV, Professor Emeritus of Symbolic Order and Meaning</em></p>
+<p>In the shadow of the Eros anomaly and the subsequent informational vacuum around Venus, we are witnessing the emergence of a most insidious phenomenon: the rise of pseudo-religious movements unmoored from tradition, structure, or sacrificial truth. Chief among them is the Faith of the Falling Star—a cultic response not born of divine revelation, but of epistemic panic, metaphysical hunger, and ideological resentment.</p>
+<p>Let us be perfectly clear: this is not a religion. This is a counterfeit of the sacred, a subversion of the Western religious tradition, hollowed out and stuffed with cosmological ambiguity and politically expedient myth. In place of the Cross, it offers the unknown. In place of repentance, esoteric initiation. In place of Logos, the ecstatic dissolution of responsibility.</p>
+<h3 id="when-you-abandon-the-west-you-get-venusian-mysticism" tabindex="-1">When You Abandon the West, You Get Venusian Mysticism</h3>
+<p>Western civilization is predicated upon a few fundamental ideas: the sovereignty of the individual, the primacy of truth over expediency, and the recognition that order emerges through voluntary sacrifice. Christianity, in its proper form, is not merely a belief system—it is the psychological architecture that allowed us to navigate chaos, delay gratification, and build civilizations from stone and spirit alike.</p>
+<p>The Faith of the Falling Star offers none of that. It is a cult of passivity, of cosmic abdication, where believers are told that meaning is descending from the sky rather than wrestled from the soil through blood, sweat, and moral effort. It encourages its followers to wait—to submit—to be chosen, rather than to act.</p>
+<p>That is not faith. That is infantilism cloaked in transcendence.</p>
+<h3 id="the-danger-of-unregulated-mysticism" tabindex="-1">The Danger of Unregulated Mysticism</h3>
+<p>The Faith of the Falling Star is attractive precisely because it does not demand the rigors of the Western tradition. There is no cross to bear, no humility before the moral law, no confrontation with the shadow. Instead, it offers a cosmic parent on Venus who will one day explain everything, forgive everything, and fix everything.</p>
+<p>This is the return of Gnostic escapism—the belief that secret knowledge, granted from beyond, will justify your life and excuse your sins. But life does not work that way. Meaning emerges not from secret transmissions but from the honest confrontation with suffering, guided by the symbolic structure that the Judeo-Christian tradition has preserved for millennia.</p>
+<p>When you sever yourself from that tradition, you don’t become free. You become prey—prey to cults, ideologies, and charismatic manipulators who fill the void with emotional intoxication and metaphysical vagueness.</p>
+<h3 id="venus-is-not-the-new-jerusalem" tabindex="-1">Venus Is Not the New Jerusalem</h3>
+<p>Let me state this in terms that cannot be misunderstood: Venus is not holy ground. Eros was not a revelation. The “Falling Star” is not the Logos incarnate.</p>
+<p>And to teach otherwise is to deceive the desperate, to offer false fire in place of the light of the world.</p>
+<p>We must remember that meaning is not given. It is earned. It is earned through responsibility, through suffering voluntarily undertaken, through the choice to speak truth even when silence would protect you.</p>
+<p>And this is what Christianity—true Christianity—offers. Not cosmic indulgence, but transcendence through moral courage. Not unity through vague ecstasy, but brotherhood through shared sacrifice.</p>
+<h3 id="the-way-forward" tabindex="-1">The Way Forward</h3>
+<p>To those tempted by the siren call of the Falling Star, I say: Turn back. Return to the tradition that gave you language, dignity, and soul. Return to the structure that raised cathedrals instead of echo chambers. Return to the Cross.</p>
+<p>For there is no salvation in cosmic silence. There is only the Logos.<br>
+And the Logos speaks still—if we would only choose to listen.</p>
+<hr>
+<h2 id="water-rationing-intensifies-on-ceres-as-supply-infrastructure-struggles" tabindex="-1">Water Rationing Intensifies on Ceres as Supply Infrastructure Struggles</h2>
+<p><em>By Dalvi Okeke, Senior Correspondent – Tycho Free News</em></p>
+<p><strong>CERES STATION</strong>— A new wave of stringent water restrictions has taken effect across Ceres, as falling reserves and damaged infrastructure put the station’s life support systems under acute strain. The Level Four Conservation Mandate, signed into policy by OPA Administrator Anderson Dawes, imposes harsh limits on daily civilian consumption and redirects remaining reserves to critical systems and medical services.</p>
+<p>Under the new mandate, residents are limited to three litres of potable water per person per day, with nonessential hydroponic installations powered down and all public bathing facilities shuttered until further notice. Water reclamation engineers blame a combination of failed condensers, an ice melt containment breach, and interrupted shipments from Hygiea and Themis as core drivers of the shortage.</p>
+<p>Administrator Dawes, addressing the station via narrowband broadcast, stated:<br>
+<em>&quot;Ceres has always survived because we know how to endure. This is not permanent. But it is necessary. We will make it through—together.&quot;</em></p>
+<h3 id="tensions-rising-in-the-lower-levels" tabindex="-1">Tensions Rising in the Lower Levels</h3>
+<p>While the OPA urges unity, frustration is spreading fast in residential blocks already plagued by rationing, power fluctuations, and high-density occupancy.</p>
+<p><em>&quot;A litre for washing, a litre for drinking, and a litre for what—cooking? Flushing? They think we’re magicians?&quot;</em> said Kaemi Flor, a recycler from Dock Sector 11. “And they call this 'unity'?”</p>
+<p>Reports of black market filtration units, stolen recycler access codes, and violence near communal spigots have begun to circulate. Volunteers from mutual aid groups are stepping in to mediate disputes and redistribute emergency stores to vulnerable residents, but the demand is outpacing supply.</p>
+<h3 id="political-ramifications-for-dawes-and-the-opa" tabindex="-1">Political Ramifications for Dawes and the OPA</h3>
+<p>Dawes has long held that Belters must be self-sustaining, positioning Ceres as a symbol of Belt autonomy. However, this crisis presents a serious challenge to that vision.</p>
+<p>Some within the OPA are urging the seizure of dormant UN-controlled filtration systems in the upper admin tiers—systems that were decommissioned following the station handover. Others warn that doing so risks diplomatic fallout and provoking Earth-based corporate reprisals in other Belt sectors.</p>
+<p>Meanwhile, hardline factions are calling for the redirection of Tycho-bound water convoys back to Ceres, arguing that Ceres must come first before Belt-wide solidarity can be maintained.</p>
+<h3 id="aid-slow-to-arrive" tabindex="-1">Aid Slow to Arrive</h3>
+<p>Tycho and Pallas have pledged shipments, but routing remains uncertain due to OPA-nonaligned raider activity and tension along the Ceres-Pallas corridor. The first resupply isn’t expected for at least six standard days, and even then, distribution will be prioritized for medical and industrial use.</p>
+<p>Dawes, in a secondary address to OPA leadership, urged calm and called on citizens to embody the resilience that defines the Belt:<br>
+<em>&quot;They took our water before. They made us beg for every drop. We said no more. We will not beg—but we will endure. Because we are Belters.&quot;</em></p>
+<p>Until resupply and infrastructure repairs are complete, Ceres remains under strict conservation orders, with heavy penalties for unauthorized use, hoarding, or tampering with distribution systems.</p>
+<p>Water is life in the Belt—and for now, that life must be rationed.</p>
+<hr>
+<h2 id="other-news" tabindex="-1">Other News</h2>
+<h3 id="martian-mining-guild-begins-expansion-into-io" tabindex="-1">Martian Mining Guild Begins Expansion into Io</h3>
+<p>The MCRN-backed Martian Mining Guild has begun preliminary operations on Io, promising economic revitalization and increased material supply for military infrastructure. Belter labour unions have protested the move, claiming exclusion from contracts and risk to native tunnel colonies.</p>
+<h3 id="faith-of-the-falling-star-opens-temple-on-ganymede" tabindex="-1">Faith of the Falling Star Opens Temple on Ganymede</h3>
+<p>Despite mounting scrutiny, the Faith of the Falling Star has established its first formal “Temple of Ascension” on Ganymede. Local authorities express concern over child indoctrination rumours, but no legal grounds have yet been found to challenge the group’s presence.</p>
+<h3 id="kruger-thompson-lawsuit-delayed-after-witness-disappears" tabindex="-1">Kruger-Thompson Lawsuit Delayed After Witness Disappears</h3>
+<p>A court case against Kruger-Thompson involving the KT Endeavour disaster has been delayed after a key whistle-blower vanished enroute to Luna. The corporation denies involvement, but OPA media outlets are calling it a “disappearance by design.”</p>
 </main>
 <aside>
 <div class="sidebar">
 <div class="sidebar-container">
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#the-rise-of-the-falling-star-and-the-eclipse-of-the-logos">The Rise of the Falling Star and the Eclipse of the Logos</a>
+<ol>
+<li><a href="#when-you-abandon-the-west-you-get-venusian-mysticism">When You Abandon the West, You Get Venusian Mysticism</a>
+</li>
+<li><a href="#the-danger-of-unregulated-mysticism">The Danger of Unregulated Mysticism</a>
+</li>
+<li><a href="#venus-is-not-the-new-jerusalem">Venus Is Not the New Jerusalem</a>
+</li>
+<li><a href="#the-way-forward">The Way Forward</a>
+</li>
+</ol>
+</li>
+<li><a href="#water-rationing-intensifies-on-ceres-as-supply-infrastructure-struggles">Water Rationing Intensifies on Ceres as Supply Infrastructure Struggles</a>
+<ol>
+<li><a href="#tensions-rising-in-the-lower-levels">Tensions Rising in the Lower Levels</a>
+</li>
+<li><a href="#political-ramifications-for-dawes-and-the-opa">Political Ramifications for Dawes and the OPA</a>
+</li>
+<li><a href="#aid-slow-to-arrive">Aid Slow to Arrive</a>
+</li>
+</ol>
+</li>
+<li><a href="#other-news">Other News</a>
+<ol>
+<li><a href="#martian-mining-guild-begins-expansion-into-io">Martian Mining Guild Begins Expansion into Io</a>
+</li>
+<li><a href="#faith-of-the-falling-star-opens-temple-on-ganymede">Faith of the Falling Star Opens Temple on Ganymede</a>
+</li>
+<li><a href="#kruger-thompson-lawsuit-delayed-after-witness-disappears">Kruger-Thompson Lawsuit Delayed After Witness Disappears</a>
+</li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+</div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
 <div class="backlink-list"><div class="backlink-card">
