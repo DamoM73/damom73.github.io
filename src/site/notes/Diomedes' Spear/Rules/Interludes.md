@@ -439,12 +439,12 @@ To **create a reputation** anew a character will need to highlight an appropriat
 
 ## Researching 
 
-| Feature   | Details                                          |
-| --------- | ------------------------------------------------ |
-| How long  | One interlude shift                              |
-| Frequency | As desired                                       |
-| Effect    | Roll 4 advanced researh                          |
-| Focus     | Intelligence (Research) or other relevant focuis |
+| Feature   | Details                                         |
+| --------- | ----------------------------------------------- |
+| How long  | One interlude shift                             |
+| Frequency | As desired                                      |
+| Effect    | Roll 4 advanced research                        |
+| Focus     | Intelligence (Research) or other relevant focus |
 
 Researching leads is how a smart crew stays ahead of the game in a system built on secrets, shifting alliances, and hidden agendas. Whether tracking down a missing freighter, verifying a shady cargo contract, or digging into a name whispered on backchannels, research turns rumours into actionable intel. In a world where stations lie, manifests are forged, and faction loyalties change with the burn cycle, blindly charging in is a shortcut to an airlock funeral. Digging into comm records, sifting through public data nets, bribing info brokers, or scraping old sensor logs during an Interlude gives the crew time to connect dots others miss. It turns scattered clues into solid direction, reveals hidden dangers, and sometimes exposes a deeper plot. In the Expanse, information isn’t just power -- it’s survival, profit, and leverage.
 
