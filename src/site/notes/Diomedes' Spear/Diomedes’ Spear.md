@@ -5,7 +5,7 @@
 
 | Current Day |
 | :---------: |
-|    **6**    |
+|    **7**    |
 
 ![diomedes_spear.png](/img/user/Diomedes'%20Spear/Assests/diomedes_spear.png)
 
