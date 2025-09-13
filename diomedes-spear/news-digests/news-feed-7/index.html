@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Ability Tests</title>
+<title>News Feed 7</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -179,7 +179,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-7/">News Feed 7 </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-7/">News Feed 7 </a>
 </div>
 </div>
 </div>
@@ -386,7 +386,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/ability-tests/">Ability Tests </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/rules/ability-tests/">Ability Tests </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -696,262 +696,69 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-09-13T11:28:05.783Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-09-13T11:28:05.783Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-09-13T11:28:05.783Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Ability Tests</h1>
+<h1 data-note-icon="">News Feed 7</h1>
 <div class="header-meta">
 </div>
 </header>
-<h2 id="test-target-number" tabindex="-1">Test Target Number</h2>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:center">Target Number</th>
-<th>Test Difficulty</th>
-<th style="text-align:center">50% Change</th>
-<th style="text-align:center">90% Chance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">7</td>
-<td>Routine</td>
-<td style="text-align:center">-3</td>
-<td style="text-align:center">+1</td>
-</tr>
-<tr>
-<td style="text-align:center">9</td>
-<td>Easy</td>
-<td style="text-align:center">-1</td>
-<td style="text-align:center">+3</td>
-</tr>
-<tr>
-<td style="text-align:center">11</td>
-<td>Average</td>
-<td style="text-align:center">+1</td>
-<td style="text-align:center">+5</td>
-</tr>
-<tr>
-<td style="text-align:center">13</td>
-<td>Challenging</td>
-<td style="text-align:center">+3</td>
-<td style="text-align:center">+7</td>
-</tr>
-<tr>
-<td style="text-align:center">15</td>
-<td>Hard</td>
-<td style="text-align:center">+5</td>
-<td style="text-align:center">+9</td>
-</tr>
-<tr>
-<td style="text-align:center">17</td>
-<td>Formidable</td>
-<td style="text-align:center">+7</td>
-<td style="text-align:center">+11</td>
-</tr>
-<tr>
-<td style="text-align:center">19</td>
-<td>Imposing</td>
-<td style="text-align:center">+9</td>
-<td style="text-align:center">+13</td>
-</tr>
-<tr>
-<td style="text-align:center">21</td>
-<td>Nigh Impossible</td>
-<td style="text-align:center">+11</td>
-<td style="text-align:center">+15</td>
-</tr>
-</tbody>
-</table></div>
-<h2 id="basic-tests" tabindex="-1">Basic Tests</h2>
-<ol>
-<li>Determine appropriate <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses</a></li>
-<li>Assign a target number</li>
-<li>Roll &amp; apply fortune</li>
-<li>Test results successful &gt;= target number</li>
-</ol>
-<h2 id="opposed-tests" tabindex="-1">Opposed Tests</h2>
-<ol>
-<li>Determine appropriate <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses</a> for both characters</li>
-<li>Assign a target number for both characters</li>
-<li>Both characters roll &amp; apply fortune</li>
-<li>Character
-<ul>
-<li>win when &gt;= TN and &gt; opponent</li>
-<li>Tie -&gt; Drama dice
-<ul>
-<li>Tie -&gt; highest ability score (including focus)</li>
-</ul>
-</li>
-<li>Both fail TN -&gt; tie</li>
-</ul>
-</li>
-</ol>
-<h2 id="advanced-test" tabindex="-1">Advanced Test</h2>
-<ol>
-<li>Determine appropriate <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses</a> for both characters</li>
-<li>Determine the TN or opposed roll</li>
-<li>Each success on a test adds its Drama Die total to the success threshold until you either succeed or run out of time.</li>
-<li>Each roll requires a time increment.
-<ul>
-<li>figure out the typical amount of time the task should take and divide it by half of the success threshold.</li>
-</ul>
-</li>
-<li>You make an ability test against the target number or opposed roll for each time increment:
-<ul>
-<li>Failure -&gt; don’t make any headway, and the time passes.</li>
-<li>Success -&gt; Add the Drama Die result to total</li>
-</ul>
-</li>
-<li>When the total meets or exceeds the success threshold, you complete the task.</li>
-</ol>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Task Difficulty</th>
-<th style="text-align:center">Success Threshold</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Easy</td>
-<td style="text-align:center">5</td>
-</tr>
-<tr>
-<td>Average</td>
-<td style="text-align:center">10</td>
-</tr>
-<tr>
-<td>Challenging</td>
-<td style="text-align:center">15</td>
-</tr>
-<tr>
-<td>Hard</td>
-<td style="text-align:center">20</td>
-</tr>
-<tr>
-<td>Formidable</td>
-<td style="text-align:center">25</td>
-</tr>
-</tbody>
-</table></div>
-<h2 id="challenge-test" tabindex="-1">Challenge Test</h2>
-<p>Same as advanced test, with consequence for each failure.<br>
-Determine how many times characters can fail at a challenge test before increasing the level of the consequences.</p>
-<h3 id="minor-consequences" tabindex="-1">Minor consequences</h3>
-<ul>
-<li>Make the next test more difficult, increasing the target number by +2</li>
-<li>Increase the amount of time needed for each ability test</li>
-<li>Cause some minor complication</li>
-</ul>
-<h3 id="moderate-consequences" tabindex="-1">Moderate consequences</h3>
-<ul>
-<li>Make all future tests more difficult, increasing the target number by +2</li>
-<li>Eliminating half of your accumulated progress towards the success threshold</li>
-<li>Close off current avenue of progress, forcing you to adopt a new approach (may require change of focus)</li>
-</ul>
-<h3 id="major-consequences" tabindex="-1">Major consequences</h3>
-<ul>
-<li>Jeopardise the entire challenge test forcing characters to:
-<ul>
-<li>start the test over from the beginning</li>
-<li>complete another advanced or challenge test in order to pick up where they left off</li>
-</ul>
-</li>
-</ul>
-<h2 id="assisting-tests" tabindex="-1">Assisting Tests</h2>
-<p>If multiple characters work together on a task, one player is designated as the primary roller. Other characters who assist must have an applicable <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/abilities-and-focuses/">Abilities and Focuses</a> related to the test.</p>
-<p>Bonus for Assistance – For each assisting character, the primary roller gains a +1 bonus to their roll, up to a maximum of +3.</p>
-<h2 id="probability-of-scores" tabindex="-1">Probability of scores</h2>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:center">Score</th>
-<th style="text-align:center">Cumulative Probability (%)</th>
-<th style="text-align:center">Exact Probability (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">9</td>
-<td style="text-align:center">5</td>
-</tr>
-<tr>
-<td style="text-align:center">7</td>
-<td style="text-align:center">16</td>
-<td style="text-align:center">7</td>
-</tr>
-<tr>
-<td style="text-align:center">8</td>
-<td style="text-align:center">26</td>
-<td style="text-align:center">10</td>
-</tr>
-<tr>
-<td style="text-align:center">9</td>
-<td style="text-align:center">38</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td style="text-align:center">10</td>
-<td style="text-align:center">50</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td style="text-align:center">11</td>
-<td style="text-align:center">62</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td style="text-align:center">12</td>
-<td style="text-align:center">74</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td style="text-align:center">13</td>
-<td style="text-align:center">84</td>
-<td style="text-align:center">10</td>
-</tr>
-<tr>
-<td style="text-align:center">14</td>
-<td style="text-align:center">91</td>
-<td style="text-align:center">7</td>
-</tr>
-<tr>
-<td style="text-align:center">15</td>
-<td style="text-align:center">95</td>
-<td style="text-align:center">5</td>
-</tr>
-<tr>
-<td style="text-align:center">16</td>
-<td style="text-align:center">98</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">17</td>
-<td style="text-align:center">100</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">18</td>
-<td style="text-align:center">100</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="what-did-sorrento-gillis-know-and-when-did-he-know-it" tabindex="-1">What Did Sorrento-Gillis Know—and When Did He Know It?</h2>
+<p><em>By Vika Amanpour, <em>Red Sand Sentinel</em>, Martian Political Affairs Bureau</em></p>
+<p><strong>LONDRES NOVA</strong>— As the mystery of Eros and the Venus Quarantine deepens, many across Mars are beginning to ask a question that has gone unanswered for too long: What did United Nations Secretary-General Esteban Sorrento-Gillis know about Eros, and when did he know it?</p>
+<p>With entire stations gone silent, thousands dead, and no survivors from the Eros quarantine, the Martian Congressional Republic has maintained a policy of measured caution and rigorous scientific observation. Earth, by contrast, has obstructed inquiries, restricted data sharing, and kept the MCRN and the rest of the system in the dark.</p>
+<p>And at the centre of that secrecy stands Sorrento-Gillis—smiling for cameras, shaking hands with Belt “leaders,” and issuing vague statements about “containment protocols.”</p>
+<p>But Martians know better. Containment implies knowledge. Control. Planning.</p>
+<h3 id="too-quick-to-spin" tabindex="-1">Too Quick to Spin</h3>
+<p>The official UN narrative emerged hours after Eros went silent: A rogue experiment, a containment failure, heroic sacrifices. But leaked transmissions between UNN fleet command and Luna-based defence authorities suggest that warning signs existed well before the station’s final hours—and that Sorrento-Gillis’ office may have been briefed in advance of the catastrophe.</p>
+<p>If that’s true, then Earth’s failure was not one of reaction, but of wilful neglect. And if the Secretary-General had foreknowledge of the threat and allowed civilian traffic to continue around Eros, or delayed broader system-wide alerts, then the consequences are not just tragic. They are criminal.</p>
+<h3 id="the-cost-of-secrecy" tabindex="-1">The Cost of Secrecy</h3>
+<p>Mars has repeatedly requested full telemetry and biohazard data related to the Eros event and the Venus impact. Each time, Earth has responded with redacted files, incomplete records, or bureaucratic delay. When the MCRN Science Directorate formally requested access to atmospheric readings from the Venus entry, the UN’s answer was simple:</p>
+<p><em>&quot;Not at this time.&quot;</em></p>
+<p>Not at this time—while entire Martian civilian ships have had to reroute, while refugee rumours spread chaos in the Belt, and while radical cults and anti-Martian factions cite Venus as proof of Earth’s ascendancy or judgment.</p>
+<p>The truth is, Mars cannot afford to wait. We cannot base policy, security, or science on the vague assurances of a government that has already misled the system once.</p>
+<h3 id="a-pattern-of-obstruction" tabindex="-1">A Pattern of Obstruction</h3>
+<p>This is not the first time the Sorrento-Gillis administration has been caught withholding critical information. From civil unrest on Luna to the mismanagement of the Basic income riots on Earth, the Secretary-General has made a career of appearing calm while chaos spreads beneath his feet.</p>
+<p>But Eros is different. Eros killed people. Eros changed something. And if Earth knew what was coming—and let it happen—then the damage goes beyond station walls and orbital paths.</p>
+<p>It goes to the heart of whether humanity can trust the United Nations at all.</p>
+<h3 id="mars-deserves-answers" tabindex="-1">Mars Deserves Answers</h3>
+<p>The MCRN has a responsibility—not just to our citizens, but to the future of the system—to demand full transparency from Earth’s leadership.</p>
+<p>If Esteban Sorrento-Gillis knew about the anomaly before it spiralled out of control, then he must stand before an interplanetary inquiry and answer for it. No more veiled statements. No more soft denials.</p>
+<p>The age of Earth’s unchallenged stewardship ended the day Eros fell silent.</p>
+<p><em>Red Sand Sentinel</em> will continue to investigate this story. Because Martians deserve to know. And the system deserves the truth.</p>
+<hr>
+<h2 id="unrest-rumoured-at-mathilde-station-as-quarantine-continues" tabindex="-1">Unrest Rumoured at Mathilde Station as Quarantine Continues</h2>
+<p><em>By Lena Yilmaz | Belt Desk</em></p>
+<p>Kruger-Thompson Mining has confirmed a “temporary quarantine” is in effect at Mathilde Station, citing “medical concerns” in a brief internal bulletin released earlier this week. No official casualty figures or further statements have been provided.</p>
+<p>All non-essential communications with the station remain suspended. Attempts by journalists, independent observers, and Belt community leaders to reach those inside have been unsuccessful.</p>
+<p>Unverified reports of deteriorating conditions continue to circulate through local OPA channels. Belter representatives have expressed concern over the lack of transparency, though no formal investigation has been approved.</p>
+<p>A small civilian medical team affiliated with the Maruttuva Kulu is reportedly seeking transport to the station. While the group has not made a public statement, sources close to the matter indicate they are attempting to negotiate safe passage for humanitarian access. It is unclear whether Kruger-Thompson will permit any third-party intervention.</p>
+<p>Station Administrator Olivia Lund has not been seen or heard from since the quarantine was announced. Pinkwater Security remains in control of station perimeter access.</p>
+<p>With little confirmed information leaving Mathilde, the scope of the situation—and the human cost—remains uncertain.</p>
+<hr>
+<h2 id="star-helix-operation-breaks-criminal-stronghold-in-brasilia-arcology" tabindex="-1">Star Helix Operation Breaks Criminal Stronghold in Brasília Arcology</h2>
+<p><em>By Imani Carvajal, Earth Affairs Correspondent – The UN Dispatch</em></p>
+<p><strong>BRASÍLIA ARCOLOGY</strong>— In one of the largest urban anti-crime actions in years, Star Helix Security Services executed a coordinated crackdown across multiple levels of the Brasília Arcology, dealing a devastating blow to three major criminal organizations operating in the heart of Earth's South American zone: Loca Greiga, the Golden Bough Society, and the Aryan Flyers.</p>
+<p>The early-morning operation, codenamed “Operation Iron Vein,” involved over 700 Star Helix personnel with aerial drones, tactical insertion units, and cyber-forensics teams. Security forces targeted known syndicate safehouses, drug-processing labs, and encrypted data caches. More than 90 arrests were made, with seizures including combat-grade stimulants, black-market Ossifex, forged Martian ID packs, and unregistered biotech.</p>
+<h3 id="from-the-belt-to-earth-syndicates-lose-ground" tabindex="-1">From the Belt to Earth: Syndicates Lose Ground</h3>
+<p>Star Helix representatives confirmed that Loca Greiga, infamous for their drug routes stretching from Baltimore to Ceres, had established a hidden distribution hub deep in the arcology’s logistics level. The group was allegedly funneling narcotics produced in the North American Shared Interest Zone to local street gangs, laundering profits through shell corporations and front clinics.</p>
+<p>Simultaneously, the Golden Bough Society—typically rooted in Belt protection rackets—was found to be extorting Earth-based tech workers in the arcology’s lower decks. Investigators also uncovered evidence that the Bough was attempting to buy political influence within local security unions.</p>
+<p>But the most alarming find came from a sealed maintenance district where the Aryan Flyers, a white supremacist gang with deep Belt roots, had set up a propaganda and weapons cache. Though thought to be largely exiled from Ceres by their rivals, the Flyers had apparently found fresh ground for recruitment among radicalized, disaffected youths in lower-tier worker zones.</p>
+<h3 id="star-helix-and-un-leadership-praise-the-operation" tabindex="-1">Star Helix and UN Leadership Praise the Operation</h3>
+<p>Commissioner Gabriela Nunes of the Arcology Security Directorate hailed the operation as a &quot;surgical and necessary step in reclaiming control over Brasília’s core systems.&quot;</p>
+<p><em>&quot;These groups thought they could extend their reach from the shadows of the Belt into the heart of Earth. They were wrong. The UN does not negotiate with extortionists, smugglers, or supremacists. We end them.&quot;</em></p>
+<p>UN Undersecretary for Internal Security, Gaspard Tanaka, also praised Star Helix’s coordination and reiterated the organization’s commitment to crushing off-world criminal influence wherever it appears.</p>
+<h3 id="connection-to-ceres-crime-wars" tabindex="-1">Connection to Ceres Crime Wars?</h3>
+<p>Though unconfirmed, intelligence analysts suggest this sweep may have been coordinated with recent OPA-backed efforts to push the Golden Bough Society and Aryan Flyers out of Ceres. The possibility of cross-system cooperation between Star Helix and OPA-aligned factions marks an unusual but pragmatic alignment in the face of transorbital crime syndicates with broad logistics networks.</p>
+<p>Loca Greiga’s loss on Earth may further embolden Belter-based competitors, particularly the Hand and Sohiro’s Crew, to try and expand into the vacuum left behind—raising concerns that Star Helix’s victory may trigger a new round of turf wars.</p>
+<h3 id="fallout-and-future-steps" tabindex="-1">Fallout and Future Steps</h3>
+<p>Star Helix has pledged to maintain a permanent presence in key arcology sectors and implement algorithmic oversight to detect early signs of smuggling and organized influence. Critics, however, warn that without parallel investments in education, basic support, and housing, the vacuum left by these arrests could quickly be filled by new factions.</p>
+<p>For now, Brasília Arcology breathes a little easier—but in a system increasingly defined by cross-border criminal enterprise, vigilance may be the only lasting peace.</p>
+<hr>
+<h2 id="other-news" tabindex="-1">Other News</h2>
+<h3 id="calisto-university-researchers-detect-gravitational-echoes-from-venus" tabindex="-1">Calisto University Researchers Detect Gravitational “Echoes” from Venus</h3>
+<p>A team at Calisto University claims to have detected strange gravimetric fluctuations emanating from Venus. The findings, not yet peer-reviewed, have fuelled renewed interest—and cult speculation—about the nature of the Eros impact and what may be happening beneath Venus' cloud layers.</p>
+<h3 id="tycho-station-unveils-first-belt-grown-protein-cultures" tabindex="-1">Tycho Station Unveils First Belt-Grown Protein Cultures</h3>
+<p>Tycho Agritech researchers have successfully cultured high-yield protein strains in microgravity hydroponic stacks, marking a major milestone in Belt self-sufficiency. The project, funded in part by OPA-aligned cooperatives, could reduce dependency on Inner supply chains by over 20% in the next two years.</p>
+<h3 id="belter-poet-releases-viral-collection" tabindex="-1">Belter Poet Releases Viral Collection</h3>
+<p>Belter poet Yaro Drek’s spoken word collection <em>The Silence That Fell</em>, chronicling the Eros tragedy and its aftermath, has gone viral across Belt channels. OPA figures hail it as a unifying piece of cultural resistance.</p>
 </main>
 <aside>
 <div class="sidebar">
@@ -965,27 +772,41 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#test-target-number">Test Target Number</a>
-</li>
-<li><a href="#basic-tests">Basic Tests</a>
-</li>
-<li><a href="#opposed-tests">Opposed Tests</a>
-</li>
-<li><a href="#advanced-test">Advanced Test</a>
-</li>
-<li><a href="#challenge-test">Challenge Test</a>
+<li><a href="#what-did-sorrento-gillis-know-and-when-did-he-know-it">What Did Sorrento-Gillis Know—and When Did He Know It?</a>
 <ol>
-<li><a href="#minor-consequences">Minor consequences</a>
+<li><a href="#too-quick-to-spin">Too Quick to Spin</a>
 </li>
-<li><a href="#moderate-consequences">Moderate consequences</a>
+<li><a href="#the-cost-of-secrecy">The Cost of Secrecy</a>
 </li>
-<li><a href="#major-consequences">Major consequences</a>
+<li><a href="#a-pattern-of-obstruction">A Pattern of Obstruction</a>
+</li>
+<li><a href="#mars-deserves-answers">Mars Deserves Answers</a>
 </li>
 </ol>
 </li>
-<li><a href="#assisting-tests">Assisting Tests</a>
+<li><a href="#unrest-rumoured-at-mathilde-station-as-quarantine-continues">Unrest Rumoured at Mathilde Station as Quarantine Continues</a>
 </li>
-<li><a href="#probability-of-scores">Probability of scores</a>
+<li><a href="#star-helix-operation-breaks-criminal-stronghold-in-brasilia-arcology">Star Helix Operation Breaks Criminal Stronghold in Brasília Arcology</a>
+<ol>
+<li><a href="#from-the-belt-to-earth-syndicates-lose-ground">From the Belt to Earth: Syndicates Lose Ground</a>
+</li>
+<li><a href="#star-helix-and-un-leadership-praise-the-operation">Star Helix and UN Leadership Praise the Operation</a>
+</li>
+<li><a href="#connection-to-ceres-crime-wars">Connection to Ceres Crime Wars?</a>
+</li>
+<li><a href="#fallout-and-future-steps">Fallout and Future Steps</a>
+</li>
+</ol>
+</li>
+<li><a href="#other-news">Other News</a>
+<ol>
+<li><a href="#calisto-university-researchers-detect-gravitational-echoes-from-venus">Calisto University Researchers Detect Gravitational “Echoes” from Venus</a>
+</li>
+<li><a href="#tycho-station-unveils-first-belt-grown-protein-cultures">Tycho Station Unveils First Belt-Grown Protein Cultures</a>
+</li>
+<li><a href="#belter-poet-releases-viral-collection">Belter Poet Releases Viral Collection</a>
+</li>
+</ol>
 </li>
 </ol>
 </nav>
@@ -993,7 +814,8 @@ On this page
 </div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/diomedes-spear/rules/abilities-and-focuses/" data-note-icon="" class="backlink">Abilities and Focuses</a>
+<div class="backlink-list"><div class="backlink-card">
+<span class="no-backlinks-message">No other pages mentions this page</span>
 </div></div>
 </div>
 </div>
