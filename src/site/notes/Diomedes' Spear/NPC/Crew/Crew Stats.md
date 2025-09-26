@@ -5,17 +5,17 @@
 ## Lira Vester
 **Level** 4
 
-| Attribute     | Score | Focuses                       |
-| ------------- | :---: | :---------------------------- |
-| Accuracy      |   0   |                               |
-| Communication |   5   | Expression                    |
-| Constitution  |   0   |                               |
-| Dexterity     |   2   | Crafting                      |
-| Fighting      |   0   |                               |
-| Intelligence  |   6   | Research, Biology, Technology |
-| Perception    |   2   |                               |
-| Strength      |   0   |                               |
-| Willpower     |   2   | Self-discipline               |
+| Attribute     | Score | Focuses                           |
+| ------------- | :---: | :-------------------------------- |
+| Accuracy      |   0   |                                   |
+| Communication |   5   | Expression                        |
+| Constitution  |   0   |                                   |
+| Dexterity     |   2   | Crafting                          |
+| Fighting      |   0   |                                   |
+| Intelligence  |   6   | Research, Biology (3), Technology |
+| Perception    |   2   |                                   |
+| Strength      |   0   |                                   |
+| Willpower     |   2   | Self-discipline                   |
 
 | Speed | Fortune | Defence | Ar+Tou |
 | :---: | :-----: | :-----: | :----: |
