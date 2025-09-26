@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/diomedes-spear/background/belter-lang/"}
 ---
 
+[Lang Belta NotebookLM](https://notebooklm.google.com/notebook/a7fd1855-93ff-4ca0-9958-6d74b058c0c6)
 [Belter Translator](https://lingojam.com/BelterTranslator)
 
 | English                                          | Belter Lang     |
