@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Baptist - Pastoral Letter</title>
+<title>Crew Stats</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -207,7 +207,7 @@ CTRL + K
 <span class="foldername">Crew</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/npc/crew/crew-stats/">Crew Stats </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/npc/crew/crew-stats/">Crew Stats </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -355,7 +355,7 @@ CTRL + K
 <span class="foldername">Traditional Faiths</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/religions/traditional-faiths/baptist-pastoral-letter/">Baptist - Pastoral Letter </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/religions/traditional-faiths/baptist-pastoral-letter/">Baptist - Pastoral Letter </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -708,51 +708,360 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-09-26T05:49:13.125Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-09-26T05:49:13.125Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-09-26T05:49:13.125Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">Baptist - Pastoral Letter</h1>
+<h1 data-note-icon="">Crew Stats</h1>
 <div class="header-meta">
 </div>
 </header>
-<h2 id="a-pastoral-letter-from-the-interplanetary-baptist-convention-on-the-meaning-of-the-eros-tragedy-and-the-witness-of-the-church" tabindex="-1">A Pastoral Letter from the Interplanetary Baptist Convention on the Meaning of the Eros Tragedy and the Witness of the Church</h2>
-<p><em>Delivered from New Jerusalem Baptist Assembly, Atlanta, Earth</em><br>
-<em>Dated: July 23, 2352</em></p>
-<blockquote>
-<p>“For we know that the whole creation groaneth and travaileth in pain together until now.”<br>
-– Romans 8:22 (KJV)</p>
-</blockquote>
+<h2 id="lira-vester" tabindex="-1">Lira Vester</h2>
+<p><strong>Level</strong> 4</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th style="text-align:center">Score</th>
+<th style="text-align:left">Focuses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy</td>
+<td style="text-align:center">0</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Communication</td>
+<td style="text-align:center">5</td>
+<td style="text-align:left">Expression</td>
+</tr>
+<tr>
+<td>Constitution</td>
+<td style="text-align:center">0</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td style="text-align:center">2</td>
+<td style="text-align:left">Crafting</td>
+</tr>
+<tr>
+<td>Fighting</td>
+<td style="text-align:center">0</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td style="text-align:center">6</td>
+<td style="text-align:left">Research, Biology, Technology</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td style="text-align:center">2</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Strength</td>
+<td style="text-align:center">0</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Willpower</td>
+<td style="text-align:center">2</td>
+<td style="text-align:left">Self-discipline</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">Speed</th>
+<th style="text-align:center">Fortune</th>
+<th style="text-align:center">Defence</th>
+<th style="text-align:center">Ar+Tou</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Weapon</th>
+<th style="text-align:center">Attack Roll</th>
+<th style="text-align:center">Damage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unarmed</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1d3</td>
+</tr>
+<tr>
+<td>Light Weapon</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1d6+2</td>
+</tr>
+<tr>
+<td>Heavy Weapon</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2d6</td>
+</tr>
+<tr>
+<td>Pistol</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2d6+2</td>
+</tr>
+<tr>
+<td>Rifle</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">3d6+2</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Talent</th>
+<th style="text-align:center">Novice</th>
+<th style="text-align:center">Expert</th>
+<th style="text-align:center">Master</th>
+<th>Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/talents/#expertise">Talents#Expertise</a> (Biology)</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center"></td>
+<td>+1 to ability test<br>re-roll failed test</td>
+</tr>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/talents/#knowledge">Talents#Knowledge</a></td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center"></td>
+<td>+1 info for successful <strong>knowledge</strong> test<br>+1 DD for <strong>research</strong> test</td>
+</tr>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/talents/#contacts">Talents#Contacts</a></td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center"></td>
+<td>make contact out of NPC<br>contact favour out of <strong>persuasion</strong> test</td>
+</tr>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/specializations/#academic">Specializations#Academic</a></td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td>re-roll failed <strong>research</strong> test</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Equipment</th>
+<th>Details</th>
+<th>Stats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Knife</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Lira's Terminal</td>
+<td>Effective, Expensive, Fine, Impressive</td>
+<td>2 tests during each advanced test round<br>+3 to DD<br>+1 to tests<br>+1 to social tests</td>
+</tr>
+</tbody>
+</table></div>
 <hr>
-<p>To the churches of the Belt, Mars, Earth, and the far colonies,<br>
-To all Baptists labouring in the light of Christ’s grace, and to our brothers and sisters across the stars:</p>
-<p>We write to you in mourning, in prayer, and in purpose. Six months have passed since the tragic and terrifying events at Eros Station, and yet the wound remains raw across our human family. What happened on that station—what was done to that station—has shaken the pillars of our world, both physical and spiritual.</p>
-<p>This letter is not written in fear, but in faith. Not to speculate on the actions of governments or corporations, but to call the faithful to stand as a witness in the face of darkness.</p>
-<h3 id="i-eros-and-the-fall-of-man" tabindex="-1">I. Eros and the Fall of Man</h3>
-<p>The events at Eros bear every mark of human sin. Greed, pride, and the desire to play god led powerful men to experiment with forces they neither understood nor respected. The result was death—not just the death of bodies, but of trust, of innocence, of our belief that some boundaries were still sacred.</p>
-<p>The Bible tells us in Genesis that God gave dominion, not domination. Science and progress are gifts, but when they are wielded without righteousness, they become idols. Eros is not the wrath of God—it is the fruit of a godless ambition.</p>
-<h3 id="ii-the-blood-cries-out" tabindex="-1">II. The Blood Cries Out</h3>
-<p>Like Abel’s blood in Genesis 4, the voices of those who perished cry out from Venus. We do not know all their names, but God does. And it is our duty to remember them—not only in prayer but in action. Let us not allow their memory to be buried in silence. Let their suffering stir the conscience of every believer.</p>
-<p>We call on all Baptist churches and fellowships to observe Eros Memorial Sunday on the first Sunday of August each year, until justice is done and truth revealed.</p>
-<h3 id="iii-the-role-of-the-church-in-the-belt-and-beyond" tabindex="-1">III. The Role of the Church in the Belt and Beyond</h3>
-<p>Too many of our brothers and sisters in the Belt live without comfort, without justice, and without hope. Many feel abandoned by Earth, by the powers that be—and even by God. Let us be clear: God has not forgotten them. And neither should we.</p>
-<p>The Baptist Church is called to go where others will not. We encourage our pastors and lay missionaries to plant churches in neglected stations, to bring not only the Gospel, but food, medicine, and presence. In the quiet corners of Ceres, Pallas, and Ganymede, let Baptist churches be a refuge and a light.</p>
-<h3 id="iv-caution-before-the-unknown" tabindex="-1">IV. Caution Before the Unknown</h3>
-<p>The Eros incident has shown us that we are not alone in the universe—not in the way we thought. Something ancient, something beyond comprehension, now moves among us. Theologians and scientists alike are struggling to name it. The Church must be wise.</p>
-<p>We must resist both fear and fascination. Just as Paul warned against “science falsely so called” (1 Timothy 6:20), we warn against blind awe. The protomolecule is not a god. It does not deserve worship. It is not divine. Whether natural or unnatural, created or cursed, it is a test of discernment.</p>
-<h3 id="v-a-call-to-unity-and-repentance" tabindex="-1">V. A Call to Unity and Repentance</h3>
-<p>Eros is not only a tragedy. It is a mirror. It reflects the divisions we have allowed to fester—between Earth and Belt, Mars and Moon, rich and poor, corporate and forgotten. The time has come for confession.</p>
-<p>We call on all Baptist churches to pray for reconciliation across the solar system. We ask believers to seek out neighbours from different worlds, different classes, even different beliefs—and break bread with them. The Kingdom of God is not bound to one planet.</p>
-<p>Brothers and sisters, hold fast. Do not be shaken by what you have seen. These are the days that test the soul, but they are also the days when faith shines brightest. Let us not cower beneath the shadow of Eros—but rise as a people of the Cross, carrying both truth and mercy.</p>
-<p>In Christ and with great urgency,</p>
-<p><em>Rev. Dr. Maynard Ellis</em><br>
-<em>Moderator, Interplanetary Baptist Convention</em></p>
-<p>Co-signed by:</p>
-<ul>
-<li><em>The Elders of the New Horizon Mission Fellowship (Ceres)</em></li>
-<li><em>The Mars Baptist Association, Dhanbad Nova Chapter</em></li>
-<li><em>The Belter Free Church Network</em></li>
-</ul>
-<blockquote>
-<p>&quot;Let us not grow weary in well doing, for in due season we shall reap, if we faint not.&quot;<br>
-— Galatians 6:9</p>
-</blockquote>
+<h2 id="paulo-glint-arrache" tabindex="-1">Paulo (Glint) Arrache</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th style="text-align:center">Score</th>
+<th>Focuses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy</td>
+<td style="text-align:center">4</td>
+<td>Pistols</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td style="text-align:center">1</td>
+<td>Expression</td>
+</tr>
+<tr>
+<td>Constitution</td>
+<td style="text-align:center">1</td>
+<td>Tolerance</td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td style="text-align:center">0</td>
+<td></td>
+</tr>
+<tr>
+<td>Fighting</td>
+<td style="text-align:center">0</td>
+<td></td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td style="text-align:center">6</td>
+<td>Engineering, Demolitions</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td style="text-align:center">3</td>
+<td>Seeing</td>
+</tr>
+<tr>
+<td>Strength</td>
+<td style="text-align:center">0</td>
+<td></td>
+</tr>
+<tr>
+<td>Willpower</td>
+<td style="text-align:center">1</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">Speed</th>
+<th style="text-align:center">Fortune</th>
+<th style="text-align:center">Defence</th>
+<th style="text-align:center">Ar+Tou</th>
+<th style="text-align:center">Init</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">21</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Weapon</th>
+<th style="text-align:center">Attack Roll</th>
+<th style="text-align:center">Damage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unarmed</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1d3</td>
+</tr>
+<tr>
+<td>Light Weapon</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1d6</td>
+</tr>
+<tr>
+<td>Heavy Weapon</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2d6</td>
+</tr>
+<tr>
+<td>Pistol</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">2d6+4 (-2 target toughness)</td>
+</tr>
+<tr>
+<td>Rifle</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3d6+3</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Talent</th>
+<th style="text-align:center">Novice</th>
+<th style="text-align:center">Expert</th>
+<th style="text-align:center">Master</th>
+<th>Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/talents/#engineering">Talents#Engineering</a></td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center"></td>
+<td>re-roll failed <strong>engineering</strong> test<br>damage control test: ST only +2 for every loss</td>
+</tr>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/talents/#expertise">Talents#Expertise</a> (Engineering)</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center"></td>
+<td>+1 to ability test<br>re-roll failed test</td>
+</tr>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/talents/#improvisation">Talents#Improvisation</a></td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center"></td>
+<td>make ability tests without required focus<br><strong>Whatever’s Handy</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/stunts/#combat-stunts">Stunts#Combat Stunts</a> -1 to penalty &amp; last 2d6 rounds</td>
+</tr>
+<tr>
+<td><a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/specializations/#mechanic">Specializations#Mechanic</a></td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td><strong>Intuition</strong> to identify ship problem</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Equipment</th>
+<th>Details</th>
+<th>Stats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glint's Pistol</td>
+<td>Fast, fine, effective, armour piercing, automatic pistol</td>
+<td>+2 bonus to initiative<br>+1 damage<br>+1 test<br>-2 to target toughness<br>can take automatic stunts<br></td>
+</tr>
+<tr>
+<td>Glint's Amrour</td>
+<td>Very light, effective, heavy body armour</td>
+<td>-2 to Dex penalty<br>+1 toughness</td>
+</tr>
+</tbody>
+</table></div>
 </main>
 <aside>
 <div class="sidebar">
@@ -766,19 +1075,9 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#a-pastoral-letter-from-the-interplanetary-baptist-convention-on-the-meaning-of-the-eros-tragedy-and-the-witness-of-the-church">A Pastoral Letter from the Interplanetary Baptist Convention on the Meaning of the Eros Tragedy and the Witness of the Church</a>
-<ol>
-<li><a href="#i-eros-and-the-fall-of-man">I. Eros and the Fall of Man</a>
+<li><a href="#lira-vester">Lira Vester</a>
 </li>
-<li><a href="#ii-the-blood-cries-out">II. The Blood Cries Out</a>
-</li>
-<li><a href="#iii-the-role-of-the-church-in-the-belt-and-beyond">III. The Role of the Church in the Belt and Beyond</a>
-</li>
-<li><a href="#iv-caution-before-the-unknown">IV. Caution Before the Unknown</a>
-</li>
-<li><a href="#v-a-call-to-unity-and-repentance">V. A Call to Unity and Repentance</a>
-</li>
-</ol>
+<li><a href="#paulo-glint-arrache">Paulo (Glint) Arrache</a>
 </li>
 </ol>
 </nav>

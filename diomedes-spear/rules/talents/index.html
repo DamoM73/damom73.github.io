@@ -207,6 +207,10 @@ CTRL + K
 <span class="foldername">Crew</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/npc/crew/crew-stats/">Crew Stats </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/npc/crew/lira-vester/">Lira Vester </a>
 </div>
 </div>
@@ -701,7 +705,7 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-09-14T12:18:30.193Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-09-14T12:18:30.193Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-09-14T12:18:30.193Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-09-26T05:49:13.125Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-09-26T05:49:13.125Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-09-26T05:49:13.125Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">Talents</h1>
@@ -715,24 +719,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>None</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>When you select this talent, increase your Income by +2.</td>
+<td>+2 <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/income/">Income</a></td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>When you gain this degree, increase your Income by +1. You may add 2 to your Income score when comparing your score with an item’s cost to purchase it automatically, without a test, or to determine whether the purchase will deplete your Income. You enjoy this benefit only once per game session, and you must choose whether it applies to an automatic purchase or to avoid depleting your Income.</td>
+<td>+1 <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/income/">Income</a><br>+2 for automatic tests</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>When you gain this degree, increase your Income by +1. You can re-roll a failed Income test, but must keep the result of the second roll</td>
+<td>+1 <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/income/">Income</a><br>re-rolled fail tests</td>
 </tr>
 </tbody>
 </table></div>
@@ -743,24 +752,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Dexterity 2 and the Dexterity (Acrobatics) focus</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>Every move you make is part of one fluid motion. Using the Move action to stand up, climb, dismount, etc. does not reduce your Speed.</td>
+<td>move does not reduce speed</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>When you move, terrain-based hazards do not reduce your Speed. When you fall, if you succeed at a Dexterity (Acrobatics) test with a TN determined by the GM based on height and nearby surfaces, you suffer only half damage.</td>
+<td>terrain does not reduce speed<br>Dex test to half fall damage</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>Impressive acrobatics are just the way you naturally move. You can re-roll any die result of 1 on each die for Dexterity (Acrobatics), Stamina (Running), and Strength (Climbing, Jumping) tests, but must keep the results of the second roll.</td>
+<td>re-roll any 1 for acrobatics, running, climbing or jumping <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -771,24 +785,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Communication 1 or higher and the Dexterity (Crafting) focus or Communication (Expression) focus</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>You can use the Dexterity (Crafting) or Communication (Expression) focuses to create works of art. Choose a field of visual (painting, sculpture, illustration, animation, photography, etc.) or literary (poetry, fiction, scriptwriting, journalism, etc.) arts. The GM determines the time and TN of the test, depending on your intentions, and the Drama Die determines your work’s quality if you succeed. You can sell your work if you know a buyer, giving you a temporary bonus to Income tests equal to half the result of the Drama Die (minimum 1); this bonus disappears upon your first successful Income test to purchase something, or at the end of the current story if you have not used it. As an option you can waive the bonus to Income and gain a temporary reputation instead. This reputation fades over time if you don’t produce other works of similar quality. Any reputation derived from your art disappears after a number of months equal to the result of the Drama Die.</td>
+<td>create works of art with crafting or expression <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>You grow as an artist, deepening your mastery of your craft or diversifying your talents. You learn the tools and tricks of a new artistic field or gain a +1 bonus to ability tests to create works of art in a field you are trained in. This bonus also applies to the Drama Die result to determine the quality of your work.</td>
+<td>+1 to create work tests, and DD</td>
 </tr>
 <tr>
 <td>Master</td>
-<td>You become an undisputed master of your craft. You learn the tools and tricks of a number of artistic f ields equal to your Communication, or select one of the f ields you are trained in and add your Willpower to the Drama Die to determine the quality of your work. Upon successfully creating a work of art, you can re-roll the Drama Die to determine its quality, but must keep the result of the second roll.</td>
+<td>You become an undisputed master of your craft. You learn the tools and tricks of a number of artistic fields equal to your Communication, or select one of the fields you are trained in and add your Willpower to the Drama Die to determine the quality of your work. Upon successfully creating a work of art, you can re-roll the Drama Die to determine its quality, but must keep the result of the second roll.</td>
+<td>+ willpower to DD<br>can re-roll DD for quality</td>
 </tr>
 </tbody>
 </table></div>
@@ -799,24 +818,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>None</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>Your presence is as stunning upon the second impression as it is on the first. You can use the Making an Entrance social stunt a second time at any point of an encounter. Also, if an NPC could be attracted to you, their initial attitude is one step more favourable towards you.</td>
+<td>use the <strong>Making an Entrance</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/stunts/#social-stunts">Stunts#Social Stunts</a> a second time</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>You know how to best exploit your appearance. You can perform the Flirt social stunt for 3 SP instead of its normal cost, and the target of your efforts can have a Neutral attitude instead of Open.</td>
+<td>perform the <strong>Flirt</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/stunts/#social-stunts">Stunts#Social Stunts</a> for 3 SP</td>
 </tr>
 <tr>
 <td>Master</td>
-<td>Every move you make captures the attention and interest of others. When interacting with char acters who would be attracted to you, you can re-roll a failed Communication (Deception, Performing, Persuasion, or Seduction) test, but must keep the result of the second roll.</td>
+<td>Every move you make captures the attention and interest of others. When interacting with characters who would be attracted to you, you can re-roll a failed Communication (Deception, Performing, Persuasion, or Seduction) test, but must keep the result of the second roll.</td>
+<td>re-roll <strong>deception</strong>, <strong>performing</strong>, <strong>persuasion</strong> or <strong>seduction</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a> tests</td>
 </tr>
 </tbody>
 </table></div>
@@ -827,24 +851,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Dexterity 2 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>You know your way around security systems. When you succeed at an Intelligence (Security) test to study a lock, alarm, guards, or any part of a security system or protocol, the GM provides you with one more piece of information.</td>
+<td>+ 1 info on successful <strong>security</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a> test</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>Security measures cannot stop you. If you fail an Intelligence (Technology) test involving a security measure, you can re-roll it, but must keep the results of the second roll.</td>
+<td>re-roll <strong>technology</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a> test</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>No valuable escapes your notice. If you fail a Perception (Searching) test, you can re-roll it, but must keep the results of the second roll.</td>
+<td>re-roll <strong>searching</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a> test</td>
 </tr>
 </tbody>
 </table></div>
@@ -854,24 +883,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Communication and Constitution 1 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>You can drink other people under the table. When making Constitution (Tolerance) tests as part of an advanced test, you gain a +1 bonus to the result of each Drama Die.</td>
+<td>+1 to DD for <strong>tolerance</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a> test</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>Choose one of the following focuses: Communication (Seduction) or Perception (Empathy). If you fail a test with your chosen focus, you can re-roll it but must keep the result of the second roll.</td>
+<td>re-roll either <strong>seduction</strong> or <strong>empathy</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a></td>
 </tr>
 <tr>
 <td>Master</td>
 <td>When you’re having a good time, you’re invincible! Or so you think. Choose the Benefit of the Doubt or Flirt stunt. You can perform that stunt for 1 SP less than its normal cost.</td>
+<td>-1 SP for <strong>benefit of the doubt</strong> or <strong>flirt stunt</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/stunts/#social-stunts">Stunts#Social Stunts</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -882,24 +916,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Communication 2 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>Your presence inspires allies. If you take a major action to offer guidance, your allies gain a +1 bonus to Willpower (Self-Discipline) and Willpower (Morale) tests for the rest of the encounter. You can do this once per encounter.</td>
+<td>+1 <strong>self-disciplne</strong> or <strong>morale</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a> to allies</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>Your allies follow your lead. Any NPCs you lead gain a +1 bonus when rolling for initiative.</td>
+<td>+1 initiative for NCP allies</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>When you stand firm, your allies stand with you. When you lead NPCs in an encounter, they do not have to make a Willpower (Morale) test until more than two-thirds of your side’s combatants are out of the fight (dead or incapacitated). If you leave the fight or are taken out, this benefit is lost.</td>
+<td>NPCs do not need to take a morale <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/focuses/">Focuses</a> test</td>
 </tr>
 </tbody>
 </table></div>
@@ -910,24 +949,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Communication 1 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>You can attempt to make a contact out of an NPC with a Neutral or better attitude toward you with a successful Communication (Persuasion) test. The GM sets the target number based on the likelihood of you knowing the character or having mutual friends. The more distant the character’s origin or social class from yours, the more difficult the test. If you succeed, the new contact’s attitude shifts one step in your favour and they readily provide information without a test, as long as it wouldn’t harm them. They will not perform other favours without further persuasion.</td>
+<td>make contact out of NPC</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>Once you’ve established a contact, you can try to get a favour from them with a single successful Communication (Persuasion) test, regardless of their attitude toward you and without engaging in a complex social interaction. The target number is based on the nature of the favour and whether it puts the contact in any danger.</td>
+<td>contact favour out of <strong>persuasion</strong> test</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>Your social skills can turn a contact into an trusted ally. If you do a significant favour for an established contact, they become Very Friendly towards you, and any potential risk in the favours you ask of them does not affect the target number of the Communication (Persuasion) test from the Expert degree. If they’re already Very Friendly, they become zealously loyal; you do not need to make an ability test to ask favours of them, regardless of the danger involved, and the GM can use your ally to provide prompts if you become stuck in the course of a story in the form of unsolicited advice or favours. Allies’ attitudes can degrade if they’re not treated well, but do not do so simply with the passage of time. You can drift apart for a decade and they’ll still be as loyal as when you last met.</td>
+<td>significant favour turns contact into ally</td>
 </tr>
 </tbody>
 </table></div>
@@ -938,24 +982,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Intelligence (Medicine) focus</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>You’re skilled in treating patients. You can re-roll any dice with a result of 1 or 2 when making an Intelligence (Medicine) test.</td>
+<td>re-roll 1s or 2s on <strong>medicine</strong> test</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>With access to medical supplies and tools, you can treat some conditions. With an hour and a basic TN 11 Intelligence (Medicine) test you can remove a wounded condition, leaving the patient only injured (see Conditions in Chapter 1). You can also remove other medical-related conditions with proper time and treatment, at the GM’s discretion, using the Interlude guide lines in Chapter 5.</td>
+<td>remove condition with TN11 <strong>medicine</strong> test</td>
 </tr>
 <tr>
 <td>Master</td>
-<td>You can perform complex medical proce dures to restore a patient to a normal, healthy condition, and you can re-roll any failed Intelligence (Medicine) test, but must keep the result of the second roll. When using Intelligence (Medicine) as a primary investigation focus, you generate +1 SP on any roll that generates stunt points.</td>
+<td>You can perform complex medical procedures to restore a patient to a normal, healthy condition, and you can re-roll any failed Intelligence (Medicine) test, but must keep the result of the second roll. When using Intelligence (Medicine) as a primary investigation focus, you generate +1 SP on any roll that generates stunt points.</td>
+<td>re-roll failed <strong>medicine</strong> test</td>
 </tr>
 </tbody>
 </table></div>
@@ -966,24 +1015,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Intelligence (Engineering) and Intelligence (Technology) focuses</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>If you fail an Intelligence (Engineering) test, you can re-roll it, but must keep the results of the second roll.</td>
+<td>re-roll failed <strong>engineering</strong> test</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>You fix it once, your know your way. For the damage control advanced test, the success threshold is only +2 for every loss on the system, rather than +5.</td>
+<td>damage control test: ST only +2 for every loss</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>When you make an advanced test using Intelligence (Engineering) or Intelligence (Technology), add +3 to the result of the Drama Die for the purpose of reaching the test’s threshold.</td>
+<td>+3 to DD for <strong>engineering</strong> or <strong>technology</strong> test</td>
 </tr>
 </tbody>
 </table></div>
@@ -994,24 +1048,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Focus in area of expertise</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>Select an ability focus you have and choose a narrower task or field within it. You gain a +1 bonus for ability tests covered by the narrower task.</td>
+<td>+1 to ability test</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>If you fail an ability test covered by your chosen expertise, you can re-roll it, but must keep the results of the second roll.</td>
+<td>re-roll failed test</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>Select one type of stunt (action, exploration, social, or command) relevant to your chosen expertise. When generating stunt points with ability tests involving your chosen expertise, you gain +1 SP for the chosen type of stunt.</td>
+<td>+1 SP for chosen stunt</td>
 </tr>
 </tbody>
 </table></div>
@@ -1022,24 +1081,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Communication 1 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>You cover your own tracks well. Other characters suffer a –2 penalty to any tests to find information about you or your activities. This stacks with the Cover Your Tracks stunt</td>
+<td>-2 to ability test to find you</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>You know how to find and navigate the local black market. Once per session, you can gain a +2 bonus on an Income test by using black market channels, but your Income is depleted by 1 regardless of the test result and the cost of the item.</td>
+<td>+2 income test for black market channels</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>You are experienced at living life hidden from the system. The penalty for tests to find information about you increases to –3, and when you buy on the black market, your Income score is depleted following the normal rules given in Chapter 2.</td>
+<td>-3 to ability test to find you</td>
 </tr>
 </tbody>
 </table></div>
@@ -1050,24 +1114,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Intelligence (Security) and Intelligence (Technology) focuses</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>When you succeed at an Intelligence (Cryptography) or Intelligence (Security) test, the GM can provide you with an extra item of information about the subject. Also, you can use the Intelligence (Technology) focus instead of Communication (Investigation) and Intelligence (Research) if the information you seek can be found in an accessible computer system.</td>
+<td>extra info onsuccessful <strong>cryptography</strong> or <strong>security</strong> test.<br>use <strong>technology</strong> focus for investigation</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>If you fail an Intelligence (Technology) test, you can re-roll it, but must keep the results of the second roll.</td>
+<td>re-roll failed technology tests</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>When you make an advanced test using Intelligence (Cryptography) or Intelligence (Technology), add +2 to the result of the Drama Die for the purpose of reaching the test’s threshold. You can perform the Cover Your Tracks stunt on tests involving the Cryptography and Technology focuses for 2 SP.</td>
+<td>+2 to DD on <strong>cryptography</strong> or <strong>technology</strong> advanced tests</td>
 </tr>
 </tbody>
 </table></div>
@@ -1078,28 +1147,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Intelligence 1 or Willpower 1 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>You adapt to the situation. You can make an ability test that requires a specific focus, even if you don’t have that focus. You don’t gain the focus bonus to your roll and don’t generate SP on such rolls, but in investigations you are always considered to have a tangential focus (see Investigation Focuses in Chapter 5).</td>
+<td>make ability tests without required focus</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>Anything is a potential weapon or a tool in your hands. When you perform the Whatever’s Handy combat stunt, the penalty of your makeshift weapon is reduced by 1 and it lasts 2d6 rounds before breaking. If improvising a tool instead of a weapon, you can perform tests that require the tool, but you don’t generate SP while doing so.</td>
+<td><strong>Whatever’s Handy</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/stunts/#combat-stunts">Stunts#Combat Stunts</a> -1 to penalty &amp; last 2d6 rounds</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>You can turn failure into some measure of success. If you roll doubles on a failed test, you generate SP equal to the result of the Drama Die –2 (minimum 1). The test still fails, but you can try to salvage the situation with a stunt you perform with the SP you gain. Unfortunately, your stunt cannot achieve your original intended action. The GM determines if the desired stunt is permitted, based on the situation.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
+<td>Generate SP on failed tests</td>
 </tr>
 </tbody>
 </table></div>
@@ -1110,24 +1180,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Communication 2 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>You inspire your friends and allies. If you are conscious and they are within sight of you, your allies gain a +1 bonus to all Willpower-related tests.</td>
+<td>+1 to allies' willpower</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>You inspire greatness in your friends and allies. If you are conscious and they are within sight of you, any ally generating stunt points gains +1 SP.</td>
+<td>+1 SP to allies</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>With you around, things don’t seem quite as bad. Once per encounter, you can spend two minor actions to offer words of inspiration to your allies. All who hear these words regain 1d6 + your Communication in Fortune, and receive a +2 bonus on their next test.</td>
+<td>1d6 + comm in fortune to allies<br>+2 to their next test</td>
 </tr>
 </tbody>
 </table></div>
@@ -1138,24 +1213,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Communication 2 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>You understand how to navigate complex social situations. Choose one of the following Communication focuses: Deception, Etiquette, or Seduction. If you fail a Communication test with your chosen focus, you can re-roll it but must keep the result of the second roll.</td>
+<td>re-roll chosen communication</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>You can squeeze information from the most reluctant sources. If the focus you chose in the Novice degree is considered a tangential focus during an investigation (see Chapter 5), you ignore the +2 increase to the TN of the test. In addition, if you use the focus you chose in the Novice degree to successfully complete a task in a complex social interaction, you clear two shifts instead of only one.</td>
+<td>social interactions give two shifts</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>The secrets you know can raise or ruin anyone’s good standing. You can perform the Cast Out and Oozing Confidence social stunts for 1 SP lower than their normal cost. In addition, you can use Oozing Confidence to benefit another character.</td>
+<td>-1 SP for <strong>cast out</strong> and <strong>oozing confidence</strong> <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/stunts/#social-stunts">Stunts#Social Stunts</a>. Can use <strong>oozing confidence</strong> for other's benefit</td>
 </tr>
 </tbody>
 </table></div>
@@ -1166,24 +1246,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Intelligence 2 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
-<td>You can attempt a test using an Intelligence focus somehow related to the test at hand rather than the called for ability, but with a –1 penalty. For example, using Intelligence (Business) instead of Communication (Persuasion) to convince a corporate middle-manager to agree with you. If this would be a tangential investigation focus, you do not suffer the +2 increase in TN.</td>
+<td>You can attempt a test using an Intelligence focus somehow related to the test at hand rather than the called for ability, but with a –1 penalty. For example, using Intelligence (Business) instead of Communication (Persuasion) to convince a corporate middle-manager to agree with you. If this would be a tangential investigation focus, you do not suffer the +2 use intel focus at -1</td>
+<td>replace needed focus with intelligence focus with -1 penalty</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>You leverage every bit of information. You can perform the Breakthrough exploration stunt for 2 SP.</td>
+<td>breakthrough <a class="internal-link" target="" data-note-icon="" href="/diomedes-spear/rules/stunts/#exploration-stunts">Stunts#Exploration Stunts#Investigation Stunts</a> for 2SP</td>
 </tr>
 <tr>
 <td>Master</td>
-<td>When you succeed at an ability test with a knowledge focus, you gain a +1 bonus to the result of each Drama Die on tests using related focuses for the duration of the encounter. For example, an Intelligence (Law) test can benefit Communication (Oratory) tests in a courtroom, or an Intelligence (Medicine) test can benefit a Perception (Intuition) test in a diagnosis.</td>
+<td>When you succeed at an ability test with a knowledge focus, you gain a +1 bonus to the result of each Drama Die on tests using related focuses for the duration of the encounter. For example, an Intelligence (Law) test can benefit Communication (Oratory) tests in a courtroom, or an Intelligence (Medicine) test can benefit a Perception (Intuition) t</td>
+<td>+1 DD for knowledge focus</td>
 </tr>
 </tbody>
 </table></div>
@@ -1194,24 +1279,29 @@ CTRL + K
 <tr>
 <th>Category</th>
 <th>Detail</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Requirements</td>
 <td>Intelligence 2 or higher</td>
+<td></td>
 </tr>
 <tr>
 <td>Novice</td>
 <td>When you make a successful Intelligence test with a knowledge focus, the GM should give you an extra piece of information on the topic. A knowledge focus is any Intelligence focus with a description that starts with “Knowledge”, such as Business or Science. The GM determines the nature of the additional information and it may or may not be pertinent to the main question at hand.</td>
+<td>+1 info for successful <strong>knowledge</strong> test</td>
 </tr>
 <tr>
 <td>Expert</td>
 <td>When making Intelligence (Research) tests as part of an advanced test, you gain a +1 bonus to the result of each Drama Die. See Advanced Tests in Chapter 1 for details.</td>
+<td>+1 DD for <strong>research</strong> test</td>
 </tr>
 <tr>
 <td>Master</td>
 <td>Pick any two of your knowledge focuses. When making tests using those focuses, you can re-roll a failed test but must keep the result of the second roll.</td>
+<td>re-roll failed tests for 2 selected knowledges</td>
 </tr>
 </tbody>
 </table></div>
@@ -1969,7 +2059,8 @@ On this page
 </div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/diomedes-spear/rules/leveling/" data-note-icon="" class="backlink">Leveling</a>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/diomedes-spear/npc/crew/crew-stats/" data-note-icon="" class="backlink">Crew Stats</a>
+</div><div class="backlink-card"><i icon-name="link"></i><a href="/diomedes-spear/rules/leveling/" data-note-icon="" class="backlink">Leveling</a>
 </div></div>
 </div>
 </div>
