@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>UNN Munroe-Class Light Destroyer</title>
+<title>News Feed 8</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -191,7 +191,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-8/">News Feed 8 </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/news-digests/news-feed-8/">News Feed 8 </a>
 </div>
 </div>
 </div>
@@ -643,7 +643,7 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/unn-munroe-class-light-destroyer/">UNN Munroe-Class Light Destroyer </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/diomedes-spear/ship-types/unn-munroe-class-light-destroyer/">UNN Munroe-Class Light Destroyer </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -712,187 +712,133 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-09-26T06:48:30.565Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-09-26T06:48:30.565Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-09-26T06:48:30.565Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">UNN Munroe-Class Light Destroyer</h1>
+<h1 data-note-icon="">News Feed 8</h1>
 <div class="header-meta">
 </div>
 </header>
-<div class="callout" data-callout="info"><div class="callout-title"><div class="callout-title-inner"> Description<br></div></div>
-<div class="callout-content">
-<p>
-The Munroe class is an example of a mass-produced UNN warship capable of taking a hit but also dishing out some serious pain.</p>
-</div></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td></td>
-</tr>
-<tr>
-<td>Class</td>
-<td>Munroe-Class Light Destroyer</td>
-</tr>
-<tr>
-<td>Faction</td>
-<td>UNN</td>
-</tr>
-<tr>
-<td>Category</td>
-<td>Huge</td>
-</tr>
-<tr>
-<td>Drive</td>
-<td>Epstein, Thrusters</td>
-</tr>
-<tr>
-<td>Length</td>
-<td>200m</td>
-</tr>
-<tr>
-<td>Crew</td>
-<td>18 (70)</td>
-</tr>
-<tr>
-<td>Competence</td>
-<td>Average</td>
-</tr>
-<tr>
-<td>Hull</td>
-<td>3d6+3</td>
-</tr>
-<tr>
-<td>Sensors</td>
-<td>2</td>
-</tr>
-<tr>
-<td>Favoured Range</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td>Favoured Command Stunts</td>
-<td>Multi-Target, Tactics, Perceived Weakness</td>
-</tr>
-<tr>
-<td>Qualities</td>
-<td>Advanced Communications Systems, Advanced Targeting Systems, Emergency Batteries, Hull Plating III, Medical Expert System, Rapid Reload Torpedo Tubes, Redundant Hull (Triple), Sensor Scrambling, Self-Destruct System</td>
-</tr>
-<tr>
-<td>Flaws</td>
-<td>Lumbering</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Weapon Type</th>
-<th>Range</th>
-<th>Damage</th>
-<th>Arc</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Torpedo Tubes (6)</td>
-<td>Long</td>
-<td>4d6</td>
-<td>2 Fore, 2 Dorsal, 2 Ventral</td>
-</tr>
-<tr>
-<td>Rail Gun (1)</td>
-<td>Medium</td>
-<td>3d6</td>
-<td>Fore</td>
-</tr>
-<tr>
-<td>Point Defence Network</td>
-<td>Close</td>
-<td>2d6</td>
-<td>Full</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:left">Quality / Flaw</th>
-<th style="text-align:left">Effect</th>
-<th style="text-align:left">Prerequisites</th>
-<th style="text-align:left">Stack?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Advanced Communications Systems</td>
-<td style="text-align:left">Reduces Fleet Command Stunt SP cost by 1.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Advanced Targeting Systems</td>
-<td style="text-align:left">+1 bonus to Sensors score for Electronic Warfare tests.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Emergency Batteries</td>
-<td style="text-align:left">Provides backup power to ship systems.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Hull Plating</td>
-<td style="text-align:left">+1 bonus when determining the ship's Hull total against damage.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">Yes (4)</td>
-</tr>
-<tr>
-<td style="text-align:left">Medical Expert System</td>
-<td style="text-align:left">+2 Medicine tests</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Rapid Reload Torpedo Tubes</td>
-<td style="text-align:left">Reduces the SP cost to use the Rapid Reload Command Stunt by 1.</td>
-<td style="text-align:left">Torpedo tubes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Redundant Hull (Triple)</td>
-<td style="text-align:left">Ignore the first two loss conditions imposed in an encounter.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Sensor Scrambling</td>
-<td style="text-align:left">-1 penalty to all enemy Sensors tests within Medium or closer range</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Self-Destruct System</td>
-<td style="text-align:left">Can be programmed to annihilating the ship and its contents.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Lumbering</td>
-<td style="text-align:left">Considered one Size category larger than its actual Size when it comes to manoeuvring tests.</td>
-<td style="text-align:left">None stated.</td>
-<td style="text-align:left">No</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="terraforming-setbacks-raise-questions-about-long-term-viability" tabindex="-1">Terraforming Setbacks Raise Questions About Long-Term Viability</h2>
+<p><em>By Aruna Dael, Science &amp; Engineering Correspondent – The Martian Chronicle (Londres Nova Edition)</em></p>
+<p><strong>MARS</strong>— For the first time in over a decade, the Martian Terraforming Directorate has officially acknowledged a series of major setbacks in its ongoing planetary engineering efforts—rekindling public concern about the pace, direction, and viability of the Red Planet’s great dream: to make Mars a world fit for unaided human life.</p>
+<p>In a statement released late Monday, Directorate spokesperson Dr. Jamil al-Khouri confirmed that three major atmospheric processors in the Elysium Corridor suffered &quot;critical synchronization faults&quot; over the last two months. This, combined with a sudden reversal of greenhouse momentum in the Northern Hemisphere, has resulted in a measurable drop in ambient pressure and regional temperatures—the first such regression recorded in twenty-seven years.</p>
+<h3 id="what-went-wrong" tabindex="-1">What Went Wrong?</h3>
+<p>Though exact technical details remain classified, sources within the Directorate cite a cascading systems fault triggered by a combination of aging infrastructure, overstrained algae-nutrient dispersal systems, and an unexpected solar flare event that damaged several orbital mirrors. One source described the situation as &quot;not catastrophic, but very serious.&quot;</p>
+<p>Additionally, dust storms in the western Tharsis range have choked out dozens of atmospheric extraction fields, stalling carbon sequestration and crippling habitat-scale heating efforts.</p>
+<p><em>&quot;We are experiencing a recalibration window far beyond predicted parameters,&quot;</em> said Dr. Al-Khouri. <em>&quot;It is not a failure. But it is a moment that demands both scientific humility and engineering tenacity.&quot;</em></p>
+<h3 id="public-reaction-cautious-but-growing-frustration" tabindex="-1">Public Reaction: Cautious, But Growing Frustration</h3>
+<p>On the streets of Londres Nova and in the pressurised townships of Utopia Planitia, public sentiment remains cautiously supportive—but murmurs of frustration are growing louder.</p>
+<p>Many Martians have sacrificed generations for this dream, enduring harsh living conditions and investing labor, capital, and identity into a project that now seems stalled.</p>
+<p><em>&quot;We were told we’d see blue sky in our lifetimes,&quot;</em> said Amira Veit, a third-generation civil engineer. <em>&quot;My grandparents built heat pumps with their bare hands. My parents managed algae tanks. Now my kids are asking if it was all just a lie. That’s hard.&quot;</em></p>
+<p>Online message boards and local town halls are buzzing with calls for increased transparency, civilian oversight, and even audits of Directorate budgets, which have ballooned by 18% in the last fiscal cycle.</p>
+<h3 id="political-implications-a-crack-in-the-consensus" tabindex="-1">Political Implications: A Crack in the Consensus</h3>
+<p>The Martian Congressional Republic has long unified around the terraforming ideal—not just as a scientific venture, but as a cultural and political pillar.</p>
+<p>But these setbacks have begun to expose ideological fractures within Parliament. The New Horizon Bloc has called for an emergency review of terraforming priorities, suggesting a shift in focus toward biosphere-contained development rather than full atmospheric transformation.</p>
+<p>In contrast, the Green Diligence Coalition insists that now is the time to double down: increase orbital mirror production, expand regolith conversion arrays, and invest in next-gen biothermal feedback systems.</p>
+<p><em>&quot;If Earth thinks we will give up and return to their table with our hats in hand, they don’t understand who we are,&quot;</em> said Senator Rena Qatari during a fiery floor speech. <em>&quot;We will turn this desert into a world—our world. But we need a course correction, not capitulation.&quot;</em></p>
+<h3 id="the-dream-isn-t-dead-but-it-needs-rebuilding" tabindex="-1">The Dream Isn’t Dead—But It Needs Rebuilding</h3>
+<p>Despite the setbacks, no one in the Directorate is declaring defeat. Research continues, new technologies are in development, and younger scientists are already proposing bold alternatives.</p>
+<p>Still, the mood across Mars is shifting—from unshakable faith to critical determination. The dream of a green Mars lives on. But now, it walks with a limp.</p>
+<hr>
+<h2 id="belter-pop-icon-hitomi-camara-announces-belt-wide-tour-aboard-em-the-keha-em" tabindex="-1">Belter Pop Icon Hitomi Camara Announces Belt-Wide Tour Aboard <em>The Keha</em></h2>
+<p><em>By Maris Keene, Far Olympus Enterprises</em></p>
+<p><strong>PALLAS STATION</strong> — Belter superstar Hitomi Camara is taking her voice—and her message of Belt pride—on a tour unlike any other. In partnership with OrbitLine Entertainment, Camara has been gifted a state-of-the-art Troubadour-class Entertainment Transport, now christened <em>The Keha</em> (“Voice” in Belter Creole). Specially refitted for concerts across the Belt and Outer Planets, the ship will serve as both stage and symbol of Belter identity.</p>
+<p><img src="/img/user/Diomedes'%20Spear/Assests/viva_beltalowda.png" alt="viva_beltalowda.png"></p>
+<p>The tour, branded <em>Viva Beltalowda</em>, will begin with a launch performance on Pallas before stops at Ceres, Tycho, and a circuit of outer stations. <em>The Keha</em> features a rotating stage dome, immersive grav-adaptive lighting, and capacity for both live audiences and broadwave transmissions across the system.</p>
+<p><em>&quot;This ship na jus stage—eshá home for Beltalowda song, ya,&quot;</em> Camara declared at the unveiling. <em>&quot;Everywhere Belter live, we bring the sound, the story, the strength.&quot;</em></p>
+<h3 id="a-cultural-and-political-event" tabindex="-1">A Cultural and Political Event</h3>
+<p>While the tour is billed as a celebration of Belter identity, it arrives in a time of mounting political strain. Camara’s past relationship with OPA hardliner Django Weber continues to draw scrutiny, with critics accusing OrbitLine of courting controversy. Corporate representatives insist the tour is about “unity through art,” though observers note the line-up includes appearances on stations recently hit by unrest.</p>
+<h3 id="high-profile-guests" tabindex="-1">High-Profile Guests</h3>
+<p>The inaugural voyage will host a select list of Earther dignitaries and sponsors, including Jonas Errinwright, younger brother of UN Undersecretary Sadavir Errinwright. His presence is already sparking debate over whether the Belt’s most famous voice should share the stage with symbols of Inner power.</p>
+<h3 id="reactions-across-the-belt" tabindex="-1">Reactions Across the Belt</h3>
+<p>Fan excitement is undeniable. Camara’s latest single, <em>Void Lullaby</em>, has surged across Belt feeds, and tickets for in-person segments have already sold out. Still, some OPA factions are wary. One Tycho official, speaking off-record, warned: <em>&quot;Anytime Belter culture stand strong, Inners try make it theirs.&quot;</em></p>
+<p>With <em>Viva Beltalowda</em>, Camara is poised to once again turn music into a political stage—whether she intends it or not.</p>
+<hr>
+<h2 id="earth-agricultural-subsidies-increase" tabindex="-1">Earth Agricultural Subsidies Increase</h2>
+<p><em>By UNN NewsNet, Global Feed</em></p>
+<h3 id="un-responds-to-food-strain" tabindex="-1">UN Responds to Food Strain</h3>
+<p>The United Nations has announced a 14% increase in agricultural subsidies, the largest in over a decade, aimed at shoring up food security both on Earth and across the Sol system. The move follows warnings from Pur’N’Kleen Water Company and FutureVeg Habitat that food distribution chains are under “severe stress” due to export demands from Belt stations.</p>
+<h3 id="exports-pulling-at-earth-s-supply" tabindex="-1">Exports Pulling at Earth’s Supply</h3>
+<p>In recent months, shipments of grain and protein from automated farms in Sub-Saharan Africa and India have been diverted toward Ceres and Tycho Station. Tycho OPA intermediaries are rumored to have negotiated “emergency purchase agreements” for Belter settlements facing ration shortfalls. UN officials insist that Basic Assistance rations will not be cut, though residents in Lagos and Manila reported narrowing variety in government-subsidized meals.</p>
+<h3 id="corporate-influence-in-the-subsidies" tabindex="-1">Corporate Influence in the Subsidies</h3>
+<p>Critics within the General Assembly argue that the subsidies will primarily benefit Earth’s agri-tech giants. Pope Enterprises’ Krystal Kleer subsidiary, already a major water and fertilizer supplier, is positioned to receive substantial contract expansions. Meanwhile, OPA-aligned groups like Persephone’s Scythe condemned the measure as “corporate welfare,” claiming that Belt-based agricultural cooperatives are being strangled by patent restrictions and licensing fees.</p>
+<h3 id="belter-reaction-and-black-markets" tabindex="-1">Belter Reaction and Black Markets</h3>
+<p>Ceres OPA leader Anderson Dawes issued a statement accusing the UN of “locking Belters into permanent dependence.” Dawes cited seizures of counterfeit food supplements—often branded as Rebel Rations or OPA Eats—that had been smuggled through Pallas. Belter black-market brands like The Belter Bento remain popular but face shortages as Inner supply chains tighten.</p>
+<h3 id="security-concerns" tabindex="-1">Security Concerns</h3>
+<p>Star Helix Security, still maintaining contracts in several Belt stations, confirmed a rise in seizures of counterfeit Ossifex and nutrient packs labeled with Pur’N’Kleen logos. Analysts suggest syndicates such as the Loca Greiga are exploiting shortages by moving illicit goods alongside drugs. “Food has become just another racket,” said one Tycho Free News correspondent.</p>
+<h3 id="system-outlook" tabindex="-1">System Outlook</h3>
+<p>Market watchers warn that Earth will remain the bottleneck for food supply unless Martian hydroponic capacity or Ganymede’s domes recover from fungal infestations. Persephone’s Scythe is reportedly stepping up sabotage of Inner-aligned shipments, while Pinkwater Security has increased inspections on Ganymede amid fears of contamination. For now, the UN’s subsidies buy time—but critics argue they only deepen the system’s reliance on corporate-controlled lifelines.</p>
+<hr>
+<h2 id="other-news" tabindex="-1">Other News</h2>
+<h3 id="mars-begins-draft-of-reserve-technicians" tabindex="-1">Mars Begins Draft of Reserve Technicians</h3>
+<p>The Martian Parliament has authorized an emergency draft of reserve engineering and logistics technicians, citing the need to “fortify core systems infrastructure.” Opponents argue the draft is a pretext for militarizing civilian assets in preparation for possible conflict with the Belt.</p>
+<h3 id="un-health-directorate-recalls-anti-radiation-inhalers" tabindex="-1">UN Health Directorate Recalls Anti-Radiation Inhalers</h3>
+<p>A batch of substandard anti-rad inhalers distributed in the Belt was recalled after multiple patients suffered respiratory failure. Investigation reveals the product was manufactured by a Kruger-Thompson subsidiary—fuelling speculation that corners were cut in post-Eros supply chain disruptions.</p>
+<h3 id="pope-enterprises-acquires-luna-based-news-conglomerate" tabindex="-1">Pope Enterprises Acquires Luna-Based News Conglomerate</h3>
+<p>In a surprising acquisition, Earth media giant Pope Enterprises has absorbed the Luna Global Syndicate, raising concerns about media consolidation and narrative control across UN territories. Critics warn this could further narrow the flow of information surrounding Eros and Venus.</p>
 </main>
 <aside>
 <div class="sidebar">
 <div class="sidebar-container">
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#terraforming-setbacks-raise-questions-about-long-term-viability">Terraforming Setbacks Raise Questions About Long-Term Viability</a>
+<ol>
+<li><a href="#what-went-wrong">What Went Wrong?</a>
+</li>
+<li><a href="#public-reaction-cautious-but-growing-frustration">Public Reaction: Cautious, But Growing Frustration</a>
+</li>
+<li><a href="#political-implications-a-crack-in-the-consensus">Political Implications: A Crack in the Consensus</a>
+</li>
+<li><a href="#the-dream-isn-t-dead-but-it-needs-rebuilding">The Dream Isn’t Dead—But It Needs Rebuilding</a>
+</li>
+</ol>
+</li>
+<li><a href="#belter-pop-icon-hitomi-camara-announces-belt-wide-tour-aboard-em-the-keha-em">Belter Pop Icon Hitomi Camara Announces Belt-Wide Tour Aboard The Keha</a>
+<ol>
+<li><a href="#a-cultural-and-political-event">A Cultural and Political Event</a>
+</li>
+<li><a href="#high-profile-guests">High-Profile Guests</a>
+</li>
+<li><a href="#reactions-across-the-belt">Reactions Across the Belt</a>
+</li>
+</ol>
+</li>
+<li><a href="#earth-agricultural-subsidies-increase">Earth Agricultural Subsidies Increase</a>
+<ol>
+<li><a href="#un-responds-to-food-strain">UN Responds to Food Strain</a>
+</li>
+<li><a href="#exports-pulling-at-earth-s-supply">Exports Pulling at Earth’s Supply</a>
+</li>
+<li><a href="#corporate-influence-in-the-subsidies">Corporate Influence in the Subsidies</a>
+</li>
+<li><a href="#belter-reaction-and-black-markets">Belter Reaction and Black Markets</a>
+</li>
+<li><a href="#security-concerns">Security Concerns</a>
+</li>
+<li><a href="#system-outlook">System Outlook</a>
+</li>
+</ol>
+</li>
+<li><a href="#other-news">Other News</a>
+<ol>
+<li><a href="#mars-begins-draft-of-reserve-technicians">Mars Begins Draft of Reserve Technicians</a>
+</li>
+<li><a href="#un-health-directorate-recalls-anti-radiation-inhalers">UN Health Directorate Recalls Anti-Radiation Inhalers</a>
+</li>
+<li><a href="#pope-enterprises-acquires-luna-based-news-conglomerate">Pope Enterprises Acquires Luna-Based News Conglomerate</a>
+</li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+</div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
 <div class="backlink-list"><div class="backlink-card">
