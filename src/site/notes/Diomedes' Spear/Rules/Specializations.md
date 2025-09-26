@@ -5,12 +5,12 @@
 ## Academic
 You are trained in finding information and putting it to use.
 
-| Category    | Detail                                                                                                                                                                                                                                                              |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Requirement | Intelligence 2 or higher and the Intelligence (Research) focus.                                                                                                                                                                                                     |
-| Novice      | You have a real skill in not only finding facts, but knowing where to look. If you fail an Intelligence (Research) test, you can re-roll it, but must keep the result of the second roll.                                                                           |
-| Expert      | You have become adept at recalling relevant information. When you perform the A-Ha! stunt, you gain one free extra use of it; that is, if you spend 1 SP, you can perform the stunt twice, if you spend 2 SP, you can use it three times, and so on.                |
-| Master      | Your fact-finding abilities are unparalleled. When you make an Intelligence (Research) test as part of an advanced test, you gain a +1 bonus to the result of each Drama Die. This increases your total roll, and allows you to reach the success threshold faster. |
+| Category    | Detail                                                                                                                                                                                                                                                              | Effect                           |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| Requirement | Intelligence 2 or higher and the Intelligence (Research) focus.                                                                                                                                                                                                     |                                  |
+| Novice      | You have a real skill in not only finding facts, but knowing where to look. If you fail an Intelligence (Research) test, you can re-roll it, but must keep the result of the second roll.                                                                           | re-roll failed **research** test |
+| Expert      | You have become adept at recalling relevant information. When you perform the A-Ha! stunt, you gain one free extra use of it; that is, if you spend 1 SP, you can perform the stunt twice, if you spend 2 SP, you can use it three times, and so on.                |                                  |
+| Master      | Your fact-finding abilities are unparalleled. When you make an Intelligence (Research) test as part of an advanced test, you gain a +1 bonus to the result of each Drama Die. This increases your total roll, and allows you to reach the success threshold faster. |                                  |
 ## Ace
 Few can fly like you do.
 
@@ -114,12 +114,12 @@ You are a master of hand-to-hand combat.
 ## Mechanic
  She takes of you, you take care of her. You are at one with your ship in a way that makes other feel uncomfortable.
 
-| Category    | Detail                                                                                                                                                                                                                |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Requirement | Intelligence 2 or higher and Engineering Focus                                                                                                                                                                        |
-| Novice      | Nominate a ship as "Your Ship". You have the Intuition focus, for the purposes of identifying if anything is wrong with your ship.                                                                                    |
-| Expert      | You have worked on so many different systems, that you intuitively know how they work. Your Intuition focus can extend to any mechanical system.                                                                      |
-| Master      | Redundancy is the key. You have added extra redundancies to all of your ship's systems. When applying loss conditions from space combat, a roll of on the normal loss table, results in no loss rather than a reroll. |
+| Category    | Detail                                                                                                                                                                                                                | Effect                                 |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Requirement | Intelligence 2 or higher and Engineering Focus                                                                                                                                                                        |                                        |
+| Novice      | Nominate a ship as "Your Ship". You have the Intuition focus, for the purposes of identifying if anything is wrong with your ship.                                                                                    | **Intuition** to identify ship problem |
+| Expert      | You have worked on so many different systems, that you intuitively know how they work. Your Intuition focus can extend to any mechanical system.                                                                      |                                        |
+| Master      | Redundancy is the key. You have added extra redundancies to all of your ship's systems. When applying loss conditions from space combat, a roll of on the normal loss table, results in no loss rather than a reroll. |                                        |
 
 ## Pirate
 | Category    | Detail                                                                                                                                                                                                                                                                                                  |
